@@ -1,0 +1,53 @@
+{
+  "adjudicator": "supervisor",
+  "decisions": [
+    {
+      "package_name": "flit",
+      "differing_fields": [
+        "verdict",
+        "support_status",
+        "version_expression",
+        "commitment_text"
+      ],
+      "fields": {
+        "verdict": "annotator1",
+        "support_status": "annotator1",
+        "version_expression": "annotator1",
+        "commitment_text": "annotator1"
+      },
+      "rationale": "Adopted Annotator 1's labels for flit. The policy explicitly states 'Only the latest non-prerelease version is supported', which designates latest_only. With 0 vulnerabilities in evidence, the expected verdict under Rule R4 is Insufficient Evidence."
+    },
+    {
+      "package_name": "gradio",
+      "differing_fields": [
+        "verdict",
+        "support_status",
+        "version_expression",
+        "commitment_text"
+      ],
+      "fields": {
+        "verdict": "annotator1",
+        "support_status": "annotator1",
+        "version_expression": "annotator1",
+        "commitment_text": "annotator1"
+      },
+      "rationale": "Adopted Annotator 1's labels for gradio. The statement 'We ship security fixes in the latest release of Gradio and its first-party clients' declares an explicit support commitment with version expression ['latest'], resulting in Partially Consistent."
+    },
+    {
+      "package_name": "pdoc",
+      "differing_fields": [
+        "verdict",
+        "support_status",
+        "version_expression",
+        "commitment_text"
+      ],
+      "fields": {
+        "verdict": "annotator1",
+        "support_status": "annotator1",
+        "version_expression": "annotator1",
+        "commitment_text": "annotator1"
+      },
+      "rationale": "Adopted Annotator 1's labels for pdoc. In accordance with Codebook Section 2.1, the table was selected including its header line, clearly designating support for the main branch and most recent release."
+    }
+  ]
+}

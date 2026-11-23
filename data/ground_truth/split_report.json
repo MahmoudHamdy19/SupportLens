@@ -1,0 +1,88 @@
+{
+  "seed": 42,
+  "target_ratios": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "total_records": 300,
+  "split_sizes": {
+    "train": 210,
+    "val": 45,
+    "test": 45
+  },
+  "realised_ratios": {
+    "train": 0.7,
+    "val": 0.15,
+    "test": 0.15
+  },
+  "per_class": {
+    "Consistent": {
+      "total": 9,
+      "train": 7,
+      "val": 1,
+      "test": 1,
+      "rule": "nominal"
+    },
+    "Partially Consistent": {
+      "total": 8,
+      "train": 6,
+      "val": 1,
+      "test": 1,
+      "rule": "nominal"
+    },
+    "Potential Inconsistency": {
+      "total": 3,
+      "train": 1,
+      "val": 1,
+      "test": 1,
+      "rule": "minimum of one record each in validation and test"
+    },
+    "Insufficient Evidence": {
+      "total": 220,
+      "train": 154,
+      "val": 33,
+      "test": 33,
+      "rule": "nominal"
+    },
+    "Unmeasurable Commitment": {
+      "total": 60,
+      "train": 42,
+      "val": 9,
+      "test": 9,
+      "rule": "nominal"
+    }
+  },
+  "class_counts": {
+    "train": {
+      "Consistent": 7,
+      "Partially Consistent": 6,
+      "Potential Inconsistency": 1,
+      "Insufficient Evidence": 154,
+      "Unmeasurable Commitment": 42
+    },
+    "val": {
+      "Consistent": 1,
+      "Partially Consistent": 1,
+      "Potential Inconsistency": 1,
+      "Insufficient Evidence": 33,
+      "Unmeasurable Commitment": 9
+    },
+    "test": {
+      "Consistent": 1,
+      "Partially Consistent": 1,
+      "Potential Inconsistency": 1,
+      "Insufficient Evidence": 33,
+      "Unmeasurable Commitment": 9
+    }
+  },
+  "warnings": [
+    "class 'Consistent' has only 1 test record(s): its F1 is unstable",
+    "class 'Partially Consistent' has only 1 test record(s): its F1 is unstable",
+    "class 'Potential Inconsistency' has only 1 test record(s): its F1 is unstable"
+  ],
+  "small_class_rules": "see the module docstring of src/data_pipeline/splits.py",
+  "input_file": "C:\\Users\\Mahmoud\\Downloads\\Telegram Desktop\\SupportLens_Final\\SupportLens\\data\\ground_truth\\ground_truth.jsonl",
+  "input_sha256": "0987c459fc515ff1de8ee6b3eb5eb5d099e1641af365f4f1ec7bd9a5f8bef513",
+  "created_at": "2026-11-23T19:27:54+00:00"
+}

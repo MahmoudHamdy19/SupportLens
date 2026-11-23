@@ -1,0 +1,81 @@
+{
+  "adjudicator": "",
+  "decisions": [
+    {
+      "package_name": "flit",
+      "differing_fields": [
+        "verdict",
+        "support_status",
+        "version_expression",
+        "commitment_text"
+      ],
+      "annotator1": {
+        "verdict": "Insufficient Evidence",
+        "support_status": "latest_only",
+        "version_expression": [
+          "latest"
+        ],
+        "commitment_text": "Only the latest non-prerelease version is supported."
+      },
+      "annotator2": {
+        "verdict": "Unmeasurable Commitment",
+        "support_status": "ambiguous",
+        "version_expression": [],
+        "commitment_text": ""
+      },
+      "fields": {},
+      "rationale": ""
+    },
+    {
+      "package_name": "gradio",
+      "differing_fields": [
+        "verdict",
+        "support_status",
+        "version_expression",
+        "commitment_text"
+      ],
+      "annotator1": {
+        "verdict": "Partially Consistent",
+        "support_status": "explicit_range",
+        "version_expression": [
+          "latest"
+        ],
+        "commitment_text": "We ship security fixes in the latest release of Gradio and its first-party\nclients."
+      },
+      "annotator2": {
+        "verdict": "Unmeasurable Commitment",
+        "support_status": "ambiguous",
+        "version_expression": [],
+        "commitment_text": ""
+      },
+      "fields": {},
+      "rationale": ""
+    },
+    {
+      "package_name": "pdoc",
+      "differing_fields": [
+        "verdict",
+        "support_status",
+        "version_expression",
+        "commitment_text"
+      ],
+      "annotator1": {
+        "verdict": "Insufficient Evidence",
+        "support_status": "explicit_range",
+        "version_expression": [
+          "main branch",
+          "most recent"
+        ],
+        "commitment_text": "| Version             | Supported          |\n| ------------------- | ------------------ |\n| main branch         | :white_check_mark: |\n| most recent release | :white_check_mark: |"
+      },
+      "annotator2": {
+        "verdict": "Unmeasurable Commitment",
+        "support_status": "ambiguous",
+        "version_expression": [],
+        "commitment_text": ""
+      },
+      "fields": {},
+      "rationale": ""
+    }
+  ]
+}

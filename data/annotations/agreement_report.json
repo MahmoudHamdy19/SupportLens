@@ -1,0 +1,216 @@
+{
+  "n_records": 300,
+  "cohens_kappa": 0.9763866295849294,
+  "kappa_target": 0.8,
+  "meets_target": true,
+  "observed_agreement": 0.99,
+  "expected_agreement": 0.5765111111111111,
+  "percent_agreement": 99.0,
+  "degenerate": false,
+  "confusion_matrix": {
+    "rows": "annotator1",
+    "columns": "annotator2",
+    "labels": [
+      "Consistent",
+      "Partially Consistent",
+      "Potential Inconsistency",
+      "Insufficient Evidence",
+      "Unmeasurable Commitment"
+    ],
+    "matrix": [
+      [
+        9,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        7,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        3,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        218,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        60
+      ]
+    ]
+  },
+  "fields": {
+    "support_status": {
+      "percent_agreement": 99.0,
+      "observed_agreement": 0.99,
+      "expected_agreement": 0.5467666666666666,
+      "cohens_kappa": 0.9779363094800323,
+      "degenerate": false,
+      "labels": [
+        "latest_only",
+        "explicit_range",
+        "all_versions",
+        "ambiguous"
+      ],
+      "confusion_matrix": [
+        [
+          34,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          212,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          50
+        ]
+      ]
+    },
+    "temporal_reference": {
+      "percent_agreement": 100.0,
+      "observed_agreement": 1.0,
+      "expected_agreement": 0.8416888888888889,
+      "cohens_kappa": 1.0,
+      "degenerate": false,
+      "labels": [
+        "release_time",
+        "vulnerability_publication_time"
+      ],
+      "confusion_matrix": [
+        [
+          26,
+          0
+        ],
+        [
+          0,
+          274
+        ]
+      ]
+    },
+    "version_expression": {
+      "percent_agreement": 99.0,
+      "mean_set_f1": 0.99
+    },
+    "temporal_expression": {
+      "percent_agreement": 100.0,
+      "mean_token_f1": 1.0
+    },
+    "commitment_text": {
+      "percent_agreement": 99.0,
+      "mean_token_f1": 0.99
+    }
+  },
+  "n_disagreements": 3,
+  "disagreements": [
+    {
+      "package_name": "flit",
+      "fields": {
+        "verdict": {
+          "annotator1": "Insufficient Evidence",
+          "annotator2": "Unmeasurable Commitment"
+        },
+        "support_status": {
+          "annotator1": "latest_only",
+          "annotator2": "ambiguous"
+        },
+        "version_expression": {
+          "annotator1": [
+            "latest"
+          ],
+          "annotator2": []
+        },
+        "commitment_text": {
+          "annotator1": "Only the latest non-prerelease version is supported.",
+          "annotator2": ""
+        }
+      }
+    },
+    {
+      "package_name": "gradio",
+      "fields": {
+        "verdict": {
+          "annotator1": "Partially Consistent",
+          "annotator2": "Unmeasurable Commitment"
+        },
+        "support_status": {
+          "annotator1": "explicit_range",
+          "annotator2": "ambiguous"
+        },
+        "version_expression": {
+          "annotator1": [
+            "latest"
+          ],
+          "annotator2": []
+        },
+        "commitment_text": {
+          "annotator1": "We ship security fixes in the latest release of Gradio and its first-party\nclients.",
+          "annotator2": ""
+        }
+      }
+    },
+    {
+      "package_name": "pdoc",
+      "fields": {
+        "verdict": {
+          "annotator1": "Insufficient Evidence",
+          "annotator2": "Unmeasurable Commitment"
+        },
+        "support_status": {
+          "annotator1": "explicit_range",
+          "annotator2": "ambiguous"
+        },
+        "version_expression": {
+          "annotator1": [
+            "main branch",
+            "most recent"
+          ],
+          "annotator2": []
+        },
+        "commitment_text": {
+          "annotator1": "| Version             | Supported          |\n| ------------------- | ------------------ |\n| main branch         | :white_check_mark: |\n| most recent release | :white_check_mark: |",
+          "annotator2": ""
+        }
+      }
+    }
+  ],
+  "warnings": [],
+  "inputs": {
+    "sample": "C:\\Users\\Mahmoud\\Downloads\\Telegram Desktop\\SupportLens_Final\\SupportLens\\data\\annotations\\sample_300.jsonl",
+    "sample_sha256": "d30c19a8ffeb285be15d64e1495cc859aa62b5df9e4d592127fe2c7e680745c3",
+    "annotator1_file": "data\\annotations\\annotator1_export.json",
+    "annotator1_sha256": "309dde28c35e3e70034bb7b1d98d4ea5c80b6830d9f91538a94c6304d8bffa95",
+    "annotator2_file": "data\\annotations\\annotator2_export.json",
+    "annotator2_sha256": "217421a2c044fa51342f11f2bae19f0bed3957d09a870895b193571cf5548d55"
+  },
+  "generated_at": "2026-11-23T19:24:01+00:00",
+  "export_authenticity_warnings": []
+}

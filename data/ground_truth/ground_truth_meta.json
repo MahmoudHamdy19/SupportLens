@@ -1,0 +1,10 @@
+{
+  "n_records": 300,
+  "n_adjudicated": 3,
+  "adjudicator": "supervisor",
+  "sample_sha256": "d30c19a8ffeb285be15d64e1495cc859aa62b5df9e4d592127fe2c7e680745c3",
+  "annotator1_sha256": "309dde28c35e3e70034bb7b1d98d4ea5c80b6830d9f91538a94c6304d8bffa95",
+  "annotator2_sha256": "217421a2c044fa51342f11f2bae19f0bed3957d09a870895b193571cf5548d55",
+  "adjudication_sha256": "28c22168980509f1f209fdfff141b32fc8d9c6f576c846dfe420b603a0762db2",
+  "created_at": "2026-11-23T19:27:37+00:00"
+}
