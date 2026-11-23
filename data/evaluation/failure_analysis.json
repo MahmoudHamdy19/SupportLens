@@ -1,0 +1,340 @@
+{
+  "n_records": 45,
+  "research_question": "RQ3: which classes of cases predominantly produce failure or insufficient-evidence outcomes",
+  "activity_definition": "active: not archived and pushed_at at most 365 days before collected_at; abandoned: archived, or pushed_at more than 365 days before collected_at; unclassified: collected_at missing, or pushed_at missing for a non-archived repository; a missing archived field counts as not archived",
+  "activity_counts": {
+    "abandoned": 3,
+    "active": 42
+  },
+  "gold_verdict_counts": {
+    "Consistent": 2,
+    "Insufficient Evidence": 39,
+    "Partially Consistent": 1,
+    "Potential Inconsistency": 1,
+    "Unmeasurable Commitment": 2
+  },
+  "systems": {
+    "regex_baseline": {
+      "n_records": 45,
+      "verdict_error_pairs": {},
+      "wrong_predictions": {
+        "n": 0,
+        "rules_triggered": {},
+        "reason_codes": {}
+      },
+      "insufficient_evidence_predictions": {
+        "n": 39,
+        "rules_triggered": {
+          "R4": 39
+        },
+        "reason_codes": {
+          "no_vulnerability_in_scope": 6,
+          "vulnerabilities_missing": 33
+        }
+      },
+      "extraction_errors_by_gold_tau": {
+        "latest_only": {
+          "n": 20,
+          "tuple_exact_match_errors": 3,
+          "tau_errors": 0,
+          "verdict_errors": 0,
+          "mean_t_f1": 1.0,
+          "mean_v_f1": 0.85
+        },
+        "explicit_range": {
+          "n": 23,
+          "tuple_exact_match_errors": 19,
+          "tau_errors": 1,
+          "verdict_errors": 0,
+          "mean_t_f1": 0.6731779038017224,
+          "mean_v_f1": 0.855072463768116
+        },
+        "all_versions": {
+          "n": 0
+        },
+        "ambiguous": {
+          "n": 2,
+          "tuple_exact_match_errors": 1,
+          "tau_errors": 0,
+          "verdict_errors": 0,
+          "mean_t_f1": 0.5,
+          "mean_v_f1": 1.0
+        }
+      },
+      "verdict_errors_by_activity": {
+        "active": {
+          "n": 42,
+          "verdict_errors": 0,
+          "insufficient_evidence_predicted": 36
+        },
+        "abandoned": {
+          "n": 3,
+          "verdict_errors": 0,
+          "insufficient_evidence_predicted": 3
+        },
+        "unclassified": {
+          "n": 0,
+          "verdict_errors": 0,
+          "insufficient_evidence_predicted": 0
+        }
+      }
+    },
+    "roberta_finetuned": {
+      "n_records": 45,
+      "verdict_error_pairs": {
+        "Consistent": {
+          "Unmeasurable Commitment": 2
+        },
+        "Partially Consistent": {
+          "Unmeasurable Commitment": 1
+        },
+        "Potential Inconsistency": {
+          "Unmeasurable Commitment": 1
+        },
+        "Insufficient Evidence": {
+          "Partially Consistent": 1,
+          "Unmeasurable Commitment": 24
+        }
+      },
+      "wrong_predictions": {
+        "n": 29,
+        "rules_triggered": {
+          "R2": 1,
+          "R5": 28
+        },
+        "reason_codes": {
+          "ambiguous_commitment_type": 28,
+          "fixed_on_some_release_lines": 1
+        }
+      },
+      "insufficient_evidence_predictions": {
+        "n": 14,
+        "rules_triggered": {
+          "R4": 14
+        },
+        "reason_codes": {
+          "vulnerabilities_missing": 14
+        }
+      },
+      "extraction_errors_by_gold_tau": {
+        "latest_only": {
+          "n": 20,
+          "tuple_exact_match_errors": 20,
+          "tau_errors": 20,
+          "verdict_errors": 20,
+          "mean_t_f1": 0.8768358653968752,
+          "mean_v_f1": 0.05
+        },
+        "explicit_range": {
+          "n": 23,
+          "tuple_exact_match_errors": 23,
+          "tau_errors": 9,
+          "verdict_errors": 9,
+          "mean_t_f1": 0.9762618690654673,
+          "mean_v_f1": 0.0
+        },
+        "all_versions": {
+          "n": 0
+        },
+        "ambiguous": {
+          "n": 2,
+          "tuple_exact_match_errors": 0,
+          "tau_errors": 0,
+          "verdict_errors": 0,
+          "mean_t_f1": 1.0,
+          "mean_v_f1": 1.0
+        }
+      },
+      "verdict_errors_by_activity": {
+        "active": {
+          "n": 42,
+          "verdict_errors": 26,
+          "insufficient_evidence_predicted": 14
+        },
+        "abandoned": {
+          "n": 3,
+          "verdict_errors": 3,
+          "insufficient_evidence_predicted": 0
+        },
+        "unclassified": {
+          "n": 0,
+          "verdict_errors": 0,
+          "insufficient_evidence_predicted": 0
+        }
+      }
+    },
+    "qwen_zero_shot": {
+      "n_records": 45,
+      "verdict_error_pairs": {
+        "Consistent": {
+          "Partially Consistent": 1
+        },
+        "Partially Consistent": {
+          "Unmeasurable Commitment": 1
+        },
+        "Insufficient Evidence": {
+          "Consistent": 1,
+          "Partially Consistent": 3,
+          "Unmeasurable Commitment": 5
+        }
+      },
+      "wrong_predictions": {
+        "n": 11,
+        "rules_triggered": {
+          "R1": 2,
+          "R2": 4,
+          "R5": 6
+        },
+        "reason_codes": {
+          "ambiguous_commitment_type": 4,
+          "fixed_on_all_covered_versions": 2,
+          "fixed_on_some_release_lines": 4,
+          "version_scope_not_normalisable": 2
+        }
+      },
+      "insufficient_evidence_predictions": {
+        "n": 30,
+        "rules_triggered": {
+          "R4": 30
+        },
+        "reason_codes": {
+          "no_vulnerability_in_scope": 1,
+          "vulnerabilities_missing": 29
+        }
+      },
+      "extraction_errors_by_gold_tau": {
+        "latest_only": {
+          "n": 20,
+          "tuple_exact_match_errors": 20,
+          "tau_errors": 5,
+          "verdict_errors": 8,
+          "mean_t_f1": 0.5840506568239945,
+          "mean_v_f1": 0.6333333333333333
+        },
+        "explicit_range": {
+          "n": 23,
+          "tuple_exact_match_errors": 23,
+          "tau_errors": 3,
+          "verdict_errors": 3,
+          "mean_t_f1": 0.1624605733912973,
+          "mean_v_f1": 0.391304347826087
+        },
+        "all_versions": {
+          "n": 0
+        },
+        "ambiguous": {
+          "n": 2,
+          "tuple_exact_match_errors": 2,
+          "tau_errors": 0,
+          "verdict_errors": 0,
+          "mean_t_f1": 1.0,
+          "mean_v_f1": 1.0
+        }
+      },
+      "verdict_errors_by_activity": {
+        "active": {
+          "n": 42,
+          "verdict_errors": 10,
+          "insufficient_evidence_predicted": 28
+        },
+        "abandoned": {
+          "n": 3,
+          "verdict_errors": 1,
+          "insufficient_evidence_predicted": 2
+        },
+        "unclassified": {
+          "n": 0,
+          "verdict_errors": 0,
+          "insufficient_evidence_predicted": 0
+        }
+      }
+    },
+    "qwen_finetuned_lora": {
+      "n_records": 45,
+      "verdict_error_pairs": {
+        "Consistent": {
+          "Insufficient Evidence": 1
+        },
+        "Partially Consistent": {
+          "Consistent": 1
+        },
+        "Insufficient Evidence": {
+          "Unmeasurable Commitment": 1
+        },
+        "Unmeasurable Commitment": {
+          "Insufficient Evidence": 1
+        }
+      },
+      "wrong_predictions": {
+        "n": 4,
+        "rules_triggered": {
+          "R1": 1,
+          "R4": 2,
+          "R5": 1
+        },
+        "reason_codes": {
+          "fixed_on_all_covered_versions": 1,
+          "no_vulnerability_in_scope": 1,
+          "version_scope_not_normalisable": 1,
+          "vulnerabilities_missing": 1
+        }
+      },
+      "insufficient_evidence_predictions": {
+        "n": 40,
+        "rules_triggered": {
+          "R4": 40
+        },
+        "reason_codes": {
+          "no_vulnerability_in_scope": 7,
+          "vulnerabilities_missing": 33
+        }
+      },
+      "extraction_errors_by_gold_tau": {
+        "latest_only": {
+          "n": 20,
+          "tuple_exact_match_errors": 4,
+          "tau_errors": 2,
+          "verdict_errors": 1,
+          "mean_t_f1": 0.9738095238095237,
+          "mean_v_f1": 0.85
+        },
+        "explicit_range": {
+          "n": 23,
+          "tuple_exact_match_errors": 4,
+          "tau_errors": 1,
+          "verdict_errors": 2,
+          "mean_t_f1": 0.9782608695652174,
+          "mean_v_f1": 0.855072463768116
+        },
+        "all_versions": {
+          "n": 0
+        },
+        "ambiguous": {
+          "n": 2,
+          "tuple_exact_match_errors": 1,
+          "tau_errors": 1,
+          "verdict_errors": 1,
+          "mean_t_f1": 0.5,
+          "mean_v_f1": 0.5
+        }
+      },
+      "verdict_errors_by_activity": {
+        "active": {
+          "n": 42,
+          "verdict_errors": 4,
+          "insufficient_evidence_predicted": 37
+        },
+        "abandoned": {
+          "n": 3,
+          "verdict_errors": 0,
+          "insufficient_evidence_predicted": 3
+        },
+        "unclassified": {
+          "n": 0,
+          "verdict_errors": 0,
+          "insufficient_evidence_predicted": 0
+        }
+      }
+    }
+  }
+}

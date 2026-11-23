@@ -1,0 +1,19 @@
+{
+  "upload_type": "dataset",
+  "title": "SupportLens annotated reference dataset: version-support commitments in Python security policies with vulnerability and release evidence",
+  "description": "<p>Manually annotated reference dataset of the master research project <em>SupportLens: An Explainable AI Framework for Assessing Version-Support Commitments Against Vulnerability and Release Evidence</em> (thesis Section 3.3.1), Master of Applied Artificial Intelligence, Prince Sattam bin Abdulaziz University. Each record holds the security policy (SECURITY.md) of a PyPI package, its commitment tuple c = &lt;t, tau, v, T&gt;, the adjudicated verdict (one of five categories), the release history and the de-duplicated vulnerability records, together with both annotators' labels. The deposit contains ground_truth.jsonl, the stratified seed-42 train/val/test splits, the annotation codebook, the inter-annotator agreement report and a dataset card. Built with scripts/package_dataset.py.</p>",
+  "creators": [
+    {"name": "Full Name, Student 1", "affiliation": "Prince Sattam bin Abdulaziz University"},
+    {"name": "Full Name, Student 2", "affiliation": "Prince Sattam bin Abdulaziz University"},
+    {"name": "Full Name, Student 3", "affiliation": "Prince Sattam bin Abdulaziz University"}
+  ],
+  "contributors": [
+    {"name": "Torkey, Hanaa", "affiliation": "Prince Sattam bin Abdulaziz University", "type": "Supervisor"}
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": ["security policy", "SECURITY.md", "version support", "vulnerability", "PyPI", "annotated dataset"],
+  "language": "eng",
+  "version": "1.0.0",
+  "notes": "DOI: to be assigned by Zenodo on deposit (no DOI has been reserved yet; add it to CITATION.cff and the README afterwards). Author names are the placeholders of the thesis front matter and must be replaced before deposit. The code is released separately under the MIT licence. Policy texts are reproduced from public repositories and remain under their own licences."
+}

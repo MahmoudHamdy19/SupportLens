@@ -1,0 +1,388 @@
+﻿item_id,rater_id,explanation,policy_snippet,cited_evidence,correctness,completeness,traceability,comments
+E005,rater2,"**Verdict: Unmeasurable Commitment**
+
+Package: kfp-pipeline-spec
+Policy statement (https://github.com/kubeflow/pipelines/blob/main/SECURITY.md): ""The Kubeflow Pipelines project maintains release branches for the most recent two minor releases.""
+Commitment type: explicit_range; version expression: most recent two minor releases; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-18; reasonable remediation timeframe: 90 days.
+
+The policy statement cannot be mapped to concrete version identifiers (rule R5). No vulnerability evidence was compared with it.
+
+Reason:
+- The version expression ['most recent two minor releases'] cannot be normalised into PEP 440 version specifiers.
+
+Sources:
+- PyPI JSON API: 38 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/kubeflow/pipelines/blob/main/SECURITY.md","# Security Policy
+
+## Supported Versions
+
+Kubeflow Pipelines versions are expressed as `X.Y.Z`, where X is the major version,
+Y is the minor version, and Z is the patch version, following the
+[Semantic Versioning](https://semver.org/) terminology.
+
+The Kubeflow Pipelines project maintains release branches for the most recent two minor releases.
+Applicable fixes, including security fixes, may be backported to those two release branches,
+depending on severity and feasibility.
+
+Users are encouraged to stay updated with the latest releases to benefit from security patches and
+improvements.
+
+## Reporting a Vulnerability
+
+We're extremely grateful for security researchers and users that report vulnerabilities to the
+Kubeflow Open Source Commun...","Commitment (t): ""The Kubeflow Pipelines project maintains release branches for the most recent two minor releases.""
+R5 (Unmeasurable Commitment): The version expression ['most recent two minor releases'] cannot be normalised into PEP 440 version specifiers.",5,5,5,Strict adherence to Algorithm 1 Line 3 and Table 3.1. Transparently reports failure to normalize into PEP 440 specifiers.
+E006,rater2,"**Verdict: Insufficient Evidence**
+
+Package: faker
+Policy statement (https://github.com/joke2k/faker/blob/master/SECURITY.md): ""Security fixes are provided for the latest released major version of Faker.""
+Commitment type: latest_only; version expression: latest; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-18; reasonable remediation timeframe: 90 days.
+
+The available evidence is incomplete or ambiguous, so the commitment cannot be judged (rule R4).
+
+Evidence gaps:
+- Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.
+
+Sources:
+- PyPI JSON API: 521 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/joke2k/faker/blob/master/SECURITY.md","# Security Policy
+
+## Supported Versions
+
+Security fixes are provided for the latest released major version of Faker.
+
+## Reporting a Vulnerability
+
+Please do not report security vulnerabilities through public GitHub issues.
+
+To report a vulnerability, use GitHub's private vulnerability reporting feature for this repository.
+
+When reporting a vulnerability, please include:
+
+- The affected Faker version
+- A clear description of the issue and its potential impact
+- Steps to reproduce or a minimal proof of concept
+...","Commitment (t): ""Security fixes are provided for the latest released major version of Faker.""
+R4 (Insufficient Evidence): Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.",5,5,5,Sound R4 judgment per Table 3.1. Evidence gap is clearly formulated with verifiable source references.
+E001,rater2,"**Verdict: Insufficient Evidence**
+
+Package: llm-sandbox
+Policy statement (https://github.com/vndee/llm-sandbox/blob/main/SECURITY.md): ""| Version | Supported | |---------|--------------------| | latest | :white_check_mark: | | older | :x: |""
+Commitment type: explicit_range; version expression: latest; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-19; reasonable remediation timeframe: 90 days.
+
+The available evidence is incomplete or ambiguous, so the commitment cannot be judged (rule R4).
+
+Evidence gaps:
+- Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.
+
+Sources:
+- PyPI JSON API: 63 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/vndee/llm-sandbox/blob/main/SECURITY.md","...ead.
+- Findings that require an attacker who already has host / cluster
+  root — that is not a threat model this project defends against.
+
+If you are unsure whether something is in scope, report it anyway and
+we will sort it out together.
+
+## Supported versions
+
+Security fixes are cut against the **latest released minor version** on
+PyPI. Older versions are not maintained; the fix is to upgrade.
+
+| Version | Supported          |
+|---------|--------------------|
+| latest  | :white_check_mark: |
+| older   | :x:                |
+
+## Disclosure history
+
+Once we have shipped fixes, published advisories will be listed at
+<https://github.com/vndee/llm-sandbox/security/advisories>.","Commitment (t): ""| Version | Supported          |
+|---------|--------------------|
+| latest  | :white_check_mark: |
+| older   | :x:                |""
+R4 (Insufficient Evidence): Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.",5,5,5,Proper execution of Rule R4 for unrepresented vulnerability evidence. Tier 4 explanation accurately cites repository policy link.
+E003,rater2,"**Verdict: Potential Inconsistency**
+
+Package: accelerate
+Policy statement (https://github.com/huggingface/accelerate/blob/main/SECURITY.md): ""We ship security fixes in the latest release.""
+Commitment type: latest_only; version expression: latest; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-18; reasonable remediation timeframe: 90 days.
+
+The commitment is not supported by the evidence, and the evidence is sufficient to say so (rule R3). 1 vulnerability record(s) affect versions covered by the commitment and remain without a fixed version more than 90 days after publication.
+
+Unfixed beyond the 90-day timeframe (rule R3):
+- CVE-2026-69112 / GHSA-4j2p-28q2-5m79, published 2026-08-10: affects covered version(s) 1.14.0 (released 2026-06-11); no fixed version is recorded 100 days after publication. Advisory: https://osv.dev/vulnerability/GHSA-4j2p-28q2-5m79
+
+Sources:
+- PyPI JSON API: 84 releases
+- OSV / GitHub Advisory / NVD: 1 de-duplicated vulnerability records
+- Security policy: https://github.com/huggingface/accelerate/blob/main/SECURITY.md","# Security Policy
+
+## Supported Versions
+
+We ship security fixes in the latest release. Please reproduce on the current released version before reporting — we do not backport fixes to older releases.
+
+## Reporting a Vulnerability
+
+Report privately — **do not open a public issue or PR for a suspected vulnerability.**
+
+- **Preferred:** GitHub private vulnerability reporting — the **""Report a vulnerability""** button under this repo's **Security** tab. This routes to the maintainers, ke...","Commitment (t): ""We ship security fixes in the latest release.""
+Version scope (v): latest; commitment type latest_only; temporal reference vulnerability_publication_time.
+R3 (Potential Inconsistency): CVE-2026-69112 / GHSA-4j2p-28q2-5m79 (published 2026-08-10) affects covered version(s) 1.14.0 (released 2026-06-11); no fixed version is recorded 100 days after publication, beyond the 90-day reasonable timeframe.
+Aggregation (Table 3.1): 1 x R3 -> Potential Inconsistency.",5,5,5,Perfect execution of Algorithm 1 (Lines 25-27). Rigorous temporal alignment and flawless traceability to GHSA advisory.
+E011,rater2,"**Verdict: Consistent**
+
+Package: piccolo
+Policy statement (https://github.com/piccolo-orm/piccolo/blob/master/SECURITY.md): ""v1 is actively maintained, and any security vulnerabilities will be patched.""
+Commitment type: explicit_range; version expression: v1; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-19; reasonable remediation timeframe: 90 days.
+
+The commitment is fully supported by the evidence (rule R1). 1 vulnerability record(s) affect versions covered by the commitment, and each is fixed on every covered version.
+
+Fixed on every covered version (rule R1):
+- CVE-2023-47128 / GHSA-xq59-7jf3-rjc6, published 2023-11-12: affects covered version(s) 1.0.0 (released 2023-10-20), 1.1.0 (released 2023-11-03); fixed in 1.1.1 (released 2023-11-10), 82679eb8cd1449cf31d87c9914a072e70168b6eb. Advisory: https://osv.dev/vulnerability/GHSA-xq59-7jf3-rjc6
+
+1 further record(s) affect no version covered by the commitment and were not assessed.
+
+Sources:
+- PyPI JSON API: 298 releases
+- OSV / GitHub Advisory / NVD: 2 de-duplicated vulnerability records
+- Security policy: https://github.com/piccolo-orm/piccolo/blob/master/SECURITY.md","# Security Policy
+
+## Supported Versions
+
+v1 is actively maintained, and any security vulnerabilities will be patched.
+
+v0.X will have any major security vulnerabilities patched.
+
+## Reporting a Vulnerability
+
+We recommend opening a security advisory on GitHub, as per the [documentation](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability).
+
+Alternatively, reach out to the maintainers via emai...","Commitment (t): ""v1 is actively maintained, and any security vulnerabilities will be patched.""
+Version scope (v): v1; commitment type explicit_range; temporal reference vulnerability_publication_time.
+R1 (Consistent): CVE-2023-47128 / GHSA-xq59-7jf3-rjc6 (published 2023-11-12) affects covered version(s) 1.0.0 (released 2023-10-20), 1.1.0 (released 2023-11-03); fixed in 1.1.1 (released 2023-11-10), 82679eb8cd1449cf31d87c9914a072e70168b6eb.
+1 vulnerability record(s) affect no version covered by the commitment and were not assessed: CVE-2023-41885 / GHSA-h7cm-mrvq-wcfr.
+Aggregation (Table 3.1): 1 x R1 -> Consistent.",5,5,5,Comprehensive consistency proof under Table 3.1. High traceability with exact commit SHA and advisory references.
+E004,rater2,"**Verdict: Unmeasurable Commitment**
+
+Package: litellm-proxy-extras
+Policy statement (https://github.com/BerriAI/litellm/blob/main/.github/SECURITY.md): ""no policy statement supplied""
+Commitment type: ambiguous; version expression: none; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-18; reasonable remediation timeframe: 90 days.
+
+The policy statement cannot be mapped to concrete version identifiers (rule R5). No vulnerability evidence was compared with it.
+
+Reason:
+- The commitment type is 'ambiguous', so the statement cannot be mapped to concrete version identifiers.
+
+Sources:
+- PyPI JSON API: 182 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/BerriAI/litellm/blob/main/.github/SECURITY.md","# Data Privacy and Security
+
+## Security Announcements
+
+LiteLLM maintains a security announcements mailing list that is open to anyone. Subscribers receive advance notice, typically one to two days, before we release a fix for a particularly severe vulnerability or for any vulnerability exploitable by an unauthenticated attacker. This notice is provided on a best-effort basis
+
+To subscribe, visit [https://security.litellm.ai/mailinglist/](https://security.litellm.ai/mailinglist/)
+
+## Security Vulnerability Reporting Guidelines
+
+We value the security community's role in protecting our systems and users.
+To report a security vulnerability, please submit a report through our vulnerability disclosure form:
+
+[LiteLLM VDP](https://security.litellm.ai/vdp/)
+
+These reports are submitted to HackerO...","Commitment (t): no policy statement supplied.
+R5 (Unmeasurable Commitment): The commitment type is 'ambiguous', so the statement cannot be mapped to concrete version identifiers.",5,4,5,Accurate Rule R5 assignment. Minor note: explanation could explicitly distinguish reporting guidelines (VDP) from support scope.
+E008,rater2,"**Verdict: Insufficient Evidence**
+
+Package: eventlet
+Policy statement (https://github.com/eventlet/eventlet/blob/master/SECURITY.md): ""master branch and latest release get priority support.""
+Commitment type: latest_only; version expression: latest; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-19; reasonable remediation timeframe: 90 days.
+
+The available evidence is incomplete or ambiguous, so the commitment cannot be judged (rule R4).
+
+Evidence gaps:
+- No vulnerability record affects a version covered by the commitment, so the commitment was never tested (resolution of a case that Algorithm 1 leaves open).
+
+Sources:
+- PyPI JSON API: 71 releases
+- OSV / GitHub Advisory / NVD: 3 de-duplicated vulnerability records
+- Security policy: https://github.com/eventlet/eventlet/blob/master/SECURITY.md","# Security Policy
+
+## Supported Versions
+
+master branch and latest release get priority support. You should expect all known problems fixed in master.
+
+All other released versions receive security updates per request.
+If you use some old version and can not upgrade for any or no reason, ask for security update release, most likely you will get it.
+
+## Reporting a Vulnerability
+
+Contact current maintainers. At 2021-03: temotor@gmail.com or https://t.me/temotor
+If that doesn't work, open Githu...","Commitment (t): ""master branch and latest release get priority support.""
+Version scope (v): latest; commitment type latest_only; temporal reference vulnerability_publication_time.
+3 vulnerability record(s) affect no version covered by the commitment and were not assessed: CVE-2023-29483 / GHSA-3rq5-2g8h-59hc, CVE-2021-21419 / GHSA-9p9m-jm8w-94p2, CVE-2025-58068 / GHSA-hw6f-rjfj-j7j7.
+R4 (Insufficient Evidence): No vulnerability record affects a version covered by the commitment, so the commitment was never tested (resolution of a case that Algorithm 1 leaves open).",5,5,5,Rigorous execution of coverage check (Algorithm 1 Line 16). Full listing and justification for unassessed historical CVEs.
+E002,rater2,"**Verdict: Insufficient Evidence**
+
+Package: termcolor
+Policy statement (https://github.com/termcolor/termcolor/blob/main/.github/SECURITY.md): ""Security fixes are only applied to the latest release.""
+Commitment type: latest_only; version expression: latest; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-18; reasonable remediation timeframe: 90 days.
+
+The available evidence is incomplete or ambiguous, so the commitment cannot be judged (rule R4).
+
+Evidence gaps:
+- Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.
+
+Sources:
+- PyPI JSON API: 20 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/termcolor/termcolor/blob/main/.github/SECURITY.md","# Security policy
+
+## Reporting a vulnerability
+
+To report a security issue, either report it privately
+[on GitHub](https://github.com/termcolor/termcolor/security) (preferred) or through the
+[Tidelift security contact](https://tidelift.com/security). Do not open a public issue.
+
+## Supported versions
+
+Security fixes are only applied to the latest release.
+
+## Incident response plan
+
+### 1. Triage
+
+- Acknowledge the report to the reporter.
+- Reproduce and assess severity.
+- Open a private GitHub Security Advisory if confirmed.
+- If necessary, yank the affected versions on PyPI (`pip install termcolor` will skip
+  yanked versions, but explicit pins still work).
+- If the release contains malicious code (for example, supply chain compromise), delete
+ ...","Commitment (t): ""Security fixes are only applied to the latest release.""
+R4 (Insufficient Evidence): Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.",5,5,5,Consistent with Table 3.1 (Insufficient Evidence). Clear gap justification and verifiable GitHub policy URL.
+E010,rater2,"**Verdict: Consistent**
+
+Package: pysaml2
+Policy statement (https://github.com/IdentityPython/pysaml2/blob/master/SECURITY.md): ""Notice, that security fixes are not backported at the moment to older releases than the latest.""
+Commitment type: latest_only; version expression: latest; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-19; reasonable remediation timeframe: 90 days.
+
+The commitment is fully supported by the evidence (rule R1). 1 vulnerability record(s) affect versions covered by the commitment, and each is fixed on every covered version.
+
+Fixed on every covered version (rule R1):
+- CVE-2017-1000246 / GHSA-cq94-qf6q-mf2h, published 2018-07-16: affects covered version(s) 4.5.0 (released 2017-10-11); fixed in 4.6.0 (released 2018-08-09). Advisory: https://osv.dev/vulnerability/GHSA-cq94-qf6q-mf2h
+
+6 further record(s) affect no version covered by the commitment and were not assessed.
+
+Sources:
+- PyPI JSON API: 66 releases
+- OSV / GitHub Advisory / NVD: 7 de-duplicated vulnerability records
+- Security policy: https://github.com/IdentityPython/pysaml2/blob/master/SECURITY.md","...atically notifies all associated projects of
+the published advisory. Projects that use IdPy projects as dependencies should
+automatically get Pull Requests by dependabot. Additionally, all communication channels
+are used again, to notify the community of the release of a new version of the affected
+software that contains the relevant fixes that mitigate the reported issue.
+
+## Supported versions
+
+Notice, that security fixes are not backported at the moment to older releases than the
+latest. The team does not have the capacity to guarantee that these backports will exist.
+You are advised to be prepared to upgrade to the latest version once the fix is out.","Commitment (t): ""Notice, that security fixes are not backported at the moment to older releases than the
+latest.""
+Version scope (v): latest; commitment type latest_only; temporal reference vulnerability_publication_time.
+R1 (Consistent): CVE-2017-1000246 / GHSA-cq94-qf6q-mf2h (published 2018-07-16) affects covered version(s) 4.5.0 (released 2017-10-11); fixed in 4.6.0 (released 2018-08-09).
+6 vulnerability record(s) affect no version covered by the commitment and were not assessed: CVE-2021-21239 / GHSA-5p3x-r448-pc62, CVE-2017-1000433 / GHSA-924m-4pmx-c67h, CVE-2016-10149 / GHSA-c2vx-49jm-h3f6, CVE-2021-21238 / GHSA-f4g9-h89h-jgv9, CVE-2016-10127 / GHSA-m269-wj6g-c459 and 1 more.
+Aggregation (Table 3.1): 1 x R1 -> Consistent.",5,5,5,Exemplary verification of Consistent verdict per Table 3.1. Complete documentation of covered vs non-covered records.
+E009,rater2,"**Verdict: Insufficient Evidence**
+
+Package: mypy-boto3-elb
+Policy statement (https://github.com/youtype/mypy_boto3_builder/blob/main/SECURITY.md): ""| 1.24.x | :white_check_mark: |""
+Commitment type: explicit_range; version expression: 1.24.x; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-19; reasonable remediation timeframe: 90 days.
+
+The available evidence is incomplete or ambiguous, so the commitment cannot be judged (rule R4).
+
+Evidence gaps:
+- Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.
+
+Sources:
+- PyPI JSON API: 590 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/youtype/mypy_boto3_builder/blob/main/SECURITY.md","# Security Policy
+
+## Supported `types-boto3` versions
+
+| Version   | Supported          |
+| -------   | ------------------ |
+| 1.24.x    | :white_check_mark: |
+| <= 1.23.x | :x:                |
+
+## Supported `boto3-stubs` versions
+
+| Version   | Supported          |
+| -------   | ------------------ |
+| 1.24.x    | :white_check_mark: |
+| <= 1.23.x | :x:                |
+
+## Supported `types-aiobotocore` versions
+
+| Version   | Supported          |
+| -------   | ------------------ |
+| 2.3.x     | :white_check_mark: |
+| <= 2.2.x  | :x:                |
+
+#...","Commitment (t): ""| 1.24.x    | :white_check_mark: |""
+R4 (Insufficient Evidence): Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.",5,4,5,Consistent R4 determination according to Table 3.1. Evidence gap clearly stated with accurate PyPI release statistics.
+E007,rater2,"**Verdict: Insufficient Evidence**
+
+Package: mypy-boto3-codepipeline
+Policy statement (https://github.com/youtype/mypy_boto3_builder/blob/main/SECURITY.md): ""| 1.24.x | :white_check_mark: |""
+Commitment type: explicit_range; version expression: 1.24.x; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-19; reasonable remediation timeframe: 90 days.
+
+The available evidence is incomplete or ambiguous, so the commitment cannot be judged (rule R4).
+
+Evidence gaps:
+- Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.
+
+Sources:
+- PyPI JSON API: 608 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/youtype/mypy_boto3_builder/blob/main/SECURITY.md","# Security Policy
+
+## Supported `types-boto3` versions
+
+| Version   | Supported          |
+| -------   | ------------------ |
+| 1.24.x    | :white_check_mark: |
+| <= 1.23.x | :x:                |
+
+## Supported `boto3-stubs` versions
+
+| Version   | Supported          |
+| -------   | ------------------ |
+| 1.24.x    | :white_check_mark: |
+| <= 1.23.x | :x:                |
+
+## Supported `types-aiobotocore` versions
+
+| Version   | Supported          |
+| -------   | ------------------ |
+| 2.3.x     | :white_check_mark: |
+| <= 2.2.x  | :x:                |
+
+#...","Commitment (t): ""| 1.24.x    | :white_check_mark: |""
+R4 (Insufficient Evidence): Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.",4,4,5,Acceptable R4 outcome under Algorithm 1 Line 7. Scope mapping carries minor ambiguity from upstream builder table.

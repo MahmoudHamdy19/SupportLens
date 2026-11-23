@@ -1,0 +1,7 @@
+# Extra dependencies for LoRA training and 4-bit inference of Qwen2.5-7B-Instruct (Colab T4 or any CUDA GPU).
+# Install after requirements.txt:  pip install -r requirements.txt -r requirements-gpu.txt
+# Schema-constrained decoding is implemented in src/layer1_ai_extraction/constrained_decoding.py
+# and needs no extra package.
+peft>=0.12.0
+accelerate>=0.34.0
+bitsandbytes>=0.43.3

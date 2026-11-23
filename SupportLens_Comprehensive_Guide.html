@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>دليل مشروع SupportLens للمناقشة والتقديم الأكاديمي</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap');
+  
+  @page {
+    size: A4;
+    margin: 18mm 15mm 18mm 15mm;
+  }
+  
+  body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    color: #2D3748;
+    background-color: #FFFFFF;
+    line-height: 1.6;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .page-break {
+    page-break-before: always;
+  }
+  
+  /* Header & Cover */
+  .cover {
+    text-align: center;
+    padding: 30px 20px 20px 20px;
+    border-bottom: 3px solid #2B6CB0;
+    margin-bottom: 25px;
+  }
+  .cover h1 {
+    font-size: 26px;
+    color: #1A365D;
+    margin: 0 0 10px 0;
+    font-weight: 800;
+  }
+  .cover .subtitle {
+    font-size: 15px;
+    color: #4A5568;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  .cover .meta {
+    font-size: 12.5px;
+    color: #718096;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .badge {
+    background: #EBF8FF;
+    color: #2B6CB0;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 12px;
+    border: 1px solid #BEE3F8;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  /* Headings */
+  h2 {
+    font-size: 17px;
+    color: #1A365D;
+    border-right: 4px solid #3182CE;
+    padding-right: 10px;
+    margin-top: 22px;
+    margin-bottom: 12px;
+  }
+  h3 {
+    font-size: 14.5px;
+    color: #2B6CB0;
+    margin-top: 14px;
+    margin-bottom: 8px;
+  }
+  
+  /* Cards & Boxes */
+  .card {
+    background: #F7FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  }
+  .card-header {
+    font-weight: 700;
+    font-size: 13.5px;
+    color: #2D3748;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .highlight-box {
+    background: #EDF2F7;
+    border-right: 4px solid #4A5568;
+    padding: 10px 14px;
+    border-radius: 4px;
+    margin: 12px 0;
+    font-size: 12px;
+  }
+  
+  .qa-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-right: 4px solid #3182CE;
+    border-radius: 6px;
+    padding: 11px 14px;
+    margin-bottom: 11px;
+  }
+  .qa-question {
+    font-weight: 700;
+    color: #1A365D;
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  .qa-answer {
+    color: #4A5568;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 12px;
+  }
+  th, td {
+    padding: 8px 10px;
+    border: 1px solid #CBD5E0;
+    text-align: right;
+  }
+  th {
+    background: #EDF2F7;
+    color: #2D3748;
+    font-weight: 700;
+  }
+  tr:nth-child(even) {
+    background: #F7FAFC;
+  }
+  
+  /* Verdict Tags */
+  .verdict-consistent { color: #2E7D5B; font-weight: 700; }
+  .verdict-partially { color: #C77D0A; font-weight: 700; }
+  .verdict-potential { color: #B83227; font-weight: 700; }
+  .verdict-insufficient { color: #52667A; font-weight: 700; }
+  .verdict-unmeasurable { color: #6B4FA0; font-weight: 700; }
+  
+  code {
+    background: #EDF2F7;
+    color: #C53030;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: Consolas, monospace;
+    font-size: 11.5px;
+    direction: ltr;
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="badge">دليل المناقشة الشامل والتقديم الأكاديمي</div>
+  <h1>مشروع SupportLens</h1>
+  <div class="subtitle">إطار عمل ذكاء اصطناعي قابل للتفسير للتحقق من التزامات دعم الإصدارات الأمنية لحزم بايثون</div>
+  <div class="meta">
+    <span><strong>الدرجة العلمية:</strong> ماجستير الذكاء الاصطناعي التطبيقي</span>
+    <span><strong>الجامعة:</strong> جامعة الأمير سطام بن عبد العزيز</span>
+    <span><strong>تاريخ الإعداد:</strong> نوفمبر 2026</span>
+  </div>
+</div>
+
+<h2>1. فكرة المشروع والمشكلة البحثية</h2>
+<div class="card">
+  <div class="card-header">📌 ما هي المشكلة؟ (The Problem)</div>
+  <p>يقوم مطورو حزم بايثون على مستودع PyPI بنشر سياسات أمان عبر ملف <code>SECURITY.md</code> يعلنون فيها التزامهم بدعم إصدارات محددة (مثل: "ندعم آخر إصدار فقط" أو "ندعم الإصدارات 3.10 فما فوق"). المشكلة تكمن في غياب أي آلية مؤتمتة وموثوقة للتحقق مما إذا كان المطورون يوفون بهذه الالتزامات فعلياً عند ظهور ثغرات أمنية حقيقية.</p>
+</div>
+
+<div class="card">
+  <div class="card-header">💡 الحل المقترح: مشروع SupportLens</div>
+  <p>نظام ذكي وقابل للتفسير (Explainable AI) يربط بين:
+  <strong>سياسة الأمان (S)</strong> و<strong>أدلة الثغرات (V)</strong> و<strong>تاريخ الإصدارات (R)</strong> ليخرج حكماً حتمياً وتفسيراً قائماً على الأدلة:
+  <br><center><code>f(S, V, R) → (y, ε)</code></center>
+  حيث <code>y</code> هو الحكم النهائي، و <code>ε</code> هو التفسير البرهاني المقترن بالأدلة.</p>
+</div>
+
+<h2>2. معمارية النظام والطبقات الخمس (5-Layer Architecture)</h2>
+<table>
+  <thead>
+    <tr>
+      <th>الطبقة</th>
+      <th>المكون البرمجي</th>
+      <th>المهمة الأساسية</th>
+      <th>الأدوات المستخدمة</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Layer 0</strong></td>
+      <td>Data Acquisition</td>
+      <td>جلب البيانات من PyPI API ومستودع GitHub والتحقق منه واستخراج وتنظيف نص SECURITY.md</td>
+      <td>requests, PyGithub</td>
+    </tr>
+    <tr>
+      <td><strong>Layer 1</strong></td>
+      <td>AI Extraction</td>
+      <td>استخراج التزام الدعم على شكل Tuple محدد: c = &lt;t, τ, v, T&gt;</td>
+      <td>Qwen2.5-7B + LoRA, Constrained Decoding</td>
+    </tr>
+    <tr>
+      <td><strong>Layer 2</strong></td>
+      <td>Evidence Layer</td>
+      <td>سحب سجل الثغرات وتوحيد الإصدارات (PEP 440) وإزالة التكرار</td>
+      <td>OSV, GitHub Advisories, NVD, packaging</td>
+    </tr>
+    <tr>
+      <td><strong>Layer 3</strong></td>
+      <td>Rule Assessment</td>
+      <td>تطبيق خوارزمية الحكم الحتمية (Algorithm 1) وقواعد R1 إلى R5</td>
+      <td>Deterministic Rule Engine</td>
+    </tr>
+    <tr>
+      <td><strong>Layer 4</strong></td>
+      <td>Explanation Output</td>
+      <td>توليد التقرير المفسر بالأدلة وتخزين سجل الـ JSON</td>
+      <td>Jinja2 Templates</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlight-box">
+  <strong>عناصر الـ Tuple المستخرج (c = &lt;t, τ, v, T&gt;):</strong><br>
+  • <strong>t (commitment_text):</strong> الجملة الحرفية المقتبسة من نص السياسة.<br>
+  • <strong>τ (support_status):</strong> نوع الالتزام (latest_only | explicit_range | all_versions | ambiguous).<br>
+  • <strong>v (version_expression):</strong> رموز الإصدارات الصريحة (مثل: ["3.10", ">=3.9"] أو ["latest"]).<br>
+  • <strong>T (temporal_reference):</strong> المرجع الزمني للتقييم (release_time أو vulnerability_publication_time).
+</div>
+
+<div class="page-break"></div>
+
+<h2>3. الأحكام الخمسة للتقييم (The 5 Verdicts - Table 3.1)</h2>
+<table>
+  <thead>
+    <tr>
+      <th>الحكم</th>
+      <th>الرمز</th>
+      <th>المعنى والشروط</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="verdict-consistent">Consistent (متسق)</span></td>
+      <td>R1</td>
+      <td>كل الثغرات المسجلة في نطاق الالتزام تم ترقيعها بالفعل في جميع خطوط الإصدارات المدعومة.</td>
+    </tr>
+    <tr>
+      <td><span class="verdict-partially">Partially Consistent (متسق جزئياً)</span></td>
+      <td>R2</td>
+      <td>تم إصلاح الثغرة في بعض خطوط الإصدارات المدعومة دون غيرها، أو تم إصلاح بعض الثغرات وتأخر إصلاح أخرى.</td>
+    </tr>
+    <tr>
+      <td><span class="verdict-potential">Potential Inconsistency (عدم اتساق محتمل)</span></td>
+      <td>R3</td>
+      <td>وجود ثغرة أمنية مفتوحة في إصدار مدعوم تجاوزت المهلة الزمنية المعقولة (90 يوماً) دون إصلاح.</td>
+    </tr>
+    <tr>
+      <td><span class="verdict-insufficient">Insufficient Evidence (أدلة غير كافية)</span></td>
+      <td>R4</td>
+      <td>لا توجد ثغرات مسجلة للحزمة، أو الثغرة حديثة جداً (أقل من 90 يوماً)، أو تعذر الوصول لأحد مصادر البيانات.</td>
+    </tr>
+    <tr>
+      <td><span class="verdict-unmeasurable">Unmeasurable (غير قابل للقياس)</span></td>
+      <td>R5</td>
+      <td>سياسة الأمان غامضة أو لا تحتوي على أرقام إصدارات محددة يمكن قياسها حاسوبياً.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4. الذكاء الاصطناعي وتقنية LoRA وتفسير أحجام النماذج</h2>
+<div class="card">
+  <div class="card-header">🤖 لماذا استخدمنا تقنية LoRA (Low-Rank Adaptation)؟</div>
+  <p>النموذج اللغوي العملاق <code>Qwen2.5-7B</code> يحتوي على 7 مليارات متغير وحجمه <strong>15 جيجابايت</strong>. بدلاً من إعادة تدريب كامل النموذج بتكلفة هائلة:
+  <br>• قمنا <strong>بتجميد (Freeze)</strong> النموذج الأصلي تماماً دون تعديل أوزانه الأساسية.
+  <br>• قمنا بتدريب مصفوفات منخفضة الرتبة (Rank = 128, Alpha = 256) بنسبة <strong>1.06% فقط</strong> من المعاملات.
+  <br>• المعادلة الرياضية للتدريب: <code>W = W₀ + ΔW</code> حيث <code>W₀</code> هو الأساسي (15GB) و <code>ΔW</code> هو تعديل الـ LoRA (320MB).</p>
+</div>
+
+<div class="highlight-box">
+  <strong>لماذا يطلب النظام تحميل 15 جيجا عند تفعيل خيار Qwen؟</strong><br>
+  ملف الـ 320 ميجا الموجود في المشروع هو الـ Adapter فقط. لكي يعمل، تقوم مكتبة <code>peft</code> بدمجه مع النموذج الأساسي الخام <code>Qwen2.5-7B-Instruct</code> (الذي يزن 15 جيجا بدقة float16). وفي كولاب، لا نشعر بهذا التحميل لأن سرعة الإنترنت السحابية تتجاوز 1000 ميجابت/ثانية فتحمله في ثوانٍ.
+</div>
+
+<h2>5. منهجية البحث العلمي وضبط الجودة (Research Methodology)</h2>
+<div class="card">
+  <div class="card-header">🛡️ النزاهة العلمية وعدم تزييف البيانات (Zero Synthetic Data)</div>
+  <p>1. <strong>الجمع الآلي:</strong> سحب حزم PyPI واستبعاد الحزم غير المستوفية للشروط في سجل رسمي (Exclusion Log).<br>
+  2. <strong>العينة الطبقية:</strong> سحب 300 حزمة عشوائياً بناءً على فئة الشهرة (نجوم GitHub) ووجود ثغرات سابقة بـ <code>seed=42</code>.<br>
+  3. <strong>التوسيم البشري المزدوج:</strong> قام اثنان من الباحثين البشر بالتقييم المستقل (Double-blind) على Label Studio دون استخدام الذكاء الاصطناعي.<br>
+  4. <strong>معامل الاتفاق:</strong> قياس اتفاق المقيّمين بمعامل كوهين كابا (Cohen's Kappa κ ≥ 0.80).<br>
+  5. <strong>تحكيم المشرف:</strong> حسم أي خلافات بواسطة المشرف الأكاديمي لإنتاج الـ Ground Truth المرجعي النهائي.<br>
+  6. <strong>التقسيم الطبقي:</strong> 70% تدريب - 15% تحقق - 15% اختبار نهائي مستقل.</p>
+</div>
+
+<div class="page-break"></div>
+
+<h2>6. بنك أسئلة المناقشة المتوقعة وإجاباتها النموذجية (Viva / Defense Q&A)</h2>
+
+<div class="qa-card">
+  <div class="qa-question">س1: لماذا لم تجعلوا نموذج الذكاء الاصطناعي (LLM) هو من يصدر الحكم النهائي مباشرة؟</div>
+  <div class="qa-answer"><strong>الرد:</strong> نماذج اللغة الكبيرة تعاني من الهلوسة (Hallucination) وعدم الحتمية (Non-determinism)، وقد تخطئ في المقارنات الزمنية وأرقام الإصدارات. لذلك حصرنا دور الذكاء الاصطناعي في <em>الاستخراج المنظم للنص فقط</em>، بينما تركنا الحكم لمحرك قواعد حتمي رياضي (Algorithm 1) يضمن دقة 100% وقابلية تتبع كاملة.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-question">س2: لماذا اخترتم Qwen2.5-7B بدلاً من GPT-4 أو LLaMA؟</div>
+  <div class="qa-answer"><strong>الرد:</strong> نموذج مفتوح المصدر (Open-Weights) يضمن تكرار التجارب علمياً (Reproducibility) عكس الـ APIs المغلقة التي تتغير نتائجها باستمرار. كما أنه متفوق جداً في مخرجات الـ JSON، ويمكن تشغيله وتدريبه بتكميم 4-bit على بطاقة شاشة واحدة (T4 GPU).</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-question">س3: إذا كانت الحزمة لا تحتوي على أي ثغرة في تاريخها، ما هو الحكم الصادر؟</div>
+  <div class="qa-answer"><strong>الرد:</strong> يصدر النظام حكم <strong>Insufficient Evidence (R4)</strong>؛ لأن التزام المطورين لم يُوضع تحت الاختبار الفعلي بعد، ولا يصح علمياً أن نحكم بالاتساق (Consistent) على سياسة لم تتعرض لأي اختبار واقعي.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-question">س4: ما هي المهلة المعقولة (Reasonable Timeframe) لإصلاح الثغرة ولماذا 90 يوماً؟</div>
+  <div class="qa-answer"><strong>الرد:</strong> 90 يوماً هي المعيار المعتمد دولياً في مجتمع الأمن السيبراني (Responsible Disclosure Policy) مثل معيار Google Project Zero. إذا مرت 90 يوماً على نشر الثغرة دون ترقيع في إصدار مدعوم يصدر حكم Potential Inconsistency (R3).</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-question">س5: من أين تأتي النتائج المعروضة في المنصة الآن؟</div>
+  <div class="qa-answer"><strong>الرد:</strong> 
+  • في <strong>صفحة الفحص (Audit):</strong> تأتي من سحب حي ومباشر (Live) لبيانات الحزمة من PyPI وثغراتها من 3 قواعد بيانات (OSV, GitHub Advisories, NVD)، ثم تطبيق محرك القواعد الرياضي فورياً.<br>
+  • في <strong>صفحة النتائج (Evaluation):</strong> تأتي من ملفات التقييم الرسمية المحفوظة في <code>data/evaluation/</code> والناتجة عن التدريب والتقييم الفعلي على Google Colab.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-question">س6: ما الفرق بين تفعيل خيار "Require fine-tuned Qwen" وتركه بدون تفعيل؟</div>
+  <div class="qa-answer"><strong>الرد:</strong> عند عدم التفعيل (الوضع السريع)، يعتمد النظام على الـ <em>Regex Baseline</em> الخفيف الذي يعمل في ثانية واحدة على أي جهاز. أما عند التفعيل (Strict Mode)، يفرض النظام تشغيل نموذج Qwen مع أوزان LoRA على بطاقة الرسوميات (GPU)، وهو الوضع الصارم المستخدم في التقييم الأكاديمي للرسالة.</div>
+</div>
+
+<div class="qa-card">
+  <div class="qa-question">س7: كيف تضمنون التفسيرية (Explainability) في المخرجات؟</div>
+  <div class="qa-answer"><strong>الرد:</strong> التفسيرات لا يتم توليدها عشوائياً بواسطة نموذج ذكاء اصطناعي، بل عبر قوالب Jinja2 تستند مباشرة إلى سجل الأدلة (Evidence Trail) والقواعد الرياضية المطبقة، مما يضمن تقريراً بشرياً واضحاً وخالياً تماماً من الهلوسة.</div>
+</div>
+
+</body>
+</html>

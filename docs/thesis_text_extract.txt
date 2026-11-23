@@ -1,0 +1,1821 @@
+              College of Computer Engineering and Science
+                     Department of Computer Science
+
+ SupportLens: An Explainable AI Framework for
+Assessing Version-Support Commitments Against
+
+         Vulnerability and Release Evidence
+
+                          Master Research Project
+
+       Submitted in partial fulfilment of the requirements for the degree of
+
+                 Master of Applied Artificial Intelligence
+                                        by
+
+                             Student 1 Full Name
+                             Student 2 Full Name
+                             Student 3 Full Name
+
+                                 Supervised by
+
+                             Hanaa Torkey,
+
+                 Associate professor at computer science department
+
+             Prince Sattam bin Abdulaziz University
+                            December, 2026
+Declaration of Originality
+
+Instruction: state clearly that the thesis is your own work, name any prior publications, shared
+code, or reused datasets, and disclose any use of Generative AI. Sign and date the paragraph.
+Below is a ready statement you can adapt.
+
+    I/We, Student(s) Full Name, declare that this thesis entitled Thesis Title is my/our own
+work. Parts of this thesis have appeared in Citation to your own paper, or â€noneâ€. I/We used
+â€Name of AI toolâ€, or â€no AI toolsâ€ only for purpose, e.g., language editing of Sections 1 and 6;
+all technical content, experiments, and analyses are my/our own. All sources of information
+and data used have been acknowledged and are cited in the text and listed in the references.
+I/We also declare that it has not been previously or concurrently submitted for any other
+degree at PSAU or any other institution.
+
+Signature:            Date:
+
+Acknowledgements
+
+Instruction: Thank your supervisors, faculty members, funding bodies, study participants
+(without naming them), and family. Keep it professional and do not overstate the help you
+received. Delete this paragraph and write your acknowledgements here.
+
+                  ii
+                      Abstract
+
+Instruction: write this section last. Keep it to two hundred to three hundred words. Cover five
+things in this order: the problem and its motivation, the gap in existing work, your approach,
+the key results, and the main contribution. Do not use citations, do not use acronyms, and do not
+refer the reader forward to later chapters. Write for a general reader of the domain, not a
+specialist. Delete this paragraph and write your abstract here.
+Keywords: 3 to 6 keywords separated by a comma.
+
+                                                          iii
+Table of Contents
+
+How to Use This Template....................................................................................................................1
+Declaration of Originality.....................................................................................................................ii
+Acknowledgements ................................................................................................................................ii
+Abstract...................................................................................................................................................... iii
+List of Tables .......................................................................................................................................... viii
+List of Figures........................................................................................................................................... ix
+List of Abbreviations .............................................................................................................................. x
+1 Introduction...........................................................................................................................................1
+1.1 Motivation, Problem, and Research Gap ........................................................................................1
+1.2 Research Questions, Objectives, and Scope...................................................................................3
+1.3 Contributions .......................................................................................................................................4
+1.4 Thesis Structure ..................................................................................................................................5
+1.5 Chapter Summary ...............................................................................................................................5
+2 Background and Related Work.......................................................................................................6
+2.1 Background and Foundations ..........................................................................................................6
+2.2 Related Work .......................................................................................................................................8
+2.3 Synthesis and Research Gap ...........................................................................................................13
+2.4 Chapter Summary .............................................................................................................................15
+3 Methodology ........................................................................................................................................16
+3.1 Research Design and Problem Formulation ...............................................................................16
+3.2 Proposed Method, Data, and Implementation ............................................................................19
+3.3 Experimental Design and Evaluation ...........................................................................................24
+3.4 Reproducibility and Responsible Research.................................................................................27
+
+                                                          iv
+v
+Table of Contents                                                                                       xiii
+
+3.5 Chapter Summary           ................................                                          1
+                                                                                                        4
+
+4 Results and Evaluation                                                                                15
+
+4.1 Evaluation Protocol and Main Results  .....................                                         1
+
+                                                                                                        5
+
+4.2           Ablation, Robustness, and Additional Analysis . . . . . . . . . . . . . . . . .           1
+
+                                                                                                        6
+
+4.3                Qualitative, Error, and Failure Analysis . . . . . . . . . . . . . . . . . . . . .   1
+
+                                                                                                        6
+
+4.4 Chapter Summary           ................................                                          1
+
+                                                                                                        6
+
+5 Discussion                                                                                            17
+
+5.1           Answers to Research Questions and Interpretation . . . . . . . . . . . . . . .            1
+
+                                                                                                        7
+
+5.2                Implications and Limitations . . . . . . . . . . . . . . . . . . . . . . . . . . .   1
+
+                                                                                                        8
+
+5.3           Ethical and Responsible AI Considerations . . . . . . . . . . . . . . . . . . .           1
+
+                                                                                                        8
+
+5.4 Chapter Summary           ................................                                          1
+
+                                                                                                        9
+
+6 Conclusion and Future Work                                                                            20
+
+6.1                Summary, Findings, and Contributions . . . . . . . . . . . . . . . . . . . . .       2
+
+                                                                                                        0
+
+6.2                Future Work . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  2
+
+                                                                                                        0
+6.3                   Final Remarks . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  2
+
+                                                                                                           1
+
+References                                                                                                 22
+
+A Additional Results                                                                                       23
+
+B Mathematical Details                                                                                     24
+
+C Reproducibility Checklist                                                                                25
+
+D Data Statement and Ethics Documentation                                                                  26
+
+                             vii
+List of Tables
+
+2.1 Comparison of representative related approaches. The characteristics reported
+
+in this table are derived from the cited sources.  ................                7
+
+4.1 Example of a main-results table. Replace placeholder values with results produced by
+      the actual experiments. Report the metric definition and uncertainty
+
+in the surrounding text.  .............................                            15
+
+                          viii
+List of Figures
+
+2.1 Conceptual relationship between the main families of approaches reviewed in this
+      thesis. The figure is redrawn by the author based on the concepts discussed
+
+in [1].          .......................................                                 8
+
+3.1 High-level overview of the proposed methodology. Each component is
+
+described in the text following the figure.  . . . . . . . . . . . . . . . . . . . . 11
+
+                 ix
+List of Abbreviations
+
+AI  Artificial Intelligence
+
+ML  Machine Learning
+
+..  ..
+
+        x
+Chapter 1
+
+Introduction
+
+1.1 Motivation, Problem, and Research Gap
+
+Open-source software (OSS) has become a foundational component of modern software
+systems. Package registries such as PyPI for Python distribute hundreds of thousands of reusable
+libraries, and applications routinely depend on dozens of packages, directly or transitively. This
+dependency structure delivers substantial efficiency gains but also introduces systemic risk: a
+vulnerability in a widely used package can propagate to every application that depends on it. Li
+and Paxson conducted a large-scale empirical study of security patches and found that security
+issues reside in code bases for years, with nearly 5% of security patches negatively impacting the
+software and over 7% being incomplete [1]. Alfadel et al. [2] similarly observed that Python
+packages commonly exhibit prolonged vulnerability disclosure and fixing delays, with a significant
+percentage of affected PyPI packages remaining unfixed after public disclosure. Liu et al. [3]
+further demonstrated that a large portion of CVEs are publicly discussed before a patch is
+available, exposing vulnerabilities to potential exploitation. These findings underscore a critical
+practical question for software adopters: which versions of a given package are actually receiving
+security fixes?
+To address this question, many open-source projects publish a security policy in a SECURITY.md
+file, as recommended by GitHub [4]. These policies typically describe how to report vulnerabilities
+and often declare which versions of the project remain supported with security updates. Such a
+declaration is, in effect, a commitment to users: "if you run a version in this range, we will fix
+security issues in it." However, a published commitment is not equivalent to a verified one. The
+policy states what the maintainers intend; the actual behavior is observable only through the
+project's vulnerability advisories, release history, and fix records.
+Choetkiertikul et al. [5] recently analyzed the security policies of 679 PyPI packages hosted on
+GitHub and characterized their content, adoption, and relationship to project-level security
+practices [5]. Their study identified eight distinct content categories, including "Scope of Practice,"
+which captures version-support statements. However, the study examined the presence and
+structure of these statements, not whether they are consistent with the project's published
+Chapter 1. Introduction  2
+
+vulnerability and fix evidence. The authors explicitly recommended future work on automated
+methods that detect practices inconsistent with declared policies, and on linking policy analysis
+with longitudinal vulnerability data.
+This thesis addresses that gap. We focus on a specific, measurable commitment contained in
+many security policies: the declaration of which versions receive security fixes. We investigate
+whether this declared commitment can be automatically extracted from SECURITY.md using
+Artificial Intelligence, and whether it is consistent with publicly available evidence drawn from
+vulnerability databases such as OSV [6], release metadata from PyPI [7], and advisory records
+from GitHub [4]. The task is inherently difficult because commitments are expressed in natural
+language, are not standardized, and often rely on relative terms such as "latest release" whose
+meaning depends on a temporal reference. Furthermore, the evidence required to assess
+consistency is heterogeneous, temporally distributed, and sometimes incomplete. Distinguishing
+genuine inconsistency from insufficient evidence is therefore a central design requirement, not
+an afterthought.
+To articulate this gap precisely, we decompose it into three interrelated dimensions that directly
+motivate our proposed solution:
+First, the Characterization Gap (X): Existing approaches successfully characterize policy content
+and measure their adoption across ecosystems, but they treat security policies merely as
+documents to be described, rather than as measurable commitments to be verified.
+Second, the Verification Gap (Y): There is currently no automated approach to verify the
+consistency between declared version-support commitments and the actual vulnerability and fix
+evidence published for a project.
+Third, the Evidence Complexity Gap (Z): The evidence required to perform such verification is
+heterogeneous and temporally distributed across multiple sources (e.g., OSV, PyPI, GitHub).
+Existing tools do not address the challenge of aligning these multi-source records with a specific
+point in time.
+Consequently, it remains unclear whether declared version-support commitments can be
+automatically extracted, normalized, and assessed against such complex evidence in a way that is
+both accurate and explainable. These three dimensionsâ€”(X), (Y), and (Z)â€”form the foundation
+of the SupportLens framework introduced in Chapter 3.
+Chapter 1. Introduction                        3
+
+1.2 Research Questions, Objectives, and Scope
+
+ To address the identified research gap dimensions (X, Y, and Z), this thesis proposes the design,
+implementation, and evaluation of SupportLens, a hybrid, explainable AI framework. The primary
+objective is to automate the extraction of version-support commitments from free-form
+SECURITY.md files using a fine-tuned Large Language Model, and to verify their consistency
+against multi-source vulnerability and release evidence (such as OSV and PyPI). By combining AI-
+based understanding with a deterministic rule engine, the framework aims to produce an
+auditable verdict and a grounded explanation for each package. To systematically achieve and
+evaluate this overarching goal, this research is guided by the following questions:
+
+          Q1. How accurately can an AI-based extraction system identify and structure version-
+         support commitments from free-form SECURITY.md files, compared with rule-based
+         baselines?
+          Q2. How effectively can the proposed framework assess the consistency between
+         extracted commitments and published vulnerability and release evidence, across the five
+         predefined outcome categories (Consistent, Partially Consistent, Potential Inconsistency,
+         Insufficient Evidence, Unmeasurable Commitment)?
+          Q3. How does the framework's performance vary across different project characteristics
+         (e.g., project age, popularity, policy complexity), and what classes of cases predominantly
+         produce failure or insufficient-evidence outcomes?
+ The corresponding objectives are:
+    1. Design and implement an AI Extraction Layer capable of identifying version-support
+         commitments from free-form security policies and normalizing them into structured,
+         comparable representations.
+    2. Build an Evidence Integration Layer that aggregates and normalizes data from PyPI, OSV,
+         and GitHub Advisory, linking each package to its repository, vulnerability records, and
+         release timeline.
+    3. Design and implement an explainable Rule-Based Assessment Layer that evaluates the
+         aligned evidence to produce one of five distinct outcomesâ€”namely, Consistent, Partially
+         Consistent, Potential Inconsistency, Insufficient Evidence, and Unmeasurable
+         Commitmentâ€”together with a grounded justification for each verdict.
+    4. Evaluate the framework against a manually annotated dataset using precision, recall, and
+         F1-score. Furthermore, collect and analyze a structured human evaluation from domain
+Chapter 1. Introduction  4
+
+         experts to assess the correctness, completeness, and traceability of the generated
+         explanations.
+    5. Conduct an error and robustness analysis across different project characteristics (e.g.,
+         project age, popularity) to identify the limitations and failure modes of the automated
+         approach.
+ Scope and assumptions. The study is restricted to PyPI packages whose GitHub repository and
+SECURITY.md file can be identified, and whose security policy contains a version-support
+statement. Only publicly available evidence is used. The framework does not claim to cover non-
+version-related security commitments, does not evaluate private or undisclosed fixes, and does
+not assess projects outside the PyPI/GitHub ecosystem. These boundaries are intentional and are
+revisited in the limitations discussion in Chapter 5.
+
+1.3 Contributions
+
+ This research makes the following contributions to the fields of software security and applied
+ artificial intelligence:
+
+    1. Methodological Contribution: A novel, explainable five-layer architectural framework
+         (SupportLens) for automated security policy verification. This architectureâ€”comprising
+         Data Acquisition, AI Extraction, Evidence Integration, Rule-Based Assessment, and
+         Explanation Generationâ€”uniquely bridges the gap between the generalization required
+         to understand natural-language policies and the strict auditability required for security
+         assessments.
+
+    2. Extraction Contribution: An AI-based extraction model specifically designed to transform
+         unstructured SECURITY.md text into structured, measurable version-support
+         commitments. This is accompanied by a newly created, manually annotated dataset
+         (serving as a ground truth) and a systematic performance comparison against rule-based
+         and zero-shot baselines.
+
+    3. Consistency-Assessment Contribution: A novel, temporally aware rule-based assessment
+         engine that evaluates declared commitments against multi-source vulnerability evidence.
+         It introduces a five-category taxonomy (including Insufficient Evidence) to prevent
+         conflating missing data with actual security inconsistencies.
+
+    4. Empirical Contribution: An empirical evaluation demonstrating the framework's
+         effectiveness on a curated set of PyPI packages. This includes quantified findings on
+         extraction accuracy, verdict accuracy, and a comprehensive analysis of failure modes in
+         automated policy verification.
+
+    5. Artifact Contribution: A reproducible, open-source implementation and the manually
+         annotated dataset, which will be made publicly available to support future research and
+         tooling in security policy compliance.
+Chapter 1. Introduction  5
+
+1.4 Thesis Structure
+
+The remainder of this thesis is organized as follows. Chapter 2 presents the background and
+related work, positioning the thesis within the literature on security policies, vulnerability
+databases, and AI-based information extraction. Chapter 3 describes the research
+methodology, detailing the five-layer SupportLens architecture, the data sources, the
+problem formulation, and the experimental protocol. Chapter 4 reports the evaluation results
+and addresses the research questions quantitatively. Chapter 5 interprets the findings,
+provides answers to the research questions, and discusses implications, limitations, validity
+threats, and responsible-AI considerations. Chapter 6 concludes the thesis and identifies
+directions for future work.
+
+1.5 Chapter Summary
+
+This chapter introduced the problem of verifying security-version commitments in open-
+source projects, highlighting the risks of unpatched vulnerabilities in the software supply
+chain. It identified the research gap left by prior work on security policy content analysis,
+formulated three distinct research questions, stated the objectives and scope, and
+summarized the methodological and empirical contributions of the SupportLens framework.
+The next chapter provides the conceptual and technical background needed to understand
+the proposed architecture.
+                                                                                                                               6
+
+Chapter 2
+
+Background and Related Work
+
+2.1 Background and Foundations
+
+ This section introduces the theoretical and technical concepts required to understand the
+SupportLens framework. It defines the terminology used throughout the thesis and explains
+the foundational mechanisms of security policies, vulnerability data, and explainable AI.
+
+ 2.1.1 Open-Source Security Policies
+ In modern software engineering, a security policy defines the procedures, expectations, and
+commitments that open-source maintainers publish for users and contributors. On platforms
+like GitHub, this policy is conventionally stored in a SECURITY.md file located in the
+repository root, the docs/ folder, or the .github/ folder [4]. GitHub recommends that this file
+include, at a minimum, a method for reporting vulnerabilities and a description of the
+versions that remain supported with security updates.
+ Kanaji et al. [9] analyzed 711 issues related to SECURITY.md and found that 79.5% were
+requests to add the file, indicating that adoption is still in its early stages [8]. Ayala et al.
+studied 2,581 projects and found that only 52.7% had a vulnerability reporting policy. While
+policies are increasingly recognized as important, their content remains heterogeneous,
+unstructured, and often incomplete.
+ Definition (Version-Support Commitment). In this thesis, a version-support commitment is
+a statement within a security policy that specifies which versions of the project receive
+security fixes. Such commitments may be expressed as explicit version ranges (e.g., 5.1.x, >=
+3.9), as relative descriptions (e.g., "the most recent release"), or as a combination of both. A
+commitment is measurable if it can be mapped to a concrete set of version identifiers within
+a defined temporal reference; otherwise, it is unmeasurable.
+Chapter 2. Background and Related Work                                         7
+
+2.1.2 Vulnerability and Release Data
+
+To verify a security commitment, three public sources provide the necessary empirical
+
+evidence:
+
+ï‚· OSV (Open-Source Vulnerabilities): Provides a machine-readable schema
+
+describing vulnerabilities, affected version ranges, and fix information [6].
+
+ï‚· PyPI JSON API: Provides package metadata and a complete release timeline, enabling
+
+the reconstruction of which versions existed at a given time [7].
+
+ï‚· GitHub Advisory Database: Provides curated security advisories linked to CVE
+
+identifiers, often including fixed version information [4].
+
+Li and Paxson [10] demonstrated the feasibility of merging vulnerability metadata with
+
+source code repositories to study patch development lifecycles. Their methodologyâ€”
+
+extracting Common Vulnerabilities and Exposures (CVE) entries, scraping external
+
+references, and linking them to Git commitsâ€”provides a foundational template for evidence
+
+integration. Bao et al. further refined the identification of affected version ranges through the
+
+V-SZZ algorithm, which uses line mapping to trace back to the earliest inducing commit.
+
+However, Jiang et al. [11] analyzed the data inconsistency of open-source vulnerability
+
+repositories and found significant discrepancies in how released versions are translated into
+
+Common Platform Enumeration (CPE) metadata, leading to false positives or missed alerts in
+
+automated scanners.
+
+2.1.3 Natural Language Processing for Policy Text
+
+Extracting structured information from security policies is a natural language
+
+understanding problem. Relevant techniques include Named Entity Recognition (NER) for
+
+identifying version tokens and Relation Extraction (RE) for linking tokens to support or non-
+
+support predicates.
+
+Dagdelen et al. [12] demonstrated that fine-tuned large language models (LLMs) can extract
+
+structured knowledge from scientific text by outputting JSON documents according to a
+
+predefined schema. Their approach, termed LLM-NERRE, achieves strong performance with
+
+only a few hundred annotated examples, showing that joint NER and RE can be performed
+
+without enumerating all possible n-ary relations. Similarly, Petrillo et al. [13] applied
+
+transformer models to the classification of security requirements, achieving an F1-score of
+
+0.90 and introducing explainability through attention visualization heatmaps.
+
+Conversely, rule-based extraction using regular expressions is effective for explicit patterns
+
+such as 5.x or >=3.9, but is brittle to paraphrases, negation, and implicit references, which are
+
+common in security policies. Pinckney et al. [14] analyzed over a million packages in the NPM
+
+ecosystem and showed that semantic versioning policies significantly impact the security
+Chapter 2. Background and Related Work  8
+
+posture of downstream dependents, highlighting the complexity of version range semantics
+and the need for precise normalization.
+
+ 2.1.4 Explainable AI and Hybrid Systems
+ Explainability is a major requirement of this research. A purely generative approach cannot
+guarantee auditability, traceability, or the absence of hallucination. Therefore, this research
+adopts a hybrid framework where AI is used for understanding (extracting the policy claim),
+and deterministic rules are used for judgment (producing the final verdict).
+ Lundberg and Lee [15] introduced SHAP (SHapley Additive exPlanations), a unified
+approach for interpreting model predictions based on cooperative game theory. Yi et al. [16]
+developed IVDetect, which uses Program Dependency Graphs (PDG) to provide fine-grained
+interpretations of vulnerability detection by identifying crucial sub-graphs. These works
+demonstrate that explainability can be achieved without sacrificing performance, provided
+that the explanation is grounded in observable evidence. Transformer architecture [17] and
+its bidirectional variant, BERT [18], provide the foundational mechanisms for the language
+models used in this thesis, while Cohen's Kappa [19] and the Mann-Whitney U test [20]
+provide the statistical rigor for evaluation.
+
+2.2 Related Work
+
+ This section reviews the literature thematically, focusing on how prior work has addressed
+security policies, vulnerability disclosure, and automated compliance.
+
+ 2.2.1 Empirical Studies of Security Policies
+ Alfadel et al. [2] conducted a large-scale empirical analysis of the Python ecosystem. By
+mining vulnerability databases and linking them to package repositories, they analyzed 1,396
+vulnerability reports across 698 packages. Their methodology revealed prolonged delays in
+vulnerability disclosure and fixing, providing the empirical motivation for verifying version-
+support commitments.
+ Ayala et al. [9] examined the adoption of security workflows and policies in popular GitHub
+repositories. By mining data from 8,073 projects with disclosed vulnerabilities, they
+compared the disclosure practices of projects with and without security policies. They
+observed that projects with security policies exhibited more coordinated disclosure practices
+(63.8% following a Coordinated Vulnerability Disclosure (CVD)-like process) compared to
+those without policies (49.7%).
+Chapter 2. Background and Related Work                                          9
+
+Zahan et al. [22] introduced the OpenSSF Scorecard, which includes a Security-Policy check
+
+that evaluates the presence and sufficiency of a SECURITY.md file. Their methodology
+
+involved running this automated tool across nearly a million npm and 211,088 PyPI
+
+packages. The results found that only 3.2% of npm and 2.5% of PyPI packages had a
+
+SECURITY.md file. While the Scorecard assesses the presence of the file, it does not verify the
+
+consistency between declared commitments and observed evidence.
+
+Liu et al. [3] conducted a large-scale empirical study of vulnerability disclosure management.
+
+Their methodology combined the analysis of 21,501 Common Vulnerabilities and Exposures
+
+(CVEs) from the National Vulnerability Database (NVD) and GitHub Advisory with a survey
+
+of 770 practitioners. By comparing actual disclosure timelines with developer preferences,
+
+they found that while over 80% support CVD, only 56% of vulnerabilities conform to it in
+
+practice, highlighting the gap between declared practices and actual behavior.
+
+ 2.2.2 Content Analysis of SECURITY.md
+ Choetkiertikul et al. [5] analyzed 679 PyPI projects and characterized the content of 303
+security policies. Their study identified eight categories of content, including "Scope of
+Practice," which captures version-support statements. They examined reporting mechanisms
+and their alignment with developer practice and analyzed correlations between policy
+content and project characteristics.
+ However, their analysis of version-support statements is descriptive: they identify the
+category but do not verify whether the declared version support is consistent with the
+vulnerability and fix evidence. The authors explicitly recommend automated methods for
+detecting non-compliant practices and for integrating policy analysis with longitudinal
+vulnerability data. This thesis directly addresses that recommendation.
+
+ 2.2.3 Vulnerability Disclosure and Management
+ Kanaji et al. [8] investigated the challenges developers face regarding SECURITY.md
+adoption. By manually classifying a sample of 711 issues related to the file, they found that
+issues containing links to documentation were closed two days faster than those without
+links. This suggests that providing concrete guidance facilitates the adoption and
+implementation of security policies.
+ Ayala et al. [9] investigated vulnerability disclosures by analyzing a dataset of 3,798
+reviewed GitHub security advisories and 4,033 disclosed bug bounty reports. As part of their
+analysis, they found that 61% of the top 100 repositories using dompdf [25] (a popular PHP
+library for HTML to PDF conversion) were vulnerable to a critical CVE (Common
+Vulnerabilities and Exposures) that was absent from the National Vulnerability Database
+Chapter 2. Background and Related Work  10
+
+(NVD). This highlights critical gaps in the vulnerability disclosure and alerting process for
+downstream dependents.
+ Assal and Chiasson [23] conducted a qualitative interview study with 13 developers to
+explore real-life software security practices. Their inductive analysis revealed significant
+deviations from best practices, often driven by factors such as division of labour, security
+knowledge, and company culture. Their work provides important context for understanding
+why security policies may not be fully implemented in practice, emphasizing the human and
+organizational factors behind policy compliance.
+
+ 2.2.4 Automated Compliance and Consistency Checking
+ Extending compliance checking to free-form security policies requires an extraction stage
+that transforms text into structured claims, followed by a verification stage. Thirumalaisamy
+[24] proposed an AI-assisted framework for verifying SBOM (Software Bill of Materials)
+accuracy and detecting "drift" â€” discrepancies between a declared SBOM and actual build
+artifacts. The framework assigns a severity score to discrepancies and can block
+deployments. Their work demonstrates the feasibility of automated consistency checking,
+albeit for structured SBOM data rather than natural-language policies.
+ Jiang et al. [11] evaluated the data inconsistency of open-source vulnerability repositories,
+revealing that discrepancies in release version translation often lead to false positives in
+automated scanners, underscoring the need for robust evidence integration and
+normalization.
+
+ 2.2.5 Information Extraction from Software Artifacts
+ Transformer-based models have been successfully applied to extracting structured
+information from software documentation and bug reports. Petrillo et al. [13] demonstrated
+that fine-tuned transformers can classify security requirements with an F1-score of 0.90,
+providing interpretable explanations via attention visualization . Dagdelen et al. [12] showed
+that LLMs fine-tuned on a few hundred examples can extract complex hierarchical
+relationships, outputting structured JSON documents according to a predefined schema.
+These properties are directly relevant to the extraction of version-support commitments,
+which may involve multiple version ranges, exceptions, and temporal references.
+ To synthesize the reviewed literature, Table 2.1 provides a comparative summary of the
+representative related approaches discussed in this chapter. The table categorizes each work
+based on its primary functionality, the AI model utilized (if any), its reported strengths, and
+its relevant limitations.
+Chapter 2. Background and Related Work                                                 11
+
+A clear pattern emerges from this comparison. Empirical studies in software security (e.g.,
+
+Alfadel et al., Ayala et al., Liu et al.) provide valuable insights into policy adoption and
+
+vulnerability disclosure, yet they rely primarily on statistical methods or manual analysis
+
+rather than automated AI extraction. Conversely, studies that leverage advanced AI models
+
+for information extraction (e.g., Dagdelen et al., Petrillo et al.) demonstrate the efficacy of
+
+LLMs and transformers for structuring unstructured text. However, these works are applied
+
+to different domains (such as materials science or requirements engineering) and do not
+
+address the specific challenges of multi-source evidence verification.
+
+As the final row of the table illustrates, the proposed SupportLens framework bridges this
+
+divide. It is uniquely positioned to combine a fine-tuned LLM for extracting natural-language
+
+commitments with a deterministic rule engine for temporally-aware consistency assessment.
+
+This direct comparison highlights the exact niche this thesis addresses, which is further
+
+detailed in the following section.
+
+Table 2.1 â€” Comparison of Representative Related Approaches
+
+Work        Functionality AI Model                Reported              Limitations
+
+                                    Used          Strengths
+
+Alfadel et al. Empirical            No AI model Large-scale             Does not
+
+[2]         analysis                of used â€”     evidence              of examine
+
+            vulnerabilities statistical and disclosure and declared
+
+            and           fixing empirical        fixing delays in version-
+
+            delays in Python analysis only the                          PyPI support
+
+            packages                              ecosystem             commitments
+
+Choetkiertikul Content              LDA topic Comprehensive Descriptive;
+
+et al. [5]  analysis                of modeling,  categorization of does not verify
+
+            SECURITY.md frequent                  policy content; commitments
+
+            and correlation itemset               quantitative          against
+
+            with project mining,                  correlation           evidence
+
+            characteristics AutoML with
+
+                                    SHAP
+
+Zahan et al. Automated              No AI model Ecosystem-scale Checks
+
+[22]        assessment of used â€” rule- automated                        presence and
+
+            OSS security based                    metrics for npm sufficiency, not
+
+            practices via automated               and PyPI              consistency
+
+            OpenSSF                 tool with 18                        with evidence
+
+            Scorecard
+Chapter 2. Background and Related Work                                    12
+
+                              heuristic
+
+                              metrics
+
+Ayala et al. [9] Empirical study No AI model Empirical     Focuses on
+
+                of workflows, used          â€” evidence     of presence and
+
+                security      empirical     adoption patterns process, not on
+
+                policies, and study with and disclosure verification of
+
+                disclosure    survey and behavior          commitments
+
+                practices     manual
+
+                              analysis
+
+Liu et al. [3]  Empirical study No AI model Large-scale    Focuses on
+
+                of vulnerability used       â€” analysis     of reporting
+
+                disclosure    empirical     disclosure     mechanisms,
+
+                management in study with practices         not version-
+
+                OSS           practitioner                 support
+
+                              survey                       commitments
+
+Kanaji et al. [8] Analysis of No AI model Insights into Focuses on
+
+                SECURITY.md- used           â€” adoption barriers issues, not on
+
+                related issues manual       and resolution policy content
+
+                and close time classification times        verification
+
+                              with Cohen's
+
+                              Kappa
+
+Li & Paxson [1] Empirical study Logistic    Methodology for Focuses on
+
+                of        security regression on linking   patch
+
+                patches across character n- vulnerability  characteristics,
+
+                682 projects  grams         metadata to Git not          policy
+
+                                            commits        commitments
+
+Bao et al. [10] Automatic     No AI model Refines affected Algorithmic;
+
+                identification of used      â€” version ranges does        not
+
+                version ranges algorithmic beyond naive address policy
+
+                affected by CVEs line-mapping last-modifying commitments
+
+                              (V-SZZ)       commit
+
+Dagdelen et al. Structured    Fine-tuned Schema-           Domain-
+
+[12]            information   LLMs (GPT-3 constrained      specific      to
+
+                extraction from and Llama-2) extraction with materials
+
+                              with LoRA                    science; not
+Chapter 2. Background and Related Work                                      13
+                         scientific text
+                                          only 400â€“650 applied         to
+
+      into JSON                           examples           security
+
+                                                             policies
+
+Petrillo et al. Classification of Fine-tuned Transformer-    Focuses on
+
+[13]  security vs. non- BERT,             based              requirements,
+
+      security   DistilBERT, classification                  not       policy
+
+      requirements RoBERTa;               with F1 = 0.90 commitments
+
+                 attention
+
+                 visualization
+
+This thesis An explainable Hybrid: Fine- Automated           Restricted to
+
+(SupportLens) AI framework tuned LLM extraction from PyPI/GitHub
+
+      that extracts (e.g., Qwen2.5) free-form policy and to version-
+
+      version-support for extraction; text; temporally support
+
+      commitments deterministic aware                        commitments
+
+      from       rule engine for consistency
+
+      SECURITY.md verdict;                assessment; five-
+
+      and verifies grounded               category verdict;
+
+      them against template               traceable
+
+      evidence   generation for explanations
+
+                 explanation
+
+2.3 Synthesis and Research Gap
+
+ The literature reviewed in this chapter establishes that security policies in open-source
+projects have become a recognized object of empirical study. Prior work has characterized
+their content, measured their adoption, and correlated their presence with project-level
+security practices. However, three specific dimensions remain unaddressed, and together
+they define the research gap that this thesis aims to close.
+
+ First, existing approaches achieve policy characterization and adoption measurement (X).
+Studies such as Choetkiertikul et al. [5], Kanaji et al. [8], and Zahan et al. [22] classify the
+content of security policies, measure adoption rates, and assess whether policies include
+sufficient information for reporting. However, these works treat the policy as a document to
+be described, not as a set of commitments to be verified.
+Chapter 2. Background and Related Work  14
+
+ Second, existing approaches do not verify the consistency between declared version
+support and published vulnerability and fix evidence (Y). While Li and Paxson [1] and Bao et
+al. [10] established methodologies for linking vulnerabilities to code changes and version
+ranges, and while Liu et al. [3] and Ayala et al. [9] documented gaps between declared and
+actual disclosure practices, no prior work has systematically compared what a project claims
+about version support with what its vulnerability records show. The closest work,
+Choetkiertikul et al. [5], identifies the "Scope of Practice" category but stops short of assessing
+whether the declared scope aligns with published evidence.
+
+ Third, the evidence required to assess this consistency is heterogeneous, temporally
+distributed, and sometimes incomplete (Z). A version-support commitment is meaningful
+only relative to a temporal reference: the phrase "we support the latest release" means
+different things at different points in time. Verifying such a commitment requires aligning
+policy text with vulnerability publication dates, release timelines, and fix records drawn from
+multiple sources (OSV, NVD, GitHub Advisory, PyPI). This temporal and multi-source
+complexity has not been addressed by prior work on policy analysis.
+
+ 2.3.1 From Research Gap to Methodology
+ To address the identified research gaps, this thesis proposes SupportLens, a hybrid,
+explainable five-tier architecture that operationalizes the solution. To prevent confusion with
+neural network layers, we refer to the architectural components as "Tiers". The architecture
+maps directly to the three gap dimensions defined in Section 1.1:
+
+    ï‚· (X) The Characterization Gap: The lack of structured, verifiable policy claims. To
+         address this, Tier 0 (Data Acquisition) retrieves the raw security policy, and Tier 1 (AI
+         Extraction) transforms the unstructured text into structured, measurable
+         commitments rather than descriptive text.
+
+    ï‚· (Z) The Evidence Complexity Gap: The challenge of heterogeneous and temporally
+         distributed evidence. To address this, Tier 2 (Evidence Integration) normalizes and
+         aligns multi-source data (from OSV, PyPI, and GitHub Advisory) using explicit
+         temporal resolution.
+
+    ï‚· (Y) The Verification Gap: The absence of automated consistency assessment. To
+         address this, Tier 3 (Rule-Based Assessment) uses a deterministic rule engine to
+         compare the declared commitments with the aligned evidence, producing a five-
+         category verdict.
+Chapter 2. Background and Related Work                                                  15
+
+ï‚· The Explainability Requirement: Finally, to ensure the system is auditable, Tier 4
+
+(Explanation Generation) produces an evidence-grounded justification for every
+
+verdict, linking each output directly to the underlying sources.
+
+The full details of this architecture, including its problem formulation, implementation, and
+
+evaluation protocol, are presented in Chapter 3.
+
+ 2.3.2 Summary of the Gap and the Proposed Response
+ Table 2.2 summarizes the relationship between the identified gap dimensions, the
+limitations of prior work, and the corresponding responses implemented in the proposed
+SupportLens framework.
+
+Table 2.2: Summary of the Gap and the Proposed Response
+
+Gap dimension           Prior work limitation SupportLens response
+
+(X) Policy characterization Policies are described, Extract commitments as
+
+without verification    not verified                     structured, measurable claims
+
+(Y) No consistency      No automated                     Temporally aware rule engine
+
+assessment against evidence comparison of claims vs. producing a five-category
+
+                        evidence                         verdict
+
+(Z) Heterogeneous,      Evidence not aligned Multi-source evidence
+
+temporally distributed  across sources and time integration with explicit
+
+evidence                                                 temporal alignment
+
+2.4 Chapter Summary
+
+ This chapter presented the background necessary to understand the thesis, covering
+security policies, vulnerability and release data sources, NLP techniques for structured
+extraction, and hybrid explainable AI. It reviewed related work on empirical studies of
+security policies, content analysis of SECURITY.md, vulnerability disclosure management,
+automated compliance checking, and information extraction from software artifacts. Finally,
+it identified the research gap that motivates the thesisâ€”the absence of an explainable, AI-
+powered approach for verifying version-support commitments against published evidenceâ€”
+and summarized how the proposed SupportLens framework addresses this gap. The next
+chapter details the methodology and implementation of the framework.
+Chapter 3
+
+Methodology
+
+3.1 Research Design and Problem Formulation
+
+ This section establishes the foundational research design and formally defines the problem
+addressed in this research. It explains the research paradigm, the scope, and the mathematical
+formulation of the system's inputs and outputs, ensuring a rigorous foundation for the
+subsequent implementation.
+
+ 3.1.1 Research Paradigm and Strategy
+ This thesis follows a Design Science Research (DSR) paradigm. The primary contribution is the
+design, implementation, and evaluation of the frameworkâ€”SupportLens. The research
+addresses a concrete problem in open-source software security governance (the gap between
+declared and observed version support) and produces a system that explains its own reasoning.
+ The methodology integrates three distinct technical traditions:
+
+    1. Software Security: Mining software repositories and vulnerability databases (e.g., OSV,
+         NVD) to extract empirical evidence regarding vulnerability disclosure, affected versions,
+         and release histories.
+
+    2. Natural Language Processing (NLP): Schema-constrained information extraction from
+         technical documentation (specifically SECURITY.md files).
+
+    3. Explainable AI (XAI): A hybrid design combining learned neural components (for
+         understanding) with deterministic symbolic reasoning (for auditable judgment).
+
+ The research strategy strictly adheres to the traceability chain required by the thesis template:
+Research Problem â†’ Research Gap â†’ Research Questions â†’ Objectives â†’ Method â†’ Experiments
+â†’ Results â†’ Discussion â†’ Answers to RQs â†’ Contributions â†’ Conclusion.
+
+ 3.1.2 Scope and Assumptions
+ The research is explicitly scoped to PyPI packages whose GitHub repository and SECURITY.md
+file can be reliably identified, and whose security policy contains a version-support statement.
+The system does not address non-version-related security commitments, does not evaluate
+private or undisclosed fixes, and does not extend to ecosystems outside PyPI/GitHub. These
+Chapter 3. Methodology  17
+
+boundaries are intended to ensure that the problem is well-defined and that the evidence is
+publicly verified.
+
+ 3.1.3 Problem Formulation
+ To rigorously evaluate the research questions, the system is formally defined as a mapping from
+unstructured text and heterogeneous data sources to a structured, auditable judgment.
+
+3.1.3.1 Notation and Input Space
+The system operates on three primary inputs, denoted as the tuple (S, V, R):
+
+   ï‚· S (Security-policy content): The raw Markdown text of the SECURITY.md file, retrieved
+        from the package's GitHub repository [4].
+
+   ï‚· V (Vulnerability evidence): A set of published vulnerability records V={v1,v2,â€¦,vn}
+        aggregated from OSV [6], NVD, and the GitHub Advisory Database. Each record contains
+        affected versions, fixed versions, and publication dates.
+
+   ï‚· R (Release history): A chronologically ordered set of release records R={r1,r2,â€¦,rm},
+        retrieved from the PyPI JSON API [7], containing version identifiers and release dates.
+
+ 3.1.3.2 Commitment Representation
+ The core target of extraction is the version-support commitment, formally represented as a
+structured tuple:
+
+                                   c=âŸ¨t,Ï„,v,TâŸ©
+
+ where:
+    ï‚· t (Original text): The verbatim sentence(s) from S expressing the commitment.
+    ï‚· Ï„ (Commitment type): The semantic category (e.g., latest_only, explicit_range,
+         all_versions, ambiguous).
+    ï‚· v (Version expression): The raw version token(s) mentioned (e.g., "latest", "2.x.x").
+    ï‚· T (Temporal reference): The point in time relative to which the commitment is
+         evaluated (e.g., release_time, vulnerability_publication_time). This is critical because
+         "latest" is meaningless without a temporal anchor.
+Chapter 3. Methodology                          18
+
+3.1.3.3 Output Space
+The system produces two outputs:
+
+   1. y (Assessment outcome): A categorical verdict drawn from five mutually exclusive
+        categories: { Consistent, Partially Consistent, Potential Inconsistency, Insufficient
+        Evidence, and Unmeasurable Commitment }.
+
+   2. Îµ (Evidence-grounded explanation): A human-readable justification for y, where every
+        statement is traceable to a specific piece of retrieved evidence.
+
+3.1.3.4 Formal System Function
+The system is defined as a function:
+
+                               f:(S,V,R)â†’(y,Îµ)
+
+ To achieve this mapping, the system executes a five-layer pipeline that extracts c, normalizes v,
+aggregates V and R, assesses consistency to produce y, and generates the explanation Îµ.
+Chapter 3. Methodology                         19
+
+3.2 Proposed Method, Data, and Implementation
+
+ The proposed SupportLens framework is implemented as a five-layer architecture, as
+illustrated in Figure 3.1. The pipeline processes a PyPI package name through five sequential
+layers, transforming raw text and metadata into an auditable verdict.
+
+Figure 1: The System Architecture of the SupportLens Framework. The pipeline consists of five layers (0 to
+4), starting from data acquisition and AI extraction to evidence normalization, deterministic rule-based
+assessment, and grounded explanation generation
+
+     3.2.1 Layer 0: Data Acquisition and Preprocessing
+         ï‚§ Purpose: Establish a verified link between a PyPI package and its GitHub repository,
+             retrieve the SECURITY.md file, and prepare the text for analysis.
+         ï‚§ Inputs: package_name (string).
+         ï‚§ Outputs: repository_url, security_policy_url, and preprocessed security_policy_text.
+         ï‚§ Method: The PyPI JSON API is queried for package metadata (project_urls). Candidate
+             GitHub URLs are verified using the GitHub API to ensure they are the primary source
+Chapter 3. Methodology  20
+
+    repository and contain a SECURITY.md file. The policy file is parsed (Markdown
+    format) to extract relevant sections and clean the text.
+ï‚§ Missing Data Handling: Packages for which a valid GitHub repository or an
+    accessible SECURITY.md file cannot be identified will be excluded from the evaluation
+    dataset. The system will automatically record the reason for exclusion (e.g., "No
+    GitHub link provided," "SECURITY.md not found") in an audit log. This ensures
+    transparency and supports reproducibility during the dataset construction phase.
+ï‚§ Tools: Python requests, PyGithub.
+
+3.2.2 Layer 1: AI Extraction Layer (Commitment Identification)
+ï‚· Purpose: Transform free-form policy text into the structured commitment tuple
+
+    c=âŸ¨t,Ï„,v,TâŸ©.
+ï‚· Inputs: Preprocessed security_policy_text.
+ï‚· Outputs: Structured commitment(s) in JSON format (e.g., commitment_text,
+
+    version_expression, support_status, temporal_reference).
+ï‚· Method: The extraction is performed using the Qwen2.5-7B-Instruct Large Language
+
+    Model (LLM) [26]. Qwen2.5 is a state-of-the-art, open-weights, decoder-only transformer
+    model. The 7-billion parameter variant was specifically selected for this research for three
+    reasons: (1) it offers a highly favorable balance between advanced reasoning capabilities
+    and computational efficiency, allowing it to be fine-tuned on a single consumer or
+    academic GPU; (2) its "Instruct" variant is specifically optimized for instruction-following
+    and structured output generation, making it highly reliable for adhering to our JSON
+    schema; and (3) its open-source nature ensures full reproducibility, unlike proprietary
+    APIs (e.g., GPT-4) which may change over time.
+    To adapt the model efficiently without the prohibitive cost of full fine-tuning, we utilize
+    Low-Rank Adaptation (LoRA) [27]. LoRA freezes the pre-trained model weights and
+    injects trainable rank decomposition matrices into each layer of the Transformer
+    architecture. This significantly reduces the number of trainable parameters, mitigating
+    the risk of catastrophic forgetting while maintaining high extraction accuracy. The model
+    is fine-tuned on a newly created, manually annotated dataset (detailed in Section 3.3.1).
+    During inference, the generation is strictly constrained by a predefined JSON schema to
+    prevent hallucination and ensure structural validity.
+ï‚· Tools: Hugging Face transformers [28], peft (Parameter-Efficient Fine-Tuning) [29].
+Chapter 3. Methodology  21
+
+3.2.3 Layer 2: Evidence Layer (Data Integration and Normalization)
+   ï‚§ Purpose: Collect vulnerability and release evidence, normalize version expressions,
+        and resolve relative temporal terms.
+   ï‚§ Inputs: Package name, OSV/NVD/GitHub Advisories, and PyPI release history.
+   ï‚§ Outputs: Normalized version scope (e.g., 3.2.x, >=3.0, latest stable at Time T).
+   ï‚§ Method: API queries are merged and deduplicated by CVE ID. A normalization module
+        parses version strings using the Python packaging library, resolves relative
+        expressions (like "latest") by querying the release history at the reference time T, and
+        determines the measurable scope.
+   ï‚§ Tools: Python pandas, packaging, OSV API.
+
+3.2.4 Layer 3: Rule-Based Assessment Layer (Consistency Evaluation)
+ï‚· Purpose: Compare the declared commitment with integrated evidence using
+
+    deterministic, auditable rules.
+ï‚· Inputs: Structured commitment (c), Normalized version scope ( í µí±£í µí±›í µí±œí µí±Ÿí µí±š), Vulnerability
+
+    evidence (V), Release history (R), and Reference time (T).
+ï‚· Outputs: Assessment Outcome (y) and an evidence_trail (E) containing the specific
+
+    sources used to make the decision.
+ï‚· Method: A deterministic Rule Engine evaluates the aligned evidence based on a
+
+    predefined taxonomy of five mutually exclusive rules (R1 to R5). These rules are applied
+    in a strict priority order to prevent ambiguity:
+
+         o R5 (Unmeasurable Commitment): If the commitment type (Ï„) is ambiguous or
+             the version scope cannot be normalized, the system halts and assigns this verdict.
+
+         o R4 (Insufficient Evidence): If mapping is uncertain or vulnerability/release data
+             is critically missing, the system assigns this verdict to prevent unfair penalization.
+
+         o R1 (Consistent): If the commitment covers the affected version at time T AND a
+             fix exists.
+
+         o R2 (Partially Consistent): If the commitment covers the affected version, but the
+             fix is only partial (e.g., fixed in a major release but minor versions remain
+             vulnerable) OR only some vulnerabilities have fixes.
+
+         o R3 (Potential Inconsistency): If the commitment covers the affected version
+             AND no fix has been released within a reasonable timeframe, despite complete
+             evidence.
+
+    The execution logic is formally described in Algorithm 1. The final output is mapped to
+    one of the five categories defined in Table 3.1.
+Chapter 3. Methodology                                                         22
+
+Algorithm 1: Rule-Based Consistency Assessment
+
+Require: Commitment c, Vulnerability evidence V, Release history R, Reference time T
+Ensure: Verdict y, Evidence Trail E
+
+1: Initialize Evidence_Trail E = []
+
+2: // Check Rule 5: Measurability
+
+3: if c.is_measurable == False then
+
+4:   return y = "Unmeasurable Commitment", E.append(c.text)
+
+5: end if
+
+6: // Check Rule 4: Evidence Sufficiency
+
+7: if V is missing OR R is missing OR mapping_uncertain == True then
+
+8:   return y = "Insufficient Evidence", E.append("Missing data for V or R")
+
+9: end if
+
+10: // Iterate through vulnerabilities
+
+11: for each vulnerability v in V do
+
+12:  affected_versions = v.get_affected_versions()
+
+13:  fixed_versions = v.get_fixed_versions()
+
+14:
+
+15:  // Determine if the affected version was covered by the commitment at time T
+
+16:  is_supported = check_coverage(affected_versions, c, R, T)
+
+17:
+
+18:  if is_supported == True then
+
+19:          if fixed_versions is NOT empty then
+
+20:                Verdict_List.append("Consistent")
+
+21:                E.append(v.cve_id + " was fixed in " + fixed_versions)
+
+22:          else if fixed_versions is PARTIAL then
+
+23:                Verdict_List.append("Partially Consistent")
+
+24:                E.append(v.cve_id + " is partially fixed")
+
+25:          else
+
+26:                Verdict_List.append("Potential Inconsistency")
+
+27:                E.append(v.cve_id + " has no fix despite being supported")
+
+28:          end if
+
+29:  end if
+
+30: end for
+Chapter 3. Methodology                                                      23
+
+31: // Aggregate final verdict based on the highest severity
+32: y = aggregate_verdict(Verdict_List)
+33: return y, E
+
+Tools: Python (pure) for logic execution, pydantic for strict schema validation of the
+inputs and outputs.
+
+Table 3.1: Assessment Outcome Categories and Definitions
+
+Category                Meaning
+
+Consistent              The declared commitment is fully supported by the
+
+                        evidence.
+
+Partially consistent    The commitment is supported for some vulnerabilities but
+
+                        not others.
+
+Potential               The commitment is not supported by the evidence, and
+
+inconsistency           sufficient evidence exists.
+
+Insufficient            The available evidence is incomplete or ambiguous.
+
+evidence
+
+Unmeasurable            The commitment text cannot be mapped to concrete version
+
+commitment              identifiers.
+
+3.2.5 Layer 4: Explanation and Output Layer
+ï‚· Purpose: Generate evidence-grounded explanations, store results, and present the final
+
+    output to the user.
+ï‚· Inputs: Verdict y, evidence trail, and commitment c.
+ï‚· Outputs: Human-readable explanation Îµ with source references, and a structured record
+
+    (JSON).
+ï‚· Method: To ensure absolute traceability and prevent hallucination, the explanation is
+
+    generated using a template-based approach (Jinja2) [30]. The generator populates
+    predefined natural language templates with the retrieved facts from the evidence trail.
+    For example, a template for a "Potential Inconsistency" verdict explicitly maps the policy
+    text, the specific CVE, and the release dates into the output sentence. The final output is
+    serialized into a structured JSON record using the standard Python json module,
+    containing the verdict, the generated explanation, and direct source references (URLs,
+    line numbers).
+Chapter 3. Methodology                                                       24
+
+ï‚· Tools: Jinja2 [30], Python json module (Python Software Foundation) [31].
+
+3.3 Experimental Design and Evaluation
+
+ This section defines the experimental setup required to answer the research questions (Q1, Q2,
+and Q3).
+ 3.3.1 Datasets and Gold Standard
+ Since no existing benchmark dataset provides labels for version-support commitments in
+SECURITY.md files, this thesis will construct a new manually annotated reference dataset to
+serve as the ground truth for evaluation.
+
+    ï‚· Data Collection: A Python script queries the PyPI JSON API to retrieve packages that have
+         a valid GitHub repository link and an accessible SECURITY.md file. Only packages
+         containing a version-support statement will be retained.
+
+    ï‚· Manual Annotation Process: A stratified random sample of 300 policies will be
+         annotated. The annotation will be performed independently by two annotators: (1) the
+         primary author of this thesis, and (2) an independent peer researcher with a background
+         in computer science. To ensure consistency, both annotators will use a predefined
+         Annotation Guideline (Codebook) and a graphical annotation tool (e.g., Label Studio).
+         They will label the commitment tuple c=âŸ¨t,Ï„,v,TâŸ© and the expected verdict y.
+
+    ï‚· Adjudication: In cases of disagreement between the two annotators, a third party (the
+         thesis supervisor) will act as an adjudicator to resolve the conflict and establish the final
+         ground truth label.
+
+    ï‚· Inter-rater Reliability: Before adjudication, the level of agreement between the two
+         annotators will be measured using Cohenâ€™s Kappa [19] to ensure the annotations are
+         objective and reliable (target Îºâ‰¥0.80).
+
+    ï‚· Data Splits: Once the reference dataset is finalized, it will be partitioned into 70%
+         training (for fine-tuning the Tier 1 extraction model), 15% validation, and 15% test sets.
+
+ 3.3.2 Baselines
+ To rigorously evaluate the contribution of the proposed AI Extraction Tier (Tier 1), its
+performance will be compared against three distinct baselines, ranging from traditional
+deterministic methods to standard machine learning approaches:
+
+    1. Rule-Based Baseline: A deterministic script utilizing Regular Expressions (Regex) and
+         keyword matching. This baseline will use predefined patterns to extract explicit version
+         numbers (e.g., matching patterns like \d+\.\d+\.\d+ or >= 3.9) and trigger words (e.g.,
+         "latest", "supported", "end-of-life"). This represents the traditional, non-learning
+Chapter 3. Methodology  25
+
+         approach commonly used in static analysis tools. It is expected to perform well on explicit
+         ranges but fail on complex or implicit natural language phrasings.
+    2. Zero-Shot LLM Baseline: The base Qwen2.5-7B-Instruct model [26] without any fine-
+         tuning. The model will be prompted directly using In-Context Learning (ICL) with the
+         same JSON schema instructions provided to the fine-tuned model. This baseline measures
+         the model's inherent pre-trained capability to understand policy text and format it
+         correctly, serving as a control to isolate the exact value added by our domain-specific fine-
+         tuning.
+    3. Fine-Tuned RoBERTa Baseline: A traditional, encoder-only transformer model,
+         RoBERTa-base [37], fine-tuned specifically for Token Classification (Named Entity
+         Recognition). This model will be trained to identify the start and end tokens of the
+         commitment text, the version expression, and the temporal reference. Unlike the LLM
+         which generates structured JSON, RoBERTa will predict span labels.
+
+             o Fine-Tuning Details: Because RoBERTa is a relatively small model (approx. 125M
+                  parameters), it will undergo standard full-parameter fine-tuning (updating all
+                  weights). We will use a Cross-Entropy loss function, the AdamW optimizer, a
+                  learning rate of 2 Ã— 10âˆ’5, and a batch size of 16 over 5 epochs.
+
+ A Note on Parameter-Efficient Fine-Tuning (LoRA): It is important to distinguish the fine-
+tuning strategies. While the baseline RoBERTa model undergoes standard full fine-tuning, the
+primary Qwen2.5-7B model (detailed in Section 3.2.2) utilizes LoRA (Low-Rank Adaptation)
+[27]. Because Qwen has 7 billion parameters, full fine-tuning would require prohibitive GPU
+memory. LoRA freezes the original weights and injects small, trainable rank decomposition
+matrices into the attention layers. This allows the 7B model to learn the specific policy extraction
+task efficiently (training only ~1-2% of the parameters) without catastrophic forgetting, making
+the approach both computationally feasible and highly effective.
+
+3.3.3 Evaluation Metrics
+       ï‚§ Extraction Performance (Q1): Token-level Precision, Recall, and F1-score. Exact
+            Match (EM) and Partial Match (PM) for the full tuple c.
+       ï‚§ Verdict Performance (Q2): Macro-F1 score and a 5x5 Confusion Matrix to evaluate
+            how well the system distinguishes Insufficient Evidence from Potential Inconsistency.
+       ï‚§ Explanation Quality: A human evaluation rubric rating explanations on Correctness,
+            Completeness, and Traceability (1-5 scale).
+       ï‚§ Robustness (Q3): Performance metrics analyzed across different project
+            characteristics (e.g., project age, number of stars, policy length).
+Chapter 3. Methodology                                                           26
+
+3.3.4 Statistical Analysis
+
+To ensure that the findings are statistically robust and not due to random chance, the
+
+following statistical tests and estimation methods will be employed:
+
+ï‚· McNemarâ€™s Test [38]: Used to determine if the fine-tuned LLM's improvements over the
+
+baselines (e.g., Qwen Zero-shot or RoBERTa) are statistically significant (p<0.05). Unlike
+
+standard accuracy comparisons, McNemar's test is specifically designed for paired
+
+nominal data. It is estimated by constructing a 2Ã—2 contingency table based on the test set
+
+predictions (where bb is the number of instances where Baseline is correct but Fine-tuned
+
+is wrong, and c is the number of instances where Baseline is wrong but Fine-tuned is
+
+correct). The test statistic is calculated using the formula:
+
+                                           í µí±‹2  =  (|í µí±  âˆ’ í µí±|  âˆ’   1)2
+                                                         í µí± +   í µí±
+
+ï‚· Mann-Whitney U Test [20]: Used to evaluate RQ3 (Robustness). It is a non-parametric
+
+test used to compare two independent groups (e.g., performance on "popular" vs.
+
+"unpopular" projects) to determine if their distributions differ significantly. It is
+
+estimated by ranking all data points from both groups together, and then calculating the
+
+sum of ranks for each group (R1R1 and R2R2). The U statistic for group 1 is:
+
+                                   í µí±ˆ1  =  í µí±›1í µí±›2  +  í µí±›1(í µí±›1   +   1)   âˆ’  í µí±…1
+                                                            2
+
+ï‚· Bootstrap Confidence Intervals [39]: Used to report the uncertainty (95% CI) around
+
+the F1-scores. Because F1-scores are not normally distributed, standard error bars
+
+cannot be used. Instead, the bootstrap method is estimated by resampling the test set with
+
+replacement 1,000 times, recalculating the F1-score for each sample, and taking the 2.5th
+
+and 97.5th percentiles of these 1,000 scores to form the confidence interval.
+
+Table 3.2: Summary of Evaluation Metrics and Statistical Tests
+
+Metric /                Reference                  Equation /                            Purpose in
+                                                                                        SupportLens
+Test                                       Estimation Method                     To measure the
+                                                                                 accuracy of commitment
+Precision,              Standard           í µí±ƒ = í µí±‡í µí±ƒ , í µí±… =                      extraction (RQ1) and
+Recall, F1-                                                                      the correctness of the 5-
+Score                                              í µí±‡í µí±ƒ+í µí°¹í µí±ƒ                     category verdicts (RQ2).
+
+                                                í µí±‡í µí±ƒ , í µí°¹1 = 2 â‹… í µí±ƒâ‹…í µí±…
+                                           í µí±‡í µí±ƒ+í µí°¹í µí±                í µí±ƒ+í µí±…
+Chapter 3. Methodology                                                                        27
+
+Cohenâ€™s                 Cohen        í µí¼…  =  í µí±ƒí µí±œâˆ’í µí±ƒí µí±’  (Where  í µí±ƒí µí±œ  To measure inter-
+Kappa (í µí¼…)              (1960) [19]         1âˆ’í µí±ƒí µí±’                   annotator agreement
+                                                                     during the manual
+                                     is observed                     creation of the Ground
+                                                                     Truth dataset (Target:
+                                     agreement, í µí±ƒí µí±’ is              í µí¼… â‰¥ 0.80).
+                                     expected agreement)             To test if the
+                                                                     performance difference
+McNemarâ€™s               McNemar      í µí¼’2 = (|í µí±âˆ’í µí±|âˆ’1)2              between the Fine-tuned
+Test                    (1947) [38]                                  LLM and the Baselines is
+                                                    í µí±+í µí±            statistically significant.
+
+                                     (Where í µí± and í µí± are            To compare system
+                                                                     performance across
+                                     discordant pairs in a           different project groups
+                                                                     (e.g., active vs.
+                                     2x2 contingency                 abandoned projects) to
+                                                                     answer RQ3.
+                                     table)                          To report the 95%
+                                                                     confidence intervals
+Mann-                   Mann &       í µí±ˆ = í µí±›1í µí±›2 +                   around F1-scores,
+Whitney U               Whitney                                      proving the stability and
+Test                    (1947) [20]  í µí±›1(í µí±›1+1)  âˆ’     í µí±…1  (Where   reliability of the results.
+                                          2
+
+                                     í µí±…1 is the sum of ranks
+
+                                     for group 1)
+
+Bootstrap CI            Efron &      Resampling with
+                        Tibshirani   replacement (1,000
+                        (1993) [39]  iterations) to
+                                     estimate the 2.5th
+                                     and 97.5th
+                                     percentiles.
+
+3.4 Reproducibility and Responsible Research
+
+ 3.4.1 Reproducibility
+ To ensure that the research findings can be independently verified and replicated by other
+researchers, the following protocols will be implemented:
+
+    ï‚· Code and Scripts: All source code, prompt templates, and evaluation scripts will be
+         released in a public GitHub repository under an open-source license upon the
+         completion of the thesis.
+
+    ï‚· Dataset Availability: The manually annotated reference dataset (created in Section
+         3.3.1) will be published on Zenodo and assigned a Digital Object Identifier (DOI) to
+         ensure permanent, citable access.
+Chapter 3. Methodology  28
+
+ï‚· Random Seed Fixation: To ensure experimental consistency, random seeds (e.g.,
+    seed=42) will be explicitly fixed for all stochastic processes in the pipeline. This
+    includes: (1) the randomized splitting of the dataset into training, validation, and test
+    sets, and (2) the weight initialization and dropout layers during the LLM fine-tuning.
+    Fixing the seeds guarantees that any researcher re-running the code will obtain the
+    exact same data partitions and model behavior, eliminating randomness as a
+    confounding variable.
+
+ï‚· Hyperparameters and Hardware: Detailed hardware specifications (e.g., GPU
+    model, CUDA version) and a comprehensive list of all hyperparameters (e.g., learning
+    rate, batch size, LoRA rank) will be documented in Appendix C.
+
+3.4.2 Responsible AI Considerations
+   ï‚· Hallucination Mitigation: By using a deterministic rule engine for verdicts (Layer 3)
+       and template-based grounding for explanations (Layer 4), the system avoids the
+       generative hallucination risks common in pure LLM applications.
+   ï‚· Bias: The study is limited to PyPI and GitHub, which may introduce ecosystem bias.
+       This is explicitly stated as a limitation, and the framework is designed to be extensible
+       to other ecosystems in future work.
+   ï‚· Transparency and Human Oversight: The system is designed to be a co-pilot for
+       security analysts, not a replacement. The five-category verdict ensures that
+       ambiguous cases are flagged for human review rather than forced into a binary
+       pass/fail.
+
+3.5 Chapter Summary
+
+ This chapter detailed the methodology for the SupportLens framework. It formally defined the
+research problem as a mapping from policy text and evidence (S,V,R) to an auditable verdict and
+explanation (y,Îµ). It described the five-layer architecture (Layers 0 to 4), specifying the inputs,
+outputs, and methods for each layer. Finally, it outlined the experimental design, baselines,
+statistical metrics, and reproducibility protocols required to rigorously answer the research
+questions. The next chapter presents the results of these experiments.
+Chapter 4
+
+Results and Evaluation
+
+ Chapter purpose. Report the evidence generated by the experiments. Results should be
+presented objectively before their broader interpretation in the Discussion chapter.
+
+     Every important numerical claim should be traceable to a table, figure, or statistical
+analysis. Do not report only the best run when multiple runs were conducted. Report
+variability using an appropriate measure. Do not invent, alter, or selectively omit
+experimental results.
+
+4.1 Evaluation Protocol and Main Results
+
+ Begin by briefly restating the evaluation protocol and then present the main results.
+     For example: â€Table 4.1 reports the main evaluation results. The proposed method was
+
+evaluated using the protocol defined in Section 3.3.â€
+
+Table 4.1: Example of a main-results table. Replace placeholder values with results produced
+by the actual experiments. Report the metric definition and uncertainty in the surrounding
+text.
+
+Method           Metric 1 Metric 2 Metric 3
+Baseline A
+                 â€“                                           â€“  â€“
+
+Baseline B       â€“                                           â€“  â€“
+
+Proposed method  â€“                                           â€“  â€“
+
+     If a table contains results from previous literature, cite the original sources. Clearly
+distinguish reproduced results, independently reimplemented results, and values copied
+from published papers.
+
+                                                         15
+Chapter 4. Results and Evaluation
+                                                                                                                   30
+
+4.2 Ablation, Robustness, and Additional Analysis
+
+ Where applicable, evaluate which components of the proposed approach matter and whether
+the findings remain stable under reasonable changes to the experimental conditions.
+
+     Possible analyses include:
+
+    â€¢ ablation studies;
+
+    â€¢ sensitivity to hyperparameters;
+
+    â€¢ random-seed variation;
+
+    â€¢ domain or dataset shift;
+
+    â€¢ noise or perturbation robustness;
+
+    â€¢ cross-domain evaluation;
+
+    â€¢ subgroup analysis;
+
+    â€¢ computational scaling;
+
+    â€¢ model-size comparison.
+
+     Do not perform an ablation merely because it is conventional. Include it when it provides
+evidence relevant to the research questions or claims of the thesis.
+
+4.3 Qualitative, Error, and Failure Analysis
+
+Quantitative results rarely explain everything. Where appropriate, include representative
+examples, visualizations, attention maps, generated outputs, error categories, or failure cases.
+
+     Do not select only attractive examples. Include representative or systematic failures where
+they help explain the limitations of the method. Distinguish observed evidence from hypotheses
+about why a failure occurred.
+
+4.4 Chapter Summary
+
+ Summarize the principal empirical findings without turning this section into the full discussion.
+Explain which experiments provide evidence for which research questions.
+Chapter 5
+
+Discussion
+
+ Chapter purpose. The Discussion explains what the results mean. It should interpret the
+evidence rather than simply repeat numerical results.
+
+5.1  Answers to Research Questions and Interpretation
+
+Answer each research question explicitly. State the RQ, provide the answer, cite the evidence
+from Chapter 4, and explain what the result means.
+
+RQ1
+
+ Answer RQ1 using the evidence reported in the Results chapter. Avoid introducing new
+experiments here.
+
+RQ2
+
+ Answer RQ2 using the relevant robustness, ablation, or comparative results.
+
+RQ3
+
+ Answer RQ3 using the relevant computational or practical evaluation.
+     A useful structure is:
+
+       Question: What was investigated?
+       Evidence: Which result answers the question?
+       Answer: What does the evidence indicate?
+       Qualification: Under what conditions does this answer hold?
+
+                                                         17
+
+Chapter 5. Discussion
+                                                                                                                   32
+
+5.2 Implications and Limitations
+
+ Discuss what the findings imply for research and practice. Distinguish clearly between evidence
+demonstrated by the thesis and possible interpretations or implications.
+
+     Discuss limitations explicitly. Relevant limitations may include data coverage, sample size,
+dataset bias, compute budget, model assumptions, evaluation metrics, experimental design,
+external validity, and deployment conditions.
+
+     Use the following four validity categories where applicable:
+
+    â€¢ Internal validity: Could factors other than the investigated method explain the result?
+
+    â€¢ External validity: Do the results generalise to other datasets, domains, populations,
+       languages, or environments?
+
+    â€¢ Construct validity: Do the chosen measurements actually represent the concept being
+       studied?
+
+    â€¢ Statistical conclusion validity: Are the statistical procedures and uncertainty
+       estimates appropriate for the evidence?
+
+     For computational AI research, also consider reproducibility: would another researcher
+reasonably be expected to obtain similar findings from the documented procedure?
+
+5.3 Ethical and Responsible AI Considerations
+
+Discuss the ethical and responsible-AI issues relevant to the project. The exact issues depend
+on the research domain.
+
+    â€¢ Privacy and data protection;
+
+    â€¢ consent and human-subject considerations;
+
+    â€¢ bias and representation;
+
+    â€¢ fairness;
+
+    â€¢ safety and reliability;
+
+    â€¢ security;
+â€¢ dual-use and misuse;
+
+Chapter 5. Discussion   19
+
+    â€¢ copyright and intellectual property;
+    â€¢ transparency and explainability;
+    â€¢ human oversight;
+    â€¢ environmental impact;
+    â€¢ accessibility;
+    â€¢ regulatory or institutional requirements.
+     Students should not claim that an issue is absent merely because it was not measured. If an
+important issue could not be evaluated, state this as a limitation.
+
+5.4 Chapter Summary
+
+ Summarize the answers to the research questions, the main implications, and the principal
+limitations. Do not introduce new experimental results.
+Chapter 6
+
+Conclusion and Future Work
+
+Chapter purpose. The conclusion closes the research argument. It should allow a reader to
+understand what was investigated, what was found, what was contributed, and what remains
+unresolved without rereading the entire thesis.
+
+     Do not introduce a new research question, new experiment, new result, or new contribution
+in the conclusion.
+
+6.1 Summary, Findings, and Contributions
+
+ Summarize the research problem, methodology, principal findings, and contributions in a
+concise manner.
+
+     Restate the contributions already announced in Chapter 1. Do not add new contributions
+here.
+
+     A useful structure is:
+    1. What problem was addressed?
+
+    2. Why was it important?
+
+    3. What approach was used?
+
+    4. What were the principal findings?
+
+    5. What did the thesis contribute?
+
+6.2 Future Work
+
+Identify concrete research directions that follow from the limitations and findings of the thesis.
+
+Chapter 6. Conclusion and Future Work  21
+
+     Avoid vague statements such as â€the model should be improved.â€ Instead write actionable
+directions such as:
+
+                                                         34
+    â€¢ evaluate the method on multilingual datasets;
+    â€¢ investigate performance under distribution shift;
+    â€¢ evaluate on a larger external test set;
+    â€¢ reduce inference memory for deployment;
+    â€¢ conduct a prospective user study;
+    â€¢ compare additional model families;
+    â€¢ investigate the failure categories identified in Section 4.3.
+
+6.3 Final Remarks
+
+ End with a concise statement of the significance of the work together with an appropriate
+qualification of its scope.
+
+     A strong final statement should be confident about what the evidence actually
+demonstrates while avoiding claims that exceed the evaluated conditions.
+References
+
+[1] F. Li and V. Paxson, "A Large-Scale Empirical Study of Security Patches," in Proceedings of
+the 2017 ACM SIGSAC Conference on Computer and Communications Security (CCS '17),
+Dallas, TX, USA, 2017, pp. 2201-2215, doi: 10.1145/3133956.3134072.
+
+[2] M. Alfadel, D. E. Costa, and E. Shihab, "Empirical analysis of security vulnerabilities in
+Python packages," Empirical Software Engineering, vol. 28, art. no. 59, 2023, doi:
+10.1007/s10664-022-10278-4.
+
+[3] S. Liu, J. Zhou, X. Hu, F. R. Cogo, X. Xia, and X. Yang, "An Empirical Study on Vulnerability
+Disclosure Management of Open Source Software Systems," ACM Transactions on Software
+Engineering and Methodology, vol. 34, no. 7, art. no. 214, Aug. 2025, doi: 10.1145/3716822.
+
+[4] GitHub Docs, "Adding a security policy to your repository," GitHub. [Online]. Available:
+https://docs.github.com/en/code-security/how-tos/report-and-fix-
+vulnerabilities/configure-vulnerability-reporting/add-security-policy
+
+[5] M. Choetkiertikul et al., "Security by documentation? Characterizing GitHub SECURITY.md
+policy and their adoption in Python libraries," Empirical Software Engineering, vol. 31, art.
+no. 65, 2026, doi: 10.1007/s10664-025-10794-z.
+
+[6] OSV, "API documentation" and "Open Source Vulnerability schema." [Online]. Available:
+https://google.github.io/osv.dev/api/ and https://ossf.github.io/osv-schema/
+
+[7] PyPI, "JSON API documentation." [Online]. Available: https://docs.pypi.org/api/json/
+
+[8] R. Kanaji, B. Reid, Y. Kashiwa, R. G. Kula, and H. Iida, "An Empirical Study of Security-Policy
+Related Issues in Open Source Projects," arXiv preprint arXiv:2510.05604, 2025.
+
+[9] J. Ayala, Y.-J. Tung, and J. Garcia, "Investigating Vulnerability Disclosures in Open-Source
+Software Using Bug Bounty Reports and Security Advisories," arXiv preprint
+arXiv:2501.17748, 2025.
+
+[10] L. Bao, X. Xia, A. E. Hassan, and X. Yang, "V-SZZ: Automatic Identification of Version
+Ranges Affected by CVE Vulnerabilities," in Proceedings of the 44th International Conference
+on Software Engineering (ICSE '22), Pittsburgh, PA, USA, 2022, pp. 2352-2364, doi:
+10.1145/3510003.3510113.
+
+[11] Y. Jiang, M. A. Jeusfeld, and J. Ding, "Evaluating the Data Inconsistency of Open-Source
+Vulnerability Repositories," in Proceedings of the 16th International Conference on
+Availability, Reliability and Security (ARES '21), Vienna, Austria, 2021, doi:
+10.1145/3465481.3470093.
+
+                                                         36
+[12] J. Dagdelen, A. Dunn, S. Lee, N. Walker, A. S. Rosen, G. Ceder, K. A. Persson, and A. Jain,
+"Structured information extraction from scientific text with large language models," Nature
+Communications, vol. 15, art. no. 1418, 2024, doi: 10.1038/s41467-024-45563-x.
+
+[13] L. Petrillo, F. Martinelli, A. Santone, and F. Mercaldo, "Explainable Security Requirements
+Classification Through Transformer Models," Future Internet, vol. 17, no. 1, art. no. 15, 2025,
+doi: 10.3390/fi17010015.
+
+[14] D. Pinckney, F. Cassano, A. Guha, and J. B. Bell, "A Large Scale Analysis of Semantic
+Versioning in NPM," in Proceedings of the 20th International Conference on Mining Software
+Repositories (MSR '23), Melbourne, Australia, 2023, doi: 10.1109/MSR59073.2023.00073.
+
+[15] S. M. Lundberg and S.-I. Lee, "A Unified Approach to Interpreting Model Predictions," in
+Advances in Neural Information Processing Systems 30 (NIPS '17), Long Beach, CA, USA,
+2017, pp. 4768-4777.
+
+[16] L. Yi, W. Shao-hua, and N. N. Tien, "Vulnerability Detection with Fine-grained
+Interpretations," arXiv preprint arXiv:2106.10478, 2022, doi: 10.48550/arXiv.2106.10478.
+
+[17] A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, L. Kaiser, and I.
+Polosukhin, "Attention Is All You Need," in Advances in Neural Information Processing
+Systems 30 (NIPS '17), Long Beach, CA, USA, 2017, pp. 5998-6008.
+
+[18] J. Devlin, M.-W. Chang, K. Lee, and K. Toutanova, "BERT: Pre-training of Deep
+Bidirectional Transformers for Language Understanding," in Proceedings of the 2019
+Conference of the North American Chapter of the Association for Computational Linguistics:
+Human Language Technologies (NAACL-HLT '19), Minneapolis, MN, USA, 2019, pp. 4171-
+4186, doi: 10.18653/v1/N19-1423.
+
+[19] J. Cohen, "A Coefficient of Agreement for Nominal Scales," Educational and Psychological
+Measurement, vol. 20, no. 1, pp. 37-46, 1960, doi: 10.1177/001316446002000104.
+
+[20] H. B. Mann and D. R. Whitney, "On a Test of Whether One of Two Random Variables is
+Stochastically Larger than the Other," The Annals of Mathematical Statistics, vol. 18, no. 1, pp.
+50-60, 1947, doi: 10.1214/aoms/1177730491.
+
+[21] T. W. Anderson and D. A. Darling, "Asymptotic Theory of Certain 'Goodness of Fit'
+Criteria Based on Stochastic Processes," The Annals of Mathematical Statistics, vol. 23, no. 2,
+pp. 193-212, 1952, doi: 10.1214/aoms/1177729437.
+
+[22] N. Zahan, P. Kanakiya, B. Hambleton, S. Shohan, and L. Williams, "OpenSSF Scorecard: On
+the Path Toward Ecosystem-wide Automated Security Metrics," IEEE Security & Privacy, vol.
+21, no. 6, pp. 76-88, 2023, doi: 10.1109/MSEC.2023.3241258.
+
+[23] H. Assal and S. Chiasson, "Security in the Software Development Lifecycle," in
+Proceedings of the 14th Symposium on Usable Privacy and Security (SOUPS '18), Baltimore,
+MD, USA, 2018, pp. 281-296.
+[24] K. Thirumalaisamy, "AI-Assisted Verification of SBOM Accuracy and Drift in Software
+Supply Chains," International Journal of Computer Trends and Technology, vol. 73, no. 12,
+2025, doi: 10.14445/22312803/IJCTT-V73I12P103.
+
+[25] dompdf, "dompdf: HTML to PDF converter for PHP," GitHub Repository. [Online].
+Available: https://github.com/dompdf/dompdf
+
+[26] Qwen Team, "Qwen2 Technical Report," arXiv preprint arXiv:2407.10671, 2024.
+
+[27] E. J. Hu et al., "LoRA: Low-Rank Adaptation of Large Language Models," in International
+Conference on Learning Representations (ICLR), 2022.
+
+[28] T. Wolf et al., "Transformers: State-of-the-Art Natural Language Processing," in
+Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing:
+System Demonstrations (EMNLP), 2020, pp. 38-45.
+
+[29] S. Mangrulkar et al., "PEFT: State-of-the-art Parameter-Efficient Fine-Tuning methods,"
+GitHub Repository, 2022. [Online]. Available: https://github.com/huggingface/peft
+
+[30] A. Ronacher, "Jinja2: A very fast and expressive template engine," Pallets Projects, 2008.
+[Online]. Available: https://jinja.palletsprojects.com/
+
+[31] Python Software Foundation, "json â€” JSON encoder and decoder," Python 3
+Documentation. [Online]. Available: https://docs.python.org/3/library/json.html
+
+[32] K. Reitz, "Requests: HTTP for Humans," Python Software Foundation, 2011. [Online].
+Available: https://requests.readthedocs.io/
+
+[33] V. Jacques, "PyGithub: A Python library to access the GitHub REST API," GitHub
+Repository, 2012. [Online]. Available: https://github.com/PyGithub/PyGithub
+
+[34] W. McKinney, "Data Structures for Statistical Computing in Python," in Proceedings of
+the 9th Python in Science Conference, 2010, pp. 56-61.
+
+[35] D. Stufft et al., "packaging: Core utilities for Python packages," Python Package Authority
+(PyPA), 2014. [Online]. Available: https://packaging.python.org/
+
+[36] S. Colvin, "Pydantic: Data validation using Python type hints," GitHub Repository, 2017.
+[Online]. Available: https://github.com/pydantic/pydantic
+
+[37] Y. Liu et al., "RoBERTa: A Robustly Optimized BERT Pretraining Approach," arXiv
+preprint arXiv:1907.11692, 2019.
+
+[38] Q. McNemar, "Note on the sampling error of the difference between correlated
+proportions or percentages," Psychometrika, vol. 12, no. 2, pp. 153-157, 1947.
+
+[39] B. Efron and R. J. Tibshirani, An Introduction to the Bootstrap. New York, NY, USA:
+Chapman & Hall/CRC, 1993.
+
+                                                         38
+Appendix A
+Additional Results
+
+Use this appendix for material that supports the thesis but would interrupt the main argument
+if placed in the Results chapter. Examples include additional datasets, extended result tables,
+additional random seeds, supplementary plots, or secondary analyses.
+
+                                                         39
+Appendix B
+Mathematical Details
+
+ Use this appendix for lengthy derivations, proofs, mathematical definitions, or additional
+equations that are necessary for completeness but not necessary for understanding the main
+argument.
+
+                                                         40
+Appendix C
+Reproducibility Checklist
+
+Instruction: answer each of the following items briefly: random seeds; library and CUDA
+versions; hardware model; full hyperparameters; data splits; evaluation script; compute and
+CO2 estimate; code and weights release. Delete this paragraph and fill in the checklist.
+
+                                                         41
+Appendix D
+
+Data Statement and Ethics
+Documentation
+
+ If the thesis uses datasets involving people, personal information, human-generated content,
+or potentially sensitive information, provide the relevant data statement here.
+
+     Where applicable, document:
+    â€¢ who collected the data;
+    â€¢ why it was collected;
+    â€¢ when and where it was collected;
+    â€¢ language and population;
+    â€¢ annotation procedure;
+    â€¢ known limitations and biases;
+    â€¢ licensing conditions;
+    â€¢ privacy and anonymization procedures;
+    â€¢ consent;
+    â€¢ ethics approval;
+
+                                                         42
+â€¢ restrictions on redistribution.
+                                                     43
+

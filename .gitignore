@@ -1,0 +1,30 @@
+# Secrets
+.env
+*.env.local
+
+# Caches and logs
+data/cache/
+logs/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.coverage
+htmlcov/
+
+# Model weights (produced by training, too large for the repository)
+models/**/*.safetensors
+models/**/*.bin
+*.safetensors
+*.bin
+
+# Environments and IDE
+.venv/
+venv/
+.vscode/
+.idea/
+
+# Archives
+archive/
+*.zip
+*.tar.gz

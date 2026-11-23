@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "SupportLens: An Explainable AI Framework for Assessing Version-Support Commitments Against Vulnerability and Release Evidence"
+abstract: >-
+  SupportLens extracts version-support commitments from open-source security policies
+  (SECURITY.md) and assesses them against vulnerability and release evidence with a
+  deterministic rule engine and template-based explanations. Master research project,
+  Master of Applied Artificial Intelligence, Prince Sattam bin Abdulaziz University.
+authors:
+  - given-names: "Student 1"
+    family-names: "Full Name"
+    affiliation: "Prince Sattam bin Abdulaziz University"
+  - given-names: "Student 2"
+    family-names: "Full Name"
+    affiliation: "Prince Sattam bin Abdulaziz University"
+  - given-names: "Student 3"
+    family-names: "Full Name"
+    affiliation: "Prince Sattam bin Abdulaziz University"
+contact:
+  - given-names: "Hanaa"
+    family-names: "Torkey"
+    affiliation: "Department of Computer Science, Prince Sattam bin Abdulaziz University"
+license: MIT
+keywords:
+  - security policy
+  - version support
+  - vulnerability
+  - large language model
+  - explainable AI
+preferred-citation:
+  type: thesis
+  thesis-type: "Master Research Project, Master of Applied Artificial Intelligence"
+  title: "SupportLens: An Explainable AI Framework for Assessing Version-Support Commitments Against Vulnerability and Release Evidence"
+  authors:
+    - given-names: "Student 1"
+      family-names: "Full Name"
+    - given-names: "Student 2"
+      family-names: "Full Name"
+    - given-names: "Student 3"
+      family-names: "Full Name"
+  institution:
+    name: "Prince Sattam bin Abdulaziz University"
+  department: "Department of Computer Science, College of Computer Engineering and Science"
+  month: 12
+  year: 2026
+  notes: "Supervised by Hanaa Torkey, Associate Professor, Department of Computer Science."

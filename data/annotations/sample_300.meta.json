@@ -1,0 +1,33 @@
+{
+  "requested_size": 300,
+  "realised_size": 300,
+  "allow_smaller": false,
+  "shortfall": 0,
+  "seed": 42,
+  "eligible_population": 600,
+  "design": "stars tercile x has-vulnerability, proportional allocation (largest remainder)",
+  "interpretation_note": "The thesis does not name the strata; this design is an interpretation of 'stratified random sample' (Section 3.3.1).",
+  "star_tercile_cutoffs": [
+    672.0,
+    2006.9999999999998
+  ],
+  "population_by_stratum": {
+    "T1_low|no_vuln": 310,
+    "T1_low|vuln": 23,
+    "T2_mid|no_vuln": 47,
+    "T2_mid|vuln": 20,
+    "T3_high|no_vuln": 115,
+    "T3_high|vuln": 85
+  },
+  "sample_by_stratum": {
+    "T1_low|no_vuln": 155,
+    "T1_low|vuln": 12,
+    "T2_mid|no_vuln": 24,
+    "T2_mid|vuln": 10,
+    "T3_high|no_vuln": 57,
+    "T3_high|vuln": 42
+  },
+  "input_file": "C:\\Users\\Mahmoud\\Downloads\\Telegram Desktop\\SupportLens_Final\\SupportLens\\data\\processed\\pypi_dataset.jsonl",
+  "input_sha256": "cfdeccb9bbb470bac582d34570ff9d9c0c43ccedb071ddfe40486cada1f33f7f",
+  "created_at": "2026-11-19T15:15:40+00:00"
+}

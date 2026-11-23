@@ -1,0 +1,54 @@
+<View>
+  <Header value="$package_name  ($github_repo)" size="3"/>
+  <Text name="meta" value="Stars: $stars   |   Releases: $release_count   |   Vulnerability records: $vulnerability_count"/>
+
+  <View style="display: flex; gap: 16px; align-items: flex-start;">
+
+    <View style="flex: 3; border: 1px solid #cccccc; padding: 12px; border-radius: 6px;">
+      <Header value="Security policy (SECURITY.md)" size="4"/>
+      <Text name="instruction_spans" value="Select ONE contiguous span for the commitment text (t), any number of spans for the version expression (v), and at most one span for the temporal phrase (optional). All spans must be selected directly in the text below, never typed."/>
+      <Labels name="spans" toName="policy">
+        <Label value="CommitmentText" background="#1f77b4" hotkey="1"/>
+        <Label value="VersionExpression" background="#2ca02c" hotkey="2"/>
+        <Label value="TemporalExpression" background="#ff7f0e" hotkey="3"/>
+      </Labels>
+      <Text name="policy" value="$policy_text" granularity="symbol" saveTextResult="yes"/>
+    </View>
+
+    <View style="flex: 2; border: 1px solid #cccccc; padding: 12px; border-radius: 6px;">
+      <Header value="Evidence (releases, vulnerabilities, sources)" size="4"/>
+      <Text name="evidence" value="$evidence_summary"/>
+    </View>
+
+  </View>
+
+  <View style="margin-top: 16px; border: 2px solid #1f77b4; padding: 12px; border-radius: 6px;">
+    <Header value="Commitment type (tau)" size="4"/>
+    <Choices name="support_status" toName="policy" choice="single" required="true">
+      <Choice value="latest_only" hint="Only the most recent release is supported"/>
+      <Choice value="explicit_range" hint="Specific versions, branches or a version range are named"/>
+      <Choice value="all_versions" hint="All releases are supported"/>
+      <Choice value="ambiguous" hint="Support is stated but cannot be mapped to concrete versions"/>
+    </Choices>
+
+    <Header value="Temporal reference (T)" size="4"/>
+    <Choices name="temporal_reference" toName="policy" choice="single" required="true">
+      <Choice value="vulnerability_publication_time" hint="Default: support is judged at the time a vulnerability is published"/>
+      <Choice value="release_time" hint="Support is tied to the time of release (for example a number of months after release)"/>
+    </Choices>
+  </View>
+
+  <View style="margin-top: 16px; border: 2px solid #2ca02c; padding: 12px; border-radius: 6px;">
+    <Header value="Expected verdict (y, Table 3.1)" size="4"/>
+    <Choices name="expected_verdict" toName="policy" choice="single" required="true">
+      <Choice value="Consistent" hint="The commitment is fully supported by the evidence"/>
+      <Choice value="Partially Consistent" hint="Supported for some vulnerabilities but not others"/>
+      <Choice value="Potential Inconsistency" hint="Not supported by the evidence and the evidence is sufficient"/>
+      <Choice value="Insufficient Evidence" hint="The available evidence is incomplete or ambiguous"/>
+      <Choice value="Unmeasurable Commitment" hint="The commitment cannot be mapped to concrete version identifiers"/>
+    </Choices>
+
+    <Header value="Notes (optional, for the adjudicator)" size="5"/>
+    <TextArea name="notes" toName="policy" rows="3" editable="true" required="false" placeholder="Why this verdict? Anything unusual about the policy?"/>
+  </View>
+</View>

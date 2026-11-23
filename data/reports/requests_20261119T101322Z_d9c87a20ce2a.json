@@ -1,0 +1,2701 @@
+{
+  "report_id": "requests_20261119T101322Z_d9c87a20ce2a",
+  "created_at": "2026-11-19T10:13:22.551445+00:00",
+  "schema_version": 1,
+  "package_name": "requests",
+  "verdict": "Unmeasurable Commitment",
+  "explanation": "**Verdict: Unmeasurable Commitment**\n\nPackage: requests\nPolicy statement (.github/SECURITY.md, https://github.com/psf/requests/blob/main/.github/SECURITY.md): \"In addition, these packagers will be provided with the intended patch ahead of time, to ensure that they are able to promptly release their downstream packages.\"\nCommitment type: ambiguous; version expression: none; temporal reference: vulnerability_publication_time.\nEvaluated on 2026-11-19; reasonable remediation timeframe: 90 days.\n\nThe policy statement cannot be mapped to concrete version identifiers (rule R5). No vulnerability evidence was compared with it.\n\nReason:\n- The commitment type is 'ambiguous', so the statement cannot be mapped to concrete version identifiers.\n\nSources:\n- https://github.com/psf/requests/blob/main/.github/SECURITY.md\n- https://github.com/psf/requests\n- https://pypi.org/project/requests/\n- PyPI JSON API: https://pypi.org/pypi/requests/json (163 releases)\n- OSV / GitHub Advisory / NVD: 8 de-duplicated vulnerability records\n- Security policy: https://github.com/psf/requests/blob/main/.github/SECURITY.md",
+  "source_references": [
+    "https://github.com/psf/requests/blob/main/.github/SECURITY.md",
+    "https://github.com/psf/requests",
+    "https://pypi.org/project/requests/",
+    "PyPI JSON API: https://pypi.org/pypi/requests/json (163 releases)",
+    "OSV / GitHub Advisory / NVD: 8 de-duplicated vulnerability records",
+    "Security policy: https://github.com/psf/requests/blob/main/.github/SECURITY.md"
+  ],
+  "policy": {
+    "repository": "psf/requests",
+    "path": ".github/SECURITY.md",
+    "url": "https://github.com/psf/requests/blob/main/.github/SECURITY.md",
+    "line_start": null,
+    "line_end": null,
+    "line_annotated_url": "https://github.com/psf/requests/blob/main/.github/SECURITY.md",
+    "citation": ".github/SECURITY.md, https://github.com/psf/requests/blob/main/.github/SECURITY.md"
+  },
+  "commitment": {
+    "commitment_text": "In addition, these packagers will be provided with the\nintended patch ahead of time, to ensure that they are able to promptly\nrelease their downstream packages.",
+    "version_expression": [],
+    "support_status": "ambiguous",
+    "temporal_reference": "vulnerability_publication_time",
+    "is_measurable": false,
+    "extractor_engine": "RuleBasedRegexBaseline (fallback: missing libraries: peft, bitsandbytes, accelerate; CUDA is not available)",
+    "actual_model_used": "none",
+    "lora_applied": false,
+    "execution_device": "cpu",
+    "degraded": true
+  },
+  "assessment": {
+    "package_name": "requests",
+    "verdict": "Unmeasurable Commitment",
+    "is_measurable": false,
+    "rules_triggered": [
+      "R5"
+    ],
+    "evidence_trail": [
+      "Commitment (t): \"In addition, these packagers will be provided with the\nintended patch ahead of time, to ensure that they are able to promptly\nrelease their downstream packages.\"",
+      "R5 (Unmeasurable Commitment): The commitment type is 'ambiguous', so the statement cannot be mapped to concrete version identifiers."
+    ],
+    "evidence_log": [
+      {
+        "rule_id": "R5",
+        "outcome": "Unmeasurable Commitment",
+        "reason": "ambiguous_commitment_type",
+        "message": "The commitment type is 'ambiguous', so the statement cannot be mapped to concrete version identifiers.",
+        "vulnerability_id": null,
+        "identifiers": [],
+        "published_at": null,
+        "affected_in_scope": [],
+        "affected_release_dates": {},
+        "unremediated_versions": [],
+        "fixed_versions": [],
+        "fix_release_dates": {},
+        "days_since_publication": null,
+        "advisory_url": null
+      }
+    ],
+    "evaluated_vulns_count": 8,
+    "assessed_vulns_count": 0,
+    "out_of_scope_vulns_count": 0,
+    "rule_counts": {
+      "R1": 0,
+      "R2": 0,
+      "R3": 0,
+      "R4": 0
+    },
+    "reasonable_timeframe_days": 90,
+    "reference_time": "2026-11-19T10:13:07.646502+00:00"
+  },
+  "trace": {
+    "status": "INCLUDED",
+    "reference_time": "2026-11-19T10:13:07.646502+00:00",
+    "layer0": {
+      "package_name": "requests",
+      "status": "INCLUDED",
+      "exclusion_reason": null,
+      "pypi_metadata": {
+        "author": null,
+        "author_email": "Kenneth Reitz <me@kennethreitz.org>",
+        "bugtrack_url": null,
+        "classifiers": [
+          "Development Status :: 5 - Production/Stable",
+          "Environment :: Web Environment",
+          "Intended Audience :: Developers",
+          "License :: OSI Approved :: Apache Software License",
+          "Natural Language :: English",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Programming Language :: Python :: Free Threading :: 2 - Beta",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Internet :: WWW/HTTP",
+          "Topic :: Software Development :: Libraries"
+        ],
+        "description": "# Requests\n\n[![Version](https://img.shields.io/pypi/v/requests.svg?maxAge=86400)](https://pypi.org/project/requests/)\n[![Supported Versions](https://img.shields.io/pypi/pyversions/requests.svg)](https://pypi.org/project/requests)\n[![Downloads](https://static.pepy.tech/badge/requests/month)](https://pepy.tech/project/requests)\n[![Contributors](https://img.shields.io/github/contributors/psf/requests.svg)](https://github.com/psf/requests/graphs/contributors)\n[![Documentation](https://readthedocs.org/projects/requests/badge/?version=latest)](https://requests.readthedocs.io)\n\n**Requests** is a simple, yet elegant, HTTP library.\n\n```python\n>>> import requests\n>>> r = requests.get('https://httpbin.org/basic-auth/user/pass', auth=('user', 'pass'))\n>>> r.status_code\n200\n>>> r.headers['content-type']\n'application/json; charset=utf8'\n>>> r.encoding\n'utf-8'\n>>> r.text\n'{\"authenticated\": true, ...'\n>>> r.json()\n{'authenticated': True, ...}\n```\n\nRequests allows you to send HTTP/1.1 requests extremely easily. There’s no need to manually add query strings to your URLs, or to form-encode your `PUT` & `POST` data — but nowadays, just use the `json` method!\n\nRequests is one of the most downloaded Python packages today, pulling in around `300M downloads / week` — according to GitHub, Requests is currently [depended upon](https://github.com/psf/requests/network/dependents?package_id=UGFja2FnZS01NzA4OTExNg%3D%3D) by `4,000,000+` repositories.\n\n## Installing Requests and Supported Versions\n\nRequests is available on PyPI:\n\n```console\n$ python -m pip install requests\n```\n\nRequests officially supports Python 3.10+.\n\n## Supported Features & Best–Practices\n\nRequests is ready for the demands of building robust and reliable HTTP–speaking applications, for the needs of today.\n\n- Keep-Alive & Connection Pooling\n- International Domains and URLs\n- Sessions with Cookie Persistence\n- Browser-style TLS/SSL Verification\n- Basic & Digest Authentication\n- Familiar `dict`–like Cookies\n- Automatic Content Decompression and Decoding\n- Multi-part File Uploads\n- SOCKS Proxy Support\n- Connection Timeouts\n- Streaming Downloads\n- Automatic honoring of `.netrc`\n- Chunked HTTP Requests\n\n## Cloning the repository\n\nWhen cloning the Requests repository, you may need to add the `-c\nfetch.fsck.badTimezone=ignore` flag to avoid an error about a bad commit timestamp (see\n[this issue](https://github.com/psf/requests/issues/2690) for more background):\n\n```shell\ngit clone -c fetch.fsck.badTimezone=ignore https://github.com/psf/requests.git\n```\n\nYou can also apply this setting to your global Git config:\n\n```shell\ngit config --global fetch.fsck.badTimezone ignore\n```\n\n---\n\n[![Kenneth Reitz](https://raw.githubusercontent.com/psf/requests/main/ext/kr.png)](https://kennethreitz.org) [![Python Software Foundation](https://raw.githubusercontent.com/psf/requests/main/ext/psf.png)](https://www.python.org/psf)\n",
+        "description_content_type": "text/markdown",
+        "docs_url": null,
+        "download_url": null,
+        "downloads": {
+          "last_day": -1,
+          "last_month": -1,
+          "last_week": -1
+        },
+        "dynamic": [
+          "License-File"
+        ],
+        "home_page": null,
+        "keywords": null,
+        "license": "Apache-2.0",
+        "license_expression": null,
+        "license_files": [
+          "LICENSE",
+          "NOTICE"
+        ],
+        "maintainer": null,
+        "maintainer_email": "Ian Stapleton Cordasco <graffatcolmingov@gmail.com>, Nate Prewitt <nate.prewitt@gmail.com>",
+        "name": "requests",
+        "package_url": "https://pypi.org/project/requests/",
+        "platform": null,
+        "project_url": "https://pypi.org/project/requests/",
+        "project_urls": {
+          "Documentation": "https://requests.readthedocs.io",
+          "Source": "https://github.com/psf/requests"
+        },
+        "provides_extra": [
+          "security",
+          "socks",
+          "use-chardet-on-py3"
+        ],
+        "release_url": "https://pypi.org/project/requests/2.34.2/",
+        "requires_dist": [
+          "charset_normalizer<4,>=2",
+          "idna<4,>=2.5",
+          "urllib3<3,>=1.26",
+          "certifi>=2023.5.7",
+          "PySocks!=1.5.7,>=1.5.6; extra == \"socks\"",
+          "chardet<8,>=3.0.2; extra == \"use-chardet-on-py3\""
+        ],
+        "requires_python": ">=3.10",
+        "summary": "Python HTTP for Humans.",
+        "version": "2.34.2",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      "releases": [
+        {
+          "tag": "0.2.0",
+          "version": "0.2.0",
+          "published_at": "2011-02-14T08:49:42.641660Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.2.1",
+          "version": "0.2.1",
+          "published_at": "2011-02-14T16:38:12.392550Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.2.2",
+          "version": "0.2.2",
+          "published_at": "2011-02-14T18:58:40.410171Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.2.3",
+          "version": "0.2.3",
+          "published_at": "2011-02-15T15:47:29.058010Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.2.4",
+          "version": "0.2.4",
+          "published_at": "2011-02-19T07:03:14.518479Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.3.0",
+          "version": "0.3.0",
+          "published_at": "2011-02-25T14:58:38.361577Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.3.1",
+          "version": "0.3.1",
+          "published_at": "2011-04-01T20:55:03.064666Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.3.2",
+          "version": "0.3.2",
+          "published_at": "2011-04-15T23:30:50.899634Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.3.3",
+          "version": "0.3.3",
+          "published_at": "2011-05-12T10:03:24.258074Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.3.4",
+          "version": "0.3.4",
+          "published_at": "2011-05-14T20:30:44.001002Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.4.0",
+          "version": "0.4.0",
+          "published_at": "2011-05-15T05:58:43.415820Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.4.1",
+          "version": "0.4.1",
+          "published_at": "2011-05-25T18:54:05.328955Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.5.0",
+          "version": "0.5.0",
+          "published_at": "2011-06-22T04:44:39.288841Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.5.1",
+          "version": "0.5.1",
+          "published_at": "2011-07-24T05:01:45.612333Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.6.0",
+          "version": "0.6.0",
+          "published_at": "2011-08-17T10:33:05.720565Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.6.1",
+          "version": "0.6.1",
+          "published_at": "2011-08-21T00:25:37.203918Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.6.2",
+          "version": "0.6.2",
+          "published_at": "2011-10-09T13:12:45.395766Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.6.3",
+          "version": "0.6.3",
+          "published_at": "2011-10-14T03:35:13.523706Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.6.4",
+          "version": "0.6.4",
+          "published_at": "2011-10-14T04:23:31.793480Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.6.5",
+          "version": "0.6.5",
+          "published_at": "2011-10-19T07:30:59.708543Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.6.6",
+          "version": "0.6.6",
+          "published_at": "2011-10-19T09:39:56.534103Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.7.0",
+          "version": "0.7.0",
+          "published_at": "2011-10-23T03:33:24.637553Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.7.1",
+          "version": "0.7.1",
+          "published_at": "2011-10-23T21:19:22.099184Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.7.2",
+          "version": "0.7.2",
+          "published_at": "2011-10-23T21:40:37.623156Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.7.3",
+          "version": "0.7.3",
+          "published_at": "2011-10-23T23:04:13.595145Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.7.4",
+          "version": "0.7.4",
+          "published_at": "2011-10-27T00:36:25.355189Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.7.5",
+          "version": "0.7.5",
+          "published_at": "2011-11-05T04:32:37.598633Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.7.6",
+          "version": "0.7.6",
+          "published_at": "2011-11-07T20:19:31.227072Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.8.0",
+          "version": "0.8.0",
+          "published_at": "2011-11-13T06:52:10.360103Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.8.1",
+          "version": "0.8.1",
+          "published_at": "2011-11-15T16:01:47.827430Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.8.2",
+          "version": "0.8.2",
+          "published_at": "2011-11-19T22:28:31.706305Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.8.3",
+          "version": "0.8.3",
+          "published_at": "2011-11-27T16:44:51.946354Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.8.4",
+          "version": "0.8.4",
+          "published_at": "2011-12-11T17:40:28.585204Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.8.5",
+          "version": "0.8.5",
+          "published_at": "2011-12-14T16:43:21.464961Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.8.6",
+          "version": "0.8.6",
+          "published_at": "2011-12-19T01:18:29.495054Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.8.7",
+          "version": "0.8.7",
+          "published_at": "2011-12-24T09:18:54.805200Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.8.8",
+          "version": "0.8.8",
+          "published_at": "2011-12-28T09:55:45.489845Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.8.9",
+          "version": "0.8.9",
+          "published_at": "2011-12-28T10:34:17.815200Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.9.0",
+          "version": "0.9.0",
+          "published_at": "2011-12-28T10:51:35.541114Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.9.1",
+          "version": "0.9.1",
+          "published_at": "2012-01-06T07:11:02.635935Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.9.2",
+          "version": "0.9.2",
+          "published_at": "2012-01-19T03:39:58.591876Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.9.3",
+          "version": "0.9.3",
+          "published_at": "2012-01-19T16:51:33.637035Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.10.0",
+          "version": "0.10.0",
+          "published_at": "2012-01-22T05:08:17.091441Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.10.1",
+          "version": "0.10.1",
+          "published_at": "2012-01-23T08:22:52.352375Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.10.2",
+          "version": "0.10.2",
+          "published_at": "2012-02-15T09:48:52.830436Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.10.3",
+          "version": "0.10.3",
+          "published_at": "2012-02-20T20:10:57.584946Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.10.4",
+          "version": "0.10.4",
+          "published_at": "2012-02-20T22:21:31.091713Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.10.6",
+          "version": "0.10.6",
+          "published_at": "2012-02-26T05:17:54.135905Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.10.7",
+          "version": "0.10.7",
+          "published_at": "2012-03-08T01:50:58.069132Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.10.8",
+          "version": "0.10.8",
+          "published_at": "2012-03-09T17:59:54.950126Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.11.1",
+          "version": "0.11.1",
+          "published_at": "2012-03-31T05:47:56.690051Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.11.2",
+          "version": "0.11.2",
+          "published_at": "2012-04-23T04:29:36.868120Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.12.0",
+          "version": "0.12.0",
+          "published_at": "2012-05-03T01:18:47.376345Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.12.1",
+          "version": "0.12.1",
+          "published_at": "2012-05-08T07:21:59.920122Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.13.0",
+          "version": "0.13.0",
+          "published_at": "2012-05-30T02:54:18.564587Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.13.1",
+          "version": "0.13.1",
+          "published_at": "2012-06-08T04:22:28.683979Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.13.2",
+          "version": "0.13.2",
+          "published_at": "2012-06-29T02:37:41.500479Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.13.3",
+          "version": "0.13.3",
+          "published_at": "2012-07-12T23:20:43.867603Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.13.4",
+          "version": "0.13.4",
+          "published_at": "2012-07-27T08:22:09.864284Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.13.5",
+          "version": "0.13.5",
+          "published_at": "2012-07-27T09:23:41.969623Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.13.6",
+          "version": "0.13.6",
+          "published_at": "2012-08-06T08:46:22.516645Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.13.7",
+          "version": "0.13.7",
+          "published_at": "2012-08-19T00:47:48.501903Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.13.8",
+          "version": "0.13.8",
+          "published_at": "2012-08-20T15:24:42.439401Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.13.9",
+          "version": "0.13.9",
+          "published_at": "2012-08-25T15:26:50.954170Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.14.0",
+          "version": "0.14.0",
+          "published_at": "2012-09-02T08:50:39.106639Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.14.1",
+          "version": "0.14.1",
+          "published_at": "2012-10-01T17:30:05.176526Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.14.2",
+          "version": "0.14.2",
+          "published_at": "2012-10-27T15:08:51.460827Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.0.0",
+          "version": "1.0.0",
+          "published_at": "2012-12-17T15:00:05.110522Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.0.1",
+          "version": "1.0.1",
+          "published_at": "2012-12-17T18:53:51.251872Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.0.2",
+          "version": "1.0.2",
+          "published_at": "2012-12-17T19:04:31.658169Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.0.3",
+          "version": "1.0.3",
+          "published_at": "2012-12-18T09:51:12.406576Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.0.4",
+          "version": "1.0.4",
+          "published_at": "2012-12-23T07:45:10.417631Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.1.0",
+          "version": "1.1.0",
+          "published_at": "2013-01-10T07:13:41.901588Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.2.0",
+          "version": "1.2.0",
+          "published_at": "2013-03-31T05:28:47.574555Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.2.1",
+          "version": "1.2.1",
+          "published_at": "2013-05-20T20:11:09.817186Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.2.2",
+          "version": "1.2.2",
+          "published_at": "2013-05-21T21:44:44.405678Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.2.3",
+          "version": "1.2.3",
+          "published_at": "2013-05-25T16:48:36.421087Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.0.0",
+          "version": "2.0.0",
+          "published_at": "2013-09-24T18:39:33.154169Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.0.1",
+          "version": "2.0.1",
+          "published_at": "2013-10-24T14:33:21.606209Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.1.0",
+          "version": "2.1.0",
+          "published_at": "2013-12-05T22:51:38.634004Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.2.0",
+          "version": "2.2.0",
+          "published_at": "2014-01-09T19:33:32.362704Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.2.1",
+          "version": "2.2.1",
+          "published_at": "2014-01-23T18:26:12.018048Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.3.0",
+          "version": "2.3.0",
+          "published_at": "2014-05-16T17:57:02.237698Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.4.0",
+          "version": "2.4.0",
+          "published_at": "2014-08-29T14:32:45.073609Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.4.1",
+          "version": "2.4.1",
+          "published_at": "2014-09-09T16:35:08.552539Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.4.2",
+          "version": "2.4.2",
+          "published_at": "2014-10-05T17:15:45.276538Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.4.3",
+          "version": "2.4.3",
+          "published_at": "2014-10-06T09:44:44.221787Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.5.0",
+          "version": "2.5.0",
+          "published_at": "2014-12-01T23:27:51.119048Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.5.1",
+          "version": "2.5.1",
+          "published_at": "2014-12-23T17:55:59.876986Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.5.2",
+          "version": "2.5.2",
+          "published_at": "2015-02-23T22:37:39.435391Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.5.3",
+          "version": "2.5.3",
+          "published_at": "2015-02-24T16:33:49.703522Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.6.0",
+          "version": "2.6.0",
+          "published_at": "2015-03-14T16:44:37.146829Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.6.1",
+          "version": "2.6.1",
+          "published_at": "2015-04-23T02:27:04.893535Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.6.2",
+          "version": "2.6.2",
+          "published_at": "2015-04-23T16:30:52.318157Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.7.0",
+          "version": "2.7.0",
+          "published_at": "2015-05-03T15:01:21.105760Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.8.0",
+          "version": "2.8.0",
+          "published_at": "2015-10-06T14:47:57.677398Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.8.1",
+          "version": "2.8.1",
+          "published_at": "2015-10-13T12:56:34.254896Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.9.0",
+          "version": "2.9.0",
+          "published_at": "2015-12-15T15:29:58.086640Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.9.1",
+          "version": "2.9.1",
+          "published_at": "2015-12-21T14:55:00.266465Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.9.2",
+          "version": "2.9.2",
+          "published_at": "2016-04-29T21:57:10.487144Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.10.0",
+          "version": "2.10.0",
+          "published_at": "2016-04-29T22:12:32.122862Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.11.0",
+          "version": "2.11.0",
+          "published_at": "2016-08-08T15:07:32.250147Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.11.1",
+          "version": "2.11.1",
+          "published_at": "2016-08-17T20:04:26.747542Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.12.0",
+          "version": "2.12.0",
+          "published_at": "2016-11-15T10:32:00.148361Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.12.1",
+          "version": "2.12.1",
+          "published_at": "2016-11-16T10:45:37.051370Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.12.2",
+          "version": "2.12.2",
+          "published_at": "2016-11-30T12:39:31.252307Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.12.3",
+          "version": "2.12.3",
+          "published_at": "2016-12-01T10:49:02.775404Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.12.4",
+          "version": "2.12.4",
+          "published_at": "2016-12-14T11:39:35.297490Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.12.5",
+          "version": "2.12.5",
+          "published_at": "2017-01-18T12:43:08.631826Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.13.0",
+          "version": "2.13.0",
+          "published_at": "2017-01-24T12:53:25.259314Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.14.0",
+          "version": "2.14.0",
+          "published_at": "2017-05-09T15:45:03.006047Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.14.1",
+          "version": "2.14.1",
+          "published_at": "2017-05-09T19:00:26.274919Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.14.2",
+          "version": "2.14.2",
+          "published_at": "2017-05-10T14:05:39.911571Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.15.1",
+          "version": "2.15.1",
+          "published_at": "2017-05-27T02:14:19.048380Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.16.0",
+          "version": "2.16.0",
+          "published_at": "2017-05-27T03:45:40.367893Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.16.1",
+          "version": "2.16.1",
+          "published_at": "2017-05-27T13:43:53.090483Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.16.2",
+          "version": "2.16.2",
+          "published_at": "2017-05-27T14:53:09.839813Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.16.3",
+          "version": "2.16.3",
+          "published_at": "2017-05-27T16:24:47.512647Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.16.4",
+          "version": "2.16.4",
+          "published_at": "2017-05-27T21:17:38.023572Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.16.5",
+          "version": "2.16.5",
+          "published_at": "2017-05-28T04:35:44.914574Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.17.0",
+          "version": "2.17.0",
+          "published_at": "2017-05-29T17:24:35.939176Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.17.1",
+          "version": "2.17.1",
+          "published_at": "2017-05-29T19:59:39.065426Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.17.2",
+          "version": "2.17.2",
+          "published_at": "2017-05-29T21:33:32.234721Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.17.3",
+          "version": "2.17.3",
+          "published_at": "2017-05-29T21:53:19.494862Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.18.0",
+          "version": "2.18.0",
+          "published_at": "2017-06-14T15:44:35.080617Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.18.1",
+          "version": "2.18.1",
+          "published_at": "2017-06-14T17:51:25.096686Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.18.2",
+          "version": "2.18.2",
+          "published_at": "2017-07-25T15:23:15.338694Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.18.3",
+          "version": "2.18.3",
+          "published_at": "2017-08-02T13:23:31.998938Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.18.4",
+          "version": "2.18.4",
+          "published_at": "2017-08-15T13:23:43.489631Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.19.0",
+          "version": "2.19.0",
+          "published_at": "2018-06-12T14:46:15.289074Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.19.1",
+          "version": "2.19.1",
+          "published_at": "2018-06-14T13:40:38.236729Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.20.0",
+          "version": "2.20.0",
+          "published_at": "2018-10-18T15:46:10.776819Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.20.1",
+          "version": "2.20.1",
+          "published_at": "2018-11-08T17:20:29.533862Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.21.0",
+          "version": "2.21.0",
+          "published_at": "2018-12-10T15:40:08.741431Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.22.0",
+          "version": "2.22.0",
+          "published_at": "2019-05-16T14:37:14.357166Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.23.0",
+          "version": "2.23.0",
+          "published_at": "2020-02-19T18:50:59.409378Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.24.0",
+          "version": "2.24.0",
+          "published_at": "2020-06-17T16:30:08.738735Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.25.0",
+          "version": "2.25.0",
+          "published_at": "2020-11-11T20:05:15.870484Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.25.1",
+          "version": "2.25.1",
+          "published_at": "2020-12-16T19:38:34.329342Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.26.0",
+          "version": "2.26.0",
+          "published_at": "2021-07-13T14:55:06.933494Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.27.0",
+          "version": "2.27.0",
+          "published_at": "2022-01-03T15:09:26.599400Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.27.1",
+          "version": "2.27.1",
+          "published_at": "2022-01-05T15:40:49.334679Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.28.0",
+          "version": "2.28.0",
+          "published_at": "2022-06-09T14:44:34.115743Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.28.1",
+          "version": "2.28.1",
+          "published_at": "2022-06-29T15:13:40.685859Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.28.2",
+          "version": "2.28.2",
+          "published_at": "2023-01-12T16:24:52.241259Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.29.0",
+          "version": "2.29.0",
+          "published_at": "2023-04-26T15:24:31.555832Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.30.0",
+          "version": "2.30.0",
+          "published_at": "2023-05-03T15:44:03.457714Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.31.0",
+          "version": "2.31.0",
+          "published_at": "2023-05-22T15:12:42.313790Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.32.0",
+          "version": "2.32.0",
+          "published_at": "2024-05-20T16:08:19.530618Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.32.1",
+          "version": "2.32.1",
+          "published_at": "2024-05-20T22:08:45.850542Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.32.2",
+          "version": "2.32.2",
+          "published_at": "2024-05-21T18:51:29.562156Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.32.3",
+          "version": "2.32.3",
+          "published_at": "2024-05-29T15:37:47.027275Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.32.4",
+          "version": "2.32.4",
+          "published_at": "2025-06-09T16:43:05.728107Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.32.5",
+          "version": "2.32.5",
+          "published_at": "2025-08-18T20:46:00.542304Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.33.0",
+          "version": "2.33.0",
+          "published_at": "2026-03-25T15:10:40.382036Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.33.1",
+          "version": "2.33.1",
+          "published_at": "2026-03-30T16:09:13.830020Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.34.0.dev1",
+          "version": "2.34.0.dev1",
+          "published_at": "2026-05-03T20:21:40.509155Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.34.0",
+          "version": "2.34.0",
+          "published_at": "2026-05-11T19:29:49.923155Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.34.1",
+          "version": "2.34.1",
+          "published_at": "2026-05-13T19:20:22.827819Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.34.2",
+          "version": "2.34.2",
+          "published_at": "2026-05-14T19:25:26.443000Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.0.1",
+          "version": "0.0.1",
+          "published_at": null,
+          "source": "PyPI JSON API (unknown date)"
+        },
+        {
+          "tag": "0.12.01",
+          "version": "0.12.01",
+          "published_at": null,
+          "source": "PyPI JSON API (unknown date)"
+        },
+        {
+          "tag": "2.15.0",
+          "version": "2.15.0",
+          "published_at": null,
+          "source": "PyPI JSON API (unknown date)"
+        }
+      ],
+      "github_repo": "psf/requests",
+      "default_branch": "main",
+      "repo_verification": "Verified via PyPI project_urls['Source'] -> https://github.com/psf/requests | Verified via GitHub API: psf/requests (default branch: 'main')",
+      "security_policy_path": ".github/SECURITY.md",
+      "security_policy_url": "https://github.com/psf/requests/blob/main/.github/SECURITY.md",
+      "retrieval_status": "FOUND",
+      "retrieval_reason": "Successfully retrieved from main/.github/SECURITY.md",
+      "raw_policy_text": "# Vulnerability Disclosure\n\nIf you think you have found a potential security vulnerability in\nrequests, please open a [draft Security Advisory](https://github.com/psf/requests/security/advisories/new)\nvia GitHub. We will coordinate verification and next steps through\nthat secure medium.\n\nIf English is not your first language, please try to describe the\nproblem and its impact to the best of your ability. For greater detail,\nplease use your native language and we will try our best to translate it\nusing online services.\n\nPlease also include the code you used to find the problem and the\nshortest amount of code necessary to reproduce it.\n\nPlease do not disclose this to anyone else. We will retrieve a CVE\nidentifier if necessary and give you full credit under whatever name or\nalias you provide. We will only request an identifier when we have a fix\nand can publish it in a release.\n\nWe will respect your privacy and will only publicize your involvement if\nyou grant us permission.\n\n## Process\n\nThis following information discusses the process the requests project\nfollows in response to vulnerability disclosures. If you are disclosing\na vulnerability, this section of the documentation lets you know how we\nwill respond to your disclosure.\n\n### Timeline\n\nWhen you report an issue, one of the project members will respond to you\nwithin two days *at the outside*. In most cases responses will be\nfaster, usually within 12 hours. This initial response will at the very\nleast confirm receipt of the report.\n\nIf we were able to rapidly reproduce the issue, the initial response\nwill also contain confirmation of the issue. If we are not, we will\noften ask for more information about the reproduction scenario.\n\nOur goal is to have a fix for any vulnerability released within two\nweeks of the initial disclosure. This may potentially involve shipping\nan interim release that simply disables function while a more mature fix\ncan be prepared, but will in the vast majority of cases mean shipping a\ncomplete release as soon as possible.\n\nThroughout the fix process we will keep you up to speed with how the fix\nis progressing. Once the fix is prepared, we will notify you that we\nbelieve we have a fix. Often we will ask you to confirm the fix resolves\nthe problem in your environment, especially if we are not confident of\nour reproduction scenario.\n\nAt this point, we will prepare for the release. We will obtain a CVE\nnumber if one is required, providing you with full credit for the\ndiscovery. We will also decide on a planned release date, and let you\nknow when it is. This release date will *always* be on a weekday.\n\nAt this point we will reach out to our major downstream packagers to\nnotify them of an impending security-related patch so they can make\narrangements. In addition, these packagers will be provided with the\nintended patch ahead of time, to ensure that they are able to promptly\nrelease their downstream packages. Currently the list of people we\nactively contact *ahead of a public release* is:\n\n-   Python Maintenance Team, Red Hat (python-maint@redhat.com)\n-   Daniele Tricoli, Debian (@eriol)\n\nWe will notify these individuals at least a week ahead of our planned\nrelease date to ensure that they have sufficient time to prepare. If you\nbelieve you should be on this list, please let one of the maintainers\nknow at one of the email addresses at the top of this article.\n\nOn release day, we will push the patch to our public repository, along\nwith an updated changelog that describes the issue and credits you. We\nwill then issue a PyPI release containing the patch.\n\nAt this point, we will publicise the release. This will involve mails to\nmailing lists, Tweets, and all other communication mechanisms available\nto the core team.\n\nWe will also explicitly mention which commits contain the fix to make it\neasier for other distributors and users to easily patch their own\nversions of requests if upgrading is not an option.\n",
+      "preprocessed_text": "# Vulnerability Disclosure\n\nIf you think you have found a potential security vulnerability in\nrequests, please open a [draft Security Advisory](https://github.com/psf/requests/security/advisories/new)\nvia GitHub. We will coordinate verification and next steps through\nthat secure medium.\n\nIf English is not your first language, please try to describe the\nproblem and its impact to the best of your ability. For greater detail,\nplease use your native language and we will try our best to translate it\nusing online services.\n\nPlease also include the code you used to find the problem and the\nshortest amount of code necessary to reproduce it.\n\nPlease do not disclose this to anyone else. We will retrieve a CVE\nidentifier if necessary and give you full credit under whatever name or\nalias you provide. We will only request an identifier when we have a fix\nand can publish it in a release.\n\nWe will respect your privacy and will only publicize your involvement if\nyou grant us permission.\n\n## Process\n\nThis following information discusses the process the requests project\nfollows in response to vulnerability disclosures. If you are disclosing\na vulnerability, this section of the documentation lets you know how we\nwill respond to your disclosure.\n\n### Timeline\n\nWhen you report an issue, one of the project members will respond to you\nwithin two days *at the outside*. In most cases responses will be\nfaster, usually within 12 hours. This initial response will at the very\nleast confirm receipt of the report.\n\nIf we were able to rapidly reproduce the issue, the initial response\nwill also contain confirmation of the issue. If we are not, we will\noften ask for more information about the reproduction scenario.\n\nOur goal is to have a fix for any vulnerability released within two\nweeks of the initial disclosure. This may potentially involve shipping\nan interim release that simply disables function while a more mature fix\ncan be prepared, but will in the vast majority of cases mean shipping a\ncomplete release as soon as possible.\n\nThroughout the fix process we will keep you up to speed with how the fix\nis progressing. Once the fix is prepared, we will notify you that we\nbelieve we have a fix. Often we will ask you to confirm the fix resolves\nthe problem in your environment, especially if we are not confident of\nour reproduction scenario.\n\nAt this point, we will prepare for the release. We will obtain a CVE\nnumber if one is required, providing you with full credit for the\ndiscovery. We will also decide on a planned release date, and let you\nknow when it is. This release date will *always* be on a weekday.\n\nAt this point we will reach out to our major downstream packagers to\nnotify them of an impending security-related patch so they can make\narrangements. In addition, these packagers will be provided with the\nintended patch ahead of time, to ensure that they are able to promptly\nrelease their downstream packages. Currently the list of people we\nactively contact *ahead of a public release* is:\n\n-   Python Maintenance Team, Red Hat (python-maint@redhat.com)\n-   Daniele Tricoli, Debian (@eriol)\n\nWe will notify these individuals at least a week ahead of our planned\nrelease date to ensure that they have sufficient time to prepare. If you\nbelieve you should be on this list, please let one of the maintainers\nknow at one of the email addresses at the top of this article.\n\nOn release day, we will push the patch to our public repository, along\nwith an updated changelog that describes the issue and credits you. We\nwill then issue a PyPI release containing the patch.\n\nAt this point, we will publicise the release. This will involve mails to\nmailing lists, Tweets, and all other communication mechanisms available\nto the core team.\n\nWe will also explicitly mention which commits contain the fix to make it\neasier for other distributors and users to easily patch their own\nversions of requests if upgrading is not an option.",
+      "prioritized_text": "# Vulnerability Disclosure\n\nIf you think you have found a potential security vulnerability in\nrequests, please open a [draft Security Advisory](https://github.com/psf/requests/security/advisories/new)\nvia GitHub. We will coordinate verification and next steps through\nthat secure medium.\n\nIf English is not your first language, please try to describe the\nproblem and its impact to the best of your ability. For greater detail,\nplease use your native language and we will try our best to translate it\nusing online services.\n\nPlease also include the code you used to find the problem and the\nshortest amount of code necessary to reproduce it.\n\nPlease do not disclose this to anyone else. We will retrieve a CVE\nidentifier if necessary and give you full credit under whatever name or\nalias you provide. We will only request an identifier when we have a fix\nand can publish it in a release.\n\nWe will respect your privacy and will only publicize your involvement if\nyou grant us permission.\n\n## Process\n\nThis following information discusses the process the requests project\nfollows in response to vulnerability disclosures. If you are disclosing\na vulnerability, this section of the documentation lets you know how we\nwill respond to your disclosure.\n\n### Timeline\n\nWhen you report an issue, one of the project members will respond to you\nwithin two days *at the outside*. In most cases responses will be\nfaster, usually within 12 hours. This initial response will at the very\nleast confirm receipt of the report.\n\nIf we were able to rapidly reproduce the issue, the initial response\nwill also contain confirmation of the issue. If we are not, we will\noften ask for more information about the reproduction scenario.\n\nOur goal is to have a fix for any vulnerability released within two\nweeks of the initial disclosure. This may potentially involve shipping\nan interim release that simply disables function while a more mature fix\ncan be prepared, but will in the vast majority of cases mean shipping a\ncomplete release as soon as possible.\n\nThroughout the fix process we will keep you up to speed with how the fix\nis progressing. Once the fix is prepared, we will notify you that we\nbelieve we have a fix. Often we will ask you to confirm the fix resolves\nthe problem in your environment, especially if we are not confident of\nour reproduction scenario.\n\nAt this point, we will prepare for the release. We will obtain a CVE\nnumber if one is required, providing you with full credit for the\ndiscovery. We will also decide on a planned release date, and let you\nknow when it is. This release date will *always* be on a weekday.\n\nAt this point we will reach out to our major downstream packagers to\nnotify them of an impending security-related patch so they can make\narrangements. In addition, these packagers will be provided with the\nintended patch ahead of time, to ensure that they are able to promptly\nrelease their downstream packages. Currently the list of people we\nactively contact *ahead of a public release* is:\n\n-   Python Maintenance Team, Red Hat (python-maint@redhat.com)\n-   Daniele Tricoli, Debian (@eriol)\n\nWe will notify these individuals at least a week ahead of our planned\nrelease date to ensure that they have sufficient time to prepare. If you\nbelieve you should be on this list, please let one of the maintainers\nknow at one of the email addresses at the top of this article.\n\nOn release day, we will push the patch to our public repository, along\nwith an updated changelog that describes the issue and credits you. We\nwill then issue a PyPI release containing the patch.\n\nAt this point, we will publicise the release. This will involve mails to\nmailing lists, Tweets, and all other communication mechanisms available\nto the core team.\n\nWe will also explicitly mention which commits contain the fix to make it\neasier for other distributors and users to easily patch their own\nversions of requests if upgrading is not an option.",
+      "policy_sections": {
+        "supported_versions": "",
+        "reporting": "<!-- L1-L23 -->\n# Vulnerability Disclosure\n\nIf you think you have found a potential security vulnerability in\nrequests, please open a [draft Security Advisory](https://github.com/psf/requests/security/advisories/new)\nvia GitHub. We will coordinate verification and next steps through\nthat secure medium.\n\nIf English is not your first language, please try to describe the\nproblem and its impact to the best of your ability. For greater detail,\nplease use your native language and we will try our best to translate it\nusing online services.\n\nPlease also include the code you used to find the problem and the\nshortest amount of code necessary to reproduce it.\n\nPlease do not disclose this to anyone else. We will retrieve a CVE\nidentifier if necessary and give you full credit under whatever name or\nalias you provide. We will only request an identifier when we have a fix\nand can publish it in a release.\n\nWe will respect your privacy and will only publicize your involvement if\nyou grant us permission.",
+        "full_preprocessed_text": "# Vulnerability Disclosure\n\nIf you think you have found a potential security vulnerability in\nrequests, please open a [draft Security Advisory](https://github.com/psf/requests/security/advisories/new)\nvia GitHub. We will coordinate verification and next steps through\nthat secure medium.\n\nIf English is not your first language, please try to describe the\nproblem and its impact to the best of your ability. For greater detail,\nplease use your native language and we will try our best to translate it\nusing online services.\n\nPlease also include the code you used to find the problem and the\nshortest amount of code necessary to reproduce it.\n\nPlease do not disclose this to anyone else. We will retrieve a CVE\nidentifier if necessary and give you full credit under whatever name or\nalias you provide. We will only request an identifier when we have a fix\nand can publish it in a release.\n\nWe will respect your privacy and will only publicize your involvement if\nyou grant us permission.\n\n## Process\n\nThis following information discusses the process the requests project\nfollows in response to vulnerability disclosures. If you are disclosing\na vulnerability, this section of the documentation lets you know how we\nwill respond to your disclosure.\n\n### Timeline\n\nWhen you report an issue, one of the project members will respond to you\nwithin two days *at the outside*. In most cases responses will be\nfaster, usually within 12 hours. This initial response will at the very\nleast confirm receipt of the report.\n\nIf we were able to rapidly reproduce the issue, the initial response\nwill also contain confirmation of the issue. If we are not, we will\noften ask for more information about the reproduction scenario.\n\nOur goal is to have a fix for any vulnerability released within two\nweeks of the initial disclosure. This may potentially involve shipping\nan interim release that simply disables function while a more mature fix\ncan be prepared, but will in the vast majority of cases mean shipping a\ncomplete release as soon as possible.\n\nThroughout the fix process we will keep you up to speed with how the fix\nis progressing. Once the fix is prepared, we will notify you that we\nbelieve we have a fix. Often we will ask you to confirm the fix resolves\nthe problem in your environment, especially if we are not confident of\nour reproduction scenario.\n\nAt this point, we will prepare for the release. We will obtain a CVE\nnumber if one is required, providing you with full credit for the\ndiscovery. We will also decide on a planned release date, and let you\nknow when it is. This release date will *always* be on a weekday.\n\nAt this point we will reach out to our major downstream packagers to\nnotify them of an impending security-related patch so they can make\narrangements. In addition, these packagers will be provided with the\nintended patch ahead of time, to ensure that they are able to promptly\nrelease their downstream packages. Currently the list of people we\nactively contact *ahead of a public release* is:\n\n-   Python Maintenance Team, Red Hat (python-maint@redhat.com)\n-   Daniele Tricoli, Debian (@eriol)\n\nWe will notify these individuals at least a week ahead of our planned\nrelease date to ensure that they have sufficient time to prepare. If you\nbelieve you should be on this list, please let one of the maintainers\nknow at one of the email addresses at the top of this article.\n\nOn release day, we will push the patch to our public repository, along\nwith an updated changelog that describes the issue and credits you. We\nwill then issue a PyPI release containing the patch.\n\nAt this point, we will publicise the release. This will involve mails to\nmailing lists, Tweets, and all other communication mechanisms available\nto the core team.\n\nWe will also explicitly mention which commits contain the fix to make it\neasier for other distributors and users to easily patch their own\nversions of requests if upgrading is not an option.",
+        "segments": [
+          {
+            "heading": "Vulnerability Disclosure",
+            "level": 1,
+            "line_start": 1,
+            "line_end": 23,
+            "raw_content": "# Vulnerability Disclosure\n\nIf you think you have found a potential security vulnerability in\nrequests, please open a [draft Security Advisory](https://github.com/psf/requests/security/advisories/new)\nvia GitHub. We will coordinate verification and next steps through\nthat secure medium.\n\nIf English is not your first language, please try to describe the\nproblem and its impact to the best of your ability. For greater detail,\nplease use your native language and we will try our best to translate it\nusing online services.\n\nPlease also include the code you used to find the problem and the\nshortest amount of code necessary to reproduce it.\n\nPlease do not disclose this to anyone else. We will retrieve a CVE\nidentifier if necessary and give you full credit under whatever name or\nalias you provide. We will only request an identifier when we have a fix\nand can publish it in a release.\n\nWe will respect your privacy and will only publicize your involvement if\nyou grant us permission.\n",
+            "cleaned_content": "# Vulnerability Disclosure\n\nIf you think you have found a potential security vulnerability in\nrequests, please open a [draft Security Advisory](https://github.com/psf/requests/security/advisories/new)\nvia GitHub. We will coordinate verification and next steps through\nthat secure medium.\n\nIf English is not your first language, please try to describe the\nproblem and its impact to the best of your ability. For greater detail,\nplease use your native language and we will try our best to translate it\nusing online services.\n\nPlease also include the code you used to find the problem and the\nshortest amount of code necessary to reproduce it.\n\nPlease do not disclose this to anyone else. We will retrieve a CVE\nidentifier if necessary and give you full credit under whatever name or\nalias you provide. We will only request an identifier when we have a fix\nand can publish it in a release.\n\nWe will respect your privacy and will only publicize your involvement if\nyou grant us permission.",
+            "section_type": "vulnerability_reporting"
+          },
+          {
+            "heading": "Process",
+            "level": 2,
+            "line_start": 24,
+            "line_end": 30,
+            "raw_content": "## Process\n\nThis following information discusses the process the requests project\nfollows in response to vulnerability disclosures. If you are disclosing\na vulnerability, this section of the documentation lets you know how we\nwill respond to your disclosure.\n",
+            "cleaned_content": "## Process\n\nThis following information discusses the process the requests project\nfollows in response to vulnerability disclosures. If you are disclosing\na vulnerability, this section of the documentation lets you know how we\nwill respond to your disclosure.",
+            "section_type": "general"
+          },
+          {
+            "heading": "Timeline",
+            "level": 3,
+            "line_start": 31,
+            "line_end": 84,
+            "raw_content": "### Timeline\n\nWhen you report an issue, one of the project members will respond to you\nwithin two days *at the outside*. In most cases responses will be\nfaster, usually within 12 hours. This initial response will at the very\nleast confirm receipt of the report.\n\nIf we were able to rapidly reproduce the issue, the initial response\nwill also contain confirmation of the issue. If we are not, we will\noften ask for more information about the reproduction scenario.\n\nOur goal is to have a fix for any vulnerability released within two\nweeks of the initial disclosure. This may potentially involve shipping\nan interim release that simply disables function while a more mature fix\ncan be prepared, but will in the vast majority of cases mean shipping a\ncomplete release as soon as possible.\n\nThroughout the fix process we will keep you up to speed with how the fix\nis progressing. Once the fix is prepared, we will notify you that we\nbelieve we have a fix. Often we will ask you to confirm the fix resolves\nthe problem in your environment, especially if we are not confident of\nour reproduction scenario.\n\nAt this point, we will prepare for the release. We will obtain a CVE\nnumber if one is required, providing you with full credit for the\ndiscovery. We will also decide on a planned release date, and let you\nknow when it is. This release date will *always* be on a weekday.\n\nAt this point we will reach out to our major downstream packagers to\nnotify them of an impending security-related patch so they can make\narrangements. In addition, these packagers will be provided with the\nintended patch ahead of time, to ensure that they are able to promptly\nrelease their downstream packages. Currently the list of people we\nactively contact *ahead of a public release* is:\n\n-   Python Maintenance Team, Red Hat (python-maint@redhat.com)\n-   Daniele Tricoli, Debian (@eriol)\n\nWe will notify these individuals at least a week ahead of our planned\nrelease date to ensure that they have sufficient time to prepare. If you\nbelieve you should be on this list, please let one of the maintainers\nknow at one of the email addresses at the top of this article.\n\nOn release day, we will push the patch to our public repository, along\nwith an updated changelog that describes the issue and credits you. We\nwill then issue a PyPI release containing the patch.\n\nAt this point, we will publicise the release. This will involve mails to\nmailing lists, Tweets, and all other communication mechanisms available\nto the core team.\n\nWe will also explicitly mention which commits contain the fix to make it\neasier for other distributors and users to easily patch their own\nversions of requests if upgrading is not an option.",
+            "cleaned_content": "### Timeline\n\nWhen you report an issue, one of the project members will respond to you\nwithin two days *at the outside*. In most cases responses will be\nfaster, usually within 12 hours. This initial response will at the very\nleast confirm receipt of the report.\n\nIf we were able to rapidly reproduce the issue, the initial response\nwill also contain confirmation of the issue. If we are not, we will\noften ask for more information about the reproduction scenario.\n\nOur goal is to have a fix for any vulnerability released within two\nweeks of the initial disclosure. This may potentially involve shipping\nan interim release that simply disables function while a more mature fix\ncan be prepared, but will in the vast majority of cases mean shipping a\ncomplete release as soon as possible.\n\nThroughout the fix process we will keep you up to speed with how the fix\nis progressing. Once the fix is prepared, we will notify you that we\nbelieve we have a fix. Often we will ask you to confirm the fix resolves\nthe problem in your environment, especially if we are not confident of\nour reproduction scenario.\n\nAt this point, we will prepare for the release. We will obtain a CVE\nnumber if one is required, providing you with full credit for the\ndiscovery. We will also decide on a planned release date, and let you\nknow when it is. This release date will *always* be on a weekday.\n\nAt this point we will reach out to our major downstream packagers to\nnotify them of an impending security-related patch so they can make\narrangements. In addition, these packagers will be provided with the\nintended patch ahead of time, to ensure that they are able to promptly\nrelease their downstream packages. Currently the list of people we\nactively contact *ahead of a public release* is:\n\n-   Python Maintenance Team, Red Hat (python-maint@redhat.com)\n-   Daniele Tricoli, Debian (@eriol)\n\nWe will notify these individuals at least a week ahead of our planned\nrelease date to ensure that they have sufficient time to prepare. If you\nbelieve you should be on this list, please let one of the maintainers\nknow at one of the email addresses at the top of this article.\n\nOn release day, we will push the patch to our public repository, along\nwith an updated changelog that describes the issue and credits you. We\nwill then issue a PyPI release containing the patch.\n\nAt this point, we will publicise the release. This will involve mails to\nmailing lists, Tweets, and all other communication mechanisms available\nto the core team.\n\nWe will also explicitly mention which commits contain the fix to make it\neasier for other distributors and users to easily patch their own\nversions of requests if upgrading is not an option.",
+            "section_type": "general"
+          }
+        ],
+        "line_references": {
+          "Vulnerability Disclosure": {
+            "line_start": 1,
+            "line_end": 23,
+            "section_type": "vulnerability_reporting"
+          },
+          "Process": {
+            "line_start": 24,
+            "line_end": 30,
+            "section_type": "general"
+          },
+          "Timeline": {
+            "line_start": 31,
+            "line_end": 84,
+            "section_type": "general"
+          }
+        },
+        "version_section_detail": {
+          "found": false,
+          "heading": null,
+          "line_start": null,
+          "line_end": null,
+          "raw_content": "",
+          "cleaned_content": "",
+          "tables": [],
+          "list_items": []
+        }
+      },
+      "line_references": {
+        "Vulnerability Disclosure": {
+          "line_start": 1,
+          "line_end": 23,
+          "section_type": "vulnerability_reporting"
+        },
+        "Process": {
+          "line_start": 24,
+          "line_end": 30,
+          "section_type": "general"
+        },
+        "Timeline": {
+          "line_start": 31,
+          "line_end": 84,
+          "section_type": "general"
+        }
+      },
+      "version_section_detail": {
+        "found": false,
+        "heading": null,
+        "line_start": null,
+        "line_end": null,
+        "raw_content": "",
+        "cleaned_content": "",
+        "tables": [],
+        "list_items": []
+      },
+      "has_version_support_statement": false,
+      "repo_metadata": {
+        "stars": 54724,
+        "created_at": "2011-02-13T18:38:17+00:00",
+        "pushed_at": "2026-11-02T16:55:12+00:00",
+        "archived": false,
+        "fork": false,
+        "html_url": "https://github.com/psf/requests"
+      },
+      "policy_word_count": 664
+    },
+    "mapping_uncertain": false,
+    "layer2": {
+      "total_releases": 163,
+      "total_vulnerabilities": 8,
+      "normalized_scope": [],
+      "supported_releases_count": 0,
+      "source_diagnostics": {
+        "pypi": {
+          "status": "SUCCESS",
+          "count": 163,
+          "endpoint": "pypi.org/pypi/<pkg>/json"
+        },
+        "osv": {
+          "status": "SUCCESS",
+          "count": 16,
+          "endpoint": "https://api.osv.dev/v1/query",
+          "error": null,
+          "pages": 1
+        },
+        "github_advisory": {
+          "status": "SUCCESS",
+          "count": 8,
+          "endpoint": "https://api.github.com/advisories",
+          "error": null,
+          "pages": 1
+        },
+        "nvd": {
+          "status": "FAILURE",
+          "count": 0,
+          "endpoint": "https://services.nvd.nist.gov/rest/json/cves/2.0",
+          "error": "CVE-2014-1830: HTTP 404; CVE-2024-47081: HTTP 404; CVE-2024-35195: HTTP 404; CVE-2014-1829: HTTP 404; CVE-2026-25645: HTTP 404 and 3 more",
+          "retrieved": 0,
+          "not_found": 0,
+          "failed": 8,
+          "skipped": 0,
+          "cached": 0,
+          "max_lookups": 250,
+          "delay_seconds": 0.6
+        }
+      },
+      "vulnerabilities": [
+        {
+          "id": "CVE-2014-1830",
+          "osv_id": "GHSA-652x-xj99-gmcc",
+          "cve_ids": [
+            "CVE-2014-1830"
+          ],
+          "ghsa_ids": [
+            "GHSA-652x-xj99-gmcc"
+          ],
+          "aliases": [
+            "CVE-2014-1830",
+            "PYSEC-2014-14",
+            "GHSA-652x-xj99-gmcc"
+          ],
+          "summary": "Exposure of Sensitive Information to an Unauthorized Actor in Requests",
+          "details": "Requests (aka python-requests) before 2.3.0 allows remote servers to obtain sensitive information by reading the Proxy-Authorization header in a redirected request.",
+          "published_at": "2022-05-14T02:09:22Z",
+          "modified_at": "2024-10-21T22:22:54.104555Z",
+          "affected_versions": [
+            "0.0.1",
+            "0.10.0",
+            "0.10.1",
+            "0.10.2",
+            "0.10.3",
+            "0.10.4",
+            "0.10.6",
+            "0.10.7",
+            "0.10.8",
+            "0.11.1",
+            "0.11.2",
+            "0.12.0",
+            "0.12.01",
+            "0.12.1",
+            "0.13.0",
+            "0.13.1",
+            "0.13.2",
+            "0.13.3",
+            "0.13.4",
+            "0.13.5",
+            "0.13.6",
+            "0.13.7",
+            "0.13.8",
+            "0.13.9",
+            "0.14.0",
+            "0.14.1",
+            "0.14.2",
+            "0.2.0",
+            "0.2.1",
+            "0.2.2",
+            "0.2.3",
+            "0.2.4",
+            "0.3.0",
+            "0.3.1",
+            "0.3.2",
+            "0.3.3",
+            "0.3.4",
+            "0.4.0",
+            "0.4.1",
+            "0.5.0",
+            "0.5.1",
+            "0.6.0",
+            "0.6.1",
+            "0.6.2",
+            "0.6.3",
+            "0.6.4",
+            "0.6.5",
+            "0.6.6",
+            "0.7.0",
+            "0.7.1",
+            "0.7.2",
+            "0.7.3",
+            "0.7.4",
+            "0.7.5",
+            "0.7.6",
+            "0.8.0",
+            "0.8.1",
+            "0.8.2",
+            "0.8.3",
+            "0.8.4",
+            "0.8.5",
+            "0.8.6",
+            "0.8.7",
+            "0.8.8",
+            "0.8.9",
+            "0.9.0",
+            "0.9.1",
+            "0.9.2",
+            "0.9.3",
+            "1.0.0",
+            "1.0.1",
+            "1.0.2",
+            "1.0.3",
+            "1.0.4",
+            "1.1.0",
+            "1.2.0",
+            "1.2.1",
+            "1.2.2",
+            "1.2.3",
+            "2.0.0",
+            "2.0.1",
+            "2.1.0",
+            "2.2.0",
+            "2.2.1"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.3.0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.3.0"
+                }
+              ],
+              "vulnerable_version_range": "< 2.3.0"
+            }
+          ],
+          "fixed_versions": [
+            "2.3.0"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-652x-xj99-gmcc"
+        },
+        {
+          "id": "CVE-2024-47081",
+          "osv_id": "GHSA-9hjg-9r4m-mvj7",
+          "cve_ids": [
+            "CVE-2024-47081"
+          ],
+          "ghsa_ids": [
+            "GHSA-9hjg-9r4m-mvj7"
+          ],
+          "aliases": [
+            "CVE-2024-47081",
+            "PYSEC-2026-1872",
+            "GHSA-9hjg-9r4m-mvj7"
+          ],
+          "summary": "Requests vulnerable to .netrc credentials leak via malicious URLs",
+          "details": "### Impact\n\nDue to a URL parsing issue, Requests releases prior to 2.32.4 may leak .netrc credentials to third parties for specific maliciously-crafted URLs.\n\n### Workarounds\nFor older versions of Requests, use of the .netrc file can be disabled with `trust_env=False` on your Requests Session ([docs](https://requests.readthedocs.io/en/latest/api/#requests.Session.trust_env)).\n\n### References\nhttps://github.com/psf/requests/pull/6965\nhttps://seclists.org/fulldisclosure/2025/Jun/2",
+          "published_at": "2025-06-09T19:06:08Z",
+          "modified_at": "2026-10-19T20:00:04.716114530Z",
+          "affected_versions": [
+            "0.0.1",
+            "0.10.0",
+            "0.10.1",
+            "0.10.2",
+            "0.10.3",
+            "0.10.4",
+            "0.10.6",
+            "0.10.7",
+            "0.10.8",
+            "0.11.1",
+            "0.11.2",
+            "0.12.0",
+            "0.12.01",
+            "0.12.1",
+            "0.13.0",
+            "0.13.1",
+            "0.13.2",
+            "0.13.3",
+            "0.13.4",
+            "0.13.5",
+            "0.13.6",
+            "0.13.7",
+            "0.13.8",
+            "0.13.9",
+            "0.14.0",
+            "0.14.1",
+            "0.14.2",
+            "0.2.0",
+            "0.2.1",
+            "0.2.2",
+            "0.2.3",
+            "0.2.4",
+            "0.3.0",
+            "0.3.1",
+            "0.3.2",
+            "0.3.3",
+            "0.3.4",
+            "0.4.0",
+            "0.4.1",
+            "0.5.0",
+            "0.5.1",
+            "0.6.0",
+            "0.6.1",
+            "0.6.2",
+            "0.6.3",
+            "0.6.4",
+            "0.6.5",
+            "0.6.6",
+            "0.7.0",
+            "0.7.1",
+            "0.7.2",
+            "0.7.3",
+            "0.7.4",
+            "0.7.5",
+            "0.7.6",
+            "0.8.0",
+            "0.8.1",
+            "0.8.2",
+            "0.8.3",
+            "0.8.4",
+            "0.8.5",
+            "0.8.6",
+            "0.8.7",
+            "0.8.8",
+            "0.8.9",
+            "0.9.0",
+            "0.9.1",
+            "0.9.2",
+            "0.9.3",
+            "1.0.0",
+            "1.0.1",
+            "1.0.2",
+            "1.0.3",
+            "1.0.4",
+            "1.1.0",
+            "1.2.0",
+            "1.2.1",
+            "1.2.2",
+            "1.2.3",
+            "2.0.0",
+            "2.0.1",
+            "2.1.0",
+            "2.10.0",
+            "2.11.0",
+            "2.11.1",
+            "2.12.0",
+            "2.12.1",
+            "2.12.2",
+            "2.12.3",
+            "2.12.4",
+            "2.12.5",
+            "2.13.0",
+            "2.14.0",
+            "2.14.1",
+            "2.14.2",
+            "2.15.0",
+            "2.15.1",
+            "2.16.0",
+            "2.16.1",
+            "2.16.2",
+            "2.16.3",
+            "2.16.4",
+            "2.16.5",
+            "2.17.0",
+            "2.17.1",
+            "2.17.2",
+            "2.17.3",
+            "2.18.0",
+            "2.18.1",
+            "2.18.2",
+            "2.18.3",
+            "2.18.4",
+            "2.19.0",
+            "2.19.1",
+            "2.2.0",
+            "2.2.1",
+            "2.20.0",
+            "2.20.1",
+            "2.21.0",
+            "2.22.0",
+            "2.23.0",
+            "2.24.0",
+            "2.25.0",
+            "2.25.1",
+            "2.26.0",
+            "2.27.0",
+            "2.27.1",
+            "2.28.0",
+            "2.28.1",
+            "2.28.2",
+            "2.29.0",
+            "2.3.0",
+            "2.30.0",
+            "2.31.0",
+            "2.32.0",
+            "2.32.1",
+            "2.32.2",
+            "2.32.3",
+            "2.4.0",
+            "2.4.1",
+            "2.4.2",
+            "2.4.3",
+            "2.5.0",
+            "2.5.1",
+            "2.5.2",
+            "2.5.3",
+            "2.6.0",
+            "2.6.1",
+            "2.6.2",
+            "2.7.0",
+            "2.8.0",
+            "2.8.1",
+            "2.9.0",
+            "2.9.1",
+            "2.9.2"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.32.4"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.32.4"
+                }
+              ],
+              "vulnerable_version_range": "< 2.32.4"
+            }
+          ],
+          "fixed_versions": [
+            "2.32.4"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-9hjg-9r4m-mvj7"
+        },
+        {
+          "id": "CVE-2024-35195",
+          "osv_id": "GHSA-9wx4-h78v-vm56",
+          "cve_ids": [
+            "CVE-2024-35195"
+          ],
+          "ghsa_ids": [
+            "GHSA-9wx4-h78v-vm56"
+          ],
+          "aliases": [
+            "CVE-2024-35195",
+            "PYSEC-2026-1873",
+            "GHSA-9wx4-h78v-vm56"
+          ],
+          "summary": "Requests `Session` object does not verify requests after making first request with verify=False",
+          "details": "When using a `requests.Session`, if the first request to a given origin is made with `verify=False`, TLS certificate verification may remain disabled for all subsequent requests to that origin, even if `verify=True` is explicitly specified later.\n\nThis occurs because the underlying connection is reused from the session's connection pool, causing the initial TLS verification setting to persist for the lifetime of the pooled connection. As a result, applications may unintentionally send requests without certificate verification, leading to potential man-in-the-middle attacks and compromised confidentiality or integrity.\n\nThis behavior affects versions of `requests` prior to 2.32.0.",
+          "published_at": "2024-05-20T20:15:00Z",
+          "modified_at": "2026-09-10T03:50:13.740879755Z",
+          "affected_versions": [
+            "0.0.1",
+            "0.10.0",
+            "0.10.1",
+            "0.10.2",
+            "0.10.3",
+            "0.10.4",
+            "0.10.6",
+            "0.10.7",
+            "0.10.8",
+            "0.11.1",
+            "0.11.2",
+            "0.12.0",
+            "0.12.01",
+            "0.12.1",
+            "0.13.0",
+            "0.13.1",
+            "0.13.2",
+            "0.13.3",
+            "0.13.4",
+            "0.13.5",
+            "0.13.6",
+            "0.13.7",
+            "0.13.8",
+            "0.13.9",
+            "0.14.0",
+            "0.14.1",
+            "0.14.2",
+            "0.2.0",
+            "0.2.1",
+            "0.2.2",
+            "0.2.3",
+            "0.2.4",
+            "0.3.0",
+            "0.3.1",
+            "0.3.2",
+            "0.3.3",
+            "0.3.4",
+            "0.4.0",
+            "0.4.1",
+            "0.5.0",
+            "0.5.1",
+            "0.6.0",
+            "0.6.1",
+            "0.6.2",
+            "0.6.3",
+            "0.6.4",
+            "0.6.5",
+            "0.6.6",
+            "0.7.0",
+            "0.7.1",
+            "0.7.2",
+            "0.7.3",
+            "0.7.4",
+            "0.7.5",
+            "0.7.6",
+            "0.8.0",
+            "0.8.1",
+            "0.8.2",
+            "0.8.3",
+            "0.8.4",
+            "0.8.5",
+            "0.8.6",
+            "0.8.7",
+            "0.8.8",
+            "0.8.9",
+            "0.9.0",
+            "0.9.1",
+            "0.9.2",
+            "0.9.3",
+            "1.0.0",
+            "1.0.1",
+            "1.0.2",
+            "1.0.3",
+            "1.0.4",
+            "1.1.0",
+            "1.2.0",
+            "1.2.1",
+            "1.2.2",
+            "1.2.3",
+            "2.0.0",
+            "2.0.1",
+            "2.1.0",
+            "2.10.0",
+            "2.11.0",
+            "2.11.1",
+            "2.12.0",
+            "2.12.1",
+            "2.12.2",
+            "2.12.3",
+            "2.12.4",
+            "2.12.5",
+            "2.13.0",
+            "2.14.0",
+            "2.14.1",
+            "2.14.2",
+            "2.15.0",
+            "2.15.1",
+            "2.16.0",
+            "2.16.1",
+            "2.16.2",
+            "2.16.3",
+            "2.16.4",
+            "2.16.5",
+            "2.17.0",
+            "2.17.1",
+            "2.17.2",
+            "2.17.3",
+            "2.18.0",
+            "2.18.1",
+            "2.18.2",
+            "2.18.3",
+            "2.18.4",
+            "2.19.0",
+            "2.19.1",
+            "2.2.0",
+            "2.2.1",
+            "2.20.0",
+            "2.20.1",
+            "2.21.0",
+            "2.22.0",
+            "2.23.0",
+            "2.24.0",
+            "2.25.0",
+            "2.25.1",
+            "2.26.0",
+            "2.27.0",
+            "2.27.1",
+            "2.28.0",
+            "2.28.1",
+            "2.28.2",
+            "2.29.0",
+            "2.3.0",
+            "2.30.0",
+            "2.31.0",
+            "2.4.0",
+            "2.4.1",
+            "2.4.2",
+            "2.4.3",
+            "2.5.0",
+            "2.5.1",
+            "2.5.2",
+            "2.5.3",
+            "2.6.0",
+            "2.6.1",
+            "2.6.2",
+            "2.7.0",
+            "2.8.0",
+            "2.8.1",
+            "2.9.0",
+            "2.9.1",
+            "2.9.2"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.32.0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.32.0"
+                }
+              ],
+              "vulnerable_version_range": "< 2.32.0"
+            }
+          ],
+          "fixed_versions": [
+            "2.32.0"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-9wx4-h78v-vm56"
+        },
+        {
+          "id": "CVE-2014-1829",
+          "osv_id": "GHSA-cfj3-7x9c-4p3h",
+          "cve_ids": [
+            "CVE-2014-1829"
+          ],
+          "ghsa_ids": [
+            "GHSA-cfj3-7x9c-4p3h"
+          ],
+          "aliases": [
+            "CVE-2014-1829",
+            "PYSEC-2014-13",
+            "GHSA-cfj3-7x9c-4p3h"
+          ],
+          "summary": "Exposure of Sensitive Information to an Unauthorized Actor in Requests",
+          "details": "Requests (aka python-requests) before 2.3.0 allows remote servers to obtain a netrc password by reading the Authorization header in a redirected request.",
+          "published_at": "2022-05-17T03:49:35Z",
+          "modified_at": "2024-10-26T22:51:23.384075Z",
+          "affected_versions": [
+            "0.0.1",
+            "0.10.0",
+            "0.10.1",
+            "0.10.2",
+            "0.10.3",
+            "0.10.4",
+            "0.10.6",
+            "0.10.7",
+            "0.10.8",
+            "0.11.1",
+            "0.11.2",
+            "0.12.0",
+            "0.12.01",
+            "0.12.1",
+            "0.13.0",
+            "0.13.1",
+            "0.13.2",
+            "0.13.3",
+            "0.13.4",
+            "0.13.5",
+            "0.13.6",
+            "0.13.7",
+            "0.13.8",
+            "0.13.9",
+            "0.14.0",
+            "0.14.1",
+            "0.14.2",
+            "0.2.0",
+            "0.2.1",
+            "0.2.2",
+            "0.2.3",
+            "0.2.4",
+            "0.3.0",
+            "0.3.1",
+            "0.3.2",
+            "0.3.3",
+            "0.3.4",
+            "0.4.0",
+            "0.4.1",
+            "0.5.0",
+            "0.5.1",
+            "0.6.0",
+            "0.6.1",
+            "0.6.2",
+            "0.6.3",
+            "0.6.4",
+            "0.6.5",
+            "0.6.6",
+            "0.7.0",
+            "0.7.1",
+            "0.7.2",
+            "0.7.3",
+            "0.7.4",
+            "0.7.5",
+            "0.7.6",
+            "0.8.0",
+            "0.8.1",
+            "0.8.2",
+            "0.8.3",
+            "0.8.4",
+            "0.8.5",
+            "0.8.6",
+            "0.8.7",
+            "0.8.8",
+            "0.8.9",
+            "0.9.0",
+            "0.9.1",
+            "0.9.2",
+            "0.9.3",
+            "1.0.0",
+            "1.0.1",
+            "1.0.2",
+            "1.0.3",
+            "1.0.4",
+            "1.1.0",
+            "1.2.0",
+            "1.2.1",
+            "1.2.2",
+            "1.2.3",
+            "2.0.0",
+            "2.0.1",
+            "2.1.0",
+            "2.2.0",
+            "2.2.1"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.3.0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.3.0"
+                }
+              ],
+              "vulnerable_version_range": "< 2.3.0"
+            }
+          ],
+          "fixed_versions": [
+            "2.3.0"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-cfj3-7x9c-4p3h"
+        },
+        {
+          "id": "CVE-2026-25645",
+          "osv_id": "GHSA-gc5v-m9x4-r6x2",
+          "cve_ids": [
+            "CVE-2026-25645"
+          ],
+          "ghsa_ids": [
+            "GHSA-gc5v-m9x4-r6x2"
+          ],
+          "aliases": [
+            "CVE-2026-25645",
+            "PYSEC-2026-2275",
+            "GHSA-gc5v-m9x4-r6x2"
+          ],
+          "summary": "Requests has Insecure Temp File Reuse in its extract_zipped_paths() utility function",
+          "details": "### Impact\nThe `requests.utils.extract_zipped_paths()` utility function uses a predictable filename when extracting files from zip archives into the system temporary directory. If the target file already exists, it is reused without validation. A local attacker with write access to the temp directory could pre-create a malicious file that would be loaded in place of the legitimate one.\n\n### Affected usages\n**Standard usage of the Requests library is not affected by this vulnerability.** Only applications that call `extract_zipped_paths()` directly are impacted.\n\n### Remediation\nUpgrade to at least Requests 2.33.0, where the library now extracts files to a non-deterministic location.\n\nIf developers are unable to upgrade, they can set `TMPDIR` in their environment to a directory with restricted write access.",
+          "published_at": "2026-03-25T16:56:28Z",
+          "modified_at": "2026-09-10T03:50:39.207922076Z",
+          "affected_versions": [
+            "0.0.1",
+            "0.10.0",
+            "0.10.1",
+            "0.10.2",
+            "0.10.3",
+            "0.10.4",
+            "0.10.6",
+            "0.10.7",
+            "0.10.8",
+            "0.11.1",
+            "0.11.2",
+            "0.12.0",
+            "0.12.01",
+            "0.12.1",
+            "0.13.0",
+            "0.13.1",
+            "0.13.2",
+            "0.13.3",
+            "0.13.4",
+            "0.13.5",
+            "0.13.6",
+            "0.13.7",
+            "0.13.8",
+            "0.13.9",
+            "0.14.0",
+            "0.14.1",
+            "0.14.2",
+            "0.2.0",
+            "0.2.1",
+            "0.2.2",
+            "0.2.3",
+            "0.2.4",
+            "0.3.0",
+            "0.3.1",
+            "0.3.2",
+            "0.3.3",
+            "0.3.4",
+            "0.4.0",
+            "0.4.1",
+            "0.5.0",
+            "0.5.1",
+            "0.6.0",
+            "0.6.1",
+            "0.6.2",
+            "0.6.3",
+            "0.6.4",
+            "0.6.5",
+            "0.6.6",
+            "0.7.0",
+            "0.7.1",
+            "0.7.2",
+            "0.7.3",
+            "0.7.4",
+            "0.7.5",
+            "0.7.6",
+            "0.8.0",
+            "0.8.1",
+            "0.8.2",
+            "0.8.3",
+            "0.8.4",
+            "0.8.5",
+            "0.8.6",
+            "0.8.7",
+            "0.8.8",
+            "0.8.9",
+            "0.9.0",
+            "0.9.1",
+            "0.9.2",
+            "0.9.3",
+            "1.0.0",
+            "1.0.1",
+            "1.0.2",
+            "1.0.3",
+            "1.0.4",
+            "1.1.0",
+            "1.2.0",
+            "1.2.1",
+            "1.2.2",
+            "1.2.3",
+            "2.0.0",
+            "2.0.1",
+            "2.1.0",
+            "2.10.0",
+            "2.11.0",
+            "2.11.1",
+            "2.12.0",
+            "2.12.1",
+            "2.12.2",
+            "2.12.3",
+            "2.12.4",
+            "2.12.5",
+            "2.13.0",
+            "2.14.0",
+            "2.14.1",
+            "2.14.2",
+            "2.15.0",
+            "2.15.1",
+            "2.16.0",
+            "2.16.1",
+            "2.16.2",
+            "2.16.3",
+            "2.16.4",
+            "2.16.5",
+            "2.17.0",
+            "2.17.1",
+            "2.17.2",
+            "2.17.3",
+            "2.18.0",
+            "2.18.1",
+            "2.18.2",
+            "2.18.3",
+            "2.18.4",
+            "2.19.0",
+            "2.19.1",
+            "2.2.0",
+            "2.2.1",
+            "2.20.0",
+            "2.20.1",
+            "2.21.0",
+            "2.22.0",
+            "2.23.0",
+            "2.24.0",
+            "2.25.0",
+            "2.25.1",
+            "2.26.0",
+            "2.27.0",
+            "2.27.1",
+            "2.28.0",
+            "2.28.1",
+            "2.28.2",
+            "2.29.0",
+            "2.3.0",
+            "2.30.0",
+            "2.31.0",
+            "2.32.0",
+            "2.32.1",
+            "2.32.2",
+            "2.32.3",
+            "2.32.4",
+            "2.32.5",
+            "2.4.0",
+            "2.4.1",
+            "2.4.2",
+            "2.4.3",
+            "2.5.0",
+            "2.5.1",
+            "2.5.2",
+            "2.5.3",
+            "2.6.0",
+            "2.6.1",
+            "2.6.2",
+            "2.7.0",
+            "2.8.0",
+            "2.8.1",
+            "2.9.0",
+            "2.9.1",
+            "2.9.2"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.33.0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.33.0"
+                }
+              ],
+              "vulnerable_version_range": "< 2.33.0"
+            }
+          ],
+          "fixed_versions": [
+            "2.33.0"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-gc5v-m9x4-r6x2"
+        },
+        {
+          "id": "CVE-2023-32681",
+          "osv_id": "GHSA-j8r2-6x86-q33q",
+          "cve_ids": [
+            "CVE-2023-32681"
+          ],
+          "ghsa_ids": [
+            "GHSA-j8r2-6x86-q33q"
+          ],
+          "aliases": [
+            "CVE-2023-32681",
+            "PYSEC-2023-74",
+            "GHSA-j8r2-6x86-q33q"
+          ],
+          "summary": "Unintended leak of Proxy-Authorization header in requests",
+          "details": "### Impact\n\nSince Requests v2.3.0, Requests has been vulnerable to potentially leaking `Proxy-Authorization` headers to destination servers, specifically during redirects to an HTTPS origin. This is a product of how `rebuild_proxies` is used to recompute and [reattach the `Proxy-Authorization` header](https://github.com/psf/requests/blob/f2629e9e3c7ce3c3c8c025bcd8db551101cbc773/requests/sessions.py#L319-L328) to requests when redirected. Note this behavior has _only_ been observed to affect proxied requests when credentials are supplied in the URL user information component (e.g. `https://username:password@proxy:8080`).\n\n**Current vulnerable behavior(s):**\n\n1. HTTP → HTTPS: **leak**\n2. HTTPS → HTTP: **no leak**\n3. HTTPS → HTTPS: **leak**\n4. HTTP → HTTP: **no leak**\n\nFor HTTP connections sent through the proxy, the proxy will identify the header in the request itself and remove it prior to forwarding to the destination server. However when sent over HTTPS, the `Proxy-Authorization` header must be sent in the CONNECT request as the proxy has no visibility into further tunneled requests. This results in Requests forwarding the header to the destination server unintentionally, allowing a malicious actor to potentially exfiltrate those credentials.\n\nThe reason this currently works for HTTPS connections in Requests is the `Proxy-Authorization` header is also handled by urllib3 with our usage of the ProxyManager in adapters.py with [`proxy_manager_for`](https://github.com/psf/requests/blob/f2629e9e3c7ce3c3c8c025bcd8db551101cbc773/requests/adapters.py#L199-L235). This will compute the required proxy headers in `proxy_headers` and pass them to the Proxy Manager, avoiding attaching them directly to the Request object. This will be our preferred option going forward for default usage.\n\n### Patches\nStarting in Requests v2.31.0, Requests will no longer attach this header to redirects with an HTTPS destination. This should have no negative impacts on the default behavior of the library as the proxy credentials are already properly being handled by urllib3's ProxyManager.\n\nFor users with custom adapters, this _may_ be potentially breaking if you were already working around this behavior. The previous functionality of `rebuild_proxies` doesn't make sense in any case, so we would encourage any users impacted to migrate any handling of Proxy-Authorization directly into their custom adapter.\n\n### Workarounds\nFor users who are not able to update Requests immediately, there is one potential workaround.\n\nYou may disable redirects by setting `allow_redirects` to `False` on all calls through Requests top-level APIs. Note that if you're currently relying on redirect behaviors, you will need to capture the 3xx response codes and ensure a new request is made to the redirect destination.\n```\nimport requests\nr = requests.get('http://github.com/', allow_redirects=False)\n```\n\n### Credits\n\nThis vulnerability was discovered and disclosed by the following individuals.\n\nDennis Brinkrolf, Haxolot (https://haxolot.com/)\nTobias Funke, (tobiasfunke93@gmail.com)",
+          "published_at": "2023-05-22T20:36:32Z",
+          "modified_at": "2026-09-10T03:50:01.756149727Z",
+          "affected_versions": [
+            "2.10.0",
+            "2.11.0",
+            "2.11.1",
+            "2.12.0",
+            "2.12.1",
+            "2.12.2",
+            "2.12.3",
+            "2.12.4",
+            "2.12.5",
+            "2.13.0",
+            "2.14.0",
+            "2.14.1",
+            "2.14.2",
+            "2.15.0",
+            "2.15.1",
+            "2.16.0",
+            "2.16.1",
+            "2.16.2",
+            "2.16.3",
+            "2.16.4",
+            "2.16.5",
+            "2.17.0",
+            "2.17.1",
+            "2.17.2",
+            "2.17.3",
+            "2.18.0",
+            "2.18.1",
+            "2.18.2",
+            "2.18.3",
+            "2.18.4",
+            "2.19.0",
+            "2.19.1",
+            "2.20.0",
+            "2.20.1",
+            "2.21.0",
+            "2.22.0",
+            "2.23.0",
+            "2.24.0",
+            "2.25.0",
+            "2.25.1",
+            "2.26.0",
+            "2.27.0",
+            "2.27.1",
+            "2.28.0",
+            "2.28.1",
+            "2.28.2",
+            "2.29.0",
+            "2.3.0",
+            "2.30.0",
+            "2.4.0",
+            "2.4.1",
+            "2.4.2",
+            "2.4.3",
+            "2.5.0",
+            "2.5.1",
+            "2.5.2",
+            "2.5.3",
+            "2.6.0",
+            "2.6.1",
+            "2.6.2",
+            "2.7.0",
+            "2.8.0",
+            "2.8.1",
+            "2.9.0",
+            "2.9.1",
+            "2.9.2"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "2.3.0"
+                },
+                {
+                  "fixed": "2.31.0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "GIT",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.31.0"
+                }
+              ],
+              "vulnerable_version_range": ">= 2.3.0, < 2.31.0"
+            }
+          ],
+          "fixed_versions": [
+            "2.31.0",
+            "74ea7cf7a6a27a4eeb2ae24e162bcc942a6706d5"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-j8r2-6x86-q33q"
+        },
+        {
+          "id": "CVE-2015-2296",
+          "osv_id": "GHSA-pg2w-x9wp-vw92",
+          "cve_ids": [
+            "CVE-2015-2296"
+          ],
+          "ghsa_ids": [
+            "GHSA-pg2w-x9wp-vw92"
+          ],
+          "aliases": [
+            "CVE-2015-2296",
+            "PYSEC-2015-17",
+            "GHSA-pg2w-x9wp-vw92"
+          ],
+          "summary": "Python Requests Session Fixation",
+          "details": "The `resolve_redirects` function in sessions.py in requests 2.1.0 through 2.5.3 allows remote attackers to conduct session fixation attacks via a cookie without a host value in a redirect.",
+          "published_at": "2022-05-13T01:11:23Z",
+          "modified_at": "2024-12-01T05:57:02.796059Z",
+          "affected_versions": [
+            "2.1.0",
+            "2.2.0",
+            "2.2.1",
+            "2.3.0",
+            "2.4.0",
+            "2.4.1",
+            "2.4.2",
+            "2.4.3",
+            "2.5.0",
+            "2.5.1",
+            "2.5.2",
+            "2.5.3",
+            "v2.5.2",
+            "v2.5.1",
+            "v2.5.0",
+            "v2.4.3",
+            "v2.4.2",
+            "v2.4.1",
+            "v2.4.0",
+            "v2.3.0",
+            "v2.2.1",
+            "v2.2.0",
+            "v2.1.0",
+            "v2.0.1",
+            "v2.0.0",
+            "v2.0",
+            "2.0",
+            "v1.2.3",
+            "v1.2.2",
+            "v1.2.1",
+            "v1.2.0",
+            "v1.1.0",
+            "v1.0.4",
+            "v1.0.3",
+            "v1.0.2",
+            "v1.0.1",
+            "v1.0.0",
+            "v0.14.2",
+            "v0.14.0",
+            "v0.14.1",
+            "v0.13.9",
+            "v0.13.7",
+            "v0.13.6",
+            "v0.13.5",
+            "v0.13.4",
+            "v0.13.3",
+            "v0.13.2",
+            "v0.13.1",
+            "v0.13.0",
+            "v0.12.1",
+            "v0.12.0",
+            "v0.11.1",
+            "v0.10.8",
+            "v0.10.7",
+            "v0.10.6",
+            "v0.10.5",
+            "v0.10.4",
+            "v0.10.3",
+            "v0.10.2",
+            "v0.10.1",
+            "v0.10.0",
+            "v0.9.3",
+            "v0.9.1",
+            "v0.9.0",
+            "v0.8.9",
+            "v0.8.8",
+            "v0.6.4",
+            "v0.6.3",
+            "v0.5.1",
+            "v0.5.0",
+            "v0.4.1",
+            "v0.4.0",
+            "v0.3.4",
+            "v0.3.3",
+            "v0.3.2",
+            "v0.3.0",
+            "v0.2.4",
+            "v0.2.3",
+            "v0.2.2",
+            "v0.2.1",
+            "v0.2.0"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "2.1.0"
+                },
+                {
+                  "fixed": "2.6.0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "GIT",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "3bd8afbff29e50b38f889b2f688785a669b9aafc"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.6.0"
+                }
+              ],
+              "vulnerable_version_range": ">= 2.1.0, < 2.6.0"
+            }
+          ],
+          "fixed_versions": [
+            "2.6.0",
+            "3bd8afbff29e50b38f889b2f688785a669b9aafc"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-pg2w-x9wp-vw92"
+        },
+        {
+          "id": "CVE-2018-18074",
+          "osv_id": "GHSA-x84v-xcm2-53pg",
+          "cve_ids": [
+            "CVE-2018-18074"
+          ],
+          "ghsa_ids": [
+            "GHSA-x84v-xcm2-53pg"
+          ],
+          "aliases": [
+            "CVE-2018-18074",
+            "PYSEC-2018-28",
+            "GHSA-x84v-xcm2-53pg"
+          ],
+          "summary": "Insufficiently Protected Credentials in Requests",
+          "details": "The Requests package through 2.19.1 before 2018-09-14 for Python sends an HTTP Authorization header to an http URI upon receiving a same-hostname https-to-http redirect, which makes it easier for remote attackers to discover credentials by sniffing the network.",
+          "published_at": "2018-10-29T19:06:46Z",
+          "modified_at": "2024-10-21T21:42:55.896669Z",
+          "affected_versions": [
+            "0.0.1",
+            "0.10.0",
+            "0.10.1",
+            "0.10.2",
+            "0.10.3",
+            "0.10.4",
+            "0.10.6",
+            "0.10.7",
+            "0.10.8",
+            "0.11.1",
+            "0.11.2",
+            "0.12.0",
+            "0.12.01",
+            "0.12.1",
+            "0.13.0",
+            "0.13.1",
+            "0.13.2",
+            "0.13.3",
+            "0.13.4",
+            "0.13.5",
+            "0.13.6",
+            "0.13.7",
+            "0.13.8",
+            "0.13.9",
+            "0.14.0",
+            "0.14.1",
+            "0.14.2",
+            "0.2.0",
+            "0.2.1",
+            "0.2.2",
+            "0.2.3",
+            "0.2.4",
+            "0.3.0",
+            "0.3.1",
+            "0.3.2",
+            "0.3.3",
+            "0.3.4",
+            "0.4.0",
+            "0.4.1",
+            "0.5.0",
+            "0.5.1",
+            "0.6.0",
+            "0.6.1",
+            "0.6.2",
+            "0.6.3",
+            "0.6.4",
+            "0.6.5",
+            "0.6.6",
+            "0.7.0",
+            "0.7.1",
+            "0.7.2",
+            "0.7.3",
+            "0.7.4",
+            "0.7.5",
+            "0.7.6",
+            "0.8.0",
+            "0.8.1",
+            "0.8.2",
+            "0.8.3",
+            "0.8.4",
+            "0.8.5",
+            "0.8.6",
+            "0.8.7",
+            "0.8.8",
+            "0.8.9",
+            "0.9.0",
+            "0.9.1",
+            "0.9.2",
+            "0.9.3",
+            "1.0.0",
+            "1.0.1",
+            "1.0.2",
+            "1.0.3",
+            "1.0.4",
+            "1.1.0",
+            "1.2.0",
+            "1.2.1",
+            "1.2.2",
+            "1.2.3",
+            "2.0.0",
+            "2.0.1",
+            "2.1.0",
+            "2.10.0",
+            "2.11.0",
+            "2.11.1",
+            "2.12.0",
+            "2.12.1",
+            "2.12.2",
+            "2.12.3",
+            "2.12.4",
+            "2.12.5",
+            "2.13.0",
+            "2.14.0",
+            "2.14.1",
+            "2.14.2",
+            "2.15.0",
+            "2.15.1",
+            "2.16.0",
+            "2.16.1",
+            "2.16.2",
+            "2.16.3",
+            "2.16.4",
+            "2.16.5",
+            "2.17.0",
+            "2.17.1",
+            "2.17.2",
+            "2.17.3",
+            "2.18.0",
+            "2.18.1",
+            "2.18.2",
+            "2.18.3",
+            "2.18.4",
+            "2.19.0",
+            "2.19.1",
+            "2.2.0",
+            "2.2.1",
+            "2.3.0",
+            "2.4.0",
+            "2.4.1",
+            "2.4.2",
+            "2.4.3",
+            "2.5.0",
+            "2.5.1",
+            "2.5.2",
+            "2.5.3",
+            "2.6.0",
+            "2.6.1",
+            "2.6.2",
+            "2.7.0",
+            "2.8.0",
+            "2.8.1",
+            "2.9.0",
+            "2.9.1",
+            "2.9.2"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.20.0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "GIT",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "c45d7c49ea75133e52ab22a8e9e13173938e36ff"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.20.0"
+                }
+              ],
+              "vulnerable_version_range": "<= 2.19.1"
+            }
+          ],
+          "fixed_versions": [
+            "2.20.0",
+            "c45d7c49ea75133e52ab22a8e9e13173938e36ff"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-x84v-xcm2-53pg"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.0629535371655024,
+      "val_loss": 0.016150080619105243,
+      "seconds": 542.1
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.00909401571450601,
+      "val_loss": 0.010452620866244836,
+      "seconds": 548.3
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.0037450342015354896,
+      "val_loss": 0.0069288154916151605,
+      "seconds": 546.3
+    }
+  ],
+  "best_epoch": 3,
+  "best_val_loss": 0.0069288154916151605,
+  "stopped_early": false,
+  "optimizer_updates_per_epoch": 26
+}

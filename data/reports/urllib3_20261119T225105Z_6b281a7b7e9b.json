@@ -1,0 +1,4243 @@
+{
+  "report_id": "urllib3_20261119T225105Z_6b281a7b7e9b",
+  "created_at": "2026-11-19T22:51:05.678431+00:00",
+  "schema_version": 1,
+  "package_name": "urllib3",
+  "verdict": "Consistent",
+  "explanation": "**Verdict: Consistent**\n\nPackage: urllib3\nPolicy statement (SECURITY.md, supported-versions section, lines 20-30, https://github.com/urllib3/urllib3/blob/main/SECURITY.md#L20-L30): \"Only the main branch (the 2.x release line) receives updates, including security fixes.\"\nCommitment type: explicit_range; version expression: 2.x; temporal reference: vulnerability_publication_time.\nEvaluated on 2026-11-19; reasonable remediation timeframe: 90 days.\n\nThe commitment is fully supported by the evidence (rule R1). 13 vulnerability record(s) affect versions covered by the commitment, and each is fixed on every covered version.\n\nFixed on every covered version (rule R1):\n- CVE-2025-66471 / GHSA-2xpw-w6gg-jr37, published 2025-12-05: affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 11 more; fixed in 2.6.0 (released 2025-12-05). Advisory: https://osv.dev/vulnerability/GHSA-2xpw-w6gg-jr37\n\n- CVE-2024-37891 / GHSA-34jh-p97f-mpxf, published 2024-06-17: affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 6 more; fixed in 1.26.19 (released 2024-06-17), 2.2.2 (released 2024-06-17). Advisory: https://osv.dev/vulnerability/GHSA-34jh-p97f-mpxf\n\n- CVE-2026-21441 / GHSA-38jv-5279-wg99, published 2026-01-07: affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 14 more; fixed in 2.6.3 (released 2026-01-07). Advisory: https://osv.dev/vulnerability/GHSA-38jv-5279-wg99\n\n- CVE-2025-50182 / GHSA-48p4-8xcf-vxj5, published 2025-06-18: affects covered version(s) 2.2.0 (released 2024-01-30), 2.2.1 (released 2024-02-18), 2.2.2 (released 2024-06-17), 2.2.3 (released 2024-09-12), 2.3.0 (released 2024-12-22) and 1 more; fixed in 2.5.0 (released 2025-06-18). Advisory: https://osv.dev/vulnerability/GHSA-48p4-8xcf-vxj5\n\n- CVE-2026-97687 / GHSA-8988-9cw3-xx77, published 2026-09-30: affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 16 more; fixed in 2.8.0 (released 2026-09-15). Advisory: https://osv.dev/vulnerability/GHSA-8988-9cw3-xx77\n\n- CVE-2023-45803 / GHSA-g4mx-q9vg-27p4, published 2023-10-17: affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 2 more; fixed in 2.0.7 (released 2023-10-17), 1.26.18 (released 2023-10-17), 4e98d57809dacab1cbe625fddeec1a290c478ea9. Advisory: https://osv.dev/vulnerability/GHSA-g4mx-q9vg-27p4\n\n- CVE-2026-97688 / GHSA-gh4c-6fx4-qh6g, published 2026-09-30: affects covered version(s) 2.6.2 (released 2025-12-11), 2.6.3 (released 2026-01-07), 2.7.0 (released 2026-05-07); fixed in 2.8.0 (released 2026-09-15). Advisory: https://osv.dev/vulnerability/GHSA-gh4c-6fx4-qh6g\n\n- CVE-2025-66418 / GHSA-gm62-xv2j-4w53, published 2025-12-05: affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 11 more; fixed in 2.6.0 (released 2025-12-05). Advisory: https://osv.dev/vulnerability/GHSA-gm62-xv2j-4w53\n\n- CVE-2026-44432 / GHSA-mf9v-mfxr-j63j, published 2026-05-11: affects covered version(s) 2.6.0 (released 2025-12-05), 2.6.1 (released 2025-12-08), 2.6.2 (released 2025-12-11), 2.6.3 (released 2026-01-07); fixed in 2.7.0 (released 2026-05-07). Advisory: https://osv.dev/vulnerability/GHSA-mf9v-mfxr-j63j\n\n- CVE-2025-50181 / GHSA-pq67-6m6q-mj2v, published 2025-06-18: affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 10 more; fixed in 2.5.0 (released 2025-06-18). Advisory: https://osv.dev/vulnerability/GHSA-pq67-6m6q-mj2v\n\n- 3 further record(s) are listed in the stored report.\n\n9 further record(s) affect no version covered by the commitment and were not assessed.\n\nSources:\n- https://github.com/urllib3/urllib3/blob/main/SECURITY.md#L20-L30\n- https://github.com/urllib3/urllib3\n- https://pypi.org/project/urllib3/\n- https://osv.dev/vulnerability/GHSA-2xpw-w6gg-jr37\n- https://osv.dev/vulnerability/GHSA-34jh-p97f-mpxf\n- https://osv.dev/vulnerability/GHSA-38jv-5279-wg99\n- https://osv.dev/vulnerability/GHSA-48p4-8xcf-vxj5\n- https://osv.dev/vulnerability/GHSA-8988-9cw3-xx77\n- https://osv.dev/vulnerability/GHSA-g4mx-q9vg-27p4\n- https://osv.dev/vulnerability/GHSA-gh4c-6fx4-qh6g\n- https://osv.dev/vulnerability/GHSA-gm62-xv2j-4w53\n- https://osv.dev/vulnerability/GHSA-mf9v-mfxr-j63j\n- https://osv.dev/vulnerability/GHSA-pq67-6m6q-mj2v\n- https://osv.dev/vulnerability/GHSA-qccp-gfcp-xxvc\n- https://osv.dev/vulnerability/GHSA-v845-jxx5-vc9f\n- https://osv.dev/vulnerability/GHSA-vxq7-64xx-v4gw\n- PyPI JSON API: https://pypi.org/pypi/urllib3/json (109 releases)\n- OSV / GitHub Advisory / NVD: 22 de-duplicated vulnerability records\n- Security policy: https://github.com/urllib3/urllib3/blob/main/SECURITY.md",
+  "source_references": [
+    "https://github.com/urllib3/urllib3/blob/main/SECURITY.md#L20-L30",
+    "https://github.com/urllib3/urllib3",
+    "https://pypi.org/project/urllib3/",
+    "https://osv.dev/vulnerability/GHSA-2xpw-w6gg-jr37",
+    "https://osv.dev/vulnerability/GHSA-34jh-p97f-mpxf",
+    "https://osv.dev/vulnerability/GHSA-38jv-5279-wg99",
+    "https://osv.dev/vulnerability/GHSA-48p4-8xcf-vxj5",
+    "https://osv.dev/vulnerability/GHSA-8988-9cw3-xx77",
+    "https://osv.dev/vulnerability/GHSA-g4mx-q9vg-27p4",
+    "https://osv.dev/vulnerability/GHSA-gh4c-6fx4-qh6g",
+    "https://osv.dev/vulnerability/GHSA-gm62-xv2j-4w53",
+    "https://osv.dev/vulnerability/GHSA-mf9v-mfxr-j63j",
+    "https://osv.dev/vulnerability/GHSA-pq67-6m6q-mj2v",
+    "https://osv.dev/vulnerability/GHSA-qccp-gfcp-xxvc",
+    "https://osv.dev/vulnerability/GHSA-v845-jxx5-vc9f",
+    "https://osv.dev/vulnerability/GHSA-vxq7-64xx-v4gw",
+    "PyPI JSON API: https://pypi.org/pypi/urllib3/json (109 releases)",
+    "OSV / GitHub Advisory / NVD: 22 de-duplicated vulnerability records",
+    "Security policy: https://github.com/urllib3/urllib3/blob/main/SECURITY.md"
+  ],
+  "policy": {
+    "repository": "urllib3/urllib3",
+    "path": "SECURITY.md",
+    "url": "https://github.com/urllib3/urllib3/blob/main/SECURITY.md",
+    "line_start": 20,
+    "line_end": 30,
+    "line_annotated_url": "https://github.com/urllib3/urllib3/blob/main/SECURITY.md#L20-L30",
+    "citation": "SECURITY.md, supported-versions section, lines 20-30, https://github.com/urllib3/urllib3/blob/main/SECURITY.md#L20-L30"
+  },
+  "commitment": {
+    "commitment_text": "Only the main branch (the 2.x release line) receives updates, including\nsecurity fixes.",
+    "version_expression": [
+      "2.x"
+    ],
+    "support_status": "explicit_range",
+    "temporal_reference": "vulnerability_publication_time",
+    "is_measurable": true,
+    "extractor_engine": "RuleBasedRegexBaseline (fallback: missing libraries: peft, bitsandbytes, accelerate; CUDA is not available)",
+    "actual_model_used": "none",
+    "lora_applied": false,
+    "execution_device": "cpu",
+    "degraded": true
+  },
+  "assessment": {
+    "package_name": "urllib3",
+    "verdict": "Consistent",
+    "is_measurable": true,
+    "rules_triggered": [
+      "R1"
+    ],
+    "evidence_trail": [
+      "Commitment (t): \"Only the main branch (the 2.x release line) receives updates, including\nsecurity fixes.\"",
+      "Version scope (v): 2.x; commitment type explicit_range; temporal reference vulnerability_publication_time.",
+      "R1 (Consistent): CVE-2025-66471 / GHSA-2xpw-w6gg-jr37 (published 2025-12-05) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 11 more; fixed in 2.6.0 (released 2025-12-05).",
+      "R1 (Consistent): CVE-2024-37891 / GHSA-34jh-p97f-mpxf (published 2024-06-17) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 6 more; fixed in 1.26.19 (released 2024-06-17), 2.2.2 (released 2024-06-17).",
+      "R1 (Consistent): CVE-2026-21441 / GHSA-38jv-5279-wg99 (published 2026-01-07) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 14 more; fixed in 2.6.3 (released 2026-01-07).",
+      "R1 (Consistent): CVE-2025-50182 / GHSA-48p4-8xcf-vxj5 (published 2025-06-18) affects covered version(s) 2.2.0 (released 2024-01-30), 2.2.1 (released 2024-02-18), 2.2.2 (released 2024-06-17), 2.2.3 (released 2024-09-12), 2.3.0 (released 2024-12-22) and 1 more; fixed in 2.5.0 (released 2025-06-18).",
+      "R1 (Consistent): CVE-2026-97687 / GHSA-8988-9cw3-xx77 (published 2026-09-30) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 16 more; fixed in 2.8.0 (released 2026-09-15).",
+      "R1 (Consistent): CVE-2023-45803 / GHSA-g4mx-q9vg-27p4 (published 2023-10-17) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 2 more; fixed in 2.0.7 (released 2023-10-17), 1.26.18 (released 2023-10-17), 4e98d57809dacab1cbe625fddeec1a290c478ea9.",
+      "R1 (Consistent): CVE-2026-97688 / GHSA-gh4c-6fx4-qh6g (published 2026-09-30) affects covered version(s) 2.6.2 (released 2025-12-11), 2.6.3 (released 2026-01-07), 2.7.0 (released 2026-05-07); fixed in 2.8.0 (released 2026-09-15).",
+      "R1 (Consistent): CVE-2025-66418 / GHSA-gm62-xv2j-4w53 (published 2025-12-05) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 11 more; fixed in 2.6.0 (released 2025-12-05).",
+      "R1 (Consistent): CVE-2026-44432 / GHSA-mf9v-mfxr-j63j (published 2026-05-11) affects covered version(s) 2.6.0 (released 2025-12-05), 2.6.1 (released 2025-12-08), 2.6.2 (released 2025-12-11), 2.6.3 (released 2026-01-07); fixed in 2.7.0 (released 2026-05-07).",
+      "R1 (Consistent): CVE-2025-50181 / GHSA-pq67-6m6q-mj2v (published 2025-06-18) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 10 more; fixed in 2.5.0 (released 2025-06-18).",
+      "R1 (Consistent): CVE-2026-44431 / GHSA-qccp-gfcp-xxvc (published 2026-05-11) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 15 more; fixed in 2.7.0 (released 2026-05-07).",
+      "R1 (Consistent): CVE-2023-43804 / GHSA-v845-jxx5-vc9f (published 2023-10-02) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 1 more; fixed in 2.0.6 (released 2023-10-02), 1.26.17 (released 2023-10-02), 644124ecd0b6e417c527191f866daa05a5a2056d, 01220354d389cd05474713f8c982d05c9b17aafb.",
+      "R1 (Consistent): CVE-2026-97689 / GHSA-vxq7-64xx-v4gw (published 2026-09-30) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 16 more; fixed in 2.8.0 (released 2026-09-15).",
+      "9 vulnerability record(s) affect no version covered by the commitment and were not assessed: CVE-2021-28363 / GHSA-5phf-pp7p-vc2r, CVE-2018-25091 / GHSA-gwvm-45gx-3cf8, CVE-2020-7212 / GHSA-hmv2-79q8-fv6g, CVE-2019-11324 / GHSA-mh33-7rrq-662w, CVE-2021-33503 / GHSA-q2q7-5pp4-w6pg and 4 more.",
+      "Aggregation (Table 3.1): 13 x R1 -> Consistent."
+    ],
+    "evidence_log": [
+      {
+        "rule_id": "R1",
+        "outcome": "Consistent",
+        "reason": "fixed_on_all_covered_versions",
+        "message": "CVE-2025-66471 / GHSA-2xpw-w6gg-jr37 (published 2025-12-05) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 11 more; fixed in 2.6.0 (released 2025-12-05).",
+        "vulnerability_id": "CVE-2025-66471",
+        "identifiers": [
+          "CVE-2025-66471",
+          "GHSA-2xpw-w6gg-jr37"
+        ],
+        "published_at": "2025-12-05T18:15:54+00:00",
+        "affected_in_scope": [
+          "2.0.0",
+          "2.0.1",
+          "2.0.2",
+          "2.0.3",
+          "2.0.4",
+          "2.0.5",
+          "2.0.6",
+          "2.0.7",
+          "2.1.0",
+          "2.2.0",
+          "2.2.1",
+          "2.2.2",
+          "2.2.3",
+          "2.3.0",
+          "2.4.0",
+          "2.5.0"
+        ],
+        "affected_release_dates": {
+          "2.0.0": "2023-04-26T17:21:22.577020+00:00",
+          "2.0.1": "2023-04-30T09:00:04.268953+00:00",
+          "2.0.2": "2023-05-03T22:37:13.760873+00:00",
+          "2.0.3": "2023-06-07T10:59:09.651459+00:00",
+          "2.0.4": "2023-07-19T15:51:22.189776+00:00",
+          "2.0.5": "2023-09-20T07:30:33.595386+00:00",
+          "2.0.6": "2023-10-02T17:22:34.932865+00:00",
+          "2.0.7": "2023-10-17T17:46:48.538593+00:00",
+          "2.1.0": "2023-11-13T12:29:42.719227+00:00",
+          "2.2.0": "2024-01-30T15:18:04.978871+00:00",
+          "2.2.1": "2024-02-18T03:55:54.704486+00:00",
+          "2.2.2": "2024-06-17T13:40:07.795777+00:00",
+          "2.2.3": "2024-09-12T10:52:16.589559+00:00",
+          "2.3.0": "2024-12-22T07:47:28.074156+00:00",
+          "2.4.0": "2025-04-10T15:23:37.377011+00:00",
+          "2.5.0": "2025-06-18T14:07:40.390656+00:00"
+        },
+        "unremediated_versions": [],
+        "fixed_versions": [
+          "2.6.0"
+        ],
+        "fix_release_dates": {
+          "2.6.0": "2025-12-05T15:08:45.983238+00:00"
+        },
+        "days_since_publication": null,
+        "advisory_url": "https://osv.dev/vulnerability/GHSA-2xpw-w6gg-jr37"
+      },
+      {
+        "rule_id": "R1",
+        "outcome": "Consistent",
+        "reason": "fixed_on_all_covered_versions",
+        "message": "CVE-2024-37891 / GHSA-34jh-p97f-mpxf (published 2024-06-17) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 6 more; fixed in 1.26.19 (released 2024-06-17), 2.2.2 (released 2024-06-17).",
+        "vulnerability_id": "CVE-2024-37891",
+        "identifiers": [
+          "CVE-2024-37891",
+          "GHSA-34jh-p97f-mpxf"
+        ],
+        "published_at": "2024-06-17T21:37:20+00:00",
+        "affected_in_scope": [
+          "2.0.0",
+          "2.0.1",
+          "2.0.2",
+          "2.0.3",
+          "2.0.4",
+          "2.0.5",
+          "2.0.6",
+          "2.0.7",
+          "2.1.0",
+          "2.2.0",
+          "2.2.1"
+        ],
+        "affected_release_dates": {
+          "2.0.0": "2023-04-26T17:21:22.577020+00:00",
+          "2.0.1": "2023-04-30T09:00:04.268953+00:00",
+          "2.0.2": "2023-05-03T22:37:13.760873+00:00",
+          "2.0.3": "2023-06-07T10:59:09.651459+00:00",
+          "2.0.4": "2023-07-19T15:51:22.189776+00:00",
+          "2.0.5": "2023-09-20T07:30:33.595386+00:00",
+          "2.0.6": "2023-10-02T17:22:34.932865+00:00",
+          "2.0.7": "2023-10-17T17:46:48.538593+00:00",
+          "2.1.0": "2023-11-13T12:29:42.719227+00:00",
+          "2.2.0": "2024-01-30T15:18:04.978871+00:00",
+          "2.2.1": "2024-02-18T03:55:54.704486+00:00"
+        },
+        "unremediated_versions": [],
+        "fixed_versions": [
+          "1.26.19",
+          "2.2.2"
+        ],
+        "fix_release_dates": {
+          "1.26.19": "2024-06-17T14:53:31.589461+00:00",
+          "2.2.2": "2024-06-17T13:40:07.795777+00:00"
+        },
+        "days_since_publication": null,
+        "advisory_url": "https://osv.dev/vulnerability/GHSA-34jh-p97f-mpxf"
+      },
+      {
+        "rule_id": "R1",
+        "outcome": "Consistent",
+        "reason": "fixed_on_all_covered_versions",
+        "message": "CVE-2026-21441 / GHSA-38jv-5279-wg99 (published 2026-01-07) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 14 more; fixed in 2.6.3 (released 2026-01-07).",
+        "vulnerability_id": "CVE-2026-21441",
+        "identifiers": [
+          "CVE-2026-21441",
+          "GHSA-38jv-5279-wg99"
+        ],
+        "published_at": "2026-01-07T19:18:14+00:00",
+        "affected_in_scope": [
+          "2.0.0",
+          "2.0.1",
+          "2.0.2",
+          "2.0.3",
+          "2.0.4",
+          "2.0.5",
+          "2.0.6",
+          "2.0.7",
+          "2.1.0",
+          "2.2.0",
+          "2.2.1",
+          "2.2.2",
+          "2.2.3",
+          "2.3.0",
+          "2.4.0",
+          "2.5.0",
+          "2.6.0",
+          "2.6.1",
+          "2.6.2"
+        ],
+        "affected_release_dates": {
+          "2.0.0": "2023-04-26T17:21:22.577020+00:00",
+          "2.0.1": "2023-04-30T09:00:04.268953+00:00",
+          "2.0.2": "2023-05-03T22:37:13.760873+00:00",
+          "2.0.3": "2023-06-07T10:59:09.651459+00:00",
+          "2.0.4": "2023-07-19T15:51:22.189776+00:00",
+          "2.0.5": "2023-09-20T07:30:33.595386+00:00",
+          "2.0.6": "2023-10-02T17:22:34.932865+00:00",
+          "2.0.7": "2023-10-17T17:46:48.538593+00:00",
+          "2.1.0": "2023-11-13T12:29:42.719227+00:00",
+          "2.2.0": "2024-01-30T15:18:04.978871+00:00",
+          "2.2.1": "2024-02-18T03:55:54.704486+00:00",
+          "2.2.2": "2024-06-17T13:40:07.795777+00:00",
+          "2.2.3": "2024-09-12T10:52:16.589559+00:00",
+          "2.3.0": "2024-12-22T07:47:28.074156+00:00",
+          "2.4.0": "2025-04-10T15:23:37.377011+00:00",
+          "2.5.0": "2025-06-18T14:07:40.390656+00:00",
+          "2.6.0": "2025-12-05T15:08:45.983238+00:00",
+          "2.6.1": "2025-12-08T15:25:25.510965+00:00",
+          "2.6.2": "2025-12-11T15:56:38.584804+00:00"
+        },
+        "unremediated_versions": [],
+        "fixed_versions": [
+          "2.6.3"
+        ],
+        "fix_release_dates": {
+          "2.6.3": "2026-01-07T16:24:42.685091+00:00"
+        },
+        "days_since_publication": null,
+        "advisory_url": "https://osv.dev/vulnerability/GHSA-38jv-5279-wg99"
+      },
+      {
+        "rule_id": "R1",
+        "outcome": "Consistent",
+        "reason": "fixed_on_all_covered_versions",
+        "message": "CVE-2025-50182 / GHSA-48p4-8xcf-vxj5 (published 2025-06-18) affects covered version(s) 2.2.0 (released 2024-01-30), 2.2.1 (released 2024-02-18), 2.2.2 (released 2024-06-17), 2.2.3 (released 2024-09-12), 2.3.0 (released 2024-12-22) and 1 more; fixed in 2.5.0 (released 2025-06-18).",
+        "vulnerability_id": "CVE-2025-50182",
+        "identifiers": [
+          "CVE-2025-50182",
+          "GHSA-48p4-8xcf-vxj5"
+        ],
+        "published_at": "2025-06-18T17:50:11+00:00",
+        "affected_in_scope": [
+          "2.2.0",
+          "2.2.1",
+          "2.2.2",
+          "2.2.3",
+          "2.3.0",
+          "2.4.0"
+        ],
+        "affected_release_dates": {
+          "2.2.0": "2024-01-30T15:18:04.978871+00:00",
+          "2.2.1": "2024-02-18T03:55:54.704486+00:00",
+          "2.2.2": "2024-06-17T13:40:07.795777+00:00",
+          "2.2.3": "2024-09-12T10:52:16.589559+00:00",
+          "2.3.0": "2024-12-22T07:47:28.074156+00:00",
+          "2.4.0": "2025-04-10T15:23:37.377011+00:00"
+        },
+        "unremediated_versions": [],
+        "fixed_versions": [
+          "2.5.0"
+        ],
+        "fix_release_dates": {
+          "2.5.0": "2025-06-18T14:07:40.390656+00:00"
+        },
+        "days_since_publication": null,
+        "advisory_url": "https://osv.dev/vulnerability/GHSA-48p4-8xcf-vxj5"
+      },
+      {
+        "rule_id": "R1",
+        "outcome": "Consistent",
+        "reason": "fixed_on_all_covered_versions",
+        "message": "CVE-2026-97687 / GHSA-8988-9cw3-xx77 (published 2026-09-30) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 16 more; fixed in 2.8.0 (released 2026-09-15).",
+        "vulnerability_id": "CVE-2026-97687",
+        "identifiers": [
+          "CVE-2026-97687",
+          "GHSA-8988-9cw3-xx77"
+        ],
+        "published_at": "2026-09-30T14:46:04+00:00",
+        "affected_in_scope": [
+          "2.0.0",
+          "2.0.1",
+          "2.0.2",
+          "2.0.3",
+          "2.0.4",
+          "2.0.5",
+          "2.0.6",
+          "2.0.7",
+          "2.1.0",
+          "2.2.0",
+          "2.2.1",
+          "2.2.2",
+          "2.2.3",
+          "2.3.0",
+          "2.4.0",
+          "2.5.0",
+          "2.6.0",
+          "2.6.1",
+          "2.6.2",
+          "2.6.3",
+          "2.7.0"
+        ],
+        "affected_release_dates": {
+          "2.0.0": "2023-04-26T17:21:22.577020+00:00",
+          "2.0.1": "2023-04-30T09:00:04.268953+00:00",
+          "2.0.2": "2023-05-03T22:37:13.760873+00:00",
+          "2.0.3": "2023-06-07T10:59:09.651459+00:00",
+          "2.0.4": "2023-07-19T15:51:22.189776+00:00",
+          "2.0.5": "2023-09-20T07:30:33.595386+00:00",
+          "2.0.6": "2023-10-02T17:22:34.932865+00:00",
+          "2.0.7": "2023-10-17T17:46:48.538593+00:00",
+          "2.1.0": "2023-11-13T12:29:42.719227+00:00",
+          "2.2.0": "2024-01-30T15:18:04.978871+00:00",
+          "2.2.1": "2024-02-18T03:55:54.704486+00:00",
+          "2.2.2": "2024-06-17T13:40:07.795777+00:00",
+          "2.2.3": "2024-09-12T10:52:16.589559+00:00",
+          "2.3.0": "2024-12-22T07:47:28.074156+00:00",
+          "2.4.0": "2025-04-10T15:23:37.377011+00:00",
+          "2.5.0": "2025-06-18T14:07:40.390656+00:00",
+          "2.6.0": "2025-12-05T15:08:45.983238+00:00",
+          "2.6.1": "2025-12-08T15:25:25.510965+00:00",
+          "2.6.2": "2025-12-11T15:56:38.584804+00:00",
+          "2.6.3": "2026-01-07T16:24:42.685091+00:00",
+          "2.7.0": "2026-05-07T16:13:17.151740+00:00"
+        },
+        "unremediated_versions": [],
+        "fixed_versions": [
+          "2.8.0"
+        ],
+        "fix_release_dates": {
+          "2.8.0": "2026-09-15T19:29:34.577402+00:00"
+        },
+        "days_since_publication": null,
+        "advisory_url": "https://osv.dev/vulnerability/GHSA-8988-9cw3-xx77"
+      },
+      {
+        "rule_id": "R1",
+        "outcome": "Consistent",
+        "reason": "fixed_on_all_covered_versions",
+        "message": "CVE-2023-45803 / GHSA-g4mx-q9vg-27p4 (published 2023-10-17) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 2 more; fixed in 2.0.7 (released 2023-10-17), 1.26.18 (released 2023-10-17), 4e98d57809dacab1cbe625fddeec1a290c478ea9.",
+        "vulnerability_id": "CVE-2023-45803",
+        "identifiers": [
+          "CVE-2023-45803",
+          "GHSA-g4mx-q9vg-27p4"
+        ],
+        "published_at": "2023-10-17T20:15:25+00:00",
+        "affected_in_scope": [
+          "2.0.0",
+          "2.0.1",
+          "2.0.2",
+          "2.0.3",
+          "2.0.4",
+          "2.0.5",
+          "2.0.6"
+        ],
+        "affected_release_dates": {
+          "2.0.0": "2023-04-26T17:21:22.577020+00:00",
+          "2.0.1": "2023-04-30T09:00:04.268953+00:00",
+          "2.0.2": "2023-05-03T22:37:13.760873+00:00",
+          "2.0.3": "2023-06-07T10:59:09.651459+00:00",
+          "2.0.4": "2023-07-19T15:51:22.189776+00:00",
+          "2.0.5": "2023-09-20T07:30:33.595386+00:00",
+          "2.0.6": "2023-10-02T17:22:34.932865+00:00"
+        },
+        "unremediated_versions": [],
+        "fixed_versions": [
+          "2.0.7",
+          "1.26.18",
+          "4e98d57809dacab1cbe625fddeec1a290c478ea9"
+        ],
+        "fix_release_dates": {
+          "2.0.7": "2023-10-17T17:46:48.538593+00:00",
+          "1.26.18": "2023-10-17T17:47:01.725249+00:00"
+        },
+        "days_since_publication": null,
+        "advisory_url": "https://osv.dev/vulnerability/GHSA-g4mx-q9vg-27p4"
+      },
+      {
+        "rule_id": "R1",
+        "outcome": "Consistent",
+        "reason": "fixed_on_all_covered_versions",
+        "message": "CVE-2026-97688 / GHSA-gh4c-6fx4-qh6g (published 2026-09-30) affects covered version(s) 2.6.2 (released 2025-12-11), 2.6.3 (released 2026-01-07), 2.7.0 (released 2026-05-07); fixed in 2.8.0 (released 2026-09-15).",
+        "vulnerability_id": "CVE-2026-97688",
+        "identifiers": [
+          "CVE-2026-97688",
+          "GHSA-gh4c-6fx4-qh6g"
+        ],
+        "published_at": "2026-09-30T15:00:38+00:00",
+        "affected_in_scope": [
+          "2.6.2",
+          "2.6.3",
+          "2.7.0"
+        ],
+        "affected_release_dates": {
+          "2.6.2": "2025-12-11T15:56:38.584804+00:00",
+          "2.6.3": "2026-01-07T16:24:42.685091+00:00",
+          "2.7.0": "2026-05-07T16:13:17.151740+00:00"
+        },
+        "unremediated_versions": [],
+        "fixed_versions": [
+          "2.8.0"
+        ],
+        "fix_release_dates": {
+          "2.8.0": "2026-09-15T19:29:34.577402+00:00"
+        },
+        "days_since_publication": null,
+        "advisory_url": "https://osv.dev/vulnerability/GHSA-gh4c-6fx4-qh6g"
+      },
+      {
+        "rule_id": "R1",
+        "outcome": "Consistent",
+        "reason": "fixed_on_all_covered_versions",
+        "message": "CVE-2025-66418 / GHSA-gm62-xv2j-4w53 (published 2025-12-05) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 11 more; fixed in 2.6.0 (released 2025-12-05).",
+        "vulnerability_id": "CVE-2025-66418",
+        "identifiers": [
+          "CVE-2025-66418",
+          "GHSA-gm62-xv2j-4w53"
+        ],
+        "published_at": "2025-12-05T18:15:19+00:00",
+        "affected_in_scope": [
+          "2.0.0",
+          "2.0.1",
+          "2.0.2",
+          "2.0.3",
+          "2.0.4",
+          "2.0.5",
+          "2.0.6",
+          "2.0.7",
+          "2.1.0",
+          "2.2.0",
+          "2.2.1",
+          "2.2.2",
+          "2.2.3",
+          "2.3.0",
+          "2.4.0",
+          "2.5.0"
+        ],
+        "affected_release_dates": {
+          "2.0.0": "2023-04-26T17:21:22.577020+00:00",
+          "2.0.1": "2023-04-30T09:00:04.268953+00:00",
+          "2.0.2": "2023-05-03T22:37:13.760873+00:00",
+          "2.0.3": "2023-06-07T10:59:09.651459+00:00",
+          "2.0.4": "2023-07-19T15:51:22.189776+00:00",
+          "2.0.5": "2023-09-20T07:30:33.595386+00:00",
+          "2.0.6": "2023-10-02T17:22:34.932865+00:00",
+          "2.0.7": "2023-10-17T17:46:48.538593+00:00",
+          "2.1.0": "2023-11-13T12:29:42.719227+00:00",
+          "2.2.0": "2024-01-30T15:18:04.978871+00:00",
+          "2.2.1": "2024-02-18T03:55:54.704486+00:00",
+          "2.2.2": "2024-06-17T13:40:07.795777+00:00",
+          "2.2.3": "2024-09-12T10:52:16.589559+00:00",
+          "2.3.0": "2024-12-22T07:47:28.074156+00:00",
+          "2.4.0": "2025-04-10T15:23:37.377011+00:00",
+          "2.5.0": "2025-06-18T14:07:40.390656+00:00"
+        },
+        "unremediated_versions": [],
+        "fixed_versions": [
+          "2.6.0"
+        ],
+        "fix_release_dates": {
+          "2.6.0": "2025-12-05T15:08:45.983238+00:00"
+        },
+        "days_since_publication": null,
+        "advisory_url": "https://osv.dev/vulnerability/GHSA-gm62-xv2j-4w53"
+      },
+      {
+        "rule_id": "R1",
+        "outcome": "Consistent",
+        "reason": "fixed_on_all_covered_versions",
+        "message": "CVE-2026-44432 / GHSA-mf9v-mfxr-j63j (published 2026-05-11) affects covered version(s) 2.6.0 (released 2025-12-05), 2.6.1 (released 2025-12-08), 2.6.2 (released 2025-12-11), 2.6.3 (released 2026-01-07); fixed in 2.7.0 (released 2026-05-07).",
+        "vulnerability_id": "CVE-2026-44432",
+        "identifiers": [
+          "CVE-2026-44432",
+          "GHSA-mf9v-mfxr-j63j"
+        ],
+        "published_at": "2026-05-11T14:51:45+00:00",
+        "affected_in_scope": [
+          "2.6.0",
+          "2.6.1",
+          "2.6.2",
+          "2.6.3"
+        ],
+        "affected_release_dates": {
+          "2.6.0": "2025-12-05T15:08:45.983238+00:00",
+          "2.6.1": "2025-12-08T15:25:25.510965+00:00",
+          "2.6.2": "2025-12-11T15:56:38.584804+00:00",
+          "2.6.3": "2026-01-07T16:24:42.685091+00:00"
+        },
+        "unremediated_versions": [],
+        "fixed_versions": [
+          "2.7.0"
+        ],
+        "fix_release_dates": {
+          "2.7.0": "2026-05-07T16:13:17.151740+00:00"
+        },
+        "days_since_publication": null,
+        "advisory_url": "https://osv.dev/vulnerability/GHSA-mf9v-mfxr-j63j"
+      },
+      {
+        "rule_id": "R1",
+        "outcome": "Consistent",
+        "reason": "fixed_on_all_covered_versions",
+        "message": "CVE-2025-50181 / GHSA-pq67-6m6q-mj2v (published 2025-06-18) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 10 more; fixed in 2.5.0 (released 2025-06-18).",
+        "vulnerability_id": "CVE-2025-50181",
+        "identifiers": [
+          "CVE-2025-50181",
+          "GHSA-pq67-6m6q-mj2v"
+        ],
+        "published_at": "2025-06-18T17:50:00+00:00",
+        "affected_in_scope": [
+          "2.0.0",
+          "2.0.1",
+          "2.0.2",
+          "2.0.3",
+          "2.0.4",
+          "2.0.5",
+          "2.0.6",
+          "2.0.7",
+          "2.1.0",
+          "2.2.0",
+          "2.2.1",
+          "2.2.2",
+          "2.2.3",
+          "2.3.0",
+          "2.4.0"
+        ],
+        "affected_release_dates": {
+          "2.0.0": "2023-04-26T17:21:22.577020+00:00",
+          "2.0.1": "2023-04-30T09:00:04.268953+00:00",
+          "2.0.2": "2023-05-03T22:37:13.760873+00:00",
+          "2.0.3": "2023-06-07T10:59:09.651459+00:00",
+          "2.0.4": "2023-07-19T15:51:22.189776+00:00",
+          "2.0.5": "2023-09-20T07:30:33.595386+00:00",
+          "2.0.6": "2023-10-02T17:22:34.932865+00:00",
+          "2.0.7": "2023-10-17T17:46:48.538593+00:00",
+          "2.1.0": "2023-11-13T12:29:42.719227+00:00",
+          "2.2.0": "2024-01-30T15:18:04.978871+00:00",
+          "2.2.1": "2024-02-18T03:55:54.704486+00:00",
+          "2.2.2": "2024-06-17T13:40:07.795777+00:00",
+          "2.2.3": "2024-09-12T10:52:16.589559+00:00",
+          "2.3.0": "2024-12-22T07:47:28.074156+00:00",
+          "2.4.0": "2025-04-10T15:23:37.377011+00:00"
+        },
+        "unremediated_versions": [],
+        "fixed_versions": [
+          "2.5.0"
+        ],
+        "fix_release_dates": {
+          "2.5.0": "2025-06-18T14:07:40.390656+00:00"
+        },
+        "days_since_publication": null,
+        "advisory_url": "https://osv.dev/vulnerability/GHSA-pq67-6m6q-mj2v"
+      },
+      {
+        "rule_id": "R1",
+        "outcome": "Consistent",
+        "reason": "fixed_on_all_covered_versions",
+        "message": "CVE-2026-44431 / GHSA-qccp-gfcp-xxvc (published 2026-05-11) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 15 more; fixed in 2.7.0 (released 2026-05-07).",
+        "vulnerability_id": "CVE-2026-44431",
+        "identifiers": [
+          "CVE-2026-44431",
+          "GHSA-qccp-gfcp-xxvc"
+        ],
+        "published_at": "2026-05-11T14:51:20+00:00",
+        "affected_in_scope": [
+          "2.0.0",
+          "2.0.1",
+          "2.0.2",
+          "2.0.3",
+          "2.0.4",
+          "2.0.5",
+          "2.0.6",
+          "2.0.7",
+          "2.1.0",
+          "2.2.0",
+          "2.2.1",
+          "2.2.2",
+          "2.2.3",
+          "2.3.0",
+          "2.4.0",
+          "2.5.0",
+          "2.6.0",
+          "2.6.1",
+          "2.6.2",
+          "2.6.3"
+        ],
+        "affected_release_dates": {
+          "2.0.0": "2023-04-26T17:21:22.577020+00:00",
+          "2.0.1": "2023-04-30T09:00:04.268953+00:00",
+          "2.0.2": "2023-05-03T22:37:13.760873+00:00",
+          "2.0.3": "2023-06-07T10:59:09.651459+00:00",
+          "2.0.4": "2023-07-19T15:51:22.189776+00:00",
+          "2.0.5": "2023-09-20T07:30:33.595386+00:00",
+          "2.0.6": "2023-10-02T17:22:34.932865+00:00",
+          "2.0.7": "2023-10-17T17:46:48.538593+00:00",
+          "2.1.0": "2023-11-13T12:29:42.719227+00:00",
+          "2.2.0": "2024-01-30T15:18:04.978871+00:00",
+          "2.2.1": "2024-02-18T03:55:54.704486+00:00",
+          "2.2.2": "2024-06-17T13:40:07.795777+00:00",
+          "2.2.3": "2024-09-12T10:52:16.589559+00:00",
+          "2.3.0": "2024-12-22T07:47:28.074156+00:00",
+          "2.4.0": "2025-04-10T15:23:37.377011+00:00",
+          "2.5.0": "2025-06-18T14:07:40.390656+00:00",
+          "2.6.0": "2025-12-05T15:08:45.983238+00:00",
+          "2.6.1": "2025-12-08T15:25:25.510965+00:00",
+          "2.6.2": "2025-12-11T15:56:38.584804+00:00",
+          "2.6.3": "2026-01-07T16:24:42.685091+00:00"
+        },
+        "unremediated_versions": [],
+        "fixed_versions": [
+          "2.7.0"
+        ],
+        "fix_release_dates": {
+          "2.7.0": "2026-05-07T16:13:17.151740+00:00"
+        },
+        "days_since_publication": null,
+        "advisory_url": "https://osv.dev/vulnerability/GHSA-qccp-gfcp-xxvc"
+      },
+      {
+        "rule_id": "R1",
+        "outcome": "Consistent",
+        "reason": "fixed_on_all_covered_versions",
+        "message": "CVE-2023-43804 / GHSA-v845-jxx5-vc9f (published 2023-10-02) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 1 more; fixed in 2.0.6 (released 2023-10-02), 1.26.17 (released 2023-10-02), 644124ecd0b6e417c527191f866daa05a5a2056d, 01220354d389cd05474713f8c982d05c9b17aafb.",
+        "vulnerability_id": "CVE-2023-43804",
+        "identifiers": [
+          "CVE-2023-43804",
+          "GHSA-v845-jxx5-vc9f"
+        ],
+        "published_at": "2023-10-02T23:27:05+00:00",
+        "affected_in_scope": [
+          "2.0.0",
+          "2.0.1",
+          "2.0.2",
+          "2.0.3",
+          "2.0.4",
+          "2.0.5"
+        ],
+        "affected_release_dates": {
+          "2.0.0": "2023-04-26T17:21:22.577020+00:00",
+          "2.0.1": "2023-04-30T09:00:04.268953+00:00",
+          "2.0.2": "2023-05-03T22:37:13.760873+00:00",
+          "2.0.3": "2023-06-07T10:59:09.651459+00:00",
+          "2.0.4": "2023-07-19T15:51:22.189776+00:00",
+          "2.0.5": "2023-09-20T07:30:33.595386+00:00"
+        },
+        "unremediated_versions": [],
+        "fixed_versions": [
+          "2.0.6",
+          "1.26.17",
+          "644124ecd0b6e417c527191f866daa05a5a2056d",
+          "01220354d389cd05474713f8c982d05c9b17aafb"
+        ],
+        "fix_release_dates": {
+          "2.0.6": "2023-10-02T17:22:34.932865+00:00",
+          "1.26.17": "2023-10-02T17:22:28.101314+00:00"
+        },
+        "days_since_publication": null,
+        "advisory_url": "https://osv.dev/vulnerability/GHSA-v845-jxx5-vc9f"
+      },
+      {
+        "rule_id": "R1",
+        "outcome": "Consistent",
+        "reason": "fixed_on_all_covered_versions",
+        "message": "CVE-2026-97689 / GHSA-vxq7-64xx-v4gw (published 2026-09-30) affects covered version(s) 2.0.0 (released 2023-04-26), 2.0.1 (released 2023-04-30), 2.0.2 (released 2023-05-03), 2.0.3 (released 2023-06-07), 2.0.4 (released 2023-07-19) and 16 more; fixed in 2.8.0 (released 2026-09-15).",
+        "vulnerability_id": "CVE-2026-97689",
+        "identifiers": [
+          "CVE-2026-97689",
+          "GHSA-vxq7-64xx-v4gw"
+        ],
+        "published_at": "2026-09-30T14:46:18+00:00",
+        "affected_in_scope": [
+          "2.0.0",
+          "2.0.1",
+          "2.0.2",
+          "2.0.3",
+          "2.0.4",
+          "2.0.5",
+          "2.0.6",
+          "2.0.7",
+          "2.1.0",
+          "2.2.0",
+          "2.2.1",
+          "2.2.2",
+          "2.2.3",
+          "2.3.0",
+          "2.4.0",
+          "2.5.0",
+          "2.6.0",
+          "2.6.1",
+          "2.6.2",
+          "2.6.3",
+          "2.7.0"
+        ],
+        "affected_release_dates": {
+          "2.0.0": "2023-04-26T17:21:22.577020+00:00",
+          "2.0.1": "2023-04-30T09:00:04.268953+00:00",
+          "2.0.2": "2023-05-03T22:37:13.760873+00:00",
+          "2.0.3": "2023-06-07T10:59:09.651459+00:00",
+          "2.0.4": "2023-07-19T15:51:22.189776+00:00",
+          "2.0.5": "2023-09-20T07:30:33.595386+00:00",
+          "2.0.6": "2023-10-02T17:22:34.932865+00:00",
+          "2.0.7": "2023-10-17T17:46:48.538593+00:00",
+          "2.1.0": "2023-11-13T12:29:42.719227+00:00",
+          "2.2.0": "2024-01-30T15:18:04.978871+00:00",
+          "2.2.1": "2024-02-18T03:55:54.704486+00:00",
+          "2.2.2": "2024-06-17T13:40:07.795777+00:00",
+          "2.2.3": "2024-09-12T10:52:16.589559+00:00",
+          "2.3.0": "2024-12-22T07:47:28.074156+00:00",
+          "2.4.0": "2025-04-10T15:23:37.377011+00:00",
+          "2.5.0": "2025-06-18T14:07:40.390656+00:00",
+          "2.6.0": "2025-12-05T15:08:45.983238+00:00",
+          "2.6.1": "2025-12-08T15:25:25.510965+00:00",
+          "2.6.2": "2025-12-11T15:56:38.584804+00:00",
+          "2.6.3": "2026-01-07T16:24:42.685091+00:00",
+          "2.7.0": "2026-05-07T16:13:17.151740+00:00"
+        },
+        "unremediated_versions": [],
+        "fixed_versions": [
+          "2.8.0"
+        ],
+        "fix_release_dates": {
+          "2.8.0": "2026-09-15T19:29:34.577402+00:00"
+        },
+        "days_since_publication": null,
+        "advisory_url": "https://osv.dev/vulnerability/GHSA-vxq7-64xx-v4gw"
+      }
+    ],
+    "evaluated_vulns_count": 22,
+    "assessed_vulns_count": 13,
+    "out_of_scope_vulns_count": 9,
+    "rule_counts": {
+      "R1": 13,
+      "R2": 0,
+      "R3": 0,
+      "R4": 0
+    },
+    "reasonable_timeframe_days": 90,
+    "reference_time": "2026-11-19T22:50:29.369599+00:00"
+  },
+  "trace": {
+    "status": "INCLUDED",
+    "reference_time": "2026-11-19T22:50:29.369599+00:00",
+    "layer0": {
+      "package_name": "urllib3",
+      "status": "INCLUDED",
+      "exclusion_reason": null,
+      "pypi_metadata": {
+        "author": null,
+        "author_email": "Andrey Petrov <andrey.petrov@shazow.net>",
+        "bugtrack_url": null,
+        "classifiers": [
+          "Environment :: Web Environment",
+          "Intended Audience :: Developers",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3 :: Only",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.14",
+          "Programming Language :: Python :: 3.15",
+          "Programming Language :: Python :: Free Threading :: 2 - Beta",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Internet :: WWW/HTTP",
+          "Topic :: Software Development :: Libraries"
+        ],
+        "description": "<h1 align=\"center\">\n\n![urllib3](https://github.com/urllib3/urllib3/raw/main/docs/_static/banner_github.svg)\n\n</h1>\n\n<p align=\"center\">\n  <a href=\"https://pypi.org/project/urllib3\"><img alt=\"PyPI Version\" src=\"https://img.shields.io/pypi/v/urllib3.svg?maxAge=86400\" /></a>\n  <a href=\"https://pypi.org/project/urllib3\"><img alt=\"Python Versions\" src=\"https://img.shields.io/pypi/pyversions/urllib3.svg?maxAge=86400\" /></a>\n  <a href=\"https://discord.gg/urllib3\"><img alt=\"Join our Discord\" src=\"https://img.shields.io/discord/756342717725933608?color=%237289da&label=discord\" /></a>\n  <a href=\"https://github.com/urllib3/urllib3/actions?query=workflow%3ACI\"><img alt=\"Coverage Status\" src=\"https://img.shields.io/badge/coverage-100%25-success\" /></a>\n  <a href=\"https://github.com/urllib3/urllib3/actions/workflows/ci.yml?query=branch%3Amain\"><img alt=\"Build Status on GitHub\" src=\"https://github.com/urllib3/urllib3/actions/workflows/ci.yml/badge.svg?branch:main&workflow:CI\" /></a>\n  <a href=\"https://urllib3.readthedocs.io\"><img alt=\"Documentation Status\" src=\"https://readthedocs.org/projects/urllib3/badge/?version=latest\" /></a><br>\n  <a href=\"https://deps.dev/pypi/urllib3\"><img alt=\"OpenSSF Scorecard\" src=\"https://api.securityscorecards.dev/projects/github.com/urllib3/urllib3/badge\" /></a>\n  <a href=\"https://slsa.dev\"><img alt=\"SLSA 3\" src=\"https://slsa.dev/images/gh-badge-level3.svg\" /></a>\n  <a href=\"https://bestpractices.coreinfrastructure.org/projects/6227\"><img alt=\"CII Best Practices\" src=\"https://bestpractices.coreinfrastructure.org/projects/6227/badge\" /></a>\n</p>\n\nurllib3 is a powerful, *user-friendly* HTTP client for Python.\nurllib3 brings many critical features that are missing from the Python\nstandard libraries:\n\n- Thread safety.\n- Connection pooling.\n- Client-side SSL/TLS verification.\n- File uploads with multipart encoding.\n- Helpers for retrying requests and dealing with HTTP redirects.\n- Support for gzip, deflate, brotli, and zstd encoding.\n- Proxy support for HTTP and SOCKS.\n- 100% test coverage.\n\n... and many more features, but most importantly: Our maintainers have a 15+\nyear track record of maintaining urllib3 with the highest code standards and\nattention to security and safety.\n\n[Much of the Python ecosystem already uses urllib3](https://urllib3.readthedocs.io/en/stable/#who-uses)\nand you should too.\n\n\n## Installing\n\nurllib3 can be installed with [pip](https://pip.pypa.io):\n\n```bash\n$ python -m pip install urllib3\n```\n\nAlternatively, you can grab the latest source code from [GitHub](https://github.com/urllib3/urllib3):\n\n```bash\n$ git clone https://github.com/urllib3/urllib3.git\n$ cd urllib3\n$ pip install .\n```\n\n## Getting Started\n\nurllib3 is easy to use:\n\n```python3\n>>> import urllib3\n>>> resp = urllib3.request(\"GET\", \"http://httpbin.org/robots.txt\")\n>>> resp.status\n200\n>>> resp.data\nb\"User-agent: *\\nDisallow: /deny\\n\"\n```\n\nurllib3 has usage and reference documentation at [urllib3.readthedocs.io](https://urllib3.readthedocs.io).\n\n\n## Community\n\nurllib3 has a [community Discord channel](https://discord.gg/urllib3) for asking questions and\ncollaborating with other contributors. Drop by and say hello 👋\n\n\n## Contributing\n\nurllib3 welcomes contributions. Please read our\n[contributing documentation](https://urllib3.readthedocs.io/en/latest/contributing.html)\nbefore starting work.\n\nCheck for existing pull requests addressing the same issue, and share feedback\nand suggestions in the existing pull request and issue. Duplicate pull\nrequests, including alternative solutions, will be rejected without review\nunless a maintainer has approved opening an alternative pull request in\nadvance.\n\n\n## Security Disclosures\n\nTo report a security vulnerability, please use the\n[Tidelift security contact](https://tidelift.com/security).\nTidelift will coordinate the fix and disclosure with maintainers.\n\nSee the repository\n[Security Policy](https://urllib3.readthedocs.io/en/latest/security.html)\nfor more details.\n\n\n## Maintainers\n\nMeet our maintainers since 2008:\n\n- Current Lead: [@illia-v](https://github.com/illia-v) (Illia Volochii)\n- [@sethmlarson](https://github.com/sethmlarson) (Seth M. Larson)\n- [@pquentin](https://github.com/pquentin) (Quentin Pradet)\n- [@theacodes](https://github.com/theacodes) (Thea Flowers)\n- [@haikuginger](https://github.com/haikuginger) (Jess Shapiro)\n- [@lukasa](https://github.com/lukasa) (Cory Benfield)\n- [@sigmavirus24](https://github.com/sigmavirus24) (Ian Stapleton Cordasco)\n- [@shazow](https://github.com/shazow) (Andrey Petrov)\n\n👋\n\n\n## Sponsorship\n\nIf your company benefits from this library, please consider [sponsoring its\ndevelopment](https://urllib3.readthedocs.io/en/latest/sponsors.html).\n\n\n## For Enterprise\n\nProfessional support for urllib3 is available as part of the [Tidelift\nSubscription][1]. Tidelift gives software development teams a single source for\npurchasing and maintaining their software, with professional grade assurances\nfrom the experts who know it best, while seamlessly integrating with existing\ntools.\n\n[1]: https://tidelift.com/subscription/pkg/pypi-urllib3?utm_source=pypi-urllib3&utm_medium=referral&utm_campaign=readme\n",
+        "description_content_type": "text/markdown",
+        "docs_url": null,
+        "download_url": null,
+        "downloads": {
+          "last_day": -1,
+          "last_month": -1,
+          "last_week": -1
+        },
+        "dynamic": null,
+        "home_page": null,
+        "keywords": "filepost, http, httplib, https, pooling, ssl, threadsafe, urllib",
+        "license": null,
+        "license_expression": "MIT",
+        "license_files": [
+          "LICENSE.txt"
+        ],
+        "maintainer": null,
+        "maintainer_email": "Seth Michael Larson <sethmichaellarson@gmail.com>, Quentin Pradet <quentin@pradet.me>, Illia Volochii <illia.volochii@gmail.com>",
+        "name": "urllib3",
+        "package_url": "https://pypi.org/project/urllib3/",
+        "platform": null,
+        "project_url": "https://pypi.org/project/urllib3/",
+        "project_urls": {
+          "Changelog": "https://github.com/urllib3/urllib3/blob/main/CHANGES.rst",
+          "Code": "https://github.com/urllib3/urllib3",
+          "Documentation": "https://urllib3.readthedocs.io",
+          "Issue tracker": "https://github.com/urllib3/urllib3/issues",
+          "Security policy": "https://urllib3.readthedocs.io/en/latest/security.html"
+        },
+        "provides_extra": [
+          "brotli",
+          "h2",
+          "socks",
+          "zstd"
+        ],
+        "release_url": "https://pypi.org/project/urllib3/2.8.0/",
+        "requires_dist": [
+          "brotli>=1.2.0; platform_python_implementation == \"CPython\" and extra == \"brotli\"",
+          "brotlicffi>=1.2.0.0; platform_python_implementation != \"CPython\" and extra == \"brotli\"",
+          "h2<5,>=4; extra == \"h2\"",
+          "pysocks!=1.5.7,<2.0,>=1.5.6; extra == \"socks\"",
+          "backports-zstd>=1.0.0; python_version < \"3.14\" and extra == \"zstd\""
+        ],
+        "requires_python": ">=3.10",
+        "summary": "HTTP library with thread-safe connection pooling, file post, and more.",
+        "version": "2.8.0",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      "releases": [
+        {
+          "tag": "0.2",
+          "version": "0.2",
+          "published_at": "2009-12-11T08:47:22.568398Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.0",
+          "version": "1.0",
+          "published_at": "2011-10-09T23:46:31.199700Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.0.1",
+          "version": "1.0.1",
+          "published_at": "2011-10-11T03:58:44.524926Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.0.2",
+          "version": "1.0.2",
+          "published_at": "2011-11-04T19:22:58.280641Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.1",
+          "version": "1.1",
+          "published_at": "2012-01-07T23:43:51.070702Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.2",
+          "version": "1.2",
+          "published_at": "2012-01-30T00:57:13.964196Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.2.1",
+          "version": "1.2.1",
+          "published_at": "2012-02-05T21:13:40.482888Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.2.2",
+          "version": "1.2.2",
+          "published_at": "2012-02-06T17:01:47.094955Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.3",
+          "version": "1.3",
+          "published_at": "2012-03-25T20:22:58.044500Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.4",
+          "version": "1.4",
+          "published_at": "2012-06-16T22:51:41.530000Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.5",
+          "version": "1.5",
+          "published_at": "2012-08-02T19:16:31.279742Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.6",
+          "version": "1.6",
+          "published_at": "2013-04-25T18:49:52.781288Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.7",
+          "version": "1.7",
+          "published_at": "2013-08-14T21:45:48.951595Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.7.1",
+          "version": "1.7.1",
+          "published_at": "2013-09-25T16:06:42.410128Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.8",
+          "version": "1.8",
+          "published_at": "2014-03-06T00:25:58.959231Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.8.2",
+          "version": "1.8.2",
+          "published_at": "2014-04-18T06:40:18.697627Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.8.3",
+          "version": "1.8.3",
+          "published_at": "2014-06-24T18:22:57.275523Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.9",
+          "version": "1.9",
+          "published_at": "2014-07-07T20:57:43.349467Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.9.1",
+          "version": "1.9.1",
+          "published_at": "2014-09-13T18:24:32.828661Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.10",
+          "version": "1.10",
+          "published_at": "2014-12-14T21:26:11.100386Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.10.1",
+          "version": "1.10.1",
+          "published_at": "2015-02-11T02:48:59.009260Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.10.2",
+          "version": "1.10.2",
+          "published_at": "2015-02-25T23:19:45.146810Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.10.3",
+          "version": "1.10.3",
+          "published_at": "2015-04-21T20:06:21.348338Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.10.4",
+          "version": "1.10.4",
+          "published_at": "2015-05-03T14:14:22.508478Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.11",
+          "version": "1.11",
+          "published_at": "2015-07-21T13:43:35.993648Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.12",
+          "version": "1.12",
+          "published_at": "2015-09-06T18:41:26.812162Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.13",
+          "version": "1.13",
+          "published_at": "2015-12-14T21:11:21.239752Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.13.1",
+          "version": "1.13.1",
+          "published_at": "2015-12-18T22:48:34.394175Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.14",
+          "version": "1.14",
+          "published_at": "2015-12-29T20:28:31.702905Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.15",
+          "version": "1.15",
+          "published_at": "2016-04-06T19:17:18.644224Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.15.1",
+          "version": "1.15.1",
+          "published_at": "2016-04-11T17:26:25.079831Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.16",
+          "version": "1.16",
+          "published_at": "2016-06-11T20:34:52.194000Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.17",
+          "version": "1.17",
+          "published_at": "2016-09-06T14:41:20.111888Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.18",
+          "version": "1.18",
+          "published_at": "2016-09-26T08:50:34.527893Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.18.1",
+          "version": "1.18.1",
+          "published_at": "2016-10-27T11:25:19.068958Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.19",
+          "version": "1.19",
+          "published_at": "2016-11-03T15:19:26.452868Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.19.1",
+          "version": "1.19.1",
+          "published_at": "2016-11-16T10:13:26.129970Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.20",
+          "version": "1.20",
+          "published_at": "2017-01-19T09:53:40.055432Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.21",
+          "version": "1.21",
+          "published_at": "2017-04-25T11:12:26.297307Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.21.1",
+          "version": "1.21.1",
+          "published_at": "2017-05-02T10:58:32.257089Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.22",
+          "version": "1.22",
+          "published_at": "2017-07-20T09:05:46.173764Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.23",
+          "version": "1.23",
+          "published_at": "2018-06-05T03:25:49.484152Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.24",
+          "version": "1.24",
+          "published_at": "2018-10-16T17:54:20.238264Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.24.1",
+          "version": "1.24.1",
+          "published_at": "2018-11-02T19:11:17.872837Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.24.2",
+          "version": "1.24.2",
+          "published_at": "2019-04-17T17:49:45.870917Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.25",
+          "version": "1.25",
+          "published_at": "2019-04-22T14:06:44.695797Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.25.1",
+          "version": "1.25.1",
+          "published_at": "2019-04-24T17:05:21.930238Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.25.2",
+          "version": "1.25.2",
+          "published_at": "2019-04-29T13:11:29.948679Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.24.3",
+          "version": "1.24.3",
+          "published_at": "2019-05-02T15:37:44.733782Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.25.3",
+          "version": "1.25.3",
+          "published_at": "2019-05-23T19:01:44.733909Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.25.4",
+          "version": "1.25.4",
+          "published_at": "2019-09-19T14:49:01.357839Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.25.5",
+          "version": "1.25.5",
+          "published_at": "2019-09-20T01:35:54.545482Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.25.6",
+          "version": "1.25.6",
+          "published_at": "2019-09-24T14:35:10.080723Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.25.7",
+          "version": "1.25.7",
+          "published_at": "2019-11-11T15:10:09.598264Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.25.8",
+          "version": "1.25.8",
+          "published_at": "2020-01-21T20:41:23.910305Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.25.9",
+          "version": "1.25.9",
+          "published_at": "2020-04-16T15:44:06.147024Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.25.10",
+          "version": "1.25.10",
+          "published_at": "2020-07-22T15:47:32.468071Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.25.11",
+          "version": "1.25.11",
+          "published_at": "2020-10-19T14:17:20.705902Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.0",
+          "version": "1.26.0",
+          "published_at": "2020-11-10T20:08:59.430953Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.1",
+          "version": "1.26.1",
+          "published_at": "2020-11-11T20:29:26.721844Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.2",
+          "version": "1.26.2",
+          "published_at": "2020-11-12T22:16:52.922247Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.3",
+          "version": "1.26.3",
+          "published_at": "2021-01-26T18:58:16.089040Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.4",
+          "version": "1.26.4",
+          "published_at": "2021-03-15T15:04:35.709960Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.5",
+          "version": "1.26.5",
+          "published_at": "2021-05-26T17:02:33.236908Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.6",
+          "version": "1.26.6",
+          "published_at": "2021-06-25T13:24:15.310981Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.7",
+          "version": "1.26.7",
+          "published_at": "2021-09-22T18:01:15.930956Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.8",
+          "version": "1.26.8",
+          "published_at": "2022-01-07T15:56:31.276636Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.9",
+          "version": "1.26.9",
+          "published_at": "2022-03-16T13:28:16.026094Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.10",
+          "version": "1.26.10",
+          "published_at": "2022-07-07T15:12:47.549599Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.11",
+          "version": "1.26.11",
+          "published_at": "2022-07-25T13:02:21.294138Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.12",
+          "version": "1.26.12",
+          "published_at": "2022-08-22T13:27:19.719799Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.0.0a1",
+          "version": "2.0.0a1",
+          "published_at": "2022-11-15T15:43:16.231069Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.13",
+          "version": "1.26.13",
+          "published_at": "2022-11-23T22:34:29.785874Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.0.0a2",
+          "version": "2.0.0a2",
+          "published_at": "2022-11-23T22:50:07.947024Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.0.0a3",
+          "version": "2.0.0a3",
+          "published_at": "2023-01-11T13:04:31.223908Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.14",
+          "version": "1.26.14",
+          "published_at": "2023-01-11T13:04:57.170894Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.15",
+          "version": "1.26.15",
+          "published_at": "2023-03-11T00:01:39.031079Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.0.0a4",
+          "version": "2.0.0a4",
+          "published_at": "2023-04-25T18:57:08.634678Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.0.0",
+          "version": "2.0.0",
+          "published_at": "2023-04-26T17:21:22.577020Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.0.1",
+          "version": "2.0.1",
+          "published_at": "2023-04-30T09:00:04.268953Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.0.2",
+          "version": "2.0.2",
+          "published_at": "2023-05-03T22:37:13.760873Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.16",
+          "version": "1.26.16",
+          "published_at": "2023-05-23T12:18:41.548302Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.0.3",
+          "version": "2.0.3",
+          "published_at": "2023-06-07T10:59:09.651459Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.0.4",
+          "version": "2.0.4",
+          "published_at": "2023-07-19T15:51:22.189776Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.0.5",
+          "version": "2.0.5",
+          "published_at": "2023-09-20T07:30:33.595386Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.17",
+          "version": "1.26.17",
+          "published_at": "2023-10-02T17:22:28.101314Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.0.6",
+          "version": "2.0.6",
+          "published_at": "2023-10-02T17:22:34.932865Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.0.7",
+          "version": "2.0.7",
+          "published_at": "2023-10-17T17:46:48.538593Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.18",
+          "version": "1.26.18",
+          "published_at": "2023-10-17T17:47:01.725249Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.1.0",
+          "version": "2.1.0",
+          "published_at": "2023-11-13T12:29:42.719227Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.2.0",
+          "version": "2.2.0",
+          "published_at": "2024-01-30T15:18:04.978871Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.2.1",
+          "version": "2.2.1",
+          "published_at": "2024-02-18T03:55:54.704486Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.2.2",
+          "version": "2.2.2",
+          "published_at": "2024-06-17T13:40:07.795777Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.19",
+          "version": "1.26.19",
+          "published_at": "2024-06-17T14:53:31.589461Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.26.20",
+          "version": "1.26.20",
+          "published_at": "2024-08-29T15:43:08.921610Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.2.3",
+          "version": "2.2.3",
+          "published_at": "2024-09-12T10:52:16.589559Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.3.0",
+          "version": "2.3.0",
+          "published_at": "2024-12-22T07:47:28.074156Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.4.0",
+          "version": "2.4.0",
+          "published_at": "2025-04-10T15:23:37.377011Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.5.0",
+          "version": "2.5.0",
+          "published_at": "2025-06-18T14:07:40.390656Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.6.0",
+          "version": "2.6.0",
+          "published_at": "2025-12-05T15:08:45.983238Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.6.1",
+          "version": "2.6.1",
+          "published_at": "2025-12-08T15:25:25.510965Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.6.2",
+          "version": "2.6.2",
+          "published_at": "2025-12-11T15:56:38.584804Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.6.3",
+          "version": "2.6.3",
+          "published_at": "2026-01-07T16:24:42.685091Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.7.0",
+          "version": "2.7.0",
+          "published_at": "2026-05-07T16:13:17.151740Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.8.0",
+          "version": "2.8.0",
+          "published_at": "2026-09-15T19:29:34.577402Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "0.3",
+          "version": "0.3",
+          "published_at": null,
+          "source": "PyPI JSON API (unknown date)"
+        },
+        {
+          "tag": "0.3.1",
+          "version": "0.3.1",
+          "published_at": null,
+          "source": "PyPI JSON API (unknown date)"
+        },
+        {
+          "tag": "0.4.0",
+          "version": "0.4.0",
+          "published_at": null,
+          "source": "PyPI JSON API (unknown date)"
+        },
+        {
+          "tag": "0.4.1",
+          "version": "0.4.1",
+          "published_at": null,
+          "source": "PyPI JSON API (unknown date)"
+        }
+      ],
+      "github_repo": "urllib3/urllib3",
+      "default_branch": "main",
+      "repo_verification": "Verified via PyPI project_urls['Code'] -> https://github.com/urllib3/urllib3 | Verified via GitHub API: urllib3/urllib3 (default branch: 'main')",
+      "security_policy_path": "SECURITY.md",
+      "security_policy_url": "https://github.com/urllib3/urllib3/blob/main/SECURITY.md",
+      "retrieval_status": "FOUND",
+      "retrieval_reason": "Successfully retrieved from main/SECURITY.md",
+      "raw_policy_text": "# Security Policy\n\n## Reporting a Vulnerability\n\nTo report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security).\nTidelift will coordinate the fix and disclosure with maintainers.\n\n> [!WARNING]\n> Please do **not** file a public GitHub issue for security reports.\n\nWhen reporting, if possible, include:\n- A clear description of the issue and potential impact\n- Steps to reproduce or a proof of concept\n- Affected urllib3 version(s) and environment details\n- Any suggested mitigations\n\nWe typically acknowledge reports within a few business days.\n\n\n## Supported Versions\n\nOnly the main branch (the 2.x release line) receives updates, including\nsecurity fixes. Older release lines (e.g., 1.x) are not maintained. If you are\nusing an older version, please upgrade to the latest 2.x release to receive\nfixes.\n\nWhen reporting a potential vulnerability, confirm that it reproduces against\nthe latest 2.x version.\n\n\n## Out of Scope Experimental Features\n\nurllib3 contains two experimental modules: `emscripten` and `http2`.\n\n- **http2**: Issues in the HTTP/2 module are not considered security\n  vulnerabilities and should be opened as public GitHub issues after\n  checking missing features tracked in issue\n  <https://github.com/urllib3/urllib3/issues/3000>.\n- **emscripten**: Potential security issues in the `emscripten` module should\n  be reported privately. Project maintainers will decide if they qualify as\n  security issues to be handled through the standard flow or if they should be\n  considered simple bugs and fixed publicly. Issues that would be considered\n  security vulnerabilities in the core package may not qualify as such for the\n  `emscripten` module.\n\n\n## Our Process\n\nWe follow the [Tidelift security process](https://support.tidelift.com/hc/en-us/articles/4406287910036-Security-process)\nfor coordinated vulnerability disclosure. In brief:\n- Intake and triage: Reports are received privately via Tidelift, validated,\n  and scoped (affected versions, severity).\n- Private coordination: Tidelift facilitates communication between the reporter\n  and the urllib3 maintainers.\n- Fix and review: We develop, review, and prepare patches (including backports\n  to supported versions when appropriate) and mitigation guidance.\n- Timeline and embargo: We agree on a reasonable disclosure timeline based on\n  impact and fix complexity; timelines may be accelerated for active\n  exploitation or extended for complex fixes.\n- CVE and advisory: We request and manage CVE IDs via GitHub Security\n  Advisories and prepare public guidance. If desired, we credit the reporter\n  and involved maintainers in the advisory.\n- Coordinated release: We publish patched releases and the advisory at the\n  agreed time.\n\n\n## Advisories and CVEs\n\nWe publish our security advisories on GitHub at [the following page](https://github.com/urllib3/urllib3/security/advisories).\nWe request and manage CVE IDs using GitHub Security Advisories, and published\nadvisories include CVE identifiers (when assigned) and severity information.\n\nTo receive notifications when new advisories are published, open the repository\npage, choose *Watch* → *Custom*, and enable *Security alerts*. You can also\nenable *Releases* to be notified when patched versions are published.\n",
+      "preprocessed_text": "# Security Policy\n\n## Reporting a Vulnerability\n\nTo report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security).\nTidelift will coordinate the fix and disclosure with maintainers.\n\n> [!WARNING]\n> Please do **not** file a public GitHub issue for security reports.\n\nWhen reporting, if possible, include:\n- A clear description of the issue and potential impact\n- Steps to reproduce or a proof of concept\n- Affected urllib3 version(s) and environment details\n- Any suggested mitigations\n\nWe typically acknowledge reports within a few business days.\n\n## Supported Versions\n\nOnly the main branch (the 2.x release line) receives updates, including\nsecurity fixes. Older release lines (e.g., 1.x) are not maintained. If you are\nusing an older version, please upgrade to the latest 2.x release to receive\nfixes.\n\nWhen reporting a potential vulnerability, confirm that it reproduces against\nthe latest 2.x version.\n\n## Out of Scope Experimental Features\n\nurllib3 contains two experimental modules: `emscripten` and `http2`.\n\n- **http2**: Issues in the HTTP/2 module are not considered security\n  vulnerabilities and should be opened as public GitHub issues after\n  checking missing features tracked in issue\n  <https://github.com/urllib3/urllib3/issues/3000>.\n- **emscripten**: Potential security issues in the `emscripten` module should\n  be reported privately. Project maintainers will decide if they qualify as\n  security issues to be handled through the standard flow or if they should be\n  considered simple bugs and fixed publicly. Issues that would be considered\n  security vulnerabilities in the core package may not qualify as such for the\n  `emscripten` module.\n\n## Our Process\n\nWe follow the [Tidelift security process](https://support.tidelift.com/hc/en-us/articles/4406287910036-Security-process)\nfor coordinated vulnerability disclosure. In brief:\n- Intake and triage: Reports are received privately via Tidelift, validated,\n  and scoped (affected versions, severity).\n- Private coordination: Tidelift facilitates communication between the reporter\n  and the urllib3 maintainers.\n- Fix and review: We develop, review, and prepare patches (including backports\n  to supported versions when appropriate) and mitigation guidance.\n- Timeline and embargo: We agree on a reasonable disclosure timeline based on\n  impact and fix complexity; timelines may be accelerated for active\n  exploitation or extended for complex fixes.\n- CVE and advisory: We request and manage CVE IDs via GitHub Security\n  Advisories and prepare public guidance. If desired, we credit the reporter\n  and involved maintainers in the advisory.\n- Coordinated release: We publish patched releases and the advisory at the\n  agreed time.\n\n## Advisories and CVEs\n\nWe publish our security advisories on GitHub at [the following page](https://github.com/urllib3/urllib3/security/advisories).\nWe request and manage CVE IDs using GitHub Security Advisories, and published\nadvisories include CVE identifiers (when assigned) and severity information.\n\nTo receive notifications when new advisories are published, open the repository\npage, choose *Watch* → *Custom*, and enable *Security alerts*. You can also\nenable *Releases* to be notified when patched versions are published.",
+      "prioritized_text": "### [Prioritized Version Support Scope]\n## Supported Versions\n\nOnly the main branch (the 2.x release line) receives updates, including\nsecurity fixes. Older release lines (e.g., 1.x) are not maintained. If you are\nusing an older version, please upgrade to the latest 2.x release to receive\nfixes.\n\nWhen reporting a potential vulnerability, confirm that it reproduces against\nthe latest 2.x version.\n\n### [General Security Policy Context]\n# Security Policy\n\n## Reporting a Vulnerability\n\nTo report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security).\nTidelift will coordinate the fix and disclosure with maintainers.\n\n> [!WARNING]\n> Please do **not** file a public GitHub issue for security reports.\n\nWhen reporting, if possible, include:\n- A clear description of the issue and potential impact\n- Steps to reproduce or a proof of concept\n- Affected urllib3 version(s) and environment details\n- Any suggested mitigations\n\nWe typically acknowledge reports within a few business days.\n\n## Out of Scope Experimental Features\n\nurllib3 contains two experimental modules: `emscripten` and `http2`.\n\n- **http2**: Issues in the HTTP/2 module are not considered security\n  vulnerabilities and should be opened as public GitHub issues after\n  checking missing features tracked in issue\n  <https://github.com/urllib3/urllib3/issues/3000>.\n- **emscripten**: Potential security issues in the `emscripten` module should\n  be reported privately. Project maintainers will decide if they qualify as\n  security issues to be handled through the standard flow or if they should be\n  considered simple bugs and fixed publicly. Issues that would be considered\n  security vulnerabilities in the core package may not qualify as such for the\n  `emscripten` module.\n\n## Our Process\n\nWe follow the [Tidelift security process](https://support.tidelift.com/hc/en-us/articles/4406287910036-Security-process)\nfor coordinated vulnerability disclosure. In brief:\n- Intake and triage: Reports are received privately via Tidelift, validated,\n  and scoped (affected versions, severity).\n- Private coordination: Tidelift facilitates communication between the reporter\n  and the urllib3 maintainers.\n- Fix and review: We develop, review, and prepare patches (including backports\n  to supported versions when appropriate) and mitigation guidance.\n- Timeline and embargo: We agree on a reasonable disclosure timeline based on\n  impact and fix complexity; timelines may be accelerated for active\n  exploitation or extended for complex fixes.\n- CVE and advisory: We request and manage CVE IDs via GitHub Security\n  Advisories and prepare public guidance. If desired, we credit the reporter\n  and involved maintainers in the advisory.\n- Coordinated release: We publish patched releases and the advisory at the\n  agreed time.\n\n## Advisories and CVEs\n\nWe publish our security advisories on GitHub at [the following page](https://github.com/urllib3/urllib3/security/advisories).\nWe request and manage CVE IDs using GitHub Security Advisories, and published\nadvisories include CVE identifiers (when assigned) and severity information.\n\nTo receive notifications when new advisories are published, open the repository\npage, choose *Watch* → *Custom*, and enable *Security alerts*. You can also\nenable *Releases* to be notified when patched versions are published.",
+      "policy_sections": {
+        "supported_versions": "<!-- L20-L30 -->\n## Supported Versions\n\nOnly the main branch (the 2.x release line) receives updates, including\nsecurity fixes. Older release lines (e.g., 1.x) are not maintained. If you are\nusing an older version, please upgrade to the latest 2.x release to receive\nfixes.\n\nWhen reporting a potential vulnerability, confirm that it reproduces against\nthe latest 2.x version.",
+        "reporting": "<!-- L3-L19 -->\n## Reporting a Vulnerability\n\nTo report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security).\nTidelift will coordinate the fix and disclosure with maintainers.\n\n> [!WARNING]\n> Please do **not** file a public GitHub issue for security reports.\n\nWhen reporting, if possible, include:\n- A clear description of the issue and potential impact\n- Steps to reproduce or a proof of concept\n- Affected urllib3 version(s) and environment details\n- Any suggested mitigations\n\nWe typically acknowledge reports within a few business days.",
+        "full_preprocessed_text": "# Security Policy\n\n## Reporting a Vulnerability\n\nTo report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security).\nTidelift will coordinate the fix and disclosure with maintainers.\n\n> [!WARNING]\n> Please do **not** file a public GitHub issue for security reports.\n\nWhen reporting, if possible, include:\n- A clear description of the issue and potential impact\n- Steps to reproduce or a proof of concept\n- Affected urllib3 version(s) and environment details\n- Any suggested mitigations\n\nWe typically acknowledge reports within a few business days.\n\n## Supported Versions\n\nOnly the main branch (the 2.x release line) receives updates, including\nsecurity fixes. Older release lines (e.g., 1.x) are not maintained. If you are\nusing an older version, please upgrade to the latest 2.x release to receive\nfixes.\n\nWhen reporting a potential vulnerability, confirm that it reproduces against\nthe latest 2.x version.\n\n## Out of Scope Experimental Features\n\nurllib3 contains two experimental modules: `emscripten` and `http2`.\n\n- **http2**: Issues in the HTTP/2 module are not considered security\n  vulnerabilities and should be opened as public GitHub issues after\n  checking missing features tracked in issue\n  <https://github.com/urllib3/urllib3/issues/3000>.\n- **emscripten**: Potential security issues in the `emscripten` module should\n  be reported privately. Project maintainers will decide if they qualify as\n  security issues to be handled through the standard flow or if they should be\n  considered simple bugs and fixed publicly. Issues that would be considered\n  security vulnerabilities in the core package may not qualify as such for the\n  `emscripten` module.\n\n## Our Process\n\nWe follow the [Tidelift security process](https://support.tidelift.com/hc/en-us/articles/4406287910036-Security-process)\nfor coordinated vulnerability disclosure. In brief:\n- Intake and triage: Reports are received privately via Tidelift, validated,\n  and scoped (affected versions, severity).\n- Private coordination: Tidelift facilitates communication between the reporter\n  and the urllib3 maintainers.\n- Fix and review: We develop, review, and prepare patches (including backports\n  to supported versions when appropriate) and mitigation guidance.\n- Timeline and embargo: We agree on a reasonable disclosure timeline based on\n  impact and fix complexity; timelines may be accelerated for active\n  exploitation or extended for complex fixes.\n- CVE and advisory: We request and manage CVE IDs via GitHub Security\n  Advisories and prepare public guidance. If desired, we credit the reporter\n  and involved maintainers in the advisory.\n- Coordinated release: We publish patched releases and the advisory at the\n  agreed time.\n\n## Advisories and CVEs\n\nWe publish our security advisories on GitHub at [the following page](https://github.com/urllib3/urllib3/security/advisories).\nWe request and manage CVE IDs using GitHub Security Advisories, and published\nadvisories include CVE identifiers (when assigned) and severity information.\n\nTo receive notifications when new advisories are published, open the repository\npage, choose *Watch* → *Custom*, and enable *Security alerts*. You can also\nenable *Releases* to be notified when patched versions are published.",
+        "segments": [
+          {
+            "heading": "Security Policy",
+            "level": 1,
+            "line_start": 1,
+            "line_end": 2,
+            "raw_content": "# Security Policy\n",
+            "cleaned_content": "# Security Policy",
+            "section_type": "general"
+          },
+          {
+            "heading": "Reporting a Vulnerability",
+            "level": 2,
+            "line_start": 3,
+            "line_end": 19,
+            "raw_content": "## Reporting a Vulnerability\n\nTo report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security).\nTidelift will coordinate the fix and disclosure with maintainers.\n\n> [!WARNING]\n> Please do **not** file a public GitHub issue for security reports.\n\nWhen reporting, if possible, include:\n- A clear description of the issue and potential impact\n- Steps to reproduce or a proof of concept\n- Affected urllib3 version(s) and environment details\n- Any suggested mitigations\n\nWe typically acknowledge reports within a few business days.\n\n",
+            "cleaned_content": "## Reporting a Vulnerability\n\nTo report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security).\nTidelift will coordinate the fix and disclosure with maintainers.\n\n> [!WARNING]\n> Please do **not** file a public GitHub issue for security reports.\n\nWhen reporting, if possible, include:\n- A clear description of the issue and potential impact\n- Steps to reproduce or a proof of concept\n- Affected urllib3 version(s) and environment details\n- Any suggested mitigations\n\nWe typically acknowledge reports within a few business days.",
+            "section_type": "vulnerability_reporting"
+          },
+          {
+            "heading": "Supported Versions",
+            "level": 2,
+            "line_start": 20,
+            "line_end": 30,
+            "raw_content": "## Supported Versions\n\nOnly the main branch (the 2.x release line) receives updates, including\nsecurity fixes. Older release lines (e.g., 1.x) are not maintained. If you are\nusing an older version, please upgrade to the latest 2.x release to receive\nfixes.\n\nWhen reporting a potential vulnerability, confirm that it reproduces against\nthe latest 2.x version.\n\n",
+            "cleaned_content": "## Supported Versions\n\nOnly the main branch (the 2.x release line) receives updates, including\nsecurity fixes. Older release lines (e.g., 1.x) are not maintained. If you are\nusing an older version, please upgrade to the latest 2.x release to receive\nfixes.\n\nWhen reporting a potential vulnerability, confirm that it reproduces against\nthe latest 2.x version.",
+            "section_type": "supported_versions"
+          },
+          {
+            "heading": "Out of Scope Experimental Features",
+            "level": 2,
+            "line_start": 31,
+            "line_end": 46,
+            "raw_content": "## Out of Scope Experimental Features\n\nurllib3 contains two experimental modules: `emscripten` and `http2`.\n\n- **http2**: Issues in the HTTP/2 module are not considered security\n  vulnerabilities and should be opened as public GitHub issues after\n  checking missing features tracked in issue\n  <https://github.com/urllib3/urllib3/issues/3000>.\n- **emscripten**: Potential security issues in the `emscripten` module should\n  be reported privately. Project maintainers will decide if they qualify as\n  security issues to be handled through the standard flow or if they should be\n  considered simple bugs and fixed publicly. Issues that would be considered\n  security vulnerabilities in the core package may not qualify as such for the\n  `emscripten` module.\n\n",
+            "cleaned_content": "## Out of Scope Experimental Features\n\nurllib3 contains two experimental modules: `emscripten` and `http2`.\n\n- **http2**: Issues in the HTTP/2 module are not considered security\n  vulnerabilities and should be opened as public GitHub issues after\n  checking missing features tracked in issue\n  <https://github.com/urllib3/urllib3/issues/3000>.\n- **emscripten**: Potential security issues in the `emscripten` module should\n  be reported privately. Project maintainers will decide if they qualify as\n  security issues to be handled through the standard flow or if they should be\n  considered simple bugs and fixed publicly. Issues that would be considered\n  security vulnerabilities in the core package may not qualify as such for the\n  `emscripten` module.",
+            "section_type": "general"
+          },
+          {
+            "heading": "Our Process",
+            "level": 2,
+            "line_start": 47,
+            "line_end": 66,
+            "raw_content": "## Our Process\n\nWe follow the [Tidelift security process](https://support.tidelift.com/hc/en-us/articles/4406287910036-Security-process)\nfor coordinated vulnerability disclosure. In brief:\n- Intake and triage: Reports are received privately via Tidelift, validated,\n  and scoped (affected versions, severity).\n- Private coordination: Tidelift facilitates communication between the reporter\n  and the urllib3 maintainers.\n- Fix and review: We develop, review, and prepare patches (including backports\n  to supported versions when appropriate) and mitigation guidance.\n- Timeline and embargo: We agree on a reasonable disclosure timeline based on\n  impact and fix complexity; timelines may be accelerated for active\n  exploitation or extended for complex fixes.\n- CVE and advisory: We request and manage CVE IDs via GitHub Security\n  Advisories and prepare public guidance. If desired, we credit the reporter\n  and involved maintainers in the advisory.\n- Coordinated release: We publish patched releases and the advisory at the\n  agreed time.\n\n",
+            "cleaned_content": "## Our Process\n\nWe follow the [Tidelift security process](https://support.tidelift.com/hc/en-us/articles/4406287910036-Security-process)\nfor coordinated vulnerability disclosure. In brief:\n- Intake and triage: Reports are received privately via Tidelift, validated,\n  and scoped (affected versions, severity).\n- Private coordination: Tidelift facilitates communication between the reporter\n  and the urllib3 maintainers.\n- Fix and review: We develop, review, and prepare patches (including backports\n  to supported versions when appropriate) and mitigation guidance.\n- Timeline and embargo: We agree on a reasonable disclosure timeline based on\n  impact and fix complexity; timelines may be accelerated for active\n  exploitation or extended for complex fixes.\n- CVE and advisory: We request and manage CVE IDs via GitHub Security\n  Advisories and prepare public guidance. If desired, we credit the reporter\n  and involved maintainers in the advisory.\n- Coordinated release: We publish patched releases and the advisory at the\n  agreed time.",
+            "section_type": "general"
+          },
+          {
+            "heading": "Advisories and CVEs",
+            "level": 2,
+            "line_start": 67,
+            "line_end": 75,
+            "raw_content": "## Advisories and CVEs\n\nWe publish our security advisories on GitHub at [the following page](https://github.com/urllib3/urllib3/security/advisories).\nWe request and manage CVE IDs using GitHub Security Advisories, and published\nadvisories include CVE identifiers (when assigned) and severity information.\n\nTo receive notifications when new advisories are published, open the repository\npage, choose *Watch* → *Custom*, and enable *Security alerts*. You can also\nenable *Releases* to be notified when patched versions are published.",
+            "cleaned_content": "## Advisories and CVEs\n\nWe publish our security advisories on GitHub at [the following page](https://github.com/urllib3/urllib3/security/advisories).\nWe request and manage CVE IDs using GitHub Security Advisories, and published\nadvisories include CVE identifiers (when assigned) and severity information.\n\nTo receive notifications when new advisories are published, open the repository\npage, choose *Watch* → *Custom*, and enable *Security alerts*. You can also\nenable *Releases* to be notified when patched versions are published.",
+            "section_type": "general"
+          }
+        ],
+        "line_references": {
+          "Security Policy": {
+            "line_start": 1,
+            "line_end": 2,
+            "section_type": "general"
+          },
+          "Reporting a Vulnerability": {
+            "line_start": 3,
+            "line_end": 19,
+            "section_type": "vulnerability_reporting"
+          },
+          "Supported Versions": {
+            "line_start": 20,
+            "line_end": 30,
+            "section_type": "supported_versions"
+          },
+          "Out of Scope Experimental Features": {
+            "line_start": 31,
+            "line_end": 46,
+            "section_type": "general"
+          },
+          "Our Process": {
+            "line_start": 47,
+            "line_end": 66,
+            "section_type": "general"
+          },
+          "Advisories and CVEs": {
+            "line_start": 67,
+            "line_end": 75,
+            "section_type": "general"
+          }
+        },
+        "version_section_detail": {
+          "found": true,
+          "heading": "Supported Versions",
+          "line_start": 20,
+          "line_end": 30,
+          "raw_content": "## Supported Versions\n\nOnly the main branch (the 2.x release line) receives updates, including\nsecurity fixes. Older release lines (e.g., 1.x) are not maintained. If you are\nusing an older version, please upgrade to the latest 2.x release to receive\nfixes.\n\nWhen reporting a potential vulnerability, confirm that it reproduces against\nthe latest 2.x version.\n\n",
+          "cleaned_content": "## Supported Versions\n\nOnly the main branch (the 2.x release line) receives updates, including\nsecurity fixes. Older release lines (e.g., 1.x) are not maintained. If you are\nusing an older version, please upgrade to the latest 2.x release to receive\nfixes.\n\nWhen reporting a potential vulnerability, confirm that it reproduces against\nthe latest 2.x version.",
+          "tables": [],
+          "list_items": []
+        }
+      },
+      "line_references": {
+        "Security Policy": {
+          "line_start": 1,
+          "line_end": 2,
+          "section_type": "general"
+        },
+        "Reporting a Vulnerability": {
+          "line_start": 3,
+          "line_end": 19,
+          "section_type": "vulnerability_reporting"
+        },
+        "Supported Versions": {
+          "line_start": 20,
+          "line_end": 30,
+          "section_type": "supported_versions"
+        },
+        "Out of Scope Experimental Features": {
+          "line_start": 31,
+          "line_end": 46,
+          "section_type": "general"
+        },
+        "Our Process": {
+          "line_start": 47,
+          "line_end": 66,
+          "section_type": "general"
+        },
+        "Advisories and CVEs": {
+          "line_start": 67,
+          "line_end": 75,
+          "section_type": "general"
+        }
+      },
+      "version_section_detail": {
+        "found": true,
+        "heading": "Supported Versions",
+        "line_start": 20,
+        "line_end": 30,
+        "raw_content": "## Supported Versions\n\nOnly the main branch (the 2.x release line) receives updates, including\nsecurity fixes. Older release lines (e.g., 1.x) are not maintained. If you are\nusing an older version, please upgrade to the latest 2.x release to receive\nfixes.\n\nWhen reporting a potential vulnerability, confirm that it reproduces against\nthe latest 2.x version.\n\n",
+        "cleaned_content": "## Supported Versions\n\nOnly the main branch (the 2.x release line) receives updates, including\nsecurity fixes. Older release lines (e.g., 1.x) are not maintained. If you are\nusing an older version, please upgrade to the latest 2.x release to receive\nfixes.\n\nWhen reporting a potential vulnerability, confirm that it reproduces against\nthe latest 2.x version.",
+        "tables": [],
+        "list_items": []
+      },
+      "has_version_support_statement": true,
+      "repo_metadata": {
+        "stars": 4085,
+        "created_at": "2011-09-18T18:08:28+00:00",
+        "pushed_at": "2026-11-14T21:45:32+00:00",
+        "archived": false,
+        "fork": false,
+        "html_url": "https://github.com/urllib3/urllib3"
+      },
+      "policy_word_count": 449
+    },
+    "mapping_uncertain": false,
+    "layer2": {
+      "total_releases": 109,
+      "total_vulnerabilities": 22,
+      "normalized_scope": [
+        "<3.0.0,>=2.0.0"
+      ],
+      "supported_releases_count": 22,
+      "source_diagnostics": {
+        "pypi": {
+          "status": "SUCCESS",
+          "count": 109,
+          "endpoint": "pypi.org/pypi/<pkg>/json"
+        },
+        "osv": {
+          "status": "SUCCESS",
+          "count": 44,
+          "endpoint": "https://api.osv.dev/v1/query",
+          "error": null,
+          "pages": 1
+        },
+        "github_advisory": {
+          "status": "SUCCESS",
+          "count": 22,
+          "endpoint": "https://api.github.com/advisories",
+          "error": null,
+          "pages": 1
+        },
+        "nvd": {
+          "status": "FAILURE",
+          "count": 0,
+          "endpoint": "https://services.nvd.nist.gov/rest/json/cves/2.0",
+          "error": "CVE-2025-66471: HTTP 404; CVE-2024-37891: HTTP 404; CVE-2026-21441: HTTP 404; CVE-2025-50182: HTTP 404; CVE-2021-28363: HTTP 404 and 17 more",
+          "retrieved": 0,
+          "not_found": 0,
+          "failed": 22,
+          "skipped": 0,
+          "cached": 0,
+          "max_lookups": 250,
+          "delay_seconds": 0.6
+        }
+      },
+      "vulnerabilities": [
+        {
+          "id": "CVE-2025-66471",
+          "osv_id": "GHSA-2xpw-w6gg-jr37",
+          "cve_ids": [
+            "CVE-2025-66471"
+          ],
+          "ghsa_ids": [
+            "GHSA-2xpw-w6gg-jr37"
+          ],
+          "aliases": [
+            "CVE-2025-66471",
+            "PYSEC-2026-1994",
+            "GHSA-2xpw-w6gg-jr37"
+          ],
+          "summary": "urllib3 streaming API improperly handles highly compressed data",
+          "details": "### Impact\n\nurllib3's [streaming API](https://urllib3.readthedocs.io/en/2.5.0/advanced-usage.html#streaming-and-i-o) is designed for the efficient handling of large HTTP responses by reading the content in chunks, rather than loading the entire response body into memory at once.\n\nWhen streaming a compressed response, urllib3 can perform decoding or decompression based on the HTTP `Content-Encoding` header (e.g., `gzip`, `deflate`, `br`, or `zstd`). The library must read compressed data from the network and decompress it until the requested chunk size is met. Any resulting decompressed data that exceeds the requested amount is held in an internal buffer for the next read operation.\n\nThe decompression logic could cause urllib3 to fully decode a small amount of highly compressed data in a single operation. This can result in excessive resource consumption (high CPU usage and massive memory allocation for the decompressed data; CWE-409) on the client side, even if the application only requested a small chunk of data.\n\n\n### Affected usages\n\nApplications and libraries using urllib3 version 2.5.0 and earlier to stream large compressed responses or content from untrusted sources.\n\n`stream()`, `read(amt=256)`, `read1(amt=256)`, `read_chunked(amt=256)`, `readinto(b)` are examples of `urllib3.HTTPResponse` method calls using the affected logic unless decoding is disabled explicitly.\n\n\n### Remediation\n\nUpgrade to at least urllib3 v2.6.0 in which the library avoids decompressing data that exceeds the requested amount.\n\nIf your environment contains a package facilitating the Brotli encoding, upgrade to at least Brotli 1.2.0 or brotlicffi 1.2.0.0 too. These versions are enforced by the `urllib3[brotli]` extra in the patched versions of urllib3.\n\n\n### Credits\n\nThe issue was reported by @Cycloctane.\nSupplemental information was provided by @stamparm during a security audit performed by [7ASecurity](https://7asecurity.com/) and facilitated by [OSTIF](https://ostif.org/).",
+          "published_at": "2025-12-05T18:15:54Z",
+          "modified_at": "2026-09-25T17:15:05.968189421Z",
+          "affected_versions": [
+            "1.0",
+            "1.0.1",
+            "1.0.2",
+            "1.1",
+            "1.10",
+            "1.10.1",
+            "1.10.2",
+            "1.10.3",
+            "1.10.4",
+            "1.11",
+            "1.12",
+            "1.13",
+            "1.13.1",
+            "1.14",
+            "1.15",
+            "1.15.1",
+            "1.16",
+            "1.17",
+            "1.18",
+            "1.18.1",
+            "1.19",
+            "1.19.1",
+            "1.2",
+            "1.2.1",
+            "1.2.2",
+            "1.20",
+            "1.21",
+            "1.21.1",
+            "1.22",
+            "1.23",
+            "1.24",
+            "1.24.1",
+            "1.24.2",
+            "1.24.3",
+            "1.25",
+            "1.25.1",
+            "1.25.10",
+            "1.25.11",
+            "1.25.2",
+            "1.25.3",
+            "1.25.4",
+            "1.25.5",
+            "1.25.6",
+            "1.25.7",
+            "1.25.8",
+            "1.25.9",
+            "1.26.0",
+            "1.26.1",
+            "1.26.10",
+            "1.26.11",
+            "1.26.12",
+            "1.26.13",
+            "1.26.14",
+            "1.26.15",
+            "1.26.16",
+            "1.26.17",
+            "1.26.18",
+            "1.26.19",
+            "1.26.2",
+            "1.26.20",
+            "1.26.3",
+            "1.26.4",
+            "1.26.5",
+            "1.26.6",
+            "1.26.7",
+            "1.26.8",
+            "1.26.9",
+            "1.3",
+            "1.4",
+            "1.5",
+            "1.6",
+            "1.7",
+            "1.7.1",
+            "1.8",
+            "1.8.2",
+            "1.8.3",
+            "1.9",
+            "1.9.1",
+            "2.0.0",
+            "2.0.0a1",
+            "2.0.0a2",
+            "2.0.0a3",
+            "2.0.0a4",
+            "2.0.1",
+            "2.0.2",
+            "2.0.3",
+            "2.0.4",
+            "2.0.5",
+            "2.0.6",
+            "2.0.7",
+            "2.1.0",
+            "2.2.0",
+            "2.2.1",
+            "2.2.2",
+            "2.2.3",
+            "2.3.0",
+            "2.4.0",
+            "2.5.0"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "1.0"
+                },
+                {
+                  "fixed": "2.6.0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.6.0"
+                }
+              ],
+              "vulnerable_version_range": ">= 1.0, < 2.6.0"
+            }
+          ],
+          "fixed_versions": [
+            "2.6.0"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-2xpw-w6gg-jr37"
+        },
+        {
+          "id": "CVE-2024-37891",
+          "osv_id": "GHSA-34jh-p97f-mpxf",
+          "cve_ids": [
+            "CVE-2024-37891"
+          ],
+          "ghsa_ids": [
+            "GHSA-34jh-p97f-mpxf"
+          ],
+          "aliases": [
+            "CVE-2024-37891",
+            "PYSEC-2026-1995",
+            "GHSA-34jh-p97f-mpxf"
+          ],
+          "summary": "urllib3's Proxy-Authorization request header isn't stripped during cross-origin redirects",
+          "details": "When using urllib3's proxy support with `ProxyManager`, the `Proxy-Authorization` header is only sent to the configured proxy, as expected.\n\nHowever, when sending HTTP requests *without* using urllib3's proxy support, it's possible to accidentally configure the `Proxy-Authorization` header even though it won't have any effect as the request is not using a forwarding proxy or a tunneling proxy. In those cases, urllib3 doesn't treat the `Proxy-Authorization` HTTP header as one carrying authentication material and thus doesn't strip the header on cross-origin redirects.\n\nBecause this is a highly unlikely scenario, we believe the severity of this vulnerability is low for almost all users. Out of an abundance of caution urllib3 will automatically strip the `Proxy-Authorization` header during cross-origin redirects to avoid the small chance that users are doing this on accident.\n\nUsers should use urllib3's proxy support or disable automatic redirects to achieve safe processing of the `Proxy-Authorization` header, but we still decided to strip the header by default in order to further protect users who aren't using the correct approach.\n\n## Affected usages\n\nWe believe the number of usages affected by this advisory is low. It requires all of the following to be true to be exploited:\n\n* Setting the `Proxy-Authorization` header without using urllib3's built-in proxy support.\n* Not disabling HTTP redirects.\n* Either not using an HTTPS origin server or for the proxy or target origin to redirect to a malicious origin.\n\n## Remediation\n\n* Using the `Proxy-Authorization` header with urllib3's `ProxyManager`.\n* Disabling HTTP redirects using `redirects=False` when sending requests.\n* Not using the `Proxy-Authorization` header.",
+          "published_at": "2024-06-17T21:37:20Z",
+          "modified_at": "2026-09-10T03:50:14.811193644Z",
+          "affected_versions": [
+            "0.2",
+            "0.3",
+            "0.3.1",
+            "0.4.0",
+            "0.4.1",
+            "1.0",
+            "1.0.1",
+            "1.0.2",
+            "1.1",
+            "1.10",
+            "1.10.1",
+            "1.10.2",
+            "1.10.3",
+            "1.10.4",
+            "1.11",
+            "1.12",
+            "1.13",
+            "1.13.1",
+            "1.14",
+            "1.15",
+            "1.15.1",
+            "1.16",
+            "1.17",
+            "1.18",
+            "1.18.1",
+            "1.19",
+            "1.19.1",
+            "1.2",
+            "1.2.1",
+            "1.2.2",
+            "1.20",
+            "1.21",
+            "1.21.1",
+            "1.22",
+            "1.23",
+            "1.24",
+            "1.24.1",
+            "1.24.2",
+            "1.24.3",
+            "1.25",
+            "1.25.1",
+            "1.25.10",
+            "1.25.11",
+            "1.25.2",
+            "1.25.3",
+            "1.25.4",
+            "1.25.5",
+            "1.25.6",
+            "1.25.7",
+            "1.25.8",
+            "1.25.9",
+            "1.26.0",
+            "1.26.1",
+            "1.26.10",
+            "1.26.11",
+            "1.26.12",
+            "1.26.13",
+            "1.26.14",
+            "1.26.15",
+            "1.26.16",
+            "1.26.17",
+            "1.26.18",
+            "1.26.2",
+            "1.26.3",
+            "1.26.4",
+            "1.26.5",
+            "1.26.6",
+            "1.26.7",
+            "1.26.8",
+            "1.26.9",
+            "1.3",
+            "1.4",
+            "1.5",
+            "1.6",
+            "1.7",
+            "1.7.1",
+            "1.8",
+            "1.8.2",
+            "1.8.3",
+            "1.9",
+            "1.9.1",
+            "2.0.0",
+            "2.0.1",
+            "2.0.2",
+            "2.0.3",
+            "2.0.4",
+            "2.0.5",
+            "2.0.6",
+            "2.0.7",
+            "2.1.0",
+            "2.2.0",
+            "2.2.1"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.26.19"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "2.0.0"
+                },
+                {
+                  "fixed": "2.2.2"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.26.19"
+                },
+                {
+                  "introduced": "2.0.0"
+                },
+                {
+                  "fixed": "2.2.2"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.26.19"
+                }
+              ],
+              "vulnerable_version_range": "< 1.26.19"
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.2.2"
+                }
+              ],
+              "vulnerable_version_range": ">= 2.0.0, < 2.2.2"
+            }
+          ],
+          "fixed_versions": [
+            "1.26.19",
+            "2.2.2"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-34jh-p97f-mpxf"
+        },
+        {
+          "id": "CVE-2026-21441",
+          "osv_id": "GHSA-38jv-5279-wg99",
+          "cve_ids": [
+            "CVE-2026-21441"
+          ],
+          "ghsa_ids": [
+            "GHSA-38jv-5279-wg99"
+          ],
+          "aliases": [
+            "CVE-2026-21441",
+            "PYSEC-2026-1996",
+            "GHSA-38jv-5279-wg99"
+          ],
+          "summary": "Decompression-bomb safeguards bypassed when following HTTP redirects (streaming API)",
+          "details": "### Impact\n\nurllib3's [streaming API](https://urllib3.readthedocs.io/en/2.6.2/advanced-usage.html#streaming-and-i-o) is designed for the efficient handling of large HTTP responses by reading the content in chunks, rather than loading the entire response body into memory at once.\n\nurllib3 can perform decoding or decompression based on the HTTP `Content-Encoding` header (e.g., `gzip`, `deflate`, `br`, or `zstd`). When using the streaming API, the library decompresses only the necessary bytes, enabling partial content consumption.\n\nHowever, for HTTP redirect responses, the library would read the entire response body to drain the connection and decompress the content unnecessarily. This decompression occurred even before any read methods were called, and configured read limits did not restrict the amount of decompressed data. As a result, there was no safeguard against decompression bombs. A malicious server could exploit this to trigger excessive resource consumption on the client (high CPU usage and large memory allocations for decompressed data; CWE-409).\n\n### Affected usages\n\nApplications and libraries using urllib3 version 2.6.2 and earlier to stream content from untrusted sources by setting `preload_content=False` when they do not disable redirects.\n\n\n### Remediation\n\nUpgrade to at least urllib3 v2.6.3 in which the library does not decode content of redirect responses when `preload_content=False`.\n\nIf upgrading is not immediately possible, disable [redirects](https://urllib3.readthedocs.io/en/2.6.2/user-guide.html#retrying-requests) by setting `redirect=False` for requests to untrusted source.",
+          "published_at": "2026-01-07T19:18:14Z",
+          "modified_at": "2026-09-10T03:50:32.562010895Z",
+          "affected_versions": [
+            "1.22",
+            "1.23",
+            "1.24",
+            "1.24.1",
+            "1.24.2",
+            "1.24.3",
+            "1.25",
+            "1.25.1",
+            "1.25.10",
+            "1.25.11",
+            "1.25.2",
+            "1.25.3",
+            "1.25.4",
+            "1.25.5",
+            "1.25.6",
+            "1.25.7",
+            "1.25.8",
+            "1.25.9",
+            "1.26.0",
+            "1.26.1",
+            "1.26.10",
+            "1.26.11",
+            "1.26.12",
+            "1.26.13",
+            "1.26.14",
+            "1.26.15",
+            "1.26.16",
+            "1.26.17",
+            "1.26.18",
+            "1.26.19",
+            "1.26.2",
+            "1.26.20",
+            "1.26.3",
+            "1.26.4",
+            "1.26.5",
+            "1.26.6",
+            "1.26.7",
+            "1.26.8",
+            "1.26.9",
+            "2.0.0",
+            "2.0.0a1",
+            "2.0.0a2",
+            "2.0.0a3",
+            "2.0.0a4",
+            "2.0.1",
+            "2.0.2",
+            "2.0.3",
+            "2.0.4",
+            "2.0.5",
+            "2.0.6",
+            "2.0.7",
+            "2.1.0",
+            "2.2.0",
+            "2.2.1",
+            "2.2.2",
+            "2.2.3",
+            "2.3.0",
+            "2.4.0",
+            "2.5.0",
+            "2.6.0",
+            "2.6.1",
+            "2.6.2"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "1.22"
+                },
+                {
+                  "fixed": "2.6.3"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.6.3"
+                }
+              ],
+              "vulnerable_version_range": ">= 1.22, < 2.6.3"
+            }
+          ],
+          "fixed_versions": [
+            "2.6.3"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-38jv-5279-wg99"
+        },
+        {
+          "id": "CVE-2025-50182",
+          "osv_id": "GHSA-48p4-8xcf-vxj5",
+          "cve_ids": [
+            "CVE-2025-50182"
+          ],
+          "ghsa_ids": [
+            "GHSA-48p4-8xcf-vxj5"
+          ],
+          "aliases": [
+            "CVE-2025-50182",
+            "PYSEC-2026-1997",
+            "GHSA-48p4-8xcf-vxj5"
+          ],
+          "summary": "urllib3 does not control redirects in browsers and Node.js",
+          "details": "urllib3 [supports](https://urllib3.readthedocs.io/en/2.4.0/reference/contrib/emscripten.html) being used in a Pyodide runtime utilizing the [JavaScript Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) or falling back on [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest). This means you can use Python libraries to make HTTP requests from your browser or Node.js. Additionally, urllib3 provides [a mechanism](https://urllib3.readthedocs.io/en/2.4.0/user-guide.html#retrying-requests) to control redirects.\n\nHowever, the `retries` and `redirect` parameters are ignored with Pyodide; the runtime itself determines redirect behavior.\n\n\n## Affected usages\n\nAny code which relies on urllib3 to control the number of redirects for an HTTP request in a Pyodide runtime.\n\n\n## Impact\n\nRedirects are often used to exploit SSRF vulnerabilities. An application attempting to mitigate SSRF or open redirect vulnerabilities by disabling redirects may remain vulnerable if a Pyodide runtime redirect mechanism is unsuitable.\n\n\n## Remediation\n\nIf you use urllib3 in Node.js, upgrade to a patched version of urllib3.\n\nUnfortunately, browsers provide no suitable way which urllib3 can use: `XMLHttpRequest` provides no control over redirects, the Fetch API returns `opaqueredirect` responses lacking data when redirects are controlled manually. Expect default browser behavior for redirects.",
+          "published_at": "2025-06-18T17:50:11Z",
+          "modified_at": "2026-09-10T03:50:24.821170285Z",
+          "affected_versions": [
+            "2.2.0",
+            "2.2.1",
+            "2.2.2",
+            "2.2.3",
+            "2.3.0",
+            "2.4.0"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "2.2.0"
+                },
+                {
+                  "fixed": "2.5.0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.5.0"
+                }
+              ],
+              "vulnerable_version_range": ">= 2.2.0, < 2.5.0"
+            }
+          ],
+          "fixed_versions": [
+            "2.5.0"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-48p4-8xcf-vxj5"
+        },
+        {
+          "id": "CVE-2021-28363",
+          "osv_id": "GHSA-5phf-pp7p-vc2r",
+          "cve_ids": [
+            "CVE-2021-28363"
+          ],
+          "ghsa_ids": [
+            "GHSA-5phf-pp7p-vc2r"
+          ],
+          "aliases": [
+            "CVE-2021-28363",
+            "PYSEC-2021-59",
+            "GHSA-5phf-pp7p-vc2r"
+          ],
+          "summary": "Using default SSLContext for HTTPS requests in an HTTPS proxy doesn't verify certificate hostname for proxy connection",
+          "details": "### Impact\n\nUsers who are using an HTTPS proxy to issue HTTPS requests and haven't configured their own SSLContext via `proxy_config`.\nOnly the default SSLContext is impacted.\n\n### Patches\n\n[urllib3 >=1.26.4 has the issue resolved](https://github.com/urllib3/urllib3/releases/tag/1.26.4). urllib3<1.26 is not impacted due to not supporting HTTPS requests via HTTPS proxies.\n\n### Workarounds\n\nUpgrading is recommended as this is a minor release and not likely to break current usage.\n\nConfiguring an `SSLContext` with `check_hostname=True` and passing via `proxy_config` instead of relying on the default `SSLContext`\n\n### For more information\nIf you have any questions or comments about this advisory:\n* Email us at [sethmichaellarson@gmail.com](mailto:sethmichaellarson@gmail.com)",
+          "published_at": "2021-03-19T19:42:11Z",
+          "modified_at": "2026-07-08T06:28:26.820684687Z",
+          "affected_versions": [
+            "1.26.0",
+            "1.26.1",
+            "1.26.2",
+            "1.26.3"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "1.26.0"
+                },
+                {
+                  "fixed": "1.26.4"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "GIT",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.26.4"
+                }
+              ],
+              "vulnerable_version_range": ">= 1.26.0, < 1.26.4"
+            }
+          ],
+          "fixed_versions": [
+            "1.26.4",
+            "8d65ea1ecf6e2cdc27d42124e587c1b83a3118b0"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-5phf-pp7p-vc2r"
+        },
+        {
+          "id": "CVE-2026-97687",
+          "osv_id": "GHSA-8988-9cw3-xx77",
+          "cve_ids": [
+            "CVE-2026-97687"
+          ],
+          "ghsa_ids": [
+            "GHSA-8988-9cw3-xx77"
+          ],
+          "aliases": [
+            "CVE-2026-97687",
+            "PYSEC-2026-4175",
+            "GHSA-8988-9cw3-xx77"
+          ],
+          "summary": "urllib3: HTTPS proxy TLS configuration may be ignored or overridden",
+          "details": "## Impact\n\nurllib3 supports configuring TLS independently for an HTTPS proxy and the target server.\n\n`proxy_ssl_context`, `proxy_assert_hostname`, and `proxy_assert_fingerprint` configure the TLS connection to the proxy. `ssl_context` and the other target-specific TLS parameters configure the connection to the target server.\n\nIn urllib3 versions 1.26.0 through 2.7.0, these configurations were not consistently separated. Depending on the proxy mode, urllib3 could:\n\n1. Ignore `proxy_ssl_context` and use the target server's SSL context for the TLS connection to an HTTPS forwarding proxy.\n2. Override the HTTPS proxy's certificate-verification policy with the target server's certificate-verification policy.\n3. Apply target-specific SNI, hostname assertions, certificate fingerprint assertions, or TLS client credentials to the TLS connection to an HTTPS forwarding proxy.\n\nIn particular, configuring `cert_reqs=\"CERT_NONE\"` for a target server could overwrite the `verify_mode` of the SSL context configured for the HTTPS proxy. This modification occurred in place and persisted on the context object, potentially disabling proxy certificate verification for later connections that reused the same context.\n\nAn attacker able to intercept the connection to an HTTPS proxy may be able to impersonate the proxy when the effective proxy TLS configuration disables certificate verification or otherwise accepts the attacker's certificate. This may occur, for example, when the target server's trust or identity policy is incorrectly applied to the proxy connection.\n\nWhen HTTPS forwarding is enabled, an impersonated proxy can observe or modify forwarded requests and responses, potentially exposing credentials, authentication tokens, request bodies, response data, and other sensitive information.\n\nA TLS client certificate intended for the target server may also be presented to the proxy or to an attacker impersonating it. This can disclose the client's identity and provide proof of possession of the corresponding private key. The private key itself is not transmitted during the TLS handshake.\n\nIn CONNECT tunneling mode, impersonating the HTTPS proxy does not by itself defeat the separate end-to-end TLS connection between the client and the target server.\n\n## Affected Usages\n\nCode using urllib3 versions 1.26.0 through 2.7.0 may be affected in any of the following cases.\n\n### 1. The target SSL context is used for an HTTPS forwarding proxy\n\nHTTPS requests are forwarded through an HTTPS proxy with `use_forwarding_for_https=True`, and `proxy_ssl_context` is configured for the proxy.\n\nurllib3 may ignore `proxy_ssl_context` and use the target server's `ssl_context` for the proxy TLS handshake. The proxy may therefore be verified using the target server's trust and certificate policy instead of the policy explicitly configured for the proxy.\n\n### 2. The target verification policy overrides the proxy policy\n\nAn HTTPS proxy is configured with `proxy_ssl_context`, while the target server uses a different certificate-verification policy.\n\nurllib3 may apply the target server's `cert_reqs` value to the proxy SSL context. For example, setting `cert_reqs=\"CERT_NONE\"` for the target server may also disable certificate verification for the HTTPS proxy, even when `proxy_ssl_context` was configured to require verification.\n\nThis issue can affect the TLS connection to an HTTPS proxy in both forwarding and CONNECT tunneling configurations.\n\n### 3. A mutated proxy SSL context is reused\n\nThe same SSL context is reused as `proxy_ssl_context` across multiple connections, and certificate verification is disabled for one target server.\n\nurllib3 may modify the proxy SSL context's `verify_mode` in place. Later connections that reuse the same context may therefore connect to the HTTPS proxy without certificate verification.\n\n### 4. Target-specific TLS identity or credentials are applied to the proxy\n\nHTTPS requests are forwarded through an HTTPS proxy with `use_forwarding_for_https=True`, and target-specific SNI, hostname assertions, certificate fingerprint assertions, or TLS client credentials are configured.\n\nurllib3 may apply these target-specific settings to the proxy TLS handshake. This may cause urllib3 to:\n\n- send SNI intended for the target server to the proxy;\n- verify the proxy using a hostname or certificate fingerprint intended for the target server; or\n- present a TLS client certificate intended for the target server to the proxy.\n\nCode connecting through a plain HTTP proxy does not establish a TLS connection to the proxy and is not affected by this issue.\n\n## Remediation\n\nUpgrade to urllib3 2.8.0 or later.\n\nurllib3 2.8.0 independently applies the explicitly configured `proxy_ssl_context` and proxy-specific certificate assertions to the HTTPS proxy connection. Target-specific SNI, certificate assertions, and TLS client certificate parameters are no longer applied to the HTTPS proxy handshake.\n\nFor backward compatibility, when an HTTPS proxy is used with `use_forwarding_for_https=True` and `proxy_ssl_context` is not provided, urllib3 2.8.0 continues to use `ssl_context` for the TLS connection to the proxy. This configuration emits a `FutureWarning`. In urllib3 3.0, passing `ssl_context` with `use_forwarding_for_https=True` for an HTTPS proxy will raise an error. Applications should use `proxy_ssl_context` to configure TLS for an HTTPS forwarding proxy.\n\nThe fixes were implemented in commits b6447295fff7b38fdffc67e0df9712d60cef3cc3 and 07408cec79d1856d81bb42c74a904a24fdb9e465.",
+          "published_at": "2026-09-30T14:46:04Z",
+          "modified_at": "2026-10-01T17:55:53.793608550Z",
+          "affected_versions": [
+            "1.26.0",
+            "1.26.1",
+            "1.26.10",
+            "1.26.11",
+            "1.26.12",
+            "1.26.13",
+            "1.26.14",
+            "1.26.15",
+            "1.26.16",
+            "1.26.17",
+            "1.26.18",
+            "1.26.19",
+            "1.26.2",
+            "1.26.20",
+            "1.26.3",
+            "1.26.4",
+            "1.26.5",
+            "1.26.6",
+            "1.26.7",
+            "1.26.8",
+            "1.26.9",
+            "2.0.0",
+            "2.0.0a1",
+            "2.0.0a2",
+            "2.0.0a3",
+            "2.0.0a4",
+            "2.0.1",
+            "2.0.2",
+            "2.0.3",
+            "2.0.4",
+            "2.0.5",
+            "2.0.6",
+            "2.0.7",
+            "2.1.0",
+            "2.2.0",
+            "2.2.1",
+            "2.2.2",
+            "2.2.3",
+            "2.3.0",
+            "2.4.0",
+            "2.5.0",
+            "2.6.0",
+            "2.6.1",
+            "2.6.2",
+            "2.6.3",
+            "2.7.0"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "1.26.0"
+                },
+                {
+                  "fixed": "2.8.0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.8.0"
+                }
+              ],
+              "vulnerable_version_range": ">= 1.26.0, < 2.8.0"
+            }
+          ],
+          "fixed_versions": [
+            "2.8.0"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-8988-9cw3-xx77"
+        },
+        {
+          "id": "CVE-2023-45803",
+          "osv_id": "GHSA-g4mx-q9vg-27p4",
+          "cve_ids": [
+            "CVE-2023-45803"
+          ],
+          "ghsa_ids": [
+            "GHSA-g4mx-q9vg-27p4"
+          ],
+          "aliases": [
+            "CVE-2023-45803",
+            "PYSEC-2023-212",
+            "GHSA-g4mx-q9vg-27p4"
+          ],
+          "summary": "urllib3's request body not stripped after redirect from 303 status changes request method to GET",
+          "details": "urllib3 previously wouldn't remove the HTTP request body when an HTTP redirect response using status 303 \"See Other\" after the request had its method changed from one that could accept a request body (like `POST`) to `GET` as is required by HTTP RFCs. Although the behavior of removing the request body is not specified in the section for redirects, it can be inferred by piecing together information from different sections and we have observed the behavior in other major HTTP client implementations like curl and web browsers.\n\nFrom [RFC 9110 Section 9.3.1](https://www.rfc-editor.org/rfc/rfc9110.html#name-get):\n\n> A client SHOULD NOT generate content in a GET request unless it is made directly to an origin server that has previously indicated, in or out of band, that such a request has a purpose and will be adequately supported.\n\n## Affected usages\n\nBecause the vulnerability requires a previously trusted service to become compromised in order to have an impact on confidentiality we believe the exploitability of this vulnerability is low. Additionally, many users aren't putting sensitive data in HTTP request bodies, if this is the case then this vulnerability isn't exploitable.\n\nBoth of the following conditions must be true to be affected by this vulnerability:\n\n* If you're using urllib3 and submitting sensitive information in the HTTP request body (such as form data or JSON)\n* The origin service is compromised and starts redirecting using 303 to a malicious peer or the redirected-to service becomes compromised.\n\n## Remediation\n\nYou can remediate this vulnerability with any of the following steps:\n\n* Upgrade to a patched version of urllib3 (v1.26.18 or v2.0.7)\n* Disable redirects for services that you aren't expecting to respond with redirects with `redirects=False`.\n* Disable automatic redirects with `redirects=False` and handle 303 redirects manually by stripping the HTTP request body.",
+          "published_at": "2023-10-17T20:15:25Z",
+          "modified_at": "2026-09-10T03:50:03.706889410Z",
+          "affected_versions": [
+            "2.0.0",
+            "2.0.1",
+            "2.0.2",
+            "2.0.3",
+            "2.0.4",
+            "2.0.5",
+            "2.0.6",
+            "0.2",
+            "0.3",
+            "0.3.1",
+            "0.4.0",
+            "0.4.1",
+            "1.0",
+            "1.0.1",
+            "1.0.2",
+            "1.1",
+            "1.10",
+            "1.10.1",
+            "1.10.2",
+            "1.10.3",
+            "1.10.4",
+            "1.11",
+            "1.12",
+            "1.13",
+            "1.13.1",
+            "1.14",
+            "1.15",
+            "1.15.1",
+            "1.16",
+            "1.17",
+            "1.18",
+            "1.18.1",
+            "1.19",
+            "1.19.1",
+            "1.2",
+            "1.2.1",
+            "1.2.2",
+            "1.20",
+            "1.21",
+            "1.21.1",
+            "1.22",
+            "1.23",
+            "1.24",
+            "1.24.1",
+            "1.24.2",
+            "1.24.3",
+            "1.25",
+            "1.25.1",
+            "1.25.10",
+            "1.25.11",
+            "1.25.2",
+            "1.25.3",
+            "1.25.4",
+            "1.25.5",
+            "1.25.6",
+            "1.25.7",
+            "1.25.8",
+            "1.25.9",
+            "1.26.0",
+            "1.26.1",
+            "1.26.10",
+            "1.26.11",
+            "1.26.12",
+            "1.26.13",
+            "1.26.14",
+            "1.26.15",
+            "1.26.16",
+            "1.26.17",
+            "1.26.2",
+            "1.26.3",
+            "1.26.4",
+            "1.26.5",
+            "1.26.6",
+            "1.26.7",
+            "1.26.8",
+            "1.26.9",
+            "1.3",
+            "1.4",
+            "1.5",
+            "1.6",
+            "1.7",
+            "1.7.1",
+            "1.8",
+            "1.8.2",
+            "1.8.3",
+            "1.9",
+            "1.9.1"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "2.0.0"
+                },
+                {
+                  "fixed": "2.0.7"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.26.18"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "GIT",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "4e98d57809dacab1cbe625fddeec1a290c478ea9"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "2.0.0"
+                },
+                {
+                  "fixed": "2.0.7"
+                },
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.26.18"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.0.7"
+                }
+              ],
+              "vulnerable_version_range": ">= 2.0.0, < 2.0.7"
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.26.18"
+                }
+              ],
+              "vulnerable_version_range": ">= 0, < 1.26.18"
+            }
+          ],
+          "fixed_versions": [
+            "2.0.7",
+            "1.26.18",
+            "4e98d57809dacab1cbe625fddeec1a290c478ea9"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-g4mx-q9vg-27p4"
+        },
+        {
+          "id": "CVE-2026-97688",
+          "osv_id": "GHSA-gh4c-6fx4-qh6g",
+          "cve_ids": [
+            "CVE-2026-97688"
+          ],
+          "ghsa_ids": [
+            "GHSA-gh4c-6fx4-qh6g"
+          ],
+          "aliases": [
+            "CVE-2026-97688",
+            "PYSEC-2026-4176",
+            "GHSA-gh4c-6fx4-qh6g"
+          ],
+          "summary": "urllib3: Chunked Deflate streaming can enter an infinite loop",
+          "details": "### Impact\n\nurllib3's streaming API is designed for the efficient handling of large HTTP responses by reading content in chunks instead of loading the entire response body into memory at once.\n\nurllib3 can decompress response bodies according to the HTTP `Content-Encoding` header. When streaming a compressed, chunked response, urllib3 first consumes data already buffered by the decoder before reading the next HTTP chunk.\n\nHowever, urllib3 versions from 2.6.2 through 2.7.0 could enter an infinite loop when a chunked response contained bytes after the end of the Deflate stream. If the decompressed body exceeded the requested streaming chunk size, Python's zlib implementation could retain the trailing bytes as unconsumed input after reaching the end of the compressed stream. urllib3 would repeatedly attempt to decode those same bytes without making progress or reading more data from the network.\n\nA malicious server could exploit this behavior to cause excessive CPU usage and prevent the affected request from completing on the client. Network read timeouts would not interrupt the loop because no further socket operation was required.\n\n### Affected usages\n\nApplications and libraries using urllib3 versions 2.6.2 through 2.7.0 may be affected when all of the following conditions are met:\n\n1. Compressed responses from an untrusted source are streamed using `HTTPResponse.stream(amt=N)` or `HTTPResponse.read_chunked(amt=N)` with a positive, finite chunk size.\n2. Content decoding is enabled.\n3. The response uses both `Transfer-Encoding: chunked` and `Content-Encoding: deflate`.\n4. The decoded body exceeds the requested chunk size and the encoded body contains bytes after the end of the Deflate stream.\n\n`HTTPResponse.stream()` uses a finite chunk size by default and is therefore affected when the other conditions are met.\n\n### Remediation\n\nUpgrade to urllib3 2.8.0, in which the Deflate decoder stops accepting input after reaching the end of the compressed stream and no longer reports trailing bytes as data that can produce more decoded output.\n\nIf upgrading is not immediately possible, disable automatic content decoding for responses from untrusted sources by setting `decode_content=False`, or reject streamed responses using the Deflate content encoding. Applications that disable automatic decoding must handle the compressed response safely at another layer.",
+          "published_at": "2026-09-30T15:00:38Z",
+          "modified_at": "2026-10-01T17:55:40.608255720Z",
+          "affected_versions": [
+            "2.6.2",
+            "2.6.3",
+            "2.7.0"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "2.6.2"
+                },
+                {
+                  "fixed": "2.8.0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.8.0"
+                }
+              ],
+              "vulnerable_version_range": ">= 2.6.2, < 2.8.0"
+            }
+          ],
+          "fixed_versions": [
+            "2.8.0"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-gh4c-6fx4-qh6g"
+        },
+        {
+          "id": "CVE-2025-66418",
+          "osv_id": "GHSA-gm62-xv2j-4w53",
+          "cve_ids": [
+            "CVE-2025-66418"
+          ],
+          "ghsa_ids": [
+            "GHSA-gm62-xv2j-4w53"
+          ],
+          "aliases": [
+            "CVE-2025-66418",
+            "PYSEC-2026-1998",
+            "GHSA-gm62-xv2j-4w53"
+          ],
+          "summary": "urllib3 allows an unbounded number of links in the decompression chain",
+          "details": "## Impact\n\nurllib3 supports chained HTTP encoding algorithms for response content according to RFC 9110 (e.g., `Content-Encoding: gzip, zstd`).\n\nHowever, the number of links in the decompression chain was unbounded allowing a malicious server to insert a virtually unlimited number of compression steps leading to high CPU usage and massive memory allocation for the decompressed data.\n\n\n## Affected usages\n\nApplications and libraries using urllib3 version 2.5.0 and earlier for HTTP requests to untrusted sources unless they disable content decoding explicitly.\n\n\n## Remediation\n\nUpgrade to at least urllib3 v2.6.0 in which the library limits the number of links to 5.\n\nIf upgrading is not immediately possible, use [`preload_content=False`](https://urllib3.readthedocs.io/en/2.5.0/advanced-usage.html#streaming-and-i-o) and ensure that `resp.headers[\"content-encoding\"]` contains a safe number of encodings before reading the response content.",
+          "published_at": "2025-12-05T18:15:19Z",
+          "modified_at": "2026-09-10T03:50:58.741847479Z",
+          "affected_versions": [
+            "1.24",
+            "1.24.1",
+            "1.24.2",
+            "1.24.3",
+            "1.25",
+            "1.25.1",
+            "1.25.10",
+            "1.25.11",
+            "1.25.2",
+            "1.25.3",
+            "1.25.4",
+            "1.25.5",
+            "1.25.6",
+            "1.25.7",
+            "1.25.8",
+            "1.25.9",
+            "1.26.0",
+            "1.26.1",
+            "1.26.10",
+            "1.26.11",
+            "1.26.12",
+            "1.26.13",
+            "1.26.14",
+            "1.26.15",
+            "1.26.16",
+            "1.26.17",
+            "1.26.18",
+            "1.26.19",
+            "1.26.2",
+            "1.26.20",
+            "1.26.3",
+            "1.26.4",
+            "1.26.5",
+            "1.26.6",
+            "1.26.7",
+            "1.26.8",
+            "1.26.9",
+            "2.0.0",
+            "2.0.0a1",
+            "2.0.0a2",
+            "2.0.0a3",
+            "2.0.0a4",
+            "2.0.1",
+            "2.0.2",
+            "2.0.3",
+            "2.0.4",
+            "2.0.5",
+            "2.0.6",
+            "2.0.7",
+            "2.1.0",
+            "2.2.0",
+            "2.2.1",
+            "2.2.2",
+            "2.2.3",
+            "2.3.0",
+            "2.4.0",
+            "2.5.0"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "1.24"
+                },
+                {
+                  "fixed": "2.6.0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.6.0"
+                }
+              ],
+              "vulnerable_version_range": ">= 1.24, < 2.6.0"
+            }
+          ],
+          "fixed_versions": [
+            "2.6.0"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-gm62-xv2j-4w53"
+        },
+        {
+          "id": "CVE-2018-25091",
+          "osv_id": "GHSA-gwvm-45gx-3cf8",
+          "cve_ids": [
+            "CVE-2018-25091"
+          ],
+          "ghsa_ids": [
+            "GHSA-gwvm-45gx-3cf8"
+          ],
+          "aliases": [
+            "CVE-2018-25091",
+            "PYSEC-2023-207",
+            "GHSA-gwvm-45gx-3cf8"
+          ],
+          "summary": "Authorization Header forwarded on redirect",
+          "details": "urllib3 before 1.24.2 does not remove the authorization HTTP header when following a cross-origin redirect (i.e., a redirect that differs in host, port, or scheme). This can allow for credentials in the authorization header to be exposed to unintended hosts or transmitted in cleartext. NOTE: this issue exists because of an incomplete fix for CVE-2018-20060 (which was case-sensitive).",
+          "published_at": "2023-10-15T21:30:26Z",
+          "modified_at": "2024-11-18T23:24:00.169548Z",
+          "affected_versions": [
+            "0.2",
+            "0.3",
+            "0.3.1",
+            "0.4.0",
+            "0.4.1",
+            "1.0",
+            "1.0.1",
+            "1.0.2",
+            "1.1",
+            "1.10",
+            "1.10.1",
+            "1.10.2",
+            "1.10.3",
+            "1.10.4",
+            "1.11",
+            "1.12",
+            "1.13",
+            "1.13.1",
+            "1.14",
+            "1.15",
+            "1.15.1",
+            "1.16",
+            "1.17",
+            "1.18",
+            "1.18.1",
+            "1.19",
+            "1.19.1",
+            "1.2",
+            "1.2.1",
+            "1.2.2",
+            "1.20",
+            "1.21",
+            "1.21.1",
+            "1.22",
+            "1.23",
+            "1.24",
+            "1.24.1",
+            "1.3",
+            "1.4",
+            "1.5",
+            "1.6",
+            "1.7",
+            "1.7.1",
+            "1.8",
+            "1.8.2",
+            "1.8.3",
+            "1.9",
+            "1.9.1",
+            "0.4"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.24.2"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "GIT",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "adb358f8e06865406d1f05e581a16cbea2136fbc"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.24.2"
+                }
+              ],
+              "vulnerable_version_range": "< 1.24.2"
+            }
+          ],
+          "fixed_versions": [
+            "1.24.2",
+            "adb358f8e06865406d1f05e581a16cbea2136fbc"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-gwvm-45gx-3cf8"
+        },
+        {
+          "id": "CVE-2020-7212",
+          "osv_id": "GHSA-hmv2-79q8-fv6g",
+          "cve_ids": [
+            "CVE-2020-7212"
+          ],
+          "ghsa_ids": [
+            "GHSA-hmv2-79q8-fv6g"
+          ],
+          "aliases": [
+            "CVE-2020-7212",
+            "PYSEC-2020-149",
+            "GHSA-hmv2-79q8-fv6g"
+          ],
+          "summary": "Uncontrolled Resource Consumption in urllib3",
+          "details": "The _encode_invalid_chars function in util/url.py in the urllib3 library 1.25.2 through 1.25.7 for Python allows a denial of service (CPU consumption) because of an inefficient algorithm. The percent_encodings array contains all matches of percent encodings. It is not deduplicated. For a URL of length N, the size of percent_encodings may be up to O(N). The next step (normalize existing percent-encoded bytes) also takes up to O(N) for each step, so the total time is O(N^2). If percent_encodings were deduplicated, the time to compute _encode_invalid_chars would be O(kN), where k is at most 484 ((10+6*2)^2).",
+          "published_at": "2021-04-30T17:31:43Z",
+          "modified_at": "2024-11-18T22:35:00.503678Z",
+          "affected_versions": [
+            "1.25.2",
+            "1.25.3",
+            "1.25.4",
+            "1.25.5",
+            "1.25.6",
+            "1.25.7"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "1.25.2"
+                },
+                {
+                  "fixed": "1.25.8"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "GIT",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "a74c9cfbaed9f811e7563cfc3dce894928e0221a"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.25.8"
+                }
+              ],
+              "vulnerable_version_range": ">= 1.25.2, <= 1.25.7"
+            }
+          ],
+          "fixed_versions": [
+            "1.25.8",
+            "a74c9cfbaed9f811e7563cfc3dce894928e0221a"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-hmv2-79q8-fv6g"
+        },
+        {
+          "id": "CVE-2026-44432",
+          "osv_id": "GHSA-mf9v-mfxr-j63j",
+          "cve_ids": [
+            "CVE-2026-44432"
+          ],
+          "ghsa_ids": [
+            "GHSA-mf9v-mfxr-j63j"
+          ],
+          "aliases": [
+            "CVE-2026-44432",
+            "PYSEC-2026-142",
+            "GHSA-mf9v-mfxr-j63j"
+          ],
+          "summary": "urllib3: Decompression-bomb safeguards bypassed in parts of the streaming API",
+          "details": "### Impact\n\nurllib3's [streaming API](https://urllib3.readthedocs.io/en/2.7.0/advanced-usage.html#streaming-and-i-o) is designed for the efficient handling of large HTTP responses by reading the content in chunks, rather than loading the entire response body into memory at once.\n\nurllib3 can perform decompression based on the HTTP `Content-Encoding` header (e.g., `gzip`, `deflate`, `br`, or `zstd`). When using the streaming API since version 2.6.0, the library decompresses only the necessary bytes, enabling partial content consumption.\n\nHowever, urllib3 before version 2.7.0 could still decompress the whole response instead of the requested portion in two cases:\n1. During the second `HTTPResponse.read(amt=N)` call when the response was decompressed using the official [Brotli](https://pypi.org/project/brotli/) library.\n2. When `HTTPResponse.drain_conn()` was called after the response had been read and decompressed partially (compression algorithm did not matter here).\n\nThese issues could cause urllib3 to fully decode a small amount of highly compressed data in a single operation. This could result in excessive resource consumption (high CPU usage and massive memory allocation for the decompressed data; CWE-409) on the client side.\n\n\n### Affected usages\n\nApplications and libraries using urllib3 versions earlier than 2.7.0 may be affected when streaming compressed responses from untrusted sources in either of these cases, unless decompression is explicitly disabled:\n\n1. A response encoded with `br` is read incrementally with at least two `HTTPResponse.read(amt=N)` or `HTTPResponse.stream(amt=N)` calls while using the official [Brotli](https://pypi.org/project/brotli/) library.\n2. `HTTPResponse.drain_conn()` is called after response decompression has already started.\n\n\n### Remediation\n\nUpgrade to at least urllib3 version 2.7.0 in which the library:\n1. Is more efficient for reads with Brotli.\n2. Always skips decompression for `HTTPResponse.drain_conn()`.\n\nIf upgrading is not immediately possible, the following workarounds may reduce exposure in specific cases:\n1. For the Brotli-specific issue only, switch from [brotli](https://pypi.org/project/brotli/) to [brotlicffi](https://pypi.org/project/brotlicffi/) until you can upgrade urllib3; the official Brotli package is affected because of https://github.com/google/brotli/issues/1396.\n2. If your code explicitly calls `HTTPResponse.drain_conn()`, call `HTTPResponse.close()` instead when connection reuse is not important.\n\n\n### Credits\n\nThe Brotli-specific issue was reported by @kimkou2024.\n`HTTPResponse.drain_conn()` inefficiency was reported by @Cycloctane.",
+          "published_at": "2026-05-11T14:51:45Z",
+          "modified_at": "2026-09-10T03:51:06.409994465Z",
+          "affected_versions": [
+            "2.6.0",
+            "2.6.1",
+            "2.6.2",
+            "2.6.3"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "2.6.0"
+                },
+                {
+                  "fixed": "2.7.0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.7.0"
+                }
+              ],
+              "vulnerable_version_range": ">= 2.6.0, < 2.7.0"
+            }
+          ],
+          "fixed_versions": [
+            "2.7.0"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-mf9v-mfxr-j63j"
+        },
+        {
+          "id": "CVE-2019-11324",
+          "osv_id": "GHSA-mh33-7rrq-662w",
+          "cve_ids": [
+            "CVE-2019-11324"
+          ],
+          "ghsa_ids": [
+            "GHSA-mh33-7rrq-662w"
+          ],
+          "aliases": [
+            "CVE-2019-11324",
+            "PYSEC-2019-133",
+            "GHSA-mh33-7rrq-662w"
+          ],
+          "summary": "Improper Certificate Validation in urllib3",
+          "details": "The urllib3 library before 1.24.2 for Python mishandles certain cases where the desired set of CA certificates is different from the OS store of CA certificates, which results in SSL connections succeeding in situations where a verification failure is the correct outcome. This is related to use of the `ssl_context`, `ca_certs`, or `ca_certs_dir` argument.",
+          "published_at": "2019-04-19T16:55:10Z",
+          "modified_at": "2024-11-18T22:25:21.266722Z",
+          "affected_versions": [
+            "0.2",
+            "0.3",
+            "0.3.1",
+            "0.4.0",
+            "0.4.1",
+            "1.0",
+            "1.0.1",
+            "1.0.2",
+            "1.1",
+            "1.10",
+            "1.10.1",
+            "1.10.2",
+            "1.10.3",
+            "1.10.4",
+            "1.11",
+            "1.12",
+            "1.13",
+            "1.13.1",
+            "1.14",
+            "1.15",
+            "1.15.1",
+            "1.16",
+            "1.17",
+            "1.18",
+            "1.18.1",
+            "1.19",
+            "1.19.1",
+            "1.2",
+            "1.2.1",
+            "1.2.2",
+            "1.20",
+            "1.21",
+            "1.21.1",
+            "1.22",
+            "1.23",
+            "1.24",
+            "1.24.1",
+            "1.3",
+            "1.4",
+            "1.5",
+            "1.6",
+            "1.7",
+            "1.7.1",
+            "1.8",
+            "1.8.2",
+            "1.8.3",
+            "1.9",
+            "1.9.1"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.24.2"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.24.2"
+                }
+              ],
+              "vulnerable_version_range": "< 1.24.2"
+            }
+          ],
+          "fixed_versions": [
+            "1.24.2"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-mh33-7rrq-662w"
+        },
+        {
+          "id": "CVE-2025-50181",
+          "osv_id": "GHSA-pq67-6m6q-mj2v",
+          "cve_ids": [
+            "CVE-2025-50181"
+          ],
+          "ghsa_ids": [
+            "GHSA-pq67-6m6q-mj2v"
+          ],
+          "aliases": [
+            "CVE-2025-50181",
+            "PYSEC-2026-1999",
+            "GHSA-pq67-6m6q-mj2v"
+          ],
+          "summary": "urllib3 redirects are not disabled when retries are disabled on PoolManager instantiation",
+          "details": "urllib3 handles redirects and retries using the same mechanism, which is controlled by the `Retry` object. The most common way to disable redirects is at the request level, as follows:\n\n```python\nresp = urllib3.request(\"GET\", \"https://httpbin.org/redirect/1\", redirect=False)\nprint(resp.status)\n# 302\n```\n\nHowever, it is also possible to disable redirects, for all requests, by instantiating a `PoolManager` and specifying `retries` in a way that disable redirects:\n\n```python\nimport urllib3\n\nhttp = urllib3.PoolManager(retries=0)  # should raise MaxRetryError on redirect\nhttp = urllib3.PoolManager(retries=urllib3.Retry(redirect=0))  # equivalent to the above\nhttp = urllib3.PoolManager(retries=False)  # should return the first response\n\nresp = http.request(\"GET\", \"https://httpbin.org/redirect/1\")\n```\n\nHowever, the `retries` parameter is currently ignored, which means all the above examples don't disable redirects.\n\n## Affected usages\n\nPassing `retries` on `PoolManager` instantiation to disable redirects or restrict their number.\n\nBy default, requests and botocore users are not affected.\n\n## Impact\n\nRedirects are often used to exploit SSRF vulnerabilities. An application attempting to mitigate SSRF or open redirect vulnerabilities by disabling redirects at the PoolManager level will remain vulnerable.\n\n## Remediation\n\nYou can remediate this vulnerability with the following steps:\n\n * Upgrade to a patched version of urllib3. If your organization would benefit from the continued support of urllib3 1.x, please contact [sethmichaellarson@gmail.com](mailto:sethmichaellarson@gmail.com) to discuss sponsorship or contribution opportunities.\n * Disable redirects at the `request()` level instead of the `PoolManager()` level.",
+          "published_at": "2025-06-18T17:50:00Z",
+          "modified_at": "2026-09-10T03:50:25.299291456Z",
+          "affected_versions": [
+            "0.2",
+            "0.3",
+            "0.3.1",
+            "0.4.0",
+            "0.4.1",
+            "1.0",
+            "1.0.1",
+            "1.0.2",
+            "1.1",
+            "1.10",
+            "1.10.1",
+            "1.10.2",
+            "1.10.3",
+            "1.10.4",
+            "1.11",
+            "1.12",
+            "1.13",
+            "1.13.1",
+            "1.14",
+            "1.15",
+            "1.15.1",
+            "1.16",
+            "1.17",
+            "1.18",
+            "1.18.1",
+            "1.19",
+            "1.19.1",
+            "1.2",
+            "1.2.1",
+            "1.2.2",
+            "1.20",
+            "1.21",
+            "1.21.1",
+            "1.22",
+            "1.23",
+            "1.24",
+            "1.24.1",
+            "1.24.2",
+            "1.24.3",
+            "1.25",
+            "1.25.1",
+            "1.25.10",
+            "1.25.11",
+            "1.25.2",
+            "1.25.3",
+            "1.25.4",
+            "1.25.5",
+            "1.25.6",
+            "1.25.7",
+            "1.25.8",
+            "1.25.9",
+            "1.26.0",
+            "1.26.1",
+            "1.26.10",
+            "1.26.11",
+            "1.26.12",
+            "1.26.13",
+            "1.26.14",
+            "1.26.15",
+            "1.26.16",
+            "1.26.17",
+            "1.26.18",
+            "1.26.19",
+            "1.26.2",
+            "1.26.20",
+            "1.26.3",
+            "1.26.4",
+            "1.26.5",
+            "1.26.6",
+            "1.26.7",
+            "1.26.8",
+            "1.26.9",
+            "1.3",
+            "1.4",
+            "1.5",
+            "1.6",
+            "1.7",
+            "1.7.1",
+            "1.8",
+            "1.8.2",
+            "1.8.3",
+            "1.9",
+            "1.9.1",
+            "2.0.0",
+            "2.0.0a1",
+            "2.0.0a2",
+            "2.0.0a3",
+            "2.0.0a4",
+            "2.0.1",
+            "2.0.2",
+            "2.0.3",
+            "2.0.4",
+            "2.0.5",
+            "2.0.6",
+            "2.0.7",
+            "2.1.0",
+            "2.2.0",
+            "2.2.1",
+            "2.2.2",
+            "2.2.3",
+            "2.3.0",
+            "2.4.0"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.5.0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.5.0"
+                }
+              ],
+              "vulnerable_version_range": "< 2.5.0"
+            }
+          ],
+          "fixed_versions": [
+            "2.5.0"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-pq67-6m6q-mj2v"
+        },
+        {
+          "id": "CVE-2021-33503",
+          "osv_id": "GHSA-q2q7-5pp4-w6pg",
+          "cve_ids": [
+            "CVE-2021-33503"
+          ],
+          "ghsa_ids": [
+            "GHSA-q2q7-5pp4-w6pg"
+          ],
+          "aliases": [
+            "CVE-2021-33503",
+            "PYSEC-2021-108",
+            "GHSA-q2q7-5pp4-w6pg"
+          ],
+          "summary": "Catastrophic backtracking in URL authority parser when passed URL containing many @ characters",
+          "details": "### Impact\n\nWhen provided with a URL containing many `@` characters in the authority component the authority regular expression exhibits catastrophic backtracking causing a denial of service if a URL were passed as a parameter or redirected to via an HTTP redirect.\n\n\n### Patches\n\nThe issue has been fixed in urllib3 v1.26.5.\n\n### References\n\n- [CVE-2021-33503](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33503)\n- [JVNVU#92413403 (English)](https://jvn.jp/en/vu/JVNVU92413403/)\n- [JVNVU#92413403 (Japanese)](https://jvn.jp/vu/JVNVU92413403/)\n- [urllib3 v1.26.5](https://github.com/urllib3/urllib3/releases/tag/1.26.5)\n\n### For more information\nIf you have any questions or comments about this advisory:\n* Ask in our [community Discord](https://discord.gg/urllib3)\n* Email [sethmichaellarson@gmail.com](mailto:sethmichaellarson@gmail.com)",
+          "published_at": "2021-06-01T21:19:32Z",
+          "modified_at": "2026-07-08T06:00:54.217433740Z",
+          "affected_versions": [
+            "1.25.10",
+            "1.25.11",
+            "1.25.4",
+            "1.25.5",
+            "1.25.6",
+            "1.25.7",
+            "1.25.8",
+            "1.25.9",
+            "1.26.0",
+            "1.26.1",
+            "1.26.2",
+            "1.26.3",
+            "1.26.4"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "1.25.4"
+                },
+                {
+                  "fixed": "1.26.5"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "GIT",
+              "events": [
+                {
+                  "introduced": "5b047b645f5f93900d5e2fc31230848c25eb1f5f"
+                },
+                {
+                  "fixed": "2d4a3fee6de2fa45eb82169361918f759269b4ec"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.26.5"
+                }
+              ],
+              "vulnerable_version_range": ">= 1.25.4, < 1.26.5"
+            }
+          ],
+          "fixed_versions": [
+            "1.26.5",
+            "2d4a3fee6de2fa45eb82169361918f759269b4ec"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-q2q7-5pp4-w6pg"
+        },
+        {
+          "id": "CVE-2026-44431",
+          "osv_id": "GHSA-qccp-gfcp-xxvc",
+          "cve_ids": [
+            "CVE-2026-44431"
+          ],
+          "ghsa_ids": [
+            "GHSA-qccp-gfcp-xxvc"
+          ],
+          "aliases": [
+            "CVE-2026-44431",
+            "PYSEC-2026-141",
+            "GHSA-qccp-gfcp-xxvc"
+          ],
+          "summary": "urllib3: Sensitive headers forwarded across origins in proxied low-level redirects",
+          "details": "### Impact\n\nWhen following cross-origin redirects for requests made using urllib3’s high-level APIs, such as `urllib3.request()`, `PoolManager.request()`, and `ProxyManager.request()`, sensitive headers — `Authorization`, `Cookie`, and `Proxy-Authorization` (defined in `Retry.DEFAULT_REMOVE_HEADERS_ON_REDIRECT`) — are stripped by default, as expected.\n\nHowever, cross-origin redirects followed from the low-level API via `ProxyManager.connection_from_url().urlopen(..., assert_same_host=False)` still forward these sensitive headers.\n\n### Affected usage\n\nApplications and libraries using urllib3 versions earlier than 2.7.0 may be affected if they allow cross-origin redirects while making requests through `HTTPConnection.urlopen()` instances created via `ProxyManager.connection_from_url()`.\n\n### Remediation\n\nUpgrade to urllib3 version 2.7.0 or later, in which sensitive headers are stripped from redirects followed by `HTTPConnection`.\n\nIf upgrading is not immediately possible, avoid using this low-level redirect flow for cross-origin redirects. If appropriate for your use case, switch to `ProxyManager.request()`.",
+          "published_at": "2026-05-11T14:51:20Z",
+          "modified_at": "2026-09-10T03:50:47.272765640Z",
+          "affected_versions": [
+            "1.23",
+            "1.24",
+            "1.24.1",
+            "1.24.2",
+            "1.24.3",
+            "1.25",
+            "1.25.1",
+            "1.25.10",
+            "1.25.11",
+            "1.25.2",
+            "1.25.3",
+            "1.25.4",
+            "1.25.5",
+            "1.25.6",
+            "1.25.7",
+            "1.25.8",
+            "1.25.9",
+            "1.26.0",
+            "1.26.1",
+            "1.26.10",
+            "1.26.11",
+            "1.26.12",
+            "1.26.13",
+            "1.26.14",
+            "1.26.15",
+            "1.26.16",
+            "1.26.17",
+            "1.26.18",
+            "1.26.19",
+            "1.26.2",
+            "1.26.20",
+            "1.26.3",
+            "1.26.4",
+            "1.26.5",
+            "1.26.6",
+            "1.26.7",
+            "1.26.8",
+            "1.26.9",
+            "2.0.0",
+            "2.0.0a1",
+            "2.0.0a2",
+            "2.0.0a3",
+            "2.0.0a4",
+            "2.0.1",
+            "2.0.2",
+            "2.0.3",
+            "2.0.4",
+            "2.0.5",
+            "2.0.6",
+            "2.0.7",
+            "2.1.0",
+            "2.2.0",
+            "2.2.1",
+            "2.2.2",
+            "2.2.3",
+            "2.3.0",
+            "2.4.0",
+            "2.5.0",
+            "2.6.0",
+            "2.6.1",
+            "2.6.2",
+            "2.6.3"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "1.23"
+                },
+                {
+                  "fixed": "2.7.0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.7.0"
+                }
+              ],
+              "vulnerable_version_range": ">= 1.23, < 2.7.0"
+            }
+          ],
+          "fixed_versions": [
+            "2.7.0"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-qccp-gfcp-xxvc"
+        },
+        {
+          "id": "CVE-2019-11236",
+          "osv_id": "GHSA-r64q-w8jr-g9qp",
+          "cve_ids": [
+            "CVE-2019-11236"
+          ],
+          "ghsa_ids": [
+            "GHSA-r64q-w8jr-g9qp"
+          ],
+          "aliases": [
+            "CVE-2019-11236",
+            "PYSEC-2019-132",
+            "GHSA-r64q-w8jr-g9qp"
+          ],
+          "summary": "Improper Neutralization of CRLF Sequences in urllib3 library for Python",
+          "details": "In the urllib3 library through 1.24.2 for Python, CRLF injection is possible if the attacker controls the request parameter.",
+          "published_at": "2022-05-13T01:09:23Z",
+          "modified_at": "2024-11-18T23:01:35.378516Z",
+          "affected_versions": [
+            "0.2",
+            "0.3",
+            "0.3.1",
+            "0.4.0",
+            "0.4.1",
+            "1.0",
+            "1.0.1",
+            "1.0.2",
+            "1.1",
+            "1.10",
+            "1.10.1",
+            "1.10.2",
+            "1.10.3",
+            "1.10.4",
+            "1.11",
+            "1.12",
+            "1.13",
+            "1.13.1",
+            "1.14",
+            "1.15",
+            "1.15.1",
+            "1.16",
+            "1.17",
+            "1.18",
+            "1.18.1",
+            "1.19",
+            "1.19.1",
+            "1.2",
+            "1.2.1",
+            "1.2.2",
+            "1.20",
+            "1.21",
+            "1.21.1",
+            "1.22",
+            "1.23",
+            "1.24",
+            "1.24.1",
+            "1.24.2",
+            "1.3",
+            "1.4",
+            "1.5",
+            "1.6",
+            "1.7",
+            "1.7.1",
+            "1.8",
+            "1.8.2",
+            "1.8.3",
+            "1.9",
+            "1.9.1"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.24.3"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.24.3"
+                }
+              ],
+              "vulnerable_version_range": "<= 1.24.2"
+            }
+          ],
+          "fixed_versions": [
+            "1.24.3"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-r64q-w8jr-g9qp"
+        },
+        {
+          "id": "CVE-2016-9015",
+          "osv_id": "GHSA-v4w5-p2hg-8fh6",
+          "cve_ids": [
+            "CVE-2016-9015"
+          ],
+          "ghsa_ids": [
+            "GHSA-v4w5-p2hg-8fh6"
+          ],
+          "aliases": [
+            "CVE-2016-9015",
+            "PYSEC-2017-98",
+            "GHSA-v4w5-p2hg-8fh6"
+          ],
+          "summary": "Urllib3 Incorrect Certificate Validation",
+          "details": "Versions 1.17 and 1.18 of the Python urllib3 library suffer from a vulnerability that can cause them, in certain configurations, to not correctly validate TLS certificates. This places users of the library with those configurations at risk of man-in-the-middle and information leakage attacks. This vulnerability affects users using versions 1.17 and 1.18 of the urllib3 library, who are using the optional PyOpenSSL support for TLS instead of the regular standard library TLS backend, and who are using OpenSSL 1.1.0 via PyOpenSSL. This is an extremely uncommon configuration, so the security impact of this vulnerability is low.",
+          "published_at": "2022-05-17T03:05:04Z",
+          "modified_at": "2024-11-18T23:23:42.457541Z",
+          "affected_versions": [
+            "1.17",
+            "1.18"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "1.17"
+                },
+                {
+                  "fixed": "1.18.1"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.18.1"
+                }
+              ],
+              "vulnerable_version_range": ">= 1.17, <= 1.18"
+            }
+          ],
+          "fixed_versions": [
+            "1.18.1"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-v4w5-p2hg-8fh6"
+        },
+        {
+          "id": "CVE-2023-43804",
+          "osv_id": "GHSA-v845-jxx5-vc9f",
+          "cve_ids": [
+            "CVE-2023-43804"
+          ],
+          "ghsa_ids": [
+            "GHSA-v845-jxx5-vc9f"
+          ],
+          "aliases": [
+            "CVE-2023-43804",
+            "PYSEC-2023-192",
+            "GHSA-v845-jxx5-vc9f"
+          ],
+          "summary": "`Cookie` HTTP header isn't stripped on cross-origin redirects",
+          "details": "urllib3 doesn't treat the `Cookie` HTTP header special or provide any helpers for managing cookies over HTTP, that is the responsibility of the user. However, it is possible for a user to specify a `Cookie` header and unknowingly leak information via HTTP redirects to a different origin if that user doesn't disable redirects explicitly.\n\nUsers **must** handle redirects themselves instead of relying on urllib3's automatic redirects to achieve safe processing of the `Cookie` header, thus we decided to strip the header by default in order to further protect users who aren't using the correct approach.\n\n## Affected usages\n\nWe believe the number of usages affected by this advisory is low. It requires all of the following to be true to be exploited:\n\n* Using an affected version of urllib3 (patched in v1.26.17 and v2.0.6)\n* Using the `Cookie` header on requests, which is mostly typical for impersonating a browser.\n* Not disabling HTTP redirects\n* Either not using HTTPS or for the origin server to redirect to a malicious origin.\n\n## Remediation\n\n* Upgrading to at least urllib3 v1.26.17 or v2.0.6\n* Disabling HTTP redirects using `redirects=False` when sending requests.\n* Not using the `Cookie` header.",
+          "published_at": "2023-10-02T23:27:05Z",
+          "modified_at": "2026-09-10T03:49:24.753610811Z",
+          "affected_versions": [
+            "2.0.0",
+            "2.0.1",
+            "2.0.2",
+            "2.0.3",
+            "2.0.4",
+            "2.0.5",
+            "0.2",
+            "0.3",
+            "0.3.1",
+            "0.4.0",
+            "0.4.1",
+            "1.0",
+            "1.0.1",
+            "1.0.2",
+            "1.1",
+            "1.10",
+            "1.10.1",
+            "1.10.2",
+            "1.10.3",
+            "1.10.4",
+            "1.11",
+            "1.12",
+            "1.13",
+            "1.13.1",
+            "1.14",
+            "1.15",
+            "1.15.1",
+            "1.16",
+            "1.17",
+            "1.18",
+            "1.18.1",
+            "1.19",
+            "1.19.1",
+            "1.2",
+            "1.2.1",
+            "1.2.2",
+            "1.20",
+            "1.21",
+            "1.21.1",
+            "1.22",
+            "1.23",
+            "1.24",
+            "1.24.1",
+            "1.24.2",
+            "1.24.3",
+            "1.25",
+            "1.25.1",
+            "1.25.10",
+            "1.25.11",
+            "1.25.2",
+            "1.25.3",
+            "1.25.4",
+            "1.25.5",
+            "1.25.6",
+            "1.25.7",
+            "1.25.8",
+            "1.25.9",
+            "1.26.0",
+            "1.26.1",
+            "1.26.10",
+            "1.26.11",
+            "1.26.12",
+            "1.26.13",
+            "1.26.14",
+            "1.26.15",
+            "1.26.16",
+            "1.26.2",
+            "1.26.3",
+            "1.26.4",
+            "1.26.5",
+            "1.26.6",
+            "1.26.7",
+            "1.26.8",
+            "1.26.9",
+            "1.3",
+            "1.4",
+            "1.5",
+            "1.6",
+            "1.7",
+            "1.7.1",
+            "1.8",
+            "1.8.2",
+            "1.8.3",
+            "1.9",
+            "1.9.1"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "2.0.0"
+                },
+                {
+                  "fixed": "2.0.6"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.26.17"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "GIT",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "644124ecd0b6e417c527191f866daa05a5a2056d"
+                },
+                {
+                  "fixed": "01220354d389cd05474713f8c982d05c9b17aafb"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "2.0.0"
+                },
+                {
+                  "fixed": "2.0.6"
+                },
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.26.17"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.0.6"
+                }
+              ],
+              "vulnerable_version_range": ">= 2.0.0, < 2.0.6"
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.26.17"
+                }
+              ],
+              "vulnerable_version_range": "< 1.26.17"
+            }
+          ],
+          "fixed_versions": [
+            "2.0.6",
+            "1.26.17",
+            "644124ecd0b6e417c527191f866daa05a5a2056d",
+            "01220354d389cd05474713f8c982d05c9b17aafb"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-v845-jxx5-vc9f"
+        },
+        {
+          "id": "CVE-2026-97689",
+          "osv_id": "GHSA-vxq7-64xx-v4gw",
+          "cve_ids": [
+            "CVE-2026-97689"
+          ],
+          "ghsa_ids": [
+            "GHSA-vxq7-64xx-v4gw"
+          ],
+          "aliases": [
+            "CVE-2026-97689",
+            "PYSEC-2026-4177",
+            "GHSA-vxq7-64xx-v4gw"
+          ],
+          "summary": "urllib3: HTTPResponse.stream()/read_chunked() buffers an unbounded chunk-size line into memory",
+          "details": "## Impact\n\nurllib3's [streaming API](https://urllib3.readthedocs.io/en/2.7.0/advanced-usage.html#streaming-and-i-o) is designed for efficiently handling large HTTP responses by reading the content in chunks, rather than loading the entire response body into memory at once. When decoding a [chunked-transfer-encoded response](https://httpwg.org/specs/rfc9112.html#chunked.encoding), this API reads each chunk's size field by buffering until it sees `\\n` or EOF.\n\nA malicious HTTP server can return `Transfer-Encoding: chunked` and then send a very long run of bytes without any newline, causing the streaming client to buffer that entire run before urllib3 can reject the chunk size as invalid and allocate more memory than intended.\n\nTo fix the issue, we'll reject chunk-size fields larger than 65536 bytes, as already done in the non-streaming case, which is currently handled by the Python standard library. Note that this only applies to reading the chunk-size field, not the chunk data, which is already handled correctly. Thus, there shouldn't be any impact for non-malicious servers.\n\n## Affected usages\n\nApplications and libraries using urllib3 versions earlier than 2.8.0 may be affected when streaming a chunked response from untrusted sources. Specifically, this affects the [read_chunked()](https://urllib3.readthedocs.io/en/stable/reference/urllib3.response.html#urllib3.response.BaseHTTPResponse.read_chunked) and [stream()](https://urllib3.readthedocs.io/en/stable/reference/urllib3.response.html#urllib3.response.BaseHTTPResponse.stream) methods of the HTTPResponse object.\n\nThis also affects requests streaming API, which uses urllib3 under the hood.\n\n## Remediation\n\nUpgrade to urllib3 version 2.8.0 or later, where chunk-size fields larger than 65536 will be rejected. If upgrading is not immediately possible, consider reading the response at once using the [read()](https://urllib3.readthedocs.io/en/stable/reference/urllib3.response.html#urllib3.response.BaseHTTPResponse.read) method.",
+          "published_at": "2026-09-30T14:46:18Z",
+          "modified_at": "2026-10-01T17:55:57.514829071Z",
+          "affected_versions": [
+            "1.10.3",
+            "1.10.4",
+            "1.11",
+            "1.12",
+            "1.13",
+            "1.13.1",
+            "1.14",
+            "1.15",
+            "1.15.1",
+            "1.16",
+            "1.17",
+            "1.18",
+            "1.18.1",
+            "1.19",
+            "1.19.1",
+            "1.20",
+            "1.21",
+            "1.21.1",
+            "1.22",
+            "1.23",
+            "1.24",
+            "1.24.1",
+            "1.24.2",
+            "1.24.3",
+            "1.25",
+            "1.25.1",
+            "1.25.10",
+            "1.25.11",
+            "1.25.2",
+            "1.25.3",
+            "1.25.4",
+            "1.25.5",
+            "1.25.6",
+            "1.25.7",
+            "1.25.8",
+            "1.25.9",
+            "1.26.0",
+            "1.26.1",
+            "1.26.10",
+            "1.26.11",
+            "1.26.12",
+            "1.26.13",
+            "1.26.14",
+            "1.26.15",
+            "1.26.16",
+            "1.26.17",
+            "1.26.18",
+            "1.26.19",
+            "1.26.2",
+            "1.26.20",
+            "1.26.3",
+            "1.26.4",
+            "1.26.5",
+            "1.26.6",
+            "1.26.7",
+            "1.26.8",
+            "1.26.9",
+            "2.0.0",
+            "2.0.0a1",
+            "2.0.0a2",
+            "2.0.0a3",
+            "2.0.0a4",
+            "2.0.1",
+            "2.0.2",
+            "2.0.3",
+            "2.0.4",
+            "2.0.5",
+            "2.0.6",
+            "2.0.7",
+            "2.1.0",
+            "2.2.0",
+            "2.2.1",
+            "2.2.2",
+            "2.2.3",
+            "2.3.0",
+            "2.4.0",
+            "2.5.0",
+            "2.6.0",
+            "2.6.1",
+            "2.6.2",
+            "2.6.3",
+            "2.7.0"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "1.10.3"
+                },
+                {
+                  "fixed": "2.8.0"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "2.8.0"
+                }
+              ],
+              "vulnerable_version_range": ">= 1.10.3, < 2.8.0"
+            }
+          ],
+          "fixed_versions": [
+            "2.8.0"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-vxq7-64xx-v4gw"
+        },
+        {
+          "id": "CVE-2020-26137",
+          "osv_id": "GHSA-wqvq-5m8c-6g24",
+          "cve_ids": [
+            "CVE-2020-26137"
+          ],
+          "ghsa_ids": [
+            "GHSA-wqvq-5m8c-6g24"
+          ],
+          "aliases": [
+            "CVE-2020-26137",
+            "PYSEC-2020-148",
+            "GHSA-wqvq-5m8c-6g24"
+          ],
+          "summary": "CRLF injection in urllib3",
+          "details": "urllib3 before 1.25.9 allows CRLF injection if the attacker controls the HTTP request method, as demonstrated by inserting CR and LF control characters in the first argument of `putrequest()`. NOTE: this is similar to CVE-2020-26116.",
+          "published_at": "2021-06-18T18:46:43Z",
+          "modified_at": "2024-11-18T22:47:07.792720Z",
+          "affected_versions": [
+            "0.2",
+            "0.3",
+            "0.3.1",
+            "0.4.0",
+            "0.4.1",
+            "1.0",
+            "1.0.1",
+            "1.0.2",
+            "1.1",
+            "1.10",
+            "1.10.1",
+            "1.10.2",
+            "1.10.3",
+            "1.10.4",
+            "1.11",
+            "1.12",
+            "1.13",
+            "1.13.1",
+            "1.14",
+            "1.15",
+            "1.15.1",
+            "1.16",
+            "1.17",
+            "1.18",
+            "1.18.1",
+            "1.19",
+            "1.19.1",
+            "1.2",
+            "1.2.1",
+            "1.2.2",
+            "1.20",
+            "1.21",
+            "1.21.1",
+            "1.22",
+            "1.23",
+            "1.24",
+            "1.24.1",
+            "1.24.2",
+            "1.24.3",
+            "1.25",
+            "1.25.1",
+            "1.25.2",
+            "1.25.3",
+            "1.25.4",
+            "1.25.5",
+            "1.25.6",
+            "1.25.7",
+            "1.25.8",
+            "1.3",
+            "1.4",
+            "1.5",
+            "1.6",
+            "1.7",
+            "1.7.1",
+            "1.8",
+            "1.8.2",
+            "1.8.3",
+            "1.9",
+            "1.9.1"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.25.9"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "GIT",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1dd69c5c5982fae7c87a620d487c2ebf7a6b436b"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.25.9"
+                }
+              ],
+              "vulnerable_version_range": "< 1.25.9"
+            }
+          ],
+          "fixed_versions": [
+            "1.25.9",
+            "1dd69c5c5982fae7c87a620d487c2ebf7a6b436b"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-wqvq-5m8c-6g24"
+        },
+        {
+          "id": "CVE-2018-20060",
+          "osv_id": "GHSA-www2-v7xj-xrc6",
+          "cve_ids": [
+            "CVE-2018-20060"
+          ],
+          "ghsa_ids": [
+            "GHSA-www2-v7xj-xrc6"
+          ],
+          "aliases": [
+            "CVE-2018-20060",
+            "PYSEC-2018-32",
+            "GHSA-www2-v7xj-xrc6"
+          ],
+          "summary": "Exposure of Sensitive Information to an Unauthorized Actor in urllib3",
+          "details": "urllib3 before version 1.23 does not remove the Authorization HTTP header when following a cross-origin redirect (i.e., a redirect that differs in host, port, or scheme). This can allow for credentials in the Authorization header to be exposed to unintended hosts or transmitted in cleartext.",
+          "published_at": "2018-12-12T15:52:07Z",
+          "modified_at": "2024-12-27T18:35:28.737156Z",
+          "affected_versions": [
+            "0.2",
+            "0.3",
+            "0.3.1",
+            "0.4.0",
+            "0.4.1",
+            "1.0",
+            "1.0.1",
+            "1.0.2",
+            "1.1",
+            "1.10",
+            "1.10.1",
+            "1.10.2",
+            "1.10.3",
+            "1.10.4",
+            "1.11",
+            "1.12",
+            "1.13",
+            "1.13.1",
+            "1.14",
+            "1.15",
+            "1.15.1",
+            "1.16",
+            "1.17",
+            "1.18",
+            "1.18.1",
+            "1.19",
+            "1.19.1",
+            "1.2",
+            "1.2.1",
+            "1.2.2",
+            "1.20",
+            "1.21",
+            "1.21.1",
+            "1.22",
+            "1.3",
+            "1.4",
+            "1.5",
+            "1.6",
+            "1.7",
+            "1.7.1",
+            "1.8",
+            "1.8.2",
+            "1.8.3",
+            "1.9",
+            "1.9.1"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.23"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.23"
+                }
+              ],
+              "vulnerable_version_range": "< 1.23"
+            }
+          ],
+          "fixed_versions": [
+            "1.23"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory"
+          ],
+          "database_source": "OSV / GitHub Advisory",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-www2-v7xj-xrc6"
+        }
+      ]
+    }
+  }
+}

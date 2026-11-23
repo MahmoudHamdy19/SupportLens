@@ -1,0 +1,75 @@
+{#- Layer 4 explanation template (thesis Section 3.2.5). Every value comes from the evidence trail; one section per verdict. -#}
+{% macro ids(e) %}{{ e.identifiers | join(" / ") if e.identifiers else (e.vulnerability_id or "unidentified record") }}{% endmacro %}
+{% macro fixes(e) %}{% for v in e.fixed_versions %}{{ v }}{% if v in e.fix_release_dates %} (released {{ e.fix_release_dates[v] | date_only }}){% endif %}{{ ", " if not loop.last else "" }}{% endfor %}{% endmacro %}
+{% macro covered(e) %}{% for v in e.affected_in_scope[:5] %}{{ v }}{% if v in e.affected_release_dates %} (released {{ e.affected_release_dates[v] | date_only }}){% endif %}{{ ", " if not loop.last else "" }}{% endfor %}{% if e.affected_in_scope | length > 5 %} and {{ e.affected_in_scope | length - 5 }} more{% endif %}{% endmacro %}
+{% macro advisory(e) %}{% if e.advisory_url %} Advisory: {{ e.advisory_url }}{% endif %}{% endmacro %}
+{% macro line(e) %}
+{% if e.rule_id == "R1" %}
+- {{ ids(e) }}, published {{ e.published_at | date_only }}: affects covered version(s) {{ covered(e) }}; fixed in {{ fixes(e) }}.{{ advisory(e) }}
+{% elif e.rule_id == "R2" %}
+- {{ ids(e) }}, published {{ e.published_at | date_only }}: affects covered version(s) {{ covered(e) }}; fixed in {{ fixes(e) }}, but version(s) {{ e.unremediated_versions | brief }} have no later fixed release on their major release line.{{ advisory(e) }}
+{% elif e.rule_id == "R3" %}
+- {{ ids(e) }}, published {{ e.published_at | date_only }}: affects covered version(s) {{ covered(e) }}; no fixed version is recorded {{ e.days_since_publication }} days after publication.{{ advisory(e) }}
+{% elif e.reason == "unfixed_within_timeframe" %}
+- {{ ids(e) }}, published {{ e.published_at | date_only }}: affects covered version(s) {{ covered(e) }}; no fixed version is recorded, but only {{ e.days_since_publication }} days have elapsed since publication.{{ advisory(e) }}
+{% else %}
+- {{ e.message }}{{ advisory(e) }}
+{% endif %}
+{% endmacro %}
+{% macro group(title, items) %}
+{% if items %}
+{{ title }}
+{% for e in items[:limit] %}
+{{ line(e) }}
+{% endfor %}
+{% if items | length > limit %}
+- {{ items | length - limit }} further record(s) are listed in the stored report.
+{% endif %}
+
+{% endif %}
+{% endmacro %}
+**Verdict: {{ verdict }}**
+
+Package: {{ package_name }}
+Policy statement ({{ policy_citation }}): "{{ commitment_text }}"
+Commitment type: {{ support_status }}; version expression: {{ version_expression | join(", ") if version_expression else "none" }}; temporal reference: {{ temporal_reference }}.
+Evaluated on {{ reference_time | date_only }}; reasonable remediation timeframe: {{ timeframe_days }} days.
+
+{% macro all_records() %}
+{{ group("Unfixed beyond the " ~ timeframe_days ~ "-day timeframe (rule R3):", r3) }}
+{{ group("Fixed on some release lines only (rule R2):", r2) }}
+{{ group("Undecided for lack of evidence (rule R4):", r4) }}
+{{ group("Fixed on every covered version (rule R1):", r1) }}
+{% endmacro %}
+{% if verdict == "Consistent" %}
+The commitment is fully supported by the evidence (rule R1). {{ assessed }} vulnerability record(s) affect versions covered by the commitment, and each is fixed on every covered version.
+
+{{ all_records() }}
+{% elif verdict == "Partially Consistent" %}
+The commitment is supported for some vulnerabilities but not others. Of {{ assessed }} assessed record(s): {{ counts.R1 }} fixed on every covered version (R1); {{ counts.R2 }} fixed on some release lines only (R2); {{ counts.R3 }} unfixed beyond the {{ timeframe_days }}-day timeframe (R3); {{ counts.R4 }} undecided for lack of evidence (R4).
+
+{{ all_records() }}
+{% elif verdict == "Potential Inconsistency" %}
+The commitment is not supported by the evidence, and the evidence is sufficient to say so (rule R3). {{ counts.R3 }} vulnerability record(s) affect versions covered by the commitment and remain without a fixed version more than {{ timeframe_days }} days after publication{% if counts.R4 %}; {{ counts.R4 }} further record(s) are undecided for lack of evidence (R4), which does not outweigh the confirmed R3 finding{% endif %}.
+
+{{ all_records() }}
+{% elif verdict == "Insufficient Evidence" %}
+The available evidence is incomplete or ambiguous, so the commitment cannot be judged (rule R4).
+
+{{ group("Evidence gaps:", package_entries) }}
+{{ all_records() }}
+{% elif verdict == "Unmeasurable Commitment" %}
+The policy statement cannot be mapped to concrete version identifiers (rule R5). No vulnerability evidence was compared with it.
+
+{{ group("Reason:", package_entries) }}
+{% endif %}
+{% if out_of_scope and verdict not in ["Insufficient Evidence", "Unmeasurable Commitment"] %}
+{{ out_of_scope }} further record(s) affect no version covered by the commitment and were not assessed.
+
+{% endif %}
+Sources:
+{% for source in source_references %}
+- {{ source }}
+{% else %}
+- No source references were supplied.
+{% endfor %}
