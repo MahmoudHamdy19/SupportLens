@@ -46,11 +46,15 @@ import argparse
 import hashlib
 import logging
 import math
+import os
 import sys
 import time
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple
+
+# Avoid CUDA memory fragmentation on GPUs with tight memory limits (e.g. Colab T4 15 GB)
+os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
 
 from .constrained_decoding import CommitmentGrammar
 from .errors import ModelUnavailableError
@@ -121,7 +125,7 @@ class LoraTrainingConfig:
     warmup_ratio: float = 0.03
     weight_decay: float = 0.0
     max_grad_norm: float = 1.0
-    max_seq_len: int = 4096
+    max_seq_len: int = 2048
     early_stopping_patience: int = 1
     seed: int = DEFAULT_SEED
     load_in_4bit: bool = True
@@ -276,6 +280,9 @@ def evaluate_loss(model: Any, examples: Sequence[Dict[str, List[int]]], pad_id: 
                 loss = model(**batch).loss
             total_loss += float(loss) * tokens
             total_tokens += tokens
+            del batch, loss
+    if device.startswith("cuda"):
+        torch.cuda.empty_cache()
     return total_loss / max(total_tokens, 1)
 
 
@@ -327,6 +334,7 @@ def run_training(
                 epoch_tokens += tokens
                 scaled = loss / len(group)
                 (scaler.scale(scaled) if use_scaler else scaled).backward()
+                del batch, loss, scaled
             if use_scaler:
                 scaler.unscale_(optimizer)
             torch.nn.utils.clip_grad_norm_(parameters, config.max_grad_norm)
@@ -337,6 +345,9 @@ def run_training(
                 optimizer.step()
             scheduler.step()
             optimizer.zero_grad(set_to_none=True)
+
+        if device.startswith("cuda"):
+            torch.cuda.empty_cache()
 
         val_loss = evaluate_loss(model, val_examples, pad_id, device, micro)
         entry = {
