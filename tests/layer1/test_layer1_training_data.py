@@ -68,6 +68,19 @@ def test_commitments_beyond_the_truncated_policy_are_skipped():
     assert tq.build_example(record(policy_text=long_policy), CharTokenizer(), 10**9)[0] is None
 
 
+def test_a_late_support_section_is_kept_when_the_policy_is_cut():
+    long_policy = "# Security\n\n" + "Reporting details.\n" * 400 + "## Supported Versions\n\n" + COMMITMENT["commitment_text"] + "\n"
+    prepared = prepare_policy_text(long_policy)
+    assert len(prepared) <= 6000
+    assert prepared.startswith("## Supported Versions") and COMMITMENT["commitment_text"] in prepared
+    assert tq.build_example(record(policy_text=long_policy), CharTokenizer(), 10**9)[1] is None
+
+
+def test_an_early_support_section_keeps_the_leading_window():
+    policy = "# Security\n\n## Supported Versions\n\nWe support 2.x.\n\n## Reporting\n\n" + "More text.\n" * 1000
+    assert prepare_policy_text(policy).startswith("# Security")
+
+
 def test_policy_truncation_cuts_at_a_line_break():
     text = "line\n" * 2000
     cut = prepare_policy_text(text, max_chars=103)
@@ -196,3 +209,11 @@ def test_set_global_seed_makes_all_generators_repeat():
     different = random.random()
     set_global_seed(42)
     assert different != random.random()
+
+
+def test_pgp_blocks_are_removed_from_the_prompt_text():
+    key = "-----BEGIN PGP PUBLIC KEY BLOCK-----\n\nmQINBF" + "A" * 3000 + "\n=qmj5\n-----END PGP PUBLIC KEY BLOCK-----"
+    policy = POLICY + "\n## Reporting\n\nUse this key:\n```\n" + key + "\n```\n"
+    prepared = prepare_policy_text(policy)
+    assert "BEGIN PGP" not in prepared and "[PGP block removed]" in prepared
+    assert COMMITMENT["commitment_text"] in prepared

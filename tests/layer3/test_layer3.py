@@ -240,6 +240,27 @@ def test_r2_fixed_on_some_minor_release_lines_only():
     assert entry.unremediated_versions == ["2.1.0"]
 
 
+def test_r2_bounded_range_inside_one_major_uses_minor_lines():
+    vuln = vulnerability("CVE-2024-0002-range", "2023-02-01T00:00:00Z", ["2.1.0", "2.2.0"], ["2.2.5"])
+    comm = commitment(expression=(">=2.1,<2.3",), text="Versions >=2.1,<2.3 receive security fixes.")
+    rels = [
+        release("2.1.0", "2023-01-01"),
+        release("2.2.0", "2023-01-01"),
+        release("2.2.5", "2023-03-01"),
+    ]
+    result = evaluate(comm, [vuln], releases=rels)
+    assert result.verdict.value == "Partially Consistent"
+    assert result.evidence_log[0].unremediated_versions == ["2.1.0"]
+
+
+def test_open_or_cross_major_ranges_stay_on_major_lines():
+    from src.layer3_rule_assessment.rule_engine import _is_minor_line_expression
+
+    assert not _is_minor_line_expression(">=2.1")
+    assert not _is_minor_line_expression(">=1.0,<3.0")
+    assert _is_minor_line_expression(">=2.1, <2.3")
+
+
 def test_r3_unfixed_beyond_timeframe():
     vuln = vulnerability("CVE-2024-0003", "2023-02-01T00:00:00Z", ["2.0.0"])
     result = evaluate(commitment(), [vuln])

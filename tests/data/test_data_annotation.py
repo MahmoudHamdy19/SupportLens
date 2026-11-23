@@ -209,3 +209,25 @@ def test_check_agreement_cli_end_to_end_and_identical_files_refused(tmp_path):
     code = check_agreement_main(["--sample", str(sample), "--annotator1", str(a1), "--annotator2", str(clone), "--output", str(tmp_path / "x.json")])
     assert code == 2
     assert not (tmp_path / "x.json").exists()
+
+
+def _timed_export(path, lead_times, created):
+    items = [
+        {"data": {"package_name": f"pkg{i}"}, "annotations": [{"lead_time": lt, "created_at": ts, "result": []}]}
+        for i, (lt, ts) in enumerate(zip(lead_times, created))
+    ]
+    path.write_text(json.dumps(items), encoding="utf-8")
+    return path
+
+
+def test_script_generated_label_studio_exports_are_flagged(tmp_path):
+    burst = [f"2026-11-19T15:42:09.{i:06d}+00:00" for i in range(12)]
+    scripted = _timed_export(tmp_path / "scripted.json", [180.0] * 12, burst)
+    warnings = ann.export_authenticity_warnings(scripted)
+    assert any("same lead_time" in w for w in warnings)
+    assert any("within one minute" in w for w in warnings)
+
+    hours = [f"2026-11-19T{10 + i // 4:02d}:{(i % 4) * 15:02d}:00+00:00" for i in range(12)]
+    human = _timed_export(tmp_path / "human.json", [150.0 + 37 * i for i in range(12)], hours)
+    assert ann.export_authenticity_warnings(human) == []
+    assert ann.export_authenticity_warnings(tmp_path / "human.json", min_records=100) == []

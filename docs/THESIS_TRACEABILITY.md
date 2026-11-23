@@ -21,7 +21,7 @@ the named module).
 | 3.2.4 | Algorithm 1: R5 → R4 → per-vulnerability R1/R2/R3 → aggregation | Implemented | `layer3_rule_assessment/rule_engine.py` |
 | 3.2.4 | "Reasonable timeframe" for R3 | Interpretation | 90 days, `rule_engine.py` (`REASONABLE_TIMEFRAME_DAYS`) |
 | 3.2.4 | Empty V, or no vulnerability inside the commitment scope | Interpretation | Insufficient Evidence (nothing to test the commitment against), `rule_engine.py` |
-| 3.2.4 | "Partial" fix | Interpretation | Fixed on some affected major-version lines only, `rule_engine.py` |
+| 3.2.4 | "Partial" fix | Interpretation | Fixed on some affected release lines only; a release line is the major version, or the major.minor line when the commitment names that minor line (e.g. "2.1.x" and "2.2.x", or ">=2.1,<2.3"), `rule_engine.py` (`_release_line_key`, `_remediated`) |
 | 3.2.4 | Aggregation by highest severity, consistent with Table 3.1 | Implemented | R3 with R1/R2 → Partially Consistent; R3 alone (even with R4) → Potential Inconsistency; R2 → Partially Consistent; R4 → Insufficient Evidence; else Consistent |
 | 3.2.4 | Mapping uncertain → R4 | Implemented | Fork or archived repository (`repository_mapping.py`, `supportlens_pipeline.py`) |
 | 3.2.5 | Jinja2 template explanation with CVEs, dates, URLs and policy line numbers; JSON record | Implemented | `layer4_explanation_output/*`, `data/reports/` |
@@ -33,7 +33,7 @@ the named module).
 | 3.3.1 | 70/15/15 split | Implemented | `scripts/make_splits.py` (stratified by verdict, seed 42) |
 | 3.3.2 | Regex/keyword baseline | Implemented | `layer1_ai_extraction/baselines.py` |
 | 3.3.2 | Zero-shot Qwen2.5-7B with the same schema | Implemented | `QwenCommitmentExtractor(use_adapter=False)` |
-| 3.3.2 | RoBERTa-base token classification of t, v and the temporal reference; AdamW, CE, lr 2e-5, batch 16, 5 epochs | Implemented / Tooling ready | `roberta_baseline.py`, `train_roberta_baseline.py` |
+| 3.3.2 | RoBERTa-base token classification of t, v and the temporal reference; AdamW, CE, lr 2e-5, batch 16, 5 epochs | Implemented / Tooling ready; CE is class-weighted (sqrt inverse frequency) so the rare VERSION labels are learned, `--class-weighting none` restores the uniform loss | `roberta_baseline.py`, `train_roberta_baseline.py` |
 | 3.3.3 | Token-level P/R/F1; tuple EM and PM (Q1) | Implemented | `layer1_ai_extraction/metrics.py`, `src/evaluation/extraction_eval.py` |
 | 3.3.3 | Macro-F1 and 5×5 confusion matrix (Q2), end to end with predicted commitments | Implemented | `src/evaluation/runner.py`, `verdict_metrics.py` |
 | 3.3.3 | Expert rubric: correctness, completeness, traceability, 1–5 | Tooling ready | `scripts/run_expert_evaluation.py` |

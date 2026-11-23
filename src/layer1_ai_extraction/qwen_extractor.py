@@ -26,6 +26,7 @@ from typing import Any, Dict, List, Optional
 from .baselines import RuleBasedRegexBaseline
 from .constrained_decoding import ConstraintEngine, TokenVocabulary
 from .errors import ExtractionFormatError, ModelUnavailableError
+from .commitment_guard import check_commitment
 from .prompting import build_chatml_prompt, prepare_policy_text
 from .schema import CommitmentExtractionOutput
 
@@ -293,8 +294,15 @@ class QwenCommitmentExtractor:
                 execution_device="none",
             )
         try:
-            return self._parse(self.generate_json(text))
+            output = self._parse(self.generate_json(text))
         except Exception as exc:
             if self.strict:
                 raise
             return self._fallback(text, f"{type(exc).__name__}: {exc}")
+        if self.strict:
+            return output
+        checked, note = check_commitment(text, output)
+        if note:
+            log.warning("Qwen output corrected by the consistency check: %s", note)
+            checked = checked.model_copy(update={"extractor_engine": f"{output.extractor_engine} + consistency check ({note})"})
+        return checked

@@ -34,6 +34,7 @@ and the verdict must belong to the closed vocabularies; t may be empty only when
 from __future__ import annotations
 
 import random
+from datetime import datetime
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Mapping, Optional, Sequence, Tuple
@@ -313,6 +314,37 @@ def _parse_label_studio(data: List[dict], policies: Mapping[str, str], who: str)
         )
         result[name] = Annotation(name, commitment, choices["expected_verdict"][0], notes)
     return result
+
+
+def export_authenticity_warnings(path: PathLike, min_records: int = 10) -> List[str]:
+    """Signs that a Label Studio export was produced by a script rather than by a person.
+
+    Checked over the live annotations: every lead_time identical, all annotations created within
+    60 seconds of each other, or a median lead_time under 20 seconds. Exports in the simple
+    format carry no timing and give no warning.
+    """
+    data = read_json(Path(path))
+    if not (isinstance(data, list) and all(isinstance(x, dict) and "data" in x for x in data)):
+        return []
+    live = [a for item in data for a in item.get("annotations") or [] if not a.get("was_cancelled")]
+    if len(live) < min_records:
+        return []
+    who = Path(path).name
+    warnings: List[str] = []
+    lead_times = sorted(float(a["lead_time"]) for a in live if isinstance(a.get("lead_time"), (int, float)))
+    if len(lead_times) == len(live) and len(set(lead_times)) == 1:
+        warnings.append(f"{who}: every annotation has the same lead_time ({lead_times[0]} s)")
+    if lead_times and lead_times[len(lead_times) // 2] < 20:
+        warnings.append(f"{who}: median lead_time is {lead_times[len(lead_times) // 2]:.1f} s per policy")
+    stamps = []
+    for a in live:
+        try:
+            stamps.append(datetime.fromisoformat(str(a.get("created_at")).replace("Z", "+00:00")))
+        except ValueError:
+            pass
+    if len(stamps) == len(live) and (max(stamps) - min(stamps)).total_seconds() < 60:
+        warnings.append(f"{who}: all {len(live)} annotations were created within one minute")
+    return warnings
 
 
 def parse_annotator_file(path: PathLike, policies: Mapping[str, str], *, who: Optional[str] = None) -> Dict[str, Annotation]:

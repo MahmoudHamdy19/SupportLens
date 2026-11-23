@@ -8,7 +8,13 @@ Token classification (BIO) over three span types:
 
 Fine-tuning follows the thesis: all weights updated, cross-entropy loss, AdamW, learning rate 2e-5,
 batch size 16, 5 epochs, seed 42. The learning rate is constant (no schedule) and the weight
-decay is the AdamW default of PyTorch (0.01); the last epoch is kept. Long policies are split into
+decay is the AdamW default of PyTorch (0.01); the last epoch is kept. The cross-entropy is
+class-weighted by default (`class_weighting="inverse_sqrt"`): VERSION tokens are a tiny fraction of
+all tokens, and with uniform weights the model learned never to predict them (v F1 0.07 in the
+first run). Each label weight is sqrt(count(O) / count(label)) over the training windows; labels
+without training tokens keep weight 1. `class_weighting="none"` restores the uniform loss. After
+training, token-level precision, recall and F1 per label on the validation windows are written to
+run_metadata.json (`val_token_metrics`), so a model that never predicts a label is visible at once. Long policies are split into
 overlapping 512-token windows.
 
 Span targets come from the ground-truth records (INTERFACES.md section 5): `commitment_text` and
@@ -32,6 +38,7 @@ If no COMMITMENT token is predicted the result is the empty ambiguous tuple.
 from __future__ import annotations
 
 import json
+import math
 import re
 import time
 from dataclasses import asdict, dataclass
@@ -256,6 +263,42 @@ class RobertaTrainingConfig:
     max_length: int = 512
     stride: int = 128
     seed: int = DEFAULT_SEED
+    class_weighting: str = "inverse_sqrt"
+
+
+CLASS_WEIGHTINGS = ("inverse_sqrt", "none")
+
+
+def label_class_weights(windows: Sequence[Dict[str, List[int]]], scheme: str = "inverse_sqrt") -> List[float]:
+    """Cross-entropy weight per label id: sqrt(count(O) / count(label)), 1.0 for unseen labels."""
+    if scheme not in CLASS_WEIGHTINGS:
+        raise ValueError(f"class_weighting must be one of {CLASS_WEIGHTINGS}, got {scheme!r}")
+    counts = [0] * len(LABEL_LIST)
+    for window in windows:
+        for label in window["labels"]:
+            if label != IGNORE_INDEX:
+                counts[label] += 1
+    if scheme == "none" or counts[LABEL_TO_ID["O"]] == 0:
+        return [1.0] * len(LABEL_LIST)
+    reference = counts[LABEL_TO_ID["O"]]
+    return [math.sqrt(reference / count) if count else 1.0 for count in counts]
+
+
+def token_metrics(gold: Sequence[int], predicted: Sequence[int]) -> Dict[str, Dict[str, float]]:
+    """Token-level precision, recall, F1 and counts per non-O label (IGNORE_INDEX positions skipped)."""
+    result: Dict[str, Dict[str, float]] = {}
+    pairs = [(g, p) for g, p in zip(gold, predicted) if g != IGNORE_INDEX]
+    for label_id, label in ID_TO_LABEL.items():
+        if label == "O":
+            continue
+        tp = sum(1 for g, p in pairs if g == label_id and p == label_id)
+        n_gold = sum(1 for g, _ in pairs if g == label_id)
+        n_pred = sum(1 for _, p in pairs if p == label_id)
+        precision = tp / n_pred if n_pred else 0.0
+        recall = tp / n_gold if n_gold else 0.0
+        f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
+        result[label] = {"precision": precision, "recall": recall, "f1": f1, "gold_tokens": n_gold, "predicted_tokens": n_pred}
+    return result
 
 
 def encode_record(record: Dict[str, Any], tokenizer: Any, config: RobertaTrainingConfig) -> Tuple[List[Dict[str, List[int]]], Dict[str, int]]:
@@ -347,6 +390,9 @@ def train_roberta(
     pad_id = tokenizer.pad_token_id
     epochs: List[Dict[str, Any]] = []
     train = split_windows["train"]
+    weights = label_class_weights(train, config.class_weighting)
+    loss_fn = torch.nn.CrossEntropyLoss(weight=torch.tensor(weights, dtype=torch.float, device=device), ignore_index=IGNORE_INDEX)
+    log("label weights: " + ", ".join(f"{label}={w:.2f}" for label, w in zip(LABEL_LIST, weights)))
     for epoch in range(1, config.num_epochs + 1):
         started = time.time()
         model.train()
@@ -358,7 +404,8 @@ def train_roberta(
                 for k, v in _collate([train[i] for i in order[start : start + config.batch_size]], pad_id).items()
             }
             n = int((batch["labels"] != IGNORE_INDEX).sum())
-            loss = model(**batch).loss
+            logits = model(input_ids=batch["input_ids"], attention_mask=batch["attention_mask"]).logits
+            loss = loss_fn(logits.reshape(-1, logits.shape[-1]), batch["labels"].reshape(-1))
             optimizer.zero_grad(set_to_none=True)
             loss.backward()
             optimizer.step()
@@ -372,6 +419,20 @@ def train_roberta(
         }
         epochs.append(entry)
         log(f"epoch {epoch}/{config.num_epochs}: train_loss={entry['train_loss']:.4f} val_loss={entry['val_loss']:.4f}")
+
+    gold_ids: List[int] = []
+    predicted_ids: List[int] = []
+    model.eval()
+    with torch.no_grad():
+        val_windows = split_windows["val"]
+        for start in range(0, len(val_windows), config.batch_size):
+            batch = {k: v.to(device) for k, v in _collate(val_windows[start : start + config.batch_size], pad_id).items()}
+            logits = model(input_ids=batch["input_ids"], attention_mask=batch["attention_mask"]).logits
+            gold_ids.extend(batch["labels"].reshape(-1).tolist())
+            predicted_ids.extend(logits.argmax(-1).reshape(-1).tolist())
+    val_token_metrics = token_metrics(gold_ids, predicted_ids)
+    for label, scores in val_token_metrics.items():
+        log(f"val {label}: f1={scores['f1']:.3f} gold={scores['gold_tokens']} predicted={scores['predicted_tokens']}")
 
     output_dir.mkdir(parents=True, exist_ok=True)
     model.save_pretrained(str(output_dir))
@@ -388,6 +449,8 @@ def train_roberta(
             "seed": config.seed,
             "parameters": sum(p.numel() for p in model.parameters()),
             "labels": LABEL_LIST,
+            "label_weights": dict(zip(LABEL_LIST, weights)),
+            "val_token_metrics": val_token_metrics,
             "data": {
                 "train": {"path": str(train_path), "sha256": file_sha256(train_path), "records": len(train_records),
                           "windows": len(train), "span_counts": totals},

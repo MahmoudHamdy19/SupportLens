@@ -37,8 +37,11 @@ Interpretations where the thesis is silent (also stated in the evidence trail):
     release date of each affected version. T only matters when the scope contains a relative
     term such as "latest"; for fixed ranges coverage does not depend on T.
   * reference_time is only the evaluation clock used to measure elapsed time since publication.
-  * A release line is the major version. A covered affected version is remediated when a
-    fixed release with a higher version exists on the same major version.
+  * A release line is the major version, or the major.minor line when the commitment names
+    that minor line explicitly (for example "2.1.x", "2.2", "~=2.1.0", "==2.1.*", or a range
+    bounded inside one major version such as ">=2.1,<2.3"). A covered
+    affected version is remediated when a fixed release with a higher version exists on the
+    same release line, so a fix on 2.2.x does not remediate a supported 2.1.x line (R2).
   * Elapsed time is counted from vulnerability publication, in whole days rounded up. Unfixed
     for more than REASONABLE_TIMEFRAME_DAYS gives R3; exactly that many days is still R4.
   * Source statuses FAILURE and RATE_LIMITED count as a source failure.
@@ -142,6 +145,11 @@ def _is_minor_line_expression(expr: str) -> bool:
     if clean.startswith("~=") or "==" in clean:
         parts = re.findall(r"\d+", clean)
         return len(parts) >= 2
+    # A bounded range inside one major version, such as ">=2.1,<2.3", names minor lines.
+    lower = re.search(r">=?\s*(\d+)\.(\d+)", clean)
+    upper = re.search(r"<=?\s*(\d+)\.(\d+)", clean)
+    if lower and upper:
+        return lower.group(1) == upper.group(1)
     return False
 
 

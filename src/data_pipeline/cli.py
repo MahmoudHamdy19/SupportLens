@@ -185,8 +185,14 @@ def check_agreement_main(argv: Optional[Sequence[str]] = None) -> int:
     parser.add_argument("--annotator2", type=Path, required=True)
     parser.add_argument("--output", type=Path, default=DATA / "annotations" / "agreement_report.json")
     parser.add_argument("--require-target", action="store_true", help="exit with status 1 when kappa is below 0.80")
+    parser.add_argument(
+        "--allow-suspicious-exports",
+        action="store_true",
+        help="do not fail when an export shows signs of being script-generated (the warnings are still recorded)",
+    )
     args = parser.parse_args(argv)
     try:
+        authenticity = ann.export_authenticity_warnings(args.annotator1) + ann.export_authenticity_warnings(args.annotator2)
         _, _, first, second = _load_annotators(args)
         report = build_agreement_report(first, second, tau_values=TAU_VALUES, temporal_values=TEMPORAL_VALUES)
     except DataError as exc:
@@ -200,6 +206,8 @@ def check_agreement_main(argv: Optional[Sequence[str]] = None) -> int:
         "annotator2_sha256": sha256_file(args.annotator2),
     }
     report["generated_at"] = utc_now_iso()
+    report["export_authenticity_warnings"] = authenticity
+    report["warnings"] = authenticity + report["warnings"]
     write_json(args.output, report)
     print(
         f"kappa={report['cohens_kappa']:.4f} (target {report['kappa_target']}) "
@@ -207,6 +215,12 @@ def check_agreement_main(argv: Optional[Sequence[str]] = None) -> int:
     )
     for warning in report["warnings"]:
         print(f"warning: {warning}")
+    if authenticity and not args.allow_suspicious_exports:
+        return _fail(
+            "the annotator exports look script-generated (see the warnings above). Ground truth must come "
+            "from two people annotating in Label Studio; re-export their real work, or pass "
+            "--allow-suspicious-exports if the timings are explained."
+        )
     return 1 if (args.require_target and not report["meets_target"]) else 0
 
 

@@ -54,7 +54,9 @@ Read these before working:
 
 - The "reasonable timeframe" for R3 is 90 days from publication (`REASONABLE_TIMEFRAME_DAYS`).
 - An empty vulnerability list V, or no vulnerability inside the commitment scope, gives Insufficient Evidence.
-- A "partial fix" means the vulnerability is fixed on some affected major-version lines only.
+- A "partial fix" means the vulnerability is fixed on some affected release lines only. A release line is
+  the major version, or the major.minor line when the commitment names that minor line (e.g. "2.1.x",
+  or a range bounded inside one major such as ">=2.1,<2.3").
 - Aggregation: R3 with R1 or R2 gives Partially Consistent. R3 alone gives Potential Inconsistency, even
   when R4 records exist. Otherwise R2 gives Partially Consistent, R4 gives Insufficient Evidence, and
   otherwise the verdict is Consistent.

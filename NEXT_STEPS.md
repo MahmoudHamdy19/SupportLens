@@ -5,6 +5,70 @@
 
 ---
 
+## تحديث 23 نوفمبر 2026: بعد مراجعة الكود (اقرأه الأول على الجهاز التاني)
+
+### اللي اتغيّر في الكود (branch `fix/review-findings`)
+
+| البند | التغيير | الملف |
+|---|---|---|
+| NVD 404 | مفتاح `.env.example` الافتراضي بيتجاهل، ولو NVD رجّع 404 بالمفتاح (مفتاح غلط) الكود بيكمّل من غيره ويسجّل `api_key_rejected: true` | `src/layer2_evidence_layer/evidence_sources.py` |
+| قص السياسة | لو السياسة أطول من 6000 حرف وقسم "Supported Versions" بعد الحد، النص بيبدأ من القسم ده. وبلوكات PGP بتتشال. النتيجة: الـ 300 سجل كلهم بقوا صالحين للتدريب (قبل كده 207/210 و44/45) | `src/layer1_ai_extraction/prompting.py` |
+| urllib3 / latest_only | فحص بعد استخراج Qwen في التشغيل العادي بس (CLI والواجهة): لو الجملة مش حرفية أو مفيهاش تعهد دعم (زي تعليمات الإبلاغ) يرجع للقواعد، ولو فيه رقم إصدار مع `latest_only` يصححها `explicit_range`. **مش بيشتغل في التقييم** (`--strict`)، فأرقام Qwen في الفصل 4 هي مخرجات الموديل نفسه | `src/layer1_ai_extraction/commitment_guard.py` |
+| RoBERTa | cross-entropy بأوزان للـ labels النادرة (VERSION). نفس أرقام الرسالة (lr 2e-5، batch 16، 5 epochs). ومقاييس val لكل label بتتكتب في `run_metadata.json` | `src/layer1_ai_extraction/roberta_baseline.py` |
+| الإصلاح الجزئي | ranges جوه نفس الـ major (زي `>=2.1,<2.3`) بتتقيّم على مستوى الفرع الفرعي، والوصف اتظبط في الكود والتوثيق | `src/layer3_rule_assessment/rule_engine.py` |
+| التعليق | `check_agreement.py` بيرفض ملفات التعليق اللي شكلها متولّد بسكربت (نفس `lead_time` لكل السجلات، أو كلها اتعملت في أقل من دقيقة). الملفات الحالية بيترفضوا بالسبب ده | `src/data_pipeline/annotation.py`, `cli.py` |
+
+### الخطوات على الجهاز التاني بالترتيب
+
+**أ. تجهيز (آلي، مرة واحدة)**
+```
+git fetch origin
+git checkout fix/review-findings
+git pull
+.venv\Scripts\python -m pip install -r requirements.txt
+.venv\Scripts\python -m pytest
+```
+الاختبارات لازم تنجح كلها. لو فيه أي فشل، ابعت الـ output كله.
+
+**ب. مفتاح NVD (بشري)**
+- اطلب مفتاح مجاني من `https://nvd.nist.gov/developers/request-an-api-key` (بيوصل على الإيميل).
+- حطه في `.env` كده: `NVD_API_KEY=المفتاح`. لو مفيش مفتاح، **امسح السطر** وما تسيبش `your_nvd_api_key_here`.
+- اختبار سريع:
+```
+rmdir /s /q data\cache\nvd
+.venv\Scripts\python supportlens_cli.py --pypi django
+```
+افتح آخر تقرير `data\reports\django_*.json`، ودوّر على `"nvd"`. المطلوب `"status": "SUCCESS"` بمفتاح صالح، أو `"PARTIAL"` من غير مفتاح (الحد 25 CVE). لو لقيت `"api_key_rejected": true` يبقى المفتاح غلط.
+
+**ج. أرشفة التشغيل القديم (آلي):** اعمل **الخطوة 0** اللي تحت بالظبط. ملفات التعليق الحالية (`annotator1_export.json` و`annotator2_export.json`) فيها كل الـ 300 تعليق اتعملوا في نفس الثانية وبنفس `lead_time = 180`، فمينفعش تتستخدم. **انقلها للأرشيف، متحذفهاش.**
+
+**د. الخطوات 1 لـ 3 (آلي):** جمع، سحب العينة، تجهيز ملفات Label Studio، زي ما هي مكتوبة تحت.
+
+**هـ. التعليق (بشري، الخطوة 4)، ومهم جداً:**
+- كل معلّق يشتغل في Label Studio بنفسه، ويعمل Export من Label Studio مباشرة. الملف لازم يكون فيه أوقات حقيقية.
+- **علّموا العبارة الزمنية** (label `TemporalExpression`) في أي سياسة فيها جملة زمنية (زي "for 12 months after release" أو "until the next major release"). في التشغيل القديم كانت صفر، فـ RoBERTa ما اتدربش عليها. لو السياسة مفيهاش جملة زمنية، سيبوها فاضية عادي.
+- بعدها `check_agreement.py` (الخطوة 5). لو طلع `error: the annotator exports look script-generated`، **متكمّلش**. ارجع للمعلّقين.
+
+**و. التحكيم والتقسيم (الخطوات 6 و7):** زي ما هي.
+
+**ز. التدريب على Colab (الخطوة 8):**
+- لازم تدرّب **Qwen وRoBERTa من جديد**، لأن البرومبت وتجهيز النص اتغيروا. الـ adapter القديم مبقاش صالح.
+- بعد Qwen: افتح `models\qwen_lora_adapters\run_metadata.json` واكتب `records` و`used` و`skipped` لكل من train وval. دي الأعداد اللي تتكتب في الرسالة.
+- بعد RoBERTa: في الـ log دوّر على `val B-VERSION: f1=`. لو الـ F1 صفر أو `predicted=0`، **وقّف وابعتلي** قبل التقييم.
+- بعدها `run_evaluation.py --strict` زي ما هو.
+
+**ح. باقي الخطوات (9 و10):** تقييم الخبراء، ثم `render_results.py` و`verify_results.py`.
+
+### اللي يتكتب في الرسالة (بشري، صاحب الرسالة يكتبه بنفسه)
+- الفصل 3: دور NVD الفعلي (بيكمّل تاريخ النشر بس، والتأثر والإصلاح من OSV وGitHub Advisory).
+- الفصل 3: RoBERTa بـ class-weighted cross-entropy، وتعريف الإصلاح الجزئي على مستوى الفرع (major أو major.minor)، وتجهيز نص السياسة (أولوية قسم الدعم وشيل PGP).
+- الفصل 4: أعداد التدريب الفعلية، وقيد البيانات الزمنية لو فضلت قليلة.
+
+### لو حاجة فشلت
+ابعت للمساعد: الأمر اللي شغلته، والـ output كامل، وملف التقرير أو `run_metadata.json` المرتبط. **متبعتش `.env` أبداً.**
+
+---
+
 ## الخطوة 0: أرشفة التشغيل السابق (آلي)
 
 التعليقات والتحكيم والنتائج اللي فاتت ما ينفعش يتعاد استخدامها، لأن العينة هتتغير. **انقلها، متحذفهاش**، لفولدر `archive\run_2026-11-19\` في جذر المشروع:

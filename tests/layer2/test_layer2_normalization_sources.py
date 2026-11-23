@@ -244,6 +244,54 @@ def test_nvd_api_key_shortens_the_delay(monkeypatch, tmp_path):
     assert "synthetic-key" not in str(out)
 
 
+def _run_with_key(monkeypatch, tmp_path, vulns, key, nvd_answer):
+    monkeypatch.setattr(evidence_sources.requests, "post", lambda *a, **k: _Resp(200, {"vulns": vulns}))
+    headers_seen = []
+
+    def get(url, *a, headers=None, params=None, **k):
+        if "advisories" in url:
+            return _Resp(200, [])
+        headers_seen.append(dict(headers or {}))
+        return nvd_answer(headers or {}, params)
+
+    monkeypatch.setattr(evidence_sources.requests, "get", get)
+    monkeypatch.setattr(evidence_sources, "PROJECT_ROOT", tmp_path)
+    monkeypatch.delenv("SUPPORTLENS_NVD_MAX_LOOKUPS", raising=False)
+    monkeypatch.setenv("NVD_API_KEY", key)
+    sleeps = []
+    out = EvidenceCollector(sleep=sleeps.append).collect_unified_evidence("demo", pypi_releases=RELEASES)
+    return out, headers_seen, sleeps
+
+
+def test_nvd_placeholder_key_is_ignored(monkeypatch, tmp_path):
+    vulns = [_osv_vuln("PYSEC-1", "CVE-2024-0001")]
+    out, headers_seen, _ = _run_with_key(monkeypatch, tmp_path, vulns, "your_nvd_api_key_here",
+                                         lambda h, p: _Resp(200, _nvd_payload(p["cveId"])))
+    assert all("apiKey" not in h for h in headers_seen)
+    nvd = out["source_diagnostics"]["nvd"]
+    assert nvd["status"] == "SUCCESS" and nvd["api_key_used"] is False
+
+
+def test_nvd_invalid_key_404_falls_back_to_public_api(monkeypatch, tmp_path):
+    vulns = [_osv_vuln("PYSEC-1", "CVE-2024-0001", published=None), _osv_vuln("PYSEC-2", "CVE-2024-0002")]
+
+    def answer(headers, params):
+        if "apiKey" in headers:
+            return _Resp(404, {})
+        return _Resp(200, _nvd_payload(params["cveId"]))
+
+    out, headers_seen, sleeps = _run_with_key(monkeypatch, tmp_path, vulns, "synthetic-invalid-key", answer)
+    nvd = out["source_diagnostics"]["nvd"]
+    assert nvd["status"] == "SUCCESS" and nvd["retrieved"] == 2 and nvd["failed"] == 0
+    assert nvd["api_key_rejected"] is True
+    assert nvd["delay_seconds"] == evidence_sources.NVD_DELAY_NO_KEY
+    assert nvd["max_lookups"] == evidence_sources.NVD_MAX_LOOKUPS_NO_KEY
+    assert ["apiKey" in h for h in headers_seen] == [True, False, False]
+    assert "synthetic-invalid-key" not in str(out)
+    by_id = {r["id"]: r for r in out["vulnerabilities"]}
+    assert by_id["CVE-2024-0001"]["published_at_source"] == "NVD"
+
+
 def test_nvd_failure_is_reported_and_not_claimed_as_a_source(monkeypatch, tmp_path):
     out, _ = _run_with_nvd(monkeypatch, tmp_path, [_osv_vuln("PYSEC-1", "CVE-2024-0001", published=None)],
                            lambda url, params=None, **k: _Resp(503, {}))

@@ -8,6 +8,7 @@ which is also the only text the constrained decoder accepts.
 from __future__ import annotations
 
 import json
+import re
 from typing import Any, Mapping
 
 from .schema import COMMITMENT_KEYS, CommitmentExtractionOutput
@@ -39,18 +40,45 @@ SYSTEM_PROMPT = (
 )
 
 
+# A Markdown heading that announces the version-support section ("## Supported Versions", "## Versions").
+SUPPORT_HEADING_RE = re.compile(
+    r"^#{1,6}[ \t][^\n]*\b(?:supported|support|versions?|maintenance|lifecycle|end[- ]of[- ]life|eol)\b[^\n]*$",
+    re.IGNORECASE | re.MULTILINE,
+)
+_ANY_HEADING_RE = re.compile(r"^#{1,6}[ \t]", re.MULTILINE)
+# An ASCII-armoured PGP block (for example a reporting key): many tokens and never a commitment.
+PGP_BLOCK_RE = re.compile(r"-----BEGIN PGP [A-Z ]+-----.*?-----END PGP [A-Z ]+-----", re.DOTALL)
+PGP_PLACEHOLDER = "[PGP block removed]"
+
+
+def _cut_at_line(text: str, max_chars: int) -> str:
+    if len(text) <= max_chars:
+        return text
+    cut = text.rfind("\n", 0, max_chars)
+    return text[: cut if cut > 0 else max_chars]
+
+
 def prepare_policy_text(text: str, max_chars: int = MAX_POLICY_CHARS) -> str:
     """Make the policy safe and short enough for the prompt.
 
     A policy comes from an arbitrary repository, so the control-token opener `<|` is rewritten to
     `< |`; otherwise the tokenizer would read a literal `<|im_end|>` in the file as a real control
-    token. Text longer than `max_chars` is cut at the last line break before the limit.
+    token. ASCII-armoured PGP blocks are replaced by PGP_PLACEHOLDER. Text longer than `max_chars` is cut at the last line break before the limit. When the
+    first version-support heading (SUPPORT_HEADING_RE) and its section do not fit in that leading
+    window, the window starts at that heading instead, so a support section placed late in a long
+    policy is not cut away. The same function is used in training and at inference.
     """
-    text = text.replace("<|", "< |")
+    text = PGP_BLOCK_RE.sub(PGP_PLACEHOLDER, text.replace("<|", "< |"))
     if len(text) <= max_chars:
         return text
-    cut = text.rfind("\n", 0, max_chars)
-    return text[: cut if cut > 0 else max_chars]
+    head = _cut_at_line(text, max_chars)
+    match = SUPPORT_HEADING_RE.search(text)
+    if match:
+        following = _ANY_HEADING_RE.search(text, match.end())
+        section_end = following.start() if following else len(text)
+        if section_end > len(head):
+            return _cut_at_line(text[match.start():], max_chars)
+    return head
 
 
 def build_chatml_prompt(policy_text: str) -> str:

@@ -20,6 +20,9 @@ not looked up and are counted as "skipped" (status PARTIAL, not a failure). Succ
 are cached in data/cache/nvd/<CVE>.json and reused without a network call. "NVD" is recorded as a
 source of a record only when an NVD record for one of its CVEs was actually retrieved; failed
 lookups set diagnostics["nvd"]["status"] to FAILURE (RATE_LIMITED when every failure was HTTP 403/429).
+NVD answers an invalid apiKey with HTTP 404, so the .env.example placeholder is ignored, and on the
+first 404 with a key the key is dropped (api_key_rejected: True) and the lookup is repeated without it
+under the public limits.
 
 Key Capabilities:
 1. Multi-source evidence collection in a single unified pipeline with per-source status.
@@ -52,6 +55,14 @@ NVD_DELAY_WITH_KEY = 0.6
 NVD_MAX_LOOKUPS_NO_KEY = 25
 NVD_MAX_LOOKUPS_WITH_KEY = 250
 _CVE_PATTERN = re.compile(r"^CVE-\d{4}-\d+$")
+
+
+def nvd_api_key() -> Optional[str]:
+    """NVD_API_KEY from the environment, or None when it is unset, blank or the .env.example placeholder."""
+    key = (os.environ.get("NVD_API_KEY") or "").strip()
+    if not key or key.lower().startswith("your_"):
+        return None
+    return key
 
 
 def _next_link(resp: Any) -> Optional[str]:
@@ -436,14 +447,14 @@ class EvidenceCollector:
             return result
 
         cache_dir = PROJECT_ROOT / "data" / "cache" / "nvd"
-        api_key = os.environ.get("NVD_API_KEY")
+        api_key = nvd_api_key()
         nvd_headers = dict(self.headers)
         if api_key:
             nvd_headers["apiKey"] = api_key
         delay = NVD_DELAY_WITH_KEY if api_key else NVD_DELAY_NO_KEY
         cap = self._nvd_lookup_cap(bool(api_key))
-        result["max_lookups"] = cap
-        result["delay_seconds"] = delay
+        result["api_key_used"] = bool(api_key)
+        result["api_key_rejected"] = False
 
         found: Dict[str, Dict[str, Any]] = {}
         live_calls = 0
@@ -467,6 +478,16 @@ class EvidenceCollector:
                 live_calls += 1
                 try:
                     resp = requests.get(NVD_API_URL, params={"cveId": cve}, headers=nvd_headers, timeout=self.timeout)
+                    if resp.status_code == 404 and "apiKey" in nvd_headers:
+                        # NVD answers an invalid apiKey with HTTP 404 for every CVE. Drop the key,
+                        # fall back to the public limits and repeat this lookup once without it.
+                        log.warning("NVD rejected NVD_API_KEY (HTTP 404); continuing without the key.")
+                        nvd_headers.pop("apiKey")
+                        result["api_key_rejected"] = True
+                        delay = NVD_DELAY_NO_KEY
+                        cap = min(cap, self._nvd_lookup_cap(False))
+                        self._sleep(delay)
+                        resp = requests.get(NVD_API_URL, params={"cveId": cve}, headers=nvd_headers, timeout=self.timeout)
                 except requests.RequestException as e:
                     errors.append(f"{cve}: {e}")
                     continue
@@ -505,6 +526,8 @@ class EvidenceCollector:
                 rec["sources"].append("NVD")
             rec["database_source"] = " / ".join(rec["sources"])
 
+        result["max_lookups"] = cap
+        result["delay_seconds"] = delay
         result["retrieved"] = result["count"] = len(found)
         result["failed"] = len(errors)
         if errors:

@@ -261,3 +261,28 @@ def test_alignment_with_the_real_roberta_tokenizer():
     assert labels[0] == IGNORE_INDEX and labels[-1] == IGNORE_INDEX  # <s> and </s>
     entities = decode_entities(encoded["offset_mapping"], labels)
     assert entities_to_commitment(rec["policy_text"], entities)["version_expression"] == ["2.x", "3.x"]
+
+
+def test_class_weights_raise_rare_labels():
+    from src.layer1_ai_extraction.roberta_baseline import IGNORE_INDEX, label_class_weights
+
+    o, b_version = LABEL_TO_ID["O"], LABEL_TO_ID["B-VERSION"]
+    windows = [{"input_ids": [], "labels": [IGNORE_INDEX] + [o] * 99 + [b_version]}]
+    weights = label_class_weights(windows)
+    assert weights[o] == 1.0
+    assert abs(weights[b_version] - 99 ** 0.5) < 1e-9
+    assert weights[LABEL_TO_ID["B-TEMPORAL"]] == 1.0  # no training tokens
+    assert label_class_weights(windows, "none") == [1.0] * len(weights)
+    with pytest.raises(ValueError):
+        label_class_weights(windows, "squared")
+
+
+def test_token_metrics_expose_a_label_that_is_never_predicted():
+    from src.layer1_ai_extraction.roberta_baseline import IGNORE_INDEX, token_metrics
+
+    o, b_version = LABEL_TO_ID["O"], LABEL_TO_ID["B-VERSION"]
+    gold = [IGNORE_INDEX, o, b_version, b_version]
+    scores = token_metrics(gold, [o, o, o, b_version])
+    assert scores["B-VERSION"]["gold_tokens"] == 2 and scores["B-VERSION"]["predicted_tokens"] == 1
+    assert scores["B-VERSION"]["recall"] == 0.5 and scores["B-VERSION"]["precision"] == 1.0
+    assert scores["I-VERSION"]["f1"] == 0.0
