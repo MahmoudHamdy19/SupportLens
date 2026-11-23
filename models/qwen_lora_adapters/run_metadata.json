@@ -1,0 +1,79 @@
+{
+  "started_at": "2026-11-23T20:36:21+00:00",
+  "finished_at": "2026-11-23T21:03:10+00:00",
+  "base_model": "Qwen/Qwen2.5-7B-Instruct",
+  "quantization": "nf4 4-bit with double quantisation",
+  "hyperparameters": {
+    "base_model": "Qwen/Qwen2.5-7B-Instruct",
+    "lora_r": 128,
+    "lora_alpha": 256,
+    "lora_dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "learning_rate": 0.0002,
+    "num_epochs": 3,
+    "per_device_batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "warmup_ratio": 0.03,
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "max_seq_len": 2048,
+    "early_stopping_patience": 1,
+    "seed": 42,
+    "load_in_4bit": true,
+    "gradient_checkpointing": true,
+    "device": "cuda"
+  },
+  "effective_batch_size": 8,
+  "seed": 42,
+  "trainable_parameters": 80740352,
+  "total_parameters": 7696356864,
+  "trainable_percent": 1.0490723523705878,
+  "trainable_percent_thesis_range": [
+    1.0,
+    2.0
+  ],
+  "trainable_percent_within_thesis_range": true,
+  "system_prompt_sha256": "1c078a1e972cbf5d81886a4364aa58f502c0f0b52583bae823b0d17f3e672cb0",
+  "data": {
+    "train": {
+      "path": "/content/supportlens/data/ground_truth/train.jsonl",
+      "sha256": "f4abc3d55e24ef216149dde6fcdf83f49ed6fe9b09da3788ef09ca27236f83c0",
+      "records": 210,
+      "used": 210,
+      "skipped": []
+    },
+    "val": {
+      "path": "/content/supportlens/data/ground_truth/val.jsonl",
+      "sha256": "8b3668d344d4a42d980eaf40d721b7be73913aa9623e41675ab8cbe3fc9750b1",
+      "records": 45,
+      "used": 45,
+      "skipped": []
+    }
+  },
+  "environment": {
+    "python": "3.13.16",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "libraries": {
+      "torch": "2.14.1+cu130",
+      "transformers": "5.22.1",
+      "peft": "0.21.2",
+      "bitsandbytes": "0.50.2",
+      "accelerate": "1.15.0",
+      "numpy": "2.4.6",
+      "pydantic": "2.14.2",
+      "tokenizers": "0.23.3"
+    },
+    "hardware": {
+      "cuda_available": true,
+      "gpu_name": "Tesla T4",
+      "cuda_version": "13.0",
+      "gpu_count": 1,
+      "gpu_memory_gb": 14.56
+    }
+  }
+}

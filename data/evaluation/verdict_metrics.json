@@ -1,0 +1,416 @@
+{
+  "n_records": 45,
+  "labels": [
+    "Consistent",
+    "Partially Consistent",
+    "Potential Inconsistency",
+    "Insufficient Evidence",
+    "Unmeasurable Commitment"
+  ],
+  "systems": {
+    "regex_baseline": {
+      "n": 45,
+      "accuracy": 0.8222222222222222,
+      "macro_f1": 0.7541552511415526,
+      "labels_in_macro": [
+        "Consistent",
+        "Partially Consistent",
+        "Potential Inconsistency",
+        "Insufficient Evidence",
+        "Unmeasurable Commitment"
+      ],
+      "per_class": {
+        "Consistent": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1,
+          "predicted": 1
+        },
+        "Partially Consistent": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666,
+          "support": 1,
+          "predicted": 2
+        },
+        "Potential Inconsistency": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1,
+          "predicted": 1
+        },
+        "Insufficient Evidence": {
+          "precision": 0.825,
+          "recall": 1.0,
+          "f1": 0.9041095890410958,
+          "support": 33,
+          "predicted": 40
+        },
+        "Unmeasurable Commitment": {
+          "precision": 1.0,
+          "recall": 0.1111111111111111,
+          "f1": 0.19999999999999998,
+          "support": 9,
+          "predicted": 1
+        }
+      },
+      "confusion_matrix": {
+        "rows": "gold",
+        "columns": "predicted",
+        "labels": [
+          "Consistent",
+          "Partially Consistent",
+          "Potential Inconsistency",
+          "Insufficient Evidence",
+          "Unmeasurable Commitment"
+        ],
+        "matrix": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            33,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            7,
+            1
+          ]
+        ]
+      },
+      "insufficient_vs_potential": {
+        "gold_insufficient_predicted_potential": 0,
+        "gold_potential_predicted_insufficient": 0
+      }
+    },
+    "roberta_finetuned": {
+      "n": 45,
+      "accuracy": 0.8444444444444444,
+      "macro_f1": 0.6484848484848484,
+      "labels_in_macro": [
+        "Consistent",
+        "Partially Consistent",
+        "Potential Inconsistency",
+        "Insufficient Evidence",
+        "Unmeasurable Commitment"
+      ],
+      "per_class": {
+        "Consistent": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1,
+          "predicted": 1
+        },
+        "Partially Consistent": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666,
+          "support": 1,
+          "predicted": 2
+        },
+        "Potential Inconsistency": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1,
+          "predicted": 0
+        },
+        "Insufficient Evidence": {
+          "precision": 0.9090909090909091,
+          "recall": 0.9090909090909091,
+          "f1": 0.9090909090909091,
+          "support": 33,
+          "predicted": 33
+        },
+        "Unmeasurable Commitment": {
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666,
+          "support": 9,
+          "predicted": 9
+        }
+      },
+      "confusion_matrix": {
+        "rows": "gold",
+        "columns": "predicted",
+        "labels": [
+          "Consistent",
+          "Partially Consistent",
+          "Potential Inconsistency",
+          "Insufficient Evidence",
+          "Unmeasurable Commitment"
+        ],
+        "matrix": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            30,
+            3
+          ],
+          [
+            0,
+            0,
+            0,
+            3,
+            6
+          ]
+        ]
+      },
+      "insufficient_vs_potential": {
+        "gold_insufficient_predicted_potential": 0,
+        "gold_potential_predicted_insufficient": 0
+      }
+    },
+    "qwen_zero_shot": {
+      "n": 45,
+      "accuracy": 0.8,
+      "macro_f1": 0.527045707915273,
+      "labels_in_macro": [
+        "Consistent",
+        "Partially Consistent",
+        "Potential Inconsistency",
+        "Insufficient Evidence",
+        "Unmeasurable Commitment"
+      ],
+      "per_class": {
+        "Consistent": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 1,
+          "predicted": 0
+        },
+        "Partially Consistent": {
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1": 0.4,
+          "support": 1,
+          "predicted": 4
+        },
+        "Potential Inconsistency": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1,
+          "predicted": 1
+        },
+        "Insufficient Evidence": {
+          "precision": 0.8888888888888888,
+          "recall": 0.9696969696969697,
+          "f1": 0.927536231884058,
+          "support": 33,
+          "predicted": 36
+        },
+        "Unmeasurable Commitment": {
+          "precision": 0.5,
+          "recall": 0.2222222222222222,
+          "f1": 0.30769230769230765,
+          "support": 9,
+          "predicted": 4
+        }
+      },
+      "confusion_matrix": {
+        "rows": "gold",
+        "columns": "predicted",
+        "labels": [
+          "Consistent",
+          "Partially Consistent",
+          "Potential Inconsistency",
+          "Insufficient Evidence",
+          "Unmeasurable Commitment"
+        ],
+        "matrix": [
+          [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            32,
+            1
+          ],
+          [
+            0,
+            3,
+            0,
+            4,
+            2
+          ]
+        ]
+      },
+      "insufficient_vs_potential": {
+        "gold_insufficient_predicted_potential": 0,
+        "gold_potential_predicted_insufficient": 0
+      }
+    },
+    "qwen_finetuned_lora": {
+      "n": 45,
+      "accuracy": 0.8444444444444444,
+      "macro_f1": 0.8408991228070175,
+      "labels_in_macro": [
+        "Consistent",
+        "Partially Consistent",
+        "Potential Inconsistency",
+        "Insufficient Evidence",
+        "Unmeasurable Commitment"
+      ],
+      "per_class": {
+        "Consistent": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1,
+          "predicted": 1
+        },
+        "Partially Consistent": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666,
+          "support": 1,
+          "predicted": 2
+        },
+        "Potential Inconsistency": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1,
+          "predicted": 1
+        },
+        "Insufficient Evidence": {
+          "precision": 0.9354838709677419,
+          "recall": 0.8787878787878788,
+          "f1": 0.90625,
+          "support": 33,
+          "predicted": 31
+        },
+        "Unmeasurable Commitment": {
+          "precision": 0.6,
+          "recall": 0.6666666666666666,
+          "f1": 0.631578947368421,
+          "support": 9,
+          "predicted": 10
+        }
+      },
+      "confusion_matrix": {
+        "rows": "gold",
+        "columns": "predicted",
+        "labels": [
+          "Consistent",
+          "Partially Consistent",
+          "Potential Inconsistency",
+          "Insufficient Evidence",
+          "Unmeasurable Commitment"
+        ],
+        "matrix": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            29,
+            4
+          ],
+          [
+            0,
+            1,
+            0,
+            2,
+            6
+          ]
+        ]
+      },
+      "insufficient_vs_potential": {
+        "gold_insufficient_predicted_potential": 0,
+        "gold_potential_predicted_insufficient": 0
+      }
+    }
+  }
+}

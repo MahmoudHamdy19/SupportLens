@@ -1,0 +1,122 @@
+{
+  "started_at": "2026-11-23T21:03:26+00:00",
+  "finished_at": "2026-11-23T21:07:02+00:00",
+  "hyperparameters": {
+    "model_name": "roberta-base",
+    "learning_rate": 2e-05,
+    "batch_size": 16,
+    "num_epochs": 5,
+    "weight_decay": 0.01,
+    "max_length": 512,
+    "stride": 128,
+    "seed": 42,
+    "class_weighting": "inverse_sqrt"
+  },
+  "device": "cuda",
+  "seed": 42,
+  "parameters": 124060423,
+  "labels": [
+    "O",
+    "B-COMMITMENT",
+    "I-COMMITMENT",
+    "B-VERSION",
+    "I-VERSION",
+    "B-TEMPORAL",
+    "I-TEMPORAL"
+  ],
+  "label_weights": {
+    "O": 1.0,
+    "B-COMMITMENT": 23.79627218352493,
+    "I-COMMITMENT": 5.457634767494333,
+    "B-VERSION": 22.568822716171304,
+    "I-VERSION": 15.264789323913,
+    "B-TEMPORAL": 225.12329954938028,
+    "I-TEMPORAL": 129.97499759569146
+  },
+  "val_token_metrics": {
+    "B-COMMITMENT": {
+      "precision": 0.631578947368421,
+      "recall": 0.972972972972973,
+      "f1": 0.7659574468085106,
+      "gold_tokens": 37,
+      "predicted_tokens": 57
+    },
+    "I-COMMITMENT": {
+      "precision": 0.7090047393364929,
+      "recall": 0.9829172141918529,
+      "f1": 0.8237885462555066,
+      "gold_tokens": 761,
+      "predicted_tokens": 1055
+    },
+    "B-VERSION": {
+      "precision": 0.5063291139240507,
+      "recall": 0.975609756097561,
+      "f1": 0.6666666666666667,
+      "gold_tokens": 41,
+      "predicted_tokens": 79
+    },
+    "I-VERSION": {
+      "precision": 0.6624203821656051,
+      "recall": 0.9719626168224299,
+      "f1": 0.7878787878787878,
+      "gold_tokens": 107,
+      "predicted_tokens": 157
+    },
+    "B-TEMPORAL": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "gold_tokens": 0,
+      "predicted_tokens": 0
+    },
+    "I-TEMPORAL": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "gold_tokens": 0,
+      "predicted_tokens": 23
+    }
+  },
+  "data": {
+    "train": {
+      "path": "/content/supportlens/data/ground_truth/train.jsonl",
+      "sha256": "f4abc3d55e24ef216149dde6fcdf83f49ed6fe9b09da3788ef09ca27236f83c0",
+      "records": 210,
+      "windows": 328,
+      "span_counts": {
+        "commitment": 175,
+        "commitment_missing": 0,
+        "version": 193,
+        "version_missing": 0,
+        "temporal": 2
+      }
+    },
+    "val": {
+      "path": "/content/supportlens/data/ground_truth/val.jsonl",
+      "sha256": "8b3668d344d4a42d980eaf40d721b7be73913aa9623e41675ab8cbe3fc9750b1",
+      "records": 45,
+      "windows": 72
+    }
+  },
+  "environment": {
+    "python": "3.13.16",
+    "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+    "libraries": {
+      "torch": "2.14.1+cu130",
+      "transformers": "5.22.1",
+      "peft": "0.21.2",
+      "bitsandbytes": "0.50.2",
+      "accelerate": "1.15.0",
+      "numpy": "2.4.6",
+      "pydantic": "2.14.2",
+      "tokenizers": "0.23.3"
+    },
+    "hardware": {
+      "cuda_available": true,
+      "gpu_name": "Tesla T4",
+      "cuda_version": "13.0",
+      "gpu_count": 1,
+      "gpu_memory_gb": 14.56
+    }
+  }
+}

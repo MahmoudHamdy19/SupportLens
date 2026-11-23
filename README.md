@@ -64,10 +64,10 @@ The figures below are filled by `python scripts/render_results.py` after step 9 
 
 | System | Verdict macro-F1 | Tuple EM | Tuple PM |
 |---|---|---|---|
-| Regex baseline | <!-- RESULT:verdict_metrics.systems.regex_baseline.macro_f1 -->not run yet<!-- /RESULT --> | <!-- RESULT:extraction_metrics.systems.regex_baseline.tuple.exact_match -->not run yet<!-- /RESULT --> | <!-- RESULT:extraction_metrics.systems.regex_baseline.tuple.partial_match -->not run yet<!-- /RESULT --> |
-| Zero-shot Qwen2.5-7B | <!-- RESULT:verdict_metrics.systems.qwen_zero_shot.macro_f1 -->not run yet<!-- /RESULT --> | <!-- RESULT:extraction_metrics.systems.qwen_zero_shot.tuple.exact_match -->not run yet<!-- /RESULT --> | <!-- RESULT:extraction_metrics.systems.qwen_zero_shot.tuple.partial_match -->not run yet<!-- /RESULT --> |
-| RoBERTa-base | <!-- RESULT:verdict_metrics.systems.roberta_finetuned.macro_f1 -->not run yet<!-- /RESULT --> | <!-- RESULT:extraction_metrics.systems.roberta_finetuned.tuple.exact_match -->not run yet<!-- /RESULT --> | <!-- RESULT:extraction_metrics.systems.roberta_finetuned.tuple.partial_match -->not run yet<!-- /RESULT --> |
-| Qwen2.5-7B + LoRA (proposed) | <!-- RESULT:verdict_metrics.systems.qwen_finetuned_lora.macro_f1 -->not run yet<!-- /RESULT --> | <!-- RESULT:extraction_metrics.systems.qwen_finetuned_lora.tuple.exact_match -->not run yet<!-- /RESULT --> | <!-- RESULT:extraction_metrics.systems.qwen_finetuned_lora.tuple.partial_match -->not run yet<!-- /RESULT --> |
+| Regex baseline | <!-- RESULT:verdict_metrics.systems.regex_baseline.macro_f1 -->0.7542<!-- /RESULT --> | <!-- RESULT:extraction_metrics.systems.regex_baseline.tuple.exact_match -->0.0444<!-- /RESULT --> | <!-- RESULT:extraction_metrics.systems.regex_baseline.tuple.partial_match -->0.7222<!-- /RESULT --> |
+| Zero-shot Qwen2.5-7B | <!-- RESULT:verdict_metrics.systems.qwen_zero_shot.macro_f1 -->0.5270<!-- /RESULT --> | <!-- RESULT:extraction_metrics.systems.qwen_zero_shot.tuple.exact_match -->0.0000<!-- /RESULT --> | <!-- RESULT:extraction_metrics.systems.qwen_zero_shot.tuple.partial_match -->0.3538<!-- /RESULT --> |
+| RoBERTa-base | <!-- RESULT:verdict_metrics.systems.roberta_finetuned.macro_f1 -->0.6485<!-- /RESULT --> | <!-- RESULT:extraction_metrics.systems.roberta_finetuned.tuple.exact_match -->0.4667<!-- /RESULT --> | <!-- RESULT:extraction_metrics.systems.roberta_finetuned.tuple.partial_match -->0.8119<!-- /RESULT --> |
+| Qwen2.5-7B + LoRA (proposed) | <!-- RESULT:verdict_metrics.systems.qwen_finetuned_lora.macro_f1 -->0.8409<!-- /RESULT --> | <!-- RESULT:extraction_metrics.systems.qwen_finetuned_lora.tuple.exact_match -->0.8222<!-- /RESULT --> | <!-- RESULT:extraction_metrics.systems.qwen_finetuned_lora.tuple.partial_match -->0.8889<!-- /RESULT --> |
 
 ## Tests
 

@@ -1,0 +1,303 @@
+{
+  "created_at_utc": "2026-11-23T21:17:25+00:00",
+  "seed": 42,
+  "python": {
+    "version": "3.13.16",
+    "implementation": "CPython"
+  },
+  "platform": {
+    "system": "Linux",
+    "release": "6.6.159+",
+    "version": "#1 SMP Thu Oct 22 03:07:54 UTC 2026",
+    "machine": "x86_64"
+  },
+  "libraries": {
+    "numpy": "2.4.6",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.6.1",
+    "pandas": "2.2.3",
+    "torch": "2.14.1+cu130",
+    "transformers": "5.22.1",
+    "peft": "0.21.2",
+    "safetensors": "0.8.0",
+    "pydantic": "2.14.2",
+    "packaging": "26.3",
+    "requests": "2.32.4",
+    "jinja2": "3.1.6",
+    "pytest": "8.4.2"
+  },
+  "gpu": {
+    "available": true,
+    "torch": "2.14.1+cu130",
+    "cuda_version": "13.0",
+    "device_name": "Tesla T4",
+    "device_count": 1
+  },
+  "data_files": {
+    "test": {
+      "path": "data/ground_truth/test.jsonl",
+      "sha256": "b3ecdf3346add9b3dd75c4f720a1f6e48738ea3fef4aae923c450d7c858f08b0"
+    },
+    "train": {
+      "path": "data/ground_truth/train.jsonl",
+      "sha256": "f4abc3d55e24ef216149dde6fcdf83f49ed6fe9b09da3788ef09ca27236f83c0"
+    },
+    "val": {
+      "path": "data/ground_truth/val.jsonl",
+      "sha256": "8b3668d344d4a42d980eaf40d721b7be73913aa9623e41675ab8cbe3fc9750b1"
+    },
+    "ground_truth": {
+      "path": "data/ground_truth/ground_truth.jsonl",
+      "sha256": "0987c459fc515ff1de8ee6b3eb5eb5d099e1641af365f4f1ec7bd9a5f8bef513"
+    },
+    "predictions": {
+      "path": "predictions.jsonl",
+      "relative_to": "output_dir",
+      "sha256": "ec8f7aa6365009c2f90e2215d931266aadd7d2a7ca28d11e0ed4a384a7e783a4"
+    }
+  },
+  "hyperparameters": {
+    "qwen_lora_adapters": {
+      "started_at": "2026-11-23T20:36:21+00:00",
+      "finished_at": "2026-11-23T21:03:10+00:00",
+      "base_model": "Qwen/Qwen2.5-7B-Instruct",
+      "quantization": "nf4 4-bit with double quantisation",
+      "hyperparameters": {
+        "base_model": "Qwen/Qwen2.5-7B-Instruct",
+        "lora_r": 128,
+        "lora_alpha": 256,
+        "lora_dropout": 0.05,
+        "target_modules": [
+          "q_proj",
+          "k_proj",
+          "v_proj",
+          "o_proj"
+        ],
+        "learning_rate": 0.0002,
+        "num_epochs": 3,
+        "per_device_batch_size": 1,
+        "gradient_accumulation_steps": 8,
+        "warmup_ratio": 0.03,
+        "weight_decay": 0.0,
+        "max_grad_norm": 1.0,
+        "max_seq_len": 2048,
+        "early_stopping_patience": 1,
+        "seed": 42,
+        "load_in_4bit": true,
+        "gradient_checkpointing": true,
+        "device": "cuda"
+      },
+      "effective_batch_size": 8,
+      "seed": 42,
+      "trainable_parameters": 80740352,
+      "total_parameters": 7696356864,
+      "trainable_percent": 1.0490723523705878,
+      "trainable_percent_thesis_range": [
+        1.0,
+        2.0
+      ],
+      "trainable_percent_within_thesis_range": true,
+      "system_prompt_sha256": "1c078a1e972cbf5d81886a4364aa58f502c0f0b52583bae823b0d17f3e672cb0",
+      "data": {
+        "train": {
+          "path": "/content/supportlens/data/ground_truth/train.jsonl",
+          "sha256": "f4abc3d55e24ef216149dde6fcdf83f49ed6fe9b09da3788ef09ca27236f83c0",
+          "records": 210,
+          "used": 210,
+          "skipped": []
+        },
+        "val": {
+          "path": "/content/supportlens/data/ground_truth/val.jsonl",
+          "sha256": "8b3668d344d4a42d980eaf40d721b7be73913aa9623e41675ab8cbe3fc9750b1",
+          "records": 45,
+          "used": 45,
+          "skipped": []
+        }
+      },
+      "environment": {
+        "python": "3.13.16",
+        "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+        "libraries": {
+          "torch": "2.14.1+cu130",
+          "transformers": "5.22.1",
+          "peft": "0.21.2",
+          "bitsandbytes": "0.50.2",
+          "accelerate": "1.15.0",
+          "numpy": "2.4.6",
+          "pydantic": "2.14.2",
+          "tokenizers": "0.23.3"
+        },
+        "hardware": {
+          "cuda_available": true,
+          "gpu_name": "Tesla T4",
+          "cuda_version": "13.0",
+          "gpu_count": 1,
+          "gpu_memory_gb": 14.56
+        }
+      }
+    },
+    "roberta_baseline": {
+      "started_at": "2026-11-23T21:03:26+00:00",
+      "finished_at": "2026-11-23T21:07:02+00:00",
+      "hyperparameters": {
+        "model_name": "roberta-base",
+        "learning_rate": 2e-05,
+        "batch_size": 16,
+        "num_epochs": 5,
+        "weight_decay": 0.01,
+        "max_length": 512,
+        "stride": 128,
+        "seed": 42,
+        "class_weighting": "inverse_sqrt"
+      },
+      "device": "cuda",
+      "seed": 42,
+      "parameters": 124060423,
+      "labels": [
+        "O",
+        "B-COMMITMENT",
+        "I-COMMITMENT",
+        "B-VERSION",
+        "I-VERSION",
+        "B-TEMPORAL",
+        "I-TEMPORAL"
+      ],
+      "label_weights": {
+        "O": 1.0,
+        "B-COMMITMENT": 23.79627218352493,
+        "I-COMMITMENT": 5.457634767494333,
+        "B-VERSION": 22.568822716171304,
+        "I-VERSION": 15.264789323913,
+        "B-TEMPORAL": 225.12329954938028,
+        "I-TEMPORAL": 129.97499759569146
+      },
+      "val_token_metrics": {
+        "B-COMMITMENT": {
+          "precision": 0.631578947368421,
+          "recall": 0.972972972972973,
+          "f1": 0.7659574468085106,
+          "gold_tokens": 37,
+          "predicted_tokens": 57
+        },
+        "I-COMMITMENT": {
+          "precision": 0.7090047393364929,
+          "recall": 0.9829172141918529,
+          "f1": 0.8237885462555066,
+          "gold_tokens": 761,
+          "predicted_tokens": 1055
+        },
+        "B-VERSION": {
+          "precision": 0.5063291139240507,
+          "recall": 0.975609756097561,
+          "f1": 0.6666666666666667,
+          "gold_tokens": 41,
+          "predicted_tokens": 79
+        },
+        "I-VERSION": {
+          "precision": 0.6624203821656051,
+          "recall": 0.9719626168224299,
+          "f1": 0.7878787878787878,
+          "gold_tokens": 107,
+          "predicted_tokens": 157
+        },
+        "B-TEMPORAL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "gold_tokens": 0,
+          "predicted_tokens": 0
+        },
+        "I-TEMPORAL": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "gold_tokens": 0,
+          "predicted_tokens": 23
+        }
+      },
+      "data": {
+        "train": {
+          "path": "/content/supportlens/data/ground_truth/train.jsonl",
+          "sha256": "f4abc3d55e24ef216149dde6fcdf83f49ed6fe9b09da3788ef09ca27236f83c0",
+          "records": 210,
+          "windows": 328,
+          "span_counts": {
+            "commitment": 175,
+            "commitment_missing": 0,
+            "version": 193,
+            "version_missing": 0,
+            "temporal": 2
+          }
+        },
+        "val": {
+          "path": "/content/supportlens/data/ground_truth/val.jsonl",
+          "sha256": "8b3668d344d4a42d980eaf40d721b7be73913aa9623e41675ab8cbe3fc9750b1",
+          "records": 45,
+          "windows": 72
+        }
+      },
+      "environment": {
+        "python": "3.13.16",
+        "platform": "Linux-6.6.159+-x86_64-with-glibc2.39",
+        "libraries": {
+          "torch": "2.14.1+cu130",
+          "transformers": "5.22.1",
+          "peft": "0.21.2",
+          "bitsandbytes": "0.50.2",
+          "accelerate": "1.15.0",
+          "numpy": "2.4.6",
+          "pydantic": "2.14.2",
+          "tokenizers": "0.23.3"
+        },
+        "hardware": {
+          "cuda_available": true,
+          "gpu_name": "Tesla T4",
+          "cuda_version": "13.0",
+          "gpu_count": 1,
+          "gpu_memory_gb": 14.56
+        }
+      }
+    }
+  },
+  "run": {
+    "strict": true,
+    "limit": null,
+    "smoke_test": false,
+    "systems_requested": [
+      "regex_baseline",
+      "roberta_finetuned",
+      "qwen_zero_shot",
+      "qwen_finetuned_lora"
+    ],
+    "systems_evaluated": [
+      "qwen_finetuned_lora",
+      "qwen_zero_shot",
+      "regex_baseline",
+      "roberta_finetuned"
+    ],
+    "skipped_systems": {},
+    "n_test_records": 45,
+    "degraded_predictions": 0,
+    "assessment_engine": "AssessmentRuleEngine",
+    "explanation_generator": "ExplanationGenerator",
+    "metric_provider": "src.layer1_ai_extraction.metrics.score_tuple",
+    "bootstrap_resamples": 1000,
+    "extractor_provenance": {
+      "regex_baseline": {
+        "RuleBasedRegexBaseline|none|lora=False|cpu": 45
+      },
+      "roberta_finetuned": {
+        "RoBERTa-base token classification (fine-tuned)|roberta-base (fine-tuned)|lora=False|cuda": 45
+      },
+      "qwen_zero_shot": {
+        "Qwen2.5-7B-Instruct zero-shot (schema-constrained)|Qwen/Qwen2.5-7B-Instruct (4-bit NF4)|lora=False|cuda:0": 45
+      },
+      "qwen_finetuned_lora": {
+        "Qwen2.5-7B-Instruct + LoRA (schema-constrained)|Qwen/Qwen2.5-7B-Instruct (4-bit NF4)|lora=True|cuda:0": 45
+      }
+    },
+    "argv": [
+      "--strict"
+    ]
+  }
+}

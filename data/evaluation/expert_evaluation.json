@@ -1,0 +1,392 @@
+{
+  "n_items": 16,
+  "n_raters": 2,
+  "rater_ids": [
+    "rater1",
+    "rater2"
+  ],
+  "scale": [
+    1,
+    5
+  ],
+  "std_definition": "sample standard deviation (ddof=1) over all individual ratings",
+  "dimensions": {
+    "correctness": {
+      "n_ratings": 32,
+      "mean": 4.78125,
+      "std": 0.42001344064515445,
+      "per_rater_mean": {
+        "rater1": 4.8125,
+        "rater2": 4.75
+      },
+      "krippendorff_alpha_interval": 0.8228571428571428
+    },
+    "completeness": {
+      "n_ratings": 32,
+      "mean": 4.59375,
+      "std": 0.49899091723584604,
+      "per_rater_mean": {
+        "rater1": 4.625,
+        "rater2": 4.5625
+      },
+      "krippendorff_alpha_interval": 0.8744939271255061
+    },
+    "traceability": {
+      "n_ratings": 32,
+      "mean": 4.875,
+      "std": 0.3360107525161235,
+      "per_rater_mean": {
+        "rater1": 4.875,
+        "rater2": 4.875
+      },
+      "krippendorff_alpha_interval": 1.0
+    }
+  },
+  "overall": {
+    "mean": 4.75,
+    "std": 0.435285750066007,
+    "krippendorff_alpha_interval": 0.8900462962962963
+  },
+  "per_predicted_verdict": {
+    "Consistent": {
+      "n_items": 1,
+      "correctness": 5.0,
+      "completeness": 5.0,
+      "traceability": 5.0
+    },
+    "Partially Consistent": {
+      "n_items": 2,
+      "correctness": 5.0,
+      "completeness": 5.0,
+      "traceability": 5.0
+    },
+    "Potential Inconsistency": {
+      "n_items": 1,
+      "correctness": 5.0,
+      "completeness": 5.0,
+      "traceability": 5.0
+    },
+    "Insufficient Evidence": {
+      "n_items": 6,
+      "correctness": 5.0,
+      "completeness": 4.833333333333333,
+      "traceability": 5.0
+    },
+    "Unmeasurable Commitment": {
+      "n_items": 6,
+      "correctness": 4.416666666666667,
+      "completeness": 4.083333333333333,
+      "traceability": 4.666666666666667
+    }
+  },
+  "sampling": {
+    "Consistent": {
+      "requested": 6,
+      "available": 1,
+      "sampled": 1,
+      "shortfall": 5
+    },
+    "Partially Consistent": {
+      "requested": 6,
+      "available": 2,
+      "sampled": 2,
+      "shortfall": 4
+    },
+    "Potential Inconsistency": {
+      "requested": 6,
+      "available": 1,
+      "sampled": 1,
+      "shortfall": 5
+    },
+    "Insufficient Evidence": {
+      "requested": 6,
+      "available": 31,
+      "sampled": 6,
+      "shortfall": 0
+    },
+    "Unmeasurable Commitment": {
+      "requested": 6,
+      "available": 10,
+      "sampled": 6,
+      "shortfall": 0
+    }
+  },
+  "items": {
+    "E001": {
+      "package_name": "django-anymail",
+      "predicted_verdict": "Insufficient Evidence",
+      "system": "qwen_finetuned_lora"
+    },
+    "E002": {
+      "package_name": "flit",
+      "predicted_verdict": "Insufficient Evidence",
+      "system": "qwen_finetuned_lora"
+    },
+    "E003": {
+      "package_name": "daytona-toolbox-api-client-async",
+      "predicted_verdict": "Unmeasurable Commitment",
+      "system": "qwen_finetuned_lora"
+    },
+    "E004": {
+      "package_name": "transformers",
+      "predicted_verdict": "Partially Consistent",
+      "system": "qwen_finetuned_lora"
+    },
+    "E005": {
+      "package_name": "llm-sandbox",
+      "predicted_verdict": "Insufficient Evidence",
+      "system": "qwen_finetuned_lora"
+    },
+    "E006": {
+      "package_name": "pipdeptree",
+      "predicted_verdict": "Unmeasurable Commitment",
+      "system": "qwen_finetuned_lora"
+    },
+    "E007": {
+      "package_name": "openexr",
+      "predicted_verdict": "Partially Consistent",
+      "system": "qwen_finetuned_lora"
+    },
+    "E008": {
+      "package_name": "nuitka",
+      "predicted_verdict": "Unmeasurable Commitment",
+      "system": "qwen_finetuned_lora"
+    },
+    "E009": {
+      "package_name": "sqlalchemy2-stubs",
+      "predicted_verdict": "Unmeasurable Commitment",
+      "system": "qwen_finetuned_lora"
+    },
+    "E010": {
+      "package_name": "pycep-parser",
+      "predicted_verdict": "Unmeasurable Commitment",
+      "system": "qwen_finetuned_lora"
+    },
+    "E011": {
+      "package_name": "apsw",
+      "predicted_verdict": "Unmeasurable Commitment",
+      "system": "qwen_finetuned_lora"
+    },
+    "E012": {
+      "package_name": "graphifyy",
+      "predicted_verdict": "Consistent",
+      "system": "qwen_finetuned_lora"
+    },
+    "E013": {
+      "package_name": "types-aiobotocore-ssm",
+      "predicted_verdict": "Insufficient Evidence",
+      "system": "qwen_finetuned_lora"
+    },
+    "E014": {
+      "package_name": "pydantic-ai-skills",
+      "predicted_verdict": "Insufficient Evidence",
+      "system": "qwen_finetuned_lora"
+    },
+    "E015": {
+      "package_name": "ragas",
+      "predicted_verdict": "Potential Inconsistency",
+      "system": "qwen_finetuned_lora"
+    },
+    "E016": {
+      "package_name": "pymatgen-core",
+      "predicted_verdict": "Insufficient Evidence",
+      "system": "qwen_finetuned_lora"
+    }
+  },
+  "ratings": {
+    "E001": {
+      "rater1": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      },
+      "rater2": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      }
+    },
+    "E002": {
+      "rater1": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      },
+      "rater2": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      }
+    },
+    "E003": {
+      "rater1": {
+        "correctness": 4,
+        "completeness": 4,
+        "traceability": 5
+      },
+      "rater2": {
+        "correctness": 4,
+        "completeness": 4,
+        "traceability": 5
+      }
+    },
+    "E004": {
+      "rater1": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      },
+      "rater2": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      }
+    },
+    "E005": {
+      "rater1": {
+        "correctness": 5,
+        "completeness": 4,
+        "traceability": 5
+      },
+      "rater2": {
+        "correctness": 5,
+        "completeness": 4,
+        "traceability": 5
+      }
+    },
+    "E006": {
+      "rater1": {
+        "correctness": 4,
+        "completeness": 4,
+        "traceability": 4
+      },
+      "rater2": {
+        "correctness": 4,
+        "completeness": 4,
+        "traceability": 4
+      }
+    },
+    "E007": {
+      "rater1": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      },
+      "rater2": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      }
+    },
+    "E008": {
+      "rater1": {
+        "correctness": 5,
+        "completeness": 4,
+        "traceability": 5
+      },
+      "rater2": {
+        "correctness": 4,
+        "completeness": 4,
+        "traceability": 5
+      }
+    },
+    "E009": {
+      "rater1": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      },
+      "rater2": {
+        "correctness": 5,
+        "completeness": 4,
+        "traceability": 5
+      }
+    },
+    "E010": {
+      "rater1": {
+        "correctness": 4,
+        "completeness": 4,
+        "traceability": 4
+      },
+      "rater2": {
+        "correctness": 4,
+        "completeness": 4,
+        "traceability": 4
+      }
+    },
+    "E011": {
+      "rater1": {
+        "correctness": 5,
+        "completeness": 4,
+        "traceability": 5
+      },
+      "rater2": {
+        "correctness": 5,
+        "completeness": 4,
+        "traceability": 5
+      }
+    },
+    "E012": {
+      "rater1": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      },
+      "rater2": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      }
+    },
+    "E013": {
+      "rater1": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      },
+      "rater2": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      }
+    },
+    "E014": {
+      "rater1": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      },
+      "rater2": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      }
+    },
+    "E015": {
+      "rater1": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      },
+      "rater2": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      }
+    },
+    "E016": {
+      "rater1": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      },
+      "rater2": {
+        "correctness": 5,
+        "completeness": 5,
+        "traceability": 5
+      }
+    }
+  },
+  "sample_manifest_sha256": "b70f677dab6b429158cbcae9495d494d6417b836bba68aed7745b65f3e1b4501",
+  "ingested_at": "2026-11-23T21:53:13+00:00"
+}

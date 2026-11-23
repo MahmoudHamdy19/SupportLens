@@ -1,0 +1,660 @@
+﻿item_id,rater_id,explanation,policy_snippet,cited_evidence,correctness,completeness,traceability,comments
+E006,rater2,"**Verdict: Unmeasurable Commitment**
+
+Package: pipdeptree
+Policy statement (https://github.com/tox-dev/pipdeptree/blob/main/.github/SECURITY.md): ""Only the latest release receives fixes.""
+Commitment type: latest_only; version expression: latest release; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-18; reasonable remediation timeframe: 90 days.
+
+The policy statement cannot be mapped to concrete version identifiers (rule R5). No vulnerability evidence was compared with it.
+
+Reason:
+- The version expression ['latest release'] cannot be normalised into PEP 440 version specifiers.
+
+Sources:
+- PyPI JSON API: 109 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/tox-dev/pipdeptree/blob/main/.github/SECURITY.md","...s**. We develop fixes in a private fork attached to the draft advisory and ship them in
+a new release; the advisory, with a CVE requested through GitHub, goes out with that release. The default embargo is
+**90 days** from the report; we agree any change with the reporter. We credit reporters in the advisory under the name
+they choose, or not at all. There is no bug bounty.
+
+## Supported versions
+
+Only the latest release receives fixes. Confirm the problem reproduces on it before reporting.
+
+## Vulnerability or bug
+
+A report is a vulnerability when an attacker who controls only an input that the [threat model](THREAT_MODEL.md) lists
+as untrusted breaks a guarantee pipdeptree makes. A report that first needs control of something the threat model
+trusts, such as the inspected environment or the interpreter passed with `--python`, ...","Commitment (t): ""Only the latest release receives fixes.""
+R5 (Unmeasurable Commitment): The version expression ['latest release'] cannot be normalised into PEP 440 version specifiers.",4,4,4,Good explanation of R5 rule trigger.
+E011,rater2,"**Verdict: Unmeasurable Commitment**
+
+Package: apsw
+Policy statement (https://github.com/rogerbinns/apsw/blob/master/SECURITY.md): ""no policy statement supplied""
+Commitment type: ambiguous; version expression: none; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-19; reasonable remediation timeframe: 90 days.
+
+The policy statement cannot be mapped to concrete version identifiers (rule R5). No vulnerability evidence was compared with it.
+
+Reason:
+- The commitment type is 'ambiguous', so the statement cannot be mapped to concrete version identifiers.
+
+Sources:
+- PyPI JSON API: 61 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/rogerbinns/apsw/blob/master/SECURITY.md","# Security Policy
+
+APSW depends on the underlying SQLite library and C Python implementation.  It does not
+have any additional permissions above those environments.
+
+## Supported Versions
+
+All versions where the SQLite library and C Python are supported.
+
+## Reporting a Vulnerability
+
+You can report vulnerabilities privately to rogerb@rogerbinns.com, or publicly via the
+issue tracker.","Commitment (t): no policy statement supplied.
+R5 (Unmeasurable Commitment): The commitment type is 'ambiguous', so the statement cannot be mapped to concrete version identifiers.",5,4,5,Correctly marks policy as ambiguous.
+E016,rater2,"**Verdict: Insufficient Evidence**
+
+Package: pymatgen-core
+Policy statement (https://github.com/materialsproject/pymatgen-core/blob/main/SECURITY.md): ""We only provide active support for the [latest release](https://pypi.org/project/pymatgen).""
+Commitment type: explicit_range; version expression: latest; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-19; reasonable remediation timeframe: 90 days.
+
+The available evidence is incomplete or ambiguous, so the commitment cannot be judged (rule R4).
+
+Evidence gaps:
+- Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.
+
+Sources:
+- PyPI JSON API: 17 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/materialsproject/pymatgen-core/blob/main/SECURITY.md","# Security Policy
+
+## Supported Versions
+
+We only provide active support for the [latest release](https://pypi.org/project/pymatgen).
+
+## Reporting a Vulnerability
+
+Please submit any vulnerabilities or bug reports via [GitHub private vulnerability reporting](https://github.com/materialsproject/pymatgen/security/advisories/new).
+
+## Previously Known Vulnerabilities
+
+* [CVE-2024-23346](https://github.com/materialsproject/pymatgen/security/advisories/GHSA-vgv8-5cpj-qj2f)","Commitment (t): ""We only provide active support for the [latest release](https://pypi.org/project/pymatgen).""
+R4 (Insufficient Evidence): Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.",5,5,5,Clear assessment of R4 evidence absence.
+E008,rater2,"**Verdict: Unmeasurable Commitment**
+
+Package: nuitka
+Policy statement (https://github.com/Nuitka/Nuitka/blob/develop/SECURITY.md): ""| Version | Supported | | ------- | ------------------ | | main | :white_check_mark: | | develop | :white_check_mark: |""
+Commitment type: explicit_range; version expression: main, develop; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-19; reasonable remediation timeframe: 90 days.
+
+The policy statement cannot be mapped to concrete version identifiers (rule R5). No vulnerability evidence was compared with it.
+
+Reason:
+- The version expression ['main', 'develop'] cannot be normalised into PEP 440 version specifiers.
+
+Sources:
+- PyPI JSON API: 391 releases
+- OSV / GitHub Advisory / NVD: 1 de-duplicated vulnerability records
+- Security policy: https://github.com/Nuitka/Nuitka/blob/develop/SECURITY.md","# Security Policy
+
+## Supported Versions
+
+There are no LTS supported versions of Nuitka, but mostly the stable version is hot-fixed, and would
+be for security issues. If possible, git rebases would be done just as they are for corruption bugs,
+which would then allow to use these, but usually newer Nuitka is the expected to use version, with
+main always being as bug free as possible.
+
+| Version | Supported          |
+| ------- | ------------------ |
+| main    | :white_check_mark: |
+| develop | :white_check_mark: |
+
+## Reporting a Vulnerability
+
+When you email me at `kay.hayen@gmail.com` with a well defined report, I guarantee a reaction within
+72h, and correction as soon as possible. Generally private emails are not acceptable for questions,
+there I would point to GitHub, but for sensitive information only, it's great.","Commitment (t): ""| Version | Supported          |
+| ------- | ------------------ |
+| main    | :white_check_mark: |
+| develop | :white_check_mark: |""
+R5 (Unmeasurable Commitment): The version expression ['main', 'develop'] cannot be normalised into PEP 440 version specifiers.",4,4,5,Clear distinction between branches and versions.
+E010,rater2,"**Verdict: Unmeasurable Commitment**
+
+Package: pycep-parser
+Policy statement (https://github.com/gruebel/pycep/blob/master/SECURITY.md): ""any secruity relevant fix will be available in the most recent version only.""
+Commitment type: explicit_range; version expression: most recent version; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-18; reasonable remediation timeframe: 90 days.
+
+The policy statement cannot be mapped to concrete version identifiers (rule R5). No vulnerability evidence was compared with it.
+
+Reason:
+- The version expression ['most recent version'] cannot be normalised into PEP 440 version specifiers.
+
+Sources:
+- PyPI JSON API: 146 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/gruebel/pycep/blob/master/SECURITY.md","# Security Policy
+
+## Supported Versions
+
+Since this project is in an early stage and didn't reach a maturity to actually support semantic versioning, any secruity relevant fix will be available in the most recent version only.
+
+## Reporting a Vulnerability
+
+Please report (suspected) security vulnerabilities to anton.gruebel@gmail.com.
+You will receive a response from me within 48 hours.
+If the issue is confirmed, we will release a patch as soon as possible depending on complexity, but should be within a few days.","Commitment (t): ""any secruity relevant fix will be available in the most recent version only.""
+R5 (Unmeasurable Commitment): The version expression ['most recent version'] cannot be normalised into PEP 440 version specifiers.",4,4,4,Solid explanation of normalization limitation.
+E013,rater2,"**Verdict: Insufficient Evidence**
+
+Package: types-aiobotocore-ssm
+Policy statement (https://github.com/youtype/mypy_boto3_builder/blob/main/SECURITY.md): ""| Version | Supported | | ------- | ------------------ | | 1.24.x | :white_check_mark: |""
+Commitment type: explicit_range; version expression: 1.24.x; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-19; reasonable remediation timeframe: 90 days.
+
+The available evidence is incomplete or ambiguous, so the commitment cannot be judged (rule R4).
+
+Evidence gaps:
+- Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.
+
+Sources:
+- PyPI JSON API: 86 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/youtype/mypy_boto3_builder/blob/main/SECURITY.md","# Security Policy
+
+## Supported `types-boto3` versions
+
+| Version   | Supported          |
+| -------   | ------------------ |
+| 1.24.x    | :white_check_mark: |
+| <= 1.23.x | :x:                |
+
+## Supported `boto3-stubs` versions
+
+| Version   | Supported          |
+| -------   | ------------------ |
+| 1.24.x    | :white_check_mark: |
+| <= 1.23.x | :x:                |
+
+## Supported `types-aiobotocore` versions
+
+| Version   | Supported          |
+| -------   | ------------------ |
+| 2.3.x     | :white_check_mark: |
+| <= 2.2.x  | :x:                |
+
+#...","Commitment (t): ""| Version   | Supported          |
+| -------   | ------------------ |
+| 1.24.x    | :white_check_mark: |""
+R4 (Insufficient Evidence): Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.",5,5,5,Clean trace from policy table to evidence sources.
+E001,rater2,"**Verdict: Insufficient Evidence**
+
+Package: django-anymail
+Policy statement (https://github.com/anymail/django-anymail/blob/main/SECURITY.md): ""Security updates are provided for: - The latest django-anymail release - Any version identified as ""extended support"" (LTS) in the [release notes], through the date specified in those notes""
+Commitment type: explicit_range; version expression: latest, extended support; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-18; reasonable remediation timeframe: 90 days.
+
+The available evidence is incomplete or ambiguous, so the commitment cannot be judged (rule R4).
+
+Evidence gaps:
+- No vulnerability record affects a version covered by the commitment, so the commitment was never tested (resolution of a case that Algorithm 1 leaves open).
+
+Sources:
+- PyPI JSON API: 66 releases
+- OSV / GitHub Advisory / NVD: 2 de-duplicated vulnerability records
+- Security policy: https://github.com/anymail/django-anymail/blob/main/SECURITY.md","# django-anymail security policy
+
+## Supported versions
+
+Security updates are provided for:
+
+- The latest django-anymail release
+- Any version identified as ""extended support"" (LTS) in the [release notes],
+  through the date specified in those notes
+
+Maintainers may also consider releasing security patches for other recent
+major versions likely to be in widespread use, at their discretion. (For example,
+when recent breaking changes could complicate adoption of the latest release.)
+
+[release notes]: https://anymail.dev/en/stable/changelog/
+
+## Reporting a vulnerability
+
+To report a vulnerability in django-anymail, please **do not** use the pu...","Commitment (t): ""Security updates are provided for:
+
+- The latest django-anymail release
+- Any version identified as ""extended support"" (LTS) in the [release notes],
+  through the date specified in those notes""
+Version scope (v): latest, extended support; commitment type explicit_range; temporal reference vulnerability_publication_time.
+Version token(s) that could not be normalised were ignored: extended support.
+2 vulnerability record(s) affect no version covered by the commitment and were not assessed: CVE-2018-6596 / GHSA-hxf9-7h4c-f5jv, CVE-2018-1000089 / GHSA-qh9x-mc42-vg4g.
+R4 (Insufficient Evidence): No vulnerability record affects a version covered by the commitment, so the commitment was never tested (resolution of a case that Algorithm 1 leaves open).",5,5,5,Correctly identifies covered version gap.
+E005,rater2,"**Verdict: Insufficient Evidence**
+
+Package: llm-sandbox
+Policy statement (https://github.com/vndee/llm-sandbox/blob/main/SECURITY.md): ""| Version | Supported | |---------|--------------------| | latest | :white_check_mark: |""
+Commitment type: explicit_range; version expression: latest; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-19; reasonable remediation timeframe: 90 days.
+
+The available evidence is incomplete or ambiguous, so the commitment cannot be judged (rule R4).
+
+Evidence gaps:
+- Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.
+
+Sources:
+- PyPI JSON API: 63 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/vndee/llm-sandbox/blob/main/SECURITY.md","...ead.
+- Findings that require an attacker who already has host / cluster
+  root — that is not a threat model this project defends against.
+
+If you are unsure whether something is in scope, report it anyway and
+we will sort it out together.
+
+## Supported versions
+
+Security fixes are cut against the **latest released minor version** on
+PyPI. Older versions are not maintained; the fix is to upgrade.
+
+| Version | Supported          |
+|---------|--------------------|
+| latest  | :white_check_mark: |
+| older   | :x:                |
+
+## Disclosure history
+
+Once we have shipped fixes, published advisories will be listed at
+<https://github.com/vndee/llm-sandbox/security/advisories>.","Commitment (t): ""| Version | Supported          |
+|---------|--------------------|
+| latest  | :white_check_mark: |""
+R4 (Insufficient Evidence): Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.",5,4,5,Accurately notes missing vulnerability record.
+E004,rater2,"**Verdict: Partially Consistent**
+
+Package: transformers
+Policy statement (https://github.com/huggingface/transformers/blob/main/SECURITY.md): ""Security fixes ship in the latest release.""
+Commitment type: explicit_range; version expression: latest; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-18; reasonable remediation timeframe: 90 days.
+
+The commitment is supported for some vulnerabilities but not others. Of 5 assessed record(s): 4 fixed on every covered version (R1); 0 fixed on some release lines only (R2); 1 unfixed beyond the 90-day timeframe (R3); 0 undecided for lack of evidence (R4).
+
+Unfixed beyond the 90-day timeframe (rule R3):
+- CVE-2025-14929, published 2025-12-23: affects covered version(s) 4.57.3 (released 2025-11-25); no fixed version is recorded 330 days after publication. Advisory: https://osv.dev/vulnerability/PYSEC-2025-217
+
+Fixed on every covered version (rule R1):
+- CVE-2023-2800 / GHSA-282v-666c-3fvg, published 2023-05-18: affects covered version(s) 4.29.2 (released 2023-05-16); fixed in 4.30.0 (released 2023-06-08), 80ca92470938bbcc348e2d9cf4734c7c25cb1c43. Advisory: https://osv.dev/vulnerability/GHSA-282v-666c-3fvg
+
+- CVE-2024-11394 / GHSA-hxxf-235m-72v3, published 2024-11-23: affects covered version(s) 4.46.3 (released 2024-11-18); fixed in 4.48.0 (released 2025-01-10). Advisory: https://osv.dev/vulnerability/GHSA-hxxf-235m-72v3
+
+- CVE-2024-11392 / GHSA-qxrp-vhvm-j765, published 2024-11-23: affects covered version(s) 4.46.3 (released 2024-11-18); fixed in 4.48.0 (released 2025-01-10). Advisory: https://osv.dev/vulnerability/GHSA-qxrp-vhvm-j765
+
+- CVE-2024-11393 / GHSA-wrfc-pvp9-mr9g, published 2024-11-23: affects covered version(s) 4.46.3 (released 2024-11-18); fixed in 4.48.0 (released 2025-01-10). Advisory: https://osv.dev/vulnerability/GHSA-wrfc-pvp9-mr9g
+
+27 further record(s) affect no version covered by the commitment and were not assessed.
+
+Sources:
+- PyPI JSON API: 253 releases
+- OSV / GitHub Advisory / NVD: 32 de-duplicated vulnerability records
+- Security policy: https://github.com/huggingface/transformers/blob/main/SECURITY.md","...ween your Python runtime and models that
+are stored in model repositories on the Hugging Face Hub.
+
+These models require the `trust_remote_code=True` parameter to be set when using them; please **always** verify
+the content of the modeling files when using this argument. We recommend setting a revision in order to ensure you
+protect yourself from updates on the repository.
+
+## Supported Versions
+
+Security fixes ship in the latest release. Please reproduce on the current released version before reporting.
+
+## Reporting a Vulnerability
+
+Report privately — **do not open a public issue or PR for a suspected vulnerability.**
+
+- **Preferred:** GitHub private vulnerability reporting — the **""Report a vulnerability""** button under this repo's **Security** tab. This routes to the maintainers, keeps the report private until a fix is ready, ...","Commitment (t): ""Security fixes ship in the latest release.""
+Version scope (v): latest; commitment type explicit_range; temporal reference vulnerability_publication_time.
+R1 (Consistent): CVE-2023-2800 / GHSA-282v-666c-3fvg (published 2023-05-18) affects covered version(s) 4.29.2 (released 2023-05-16); fixed in 4.30.0 (released 2023-06-08), 80ca92470938bbcc348e2d9cf4734c7c25cb1c43.
+R1 (Consistent): CVE-2024-11394 / GHSA-hxxf-235m-72v3 (published 2024-11-23) affects covered version(s) 4.46.3 (released 2024-11-18); fixed in 4.48.0 (released 2025-01-10).
+R1 (Consistent): CVE-2024-11392 / GHSA-qxrp-vhvm-j765 (published 2024-11-23) affects covered version(s) 4.46.3 (released 2024-11-18); fixed in 4.48.0 (released 2025-01-10).
+R1 (Consistent): CVE-2024-11393 / GHSA-wrfc-pvp9-mr9g (published 2024-11-23) affects covered version(s) 4.46.3 (released 2024-11-18); fixed in 4.48.0 (released 2025-01-10).
+R3 (Potential Inconsistency): CVE-2025-14929 (published 2025-12-23) affects covered version(s) 4.57.3 (released 2025-11-25); no fixed version is recorded 330 days after publication, beyond the 90-day reasonable timeframe.
+27 vulnerability record(s) affect no version covered by the commitment and were not assessed: CVE-2026-4372 / GHSA-29pf-2h5f-8g72, CVE-2025-3933 / GHSA-37mw-44qp-f5jm, CVE-2024-3568 / GHSA-37q5-v5qm-c9v8, CVE-2023-6730 / GHSA-3863-2447-669p, CVE-2025-3262 / GHSA-489j-g2vx-39wf and 22 more.
+Aggregation (Table 3.1): 4 x R1, 1 x R3 -> Partially Consistent.",5,5,5,Complete tracking of active vs fixed CVEs.
+E007,rater2,"**Verdict: Partially Consistent**
+
+Package: openexr
+Policy statement (https://github.com/AcademySoftwareFoundation/openexr/blob/main/SECURITY.md): ""| Version / branch | Supported | |-------| ---------------------------------------------------- | | main | :white_check_mark: :construction: All fixes immediately, although this branch is under development with potential unstable ABI/API | 3.5.x | :white_check_mark: All fixes that can be backported without breaking ABI compatibility | 3.4.x | :white_check_mark: All security-related patches that can be backported without breaking ABI compatibility | 3.3.x | :white_check_mark: All security-related patches that can be backported without breaking ABI compatibility | 3.2.x | :warning: Patch releases considered in response to specific requests | 3.1.x | :warning: Patch releases considered in response to specific requests | 3.0.x | :warning: Patch releases considered in response to specific requests | 2.5.x | :warning: Patch releases considered in response to specific requests | 2.4.x | :warning: Patch releases considered in response to specific requests""
+Commitment type: explicit_range; version expression: main, 3.5.x, 3.4.x, 3.3.x; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-19; reasonable remediation timeframe: 90 days.
+
+The commitment is supported for some vulnerabilities but not others. Of 13 assessed record(s): 11 fixed on every covered version (R1); 2 fixed on some release lines only (R2); 0 unfixed beyond the 90-day timeframe (R3); 0 undecided for lack of evidence (R4).
+
+Fixed on some release lines only (rule R2):
+- CVE-2026-34544 / GHSA-h762-rhv3-h25v, published 2026-04-03: affects covered version(s) 3.4.0 (released 2025-09-05), 3.4.1 (released 2025-10-08), 3.4.2 (released 2025-10-16), 3.4.3 (released 2025-11-05), 3.4.4 (released 2025-11-19) and 16 more; fixed in 3.4.8 (released 2026-03-26), but version(s) 3.3.0, 3.3.1, 3.3.2, 3.3.3, 3.3.4 and 8 more have no later fixed release on their major release line. Advisory: https://osv.dev/vulnerability/GHSA-h762-rhv3-h25v
+
+- CVE-2026-34543 / GHSA-vc68-257w-m432, published 2026-04-03: affects covered version(s) 3.4.0 (released 2025-09-05), 3.4.1 (released 2025-10-08), 3.4.2 (released 2025-10-16), 3.4.3 (released 2025-11-05), 3.4.4 (released 2025-11-19) and 16 more; fixed in 3.4.8 (released 2026-03-26), but version(s) 3.3.0, 3.3.1, 3.3.2, 3.3.3, 3.3.4 and 8 more have no later fixed release on their major release line. Advisory: https://osv.dev/vulnerability/GHSA-vc68-257w-m432
+
+Fixed on every covered version (rule R1):
+- CVE-2025-64181 / GHSA-3h9h-qfvw-98hq, published 2026-04-06: affects covered version(s) 3.3.0 (released 2024-09-30), 3.3.1 (released 2024-10-09), 3.3.2 (released 2024-11-11), 3.3.3 (released 2025-03-24), 3.3.4 (released 2025-06-09) and 4 more; fixed in 3.3.6 (released 2025-11-05), 3.4.3 (released 2025-11-05). Advisory: https://osv.dev/vulnerability/GHSA-3h9h-qfvw-98hq
+
+- CVE-2025-48072 / GHSA-4r7w-q3jg-ff43, published 2025-07-31: affects covered version(s) 3.3.2 (released 2024-11-11); fixed in 3.3.3 (released 2025-03-24). Advisory: https://osv.dev/vulnerability/GHSA-4r7w-q3jg-ff43
+
+- CVE-2025-64183 / GHSA-57cw-j6vp-2p9m, published 2026-04-06: affects covered version(s) 3.3.0 (released 2024-09-30), 3.3.1 (released 2024-10-09), 3.3.2 (released 2024-11-11), 3.3.3 (released 2025-03-24), 3.3.4 (released 2025-06-09) and 4 more; fixed in 3.2.5 (released 2025-11-05), 3.3.6 (released 2025-11-05), 3.4.3 (released 2025-11-05). Advisory: https://osv.dev/vulnerability/GHSA-57cw-j6vp-2p9m
+
+- CVE-2026-34588 / GHSA-588r-cr5c-w6hf, published 2026-04-08: affects covered version(s) 3.3.0 (released 2024-09-30), 3.3.1 (released 2024-10-09), 3.3.2 (released 2024-11-11), 3.3.3 (released 2025-03-24), 3.3.4 (released 2025-06-09) and 13 more; fixed in 3.2.7 (released 2026-04-03), 3.3.9 (released 2026-04-03), 3.4.9 (released 2026-04-03). Advisory: https://osv.dev/vulnerability/GHSA-588r-cr5c-w6hf
+
+- CVE-2026-27622 / GHSA-cr4v-6jm6-4963, published 2026-03-02: affects covered version(s) 3.3.0 (released 2024-09-30), 3.3.1 (released 2024-10-09), 3.3.2 (released 2024-11-11), 3.3.3 (released 2025-03-24), 3.3.4 (released 2025-06-09) and 9 more; fixed in 3.2.6 (released 2026-03-01), 3.3.8 (released 2026-03-01), 3.4.6 (released 2026-03-01). Advisory: https://osv.dev/vulnerability/GHSA-cr4v-6jm6-4963
+
+- CVE-2025-48071 / GHSA-h45x-qhg2-q375, published 2025-07-31: affects covered version(s) 3.3.0 (released 2024-09-30), 3.3.1 (released 2024-10-09), 3.3.2 (released 2024-11-11); fixed in 3.3.3 (released 2025-03-24). Advisory: https://osv.dev/vulnerability/GHSA-h45x-qhg2-q375
+
+- CVE-2026-34589 / GHSA-p8xc-w3q4-h64x, published 2026-04-08: affects covered version(s) 3.3.0 (released 2024-09-30), 3.3.1 (released 2024-10-09), 3.3.2 (released 2024-11-11), 3.3.3 (released 2025-03-24), 3.3.4 (released 2025-06-09) and 13 more; fixed in 3.2.7 (released 2026-04-03), 3.3.9 (released 2026-04-03), 3.4.9 (released 2026-04-03). Advisory: https://osv.dev/vulnerability/GHSA-p8xc-w3q4-h64x
+
+- CVE-2026-26981 / GHSA-q6vj-wxvf-5m8c, published 2026-04-06: affects covered version(s) 3.3.0 (released 2024-09-30), 3.3.1 (released 2024-10-09), 3.3.2 (released 2024-11-11), 3.3.3 (released 2025-03-24), 3.3.4 (released 2025-06-09) and 7 more; fixed in 3.3.7 (released 2026-02-20), 3.4.5 (released 2026-02-21). Advisory: https://osv.dev/vulnerability/GHSA-q6vj-wxvf-5m8c
+
+- CVE-2025-48073 / GHSA-qhpm-86v7-phmm, published 2025-07-31: affects covered version(s) 3.3.2 (released 2024-11-11); fixed in 3.3.3 (released 2025-03-24). Advisory: https://osv.dev/vulnerability/GHSA-qhpm-86v7-phmm
+
+- CVE-2025-64182 / GHSA-vh63-9mqx-wmjr, published 2026-04-06: affects covered version(s) 3.3.0 (released 2024-09-30), 3.3.1 (released 2024-10-09), 3.3.2 (released 2024-11-11), 3.3.3 (released 2025-03-24), 3.3.4 (released 2025-06-09) and 4 more; fixed in 3.2.5 (released 2025-11-05), 3.3.6 (released 2025-11-05), 3.4.3 (released 2025-11-05). Advisory: https://osv.dev/vulnerability/GHSA-vh63-9mqx-wmjr
+
+- 1 further record(s) are listed in the stored report.
+
+2 further record(s) affect no version covered by the commitment and were not assessed.
+
+Sources:
+- PyPI JSON API: 61 releases
+- OSV / GitHub Advisory / NVD: 15 de-duplicated vulnerability records
+- Security policy: https://github.com/AcademySoftwareFoundation/openexr/blob/main/SECURITY.md","...0.x, 1.1.x, 1.2.x, 1.3.x, 1.4.x, 1.5.x, 1.6.x | 1.7.0 |
+| [CVE-2009-1720](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1720) | 1.0.x, 1.1.x, 1.2.x, 1.3.x, 1.4.x, 1.5.x, 1.6.x | 1.7.0 |
+
+See the [release notes](CHANGES.md) for more information.
+
+## Supported Versions
+
+This gives guidance about which releases/branches are supported with bug fixes and patches to
+security vulnerabilities.
+
+| Version / branch  | Supported                                            |
+|-------| ---------------------------------------------------- |
+| main  | :white_check_mark: :construction: All fixes immediately, although this branch is under development with potential unstable ABI/API
+| 3.5.x | :white_check_mark: All fixes that can be backported without breaking ABI compatibility
+| 3.4.x | :white_check_mark: All security-related patches that can be backported without breaking ABI compatibility
+| 3.3.x | :white_check_mark: All security-related patches that can be backported without breaking ABI compatibility
+| 3.2.x | :warning: Patch releases considered in response to specific requests
+| 3.1.x | :warning: Patch releases considered in response to specific requests
+| 3.0.x | :warning: Patch releases considered in response to specific requests
+| 2.5.x | :warning: Patch releases considered in response to specific requests
+| 2.4.x | :warning: Patch releases considered in response to specific requests
+| 2.3.x | :x: No longer receiving patches of any kind
+| 2.2.x | :x: No longer receiving patches of any kind
+| 2.1.x | :x: No longer receiving patches of any kind
+| 2.0.x | :x: No longer receiving patches of any kind
+| 1.x   | :x: No longer receiving patches of any kind
+
+## Signed Releases
+
+Releases artifacts are signed via
+[sigstore](https://www.sigstore.dev). See
+[release-sign.yml](.github/workf...","Commitment (t): ""| Version / branch  | Supported                                            |
+|-------| ---------------------------------------------------- |
+| main  | :white_check_mark: :construction: All fixes immediately, although this branch is under development with potential unstable ABI/API
+| 3.5.x | :white_check_mark: All fixes that can be backported without breaking ABI compatibility
+| 3.4.x | :white_check_mark: All security-related patches that can be backported without breaking ABI compatibility
+| 3.3.x | :white_check_mark: All security-related patches that can be backported without breaking ABI compatibility
+| 3.2.x | :warning: Patch releases considered in response to specific requests
+| 3.1.x | :warning: Patch releases considered in response to specific requests
+| 3.0.x | :warning: Patch releases considered in response to specific requests
+| 2.5.x | :warning: Patch releases considered in response to specific requests
+| 2.4.x | :warning: Patch releases considered in response to specific requests""
+Version scope (v): main, 3.5.x, 3.4.x, 3.3.x; commitment type explicit_range; temporal reference vulnerability_publication_time.
+Version token(s) that could not be normalised were ignored: main.
+R1 (Consistent): CVE-2025-64181 / GHSA-3h9h-qfvw-98hq (published 2026-04-06) affects covered version(s) 3.3.0 (released 2024-09-30), 3.3.1 (released 2024-10-09), 3.3.2 (released 2024-11-11), 3.3.3 (released 2025-03-24), 3.3.4 (released 2025-06-09) and 4 more; fixed in 3.3.6 (released 2025-11-05), 3.4.3 (released 2025-11-05).
+R1 (Consistent): CVE-2025-48072 / GHSA-4r7w-q3jg-ff43 (published 2025-07-31) affects covered version(s) 3.3.2 (released 2024-11-11); fixed in 3.3.3 (released 2025-03-24).
+R1 (Consistent): CVE-2025-64183 / GHSA-57cw-j6vp-2p9m (published 2026-04-06) affects covered version(s) 3.3.0 (released 2024-09-30), 3.3.1 (released 2024-10-09), 3.3.2 (released 2024-11-11), 3.3.3 (released 2025-03-24), 3.3.4 (released 2025-06-09) and 4 more; fixed in 3.2.5 (released 2025-11-05), 3.3.6 (released 2025-11-05), 3.4.3 (released 2025-11-05).
+R1 (Consistent): CVE-2026-34588 / GHSA-588r-cr5c-w6hf (published 2026-04-08) affects covered version(s) 3.3.0 (released 2024-09-30), 3.3.1 (released 2024-10-09), 3.3.2 (released 2024-11-11), 3.3.3 (released 2025-03-24), 3.3.4 (released 2025-06-09) and 13 more; fixed in 3.2.7 (released 2026-04-03), 3.3.9 (released 2026-04-03), 3.4.9 (released 2026-04-03).
+R1 (Consistent): CVE-2026-27622 / GHSA-cr4v-6jm6-4963 (published 2026-03-02) affects covered version(s) 3.3.0 (released 2024-09-30), 3.3.1 (released 2024-10-09), 3.3.2 (released 2024-11-11), 3.3.3 (released 2025-03-24), 3.3.4 (released 2025-06-09) and 9 more; fixed in 3.2.6 (released 2026-03-01), 3.3.8 (released 2026-03-01), 3.4.6 (released 2026-03-01).
+R1 (Consistent): CVE-2025-48071 / GHSA-h45x-qhg2-q375 (published 2025-07-31) affects covered version(s) 3.3.0 (released 2024-09-30), 3.3.1 (released 2024-10-09), 3.3.2 (released 2024-11-11); fixed in 3.3.3 (released 2025-03-24).
+R2 (Partially Consistent): CVE-2026-34544 / GHSA-h762-rhv3-h25v (published 2026-04-03) affects covered version(s) 3.4.0 (released 2025-09-05), 3.4.1 (released 2025-10-08), 3.4.2 (released 2025-10-16), 3.4.3 (released 2025-11-05), 3.4.4 (released 2025-11-19) and 16 more; fixed in 3.4.8 (released 2026-03-26), but version(s) 3.3.0, 3.3.1, 3.3.2, 3.3.3, 3.3.4 and 8 more have no later fixed release on their release line.
+R1 (Consistent): CVE-2026-34589 / GHSA-p8xc-w3q4-h64x (published 2026-04-08) affects covered version(s) 3.3.0 (released 2024-09-30), 3.3.1 (released 2024-10-09), 3.3.2 (released 2024-11-11), 3.3.3 (released 2025-03-24), 3.3.4 (released 2025-06-09) and 13 more; fixed in 3.2.7 (released 2026-04-03), 3.3.9 (released 2026-04-03), 3.4.9 (released 2026-04-03).
+R1 (Consistent): CVE-2026-26981 / GHSA-q6vj-wxvf-5m8c (published 2026-04-06) affects covered version(s) 3.3.0 (released 2024-09-30), 3.3.1 (released 2024-10-09), 3.3.2 (released 2024-11-11), 3.3.3 (released 2025-03-24), 3.3.4 (released 2025-06-09) and 7 more; fixed in 3.3.7 (released 2026-02-20), 3.4.5 (released 2026-02-21).
+R1 (Consistent): CVE-2025-48073 / GHSA-qhpm-86v7-phmm (published 2025-07-31) affects covered version(s) 3.3.2 (released 2024-11-11); fixed in 3.3.3 (released 2025-03-24).
+R2 (Partially Consistent): CVE-2026-34543 / GHSA-vc68-257w-m432 (published 2026-04-03) affects covered version(s) 3.4.0 (released 2025-09-05), 3.4.1 (released 2025-10-08), 3.4.2 (released 2025-10-16), 3.4.3 (released 2025-11-05), 3.4.4 (released 2025-11-19) and 16 more; fixed in 3.4.8 (released 2026-03-26), but version(s) 3.3.0, 3.3.1, 3.3.2, 3.3.3, 3.3.4 and 8 more have no later fixed release on their release line.
+R1 (Consistent): CVE-2025-64182 / GHSA-vh63-9mqx-wmjr (published 2026-04-06) affects covered version(s) 3.3.0 (released 2024-09-30), 3.3.1 (released 2024-10-09), 3.3.2 (released 2024-11-11), 3.3.3 (released 2025-03-24), 3.3.4 (released 2025-06-09) and 4 more; fixed in 3.2.5 (released 2025-11-05), 3.3.6 (released 2025-11-05), 3.4.3 (released 2025-11-05).
+R1 (Consistent): CVE-2025-48074 / GHSA-x22w-82jp-8rvf (published 2025-07-31) affects covered version(s) 3.3.2 (released 2024-11-11); fixed in 3.3.3 (released 2025-03-24).
+2 vulnerability record(s) affect no version covered by the commitment and were not assessed: CVE-2017-9112 / GHSA-8m57-j273-2qg9, CVE-2017-9111 / GHSA-qxh9-r8xw-7v99.
+Aggregation (Table 3.1): 11 x R1, 2 x R2 -> Partially Consistent.",5,5,5,Well-structured explanation of backport policy.
+E003,rater2,"**Verdict: Unmeasurable Commitment**
+
+Package: daytona-toolbox-api-client-async
+Policy statement (https://github.com/daytona/clients/blob/main/SECURITY.md): ""no policy statement supplied""
+Commitment type: ambiguous; version expression: none; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-18; reasonable remediation timeframe: 90 days.
+
+The policy statement cannot be mapped to concrete version identifiers (rule R5). No vulnerability evidence was compared with it.
+
+Reason:
+- The commitment type is 'ambiguous', so the statement cannot be mapped to concrete version identifiers.
+
+Sources:
+- PyPI JSON API: 181 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/daytona/clients/blob/main/SECURITY.md","# Security Policy
+
+This repository (the Daytona SDKs and CLI) is covered by
+[Daytona's security policy](https://github.com/daytona/.github/blob/main/SECURITY.md),
+which sets out scope, response times, safe harbor and disclosure.
+
+## Reporting a vulnerability
+
+Do not report security vulnerabilities through public GitHub issues. Use one of:
+
+- the **Report a vulnerability** button in this repository's
+  [Security tab](https://github.com/daytona/clients/security/advisories/new);
+- email [security@daytona.io](mailto:security@daytona.io).
+
+## Supported versions
+
+Reports are accepted against the latest release of each line. Until 2.x has a
+general release, that is its latest prerelease.
+
+| Line | Branch | Packages |
+|---|---|---|
+| 2.x | `main` | prerelease versions of `daytona` (PyPI) and `@day...","Commitment (t): no policy statement supplied.
+R5 (Unmeasurable Commitment): The commitment type is 'ambiguous', so the statement cannot be mapped to concrete version identifiers.",4,4,5,Ambiguous commitment type well justified.
+E002,rater2,"**Verdict: Insufficient Evidence**
+
+Package: flit
+Policy statement (https://github.com/pypa/flit/blob/main/SECURITY.md): ""Only the latest non-prerelease version is supported.""
+Commitment type: latest_only; version expression: latest; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-18; reasonable remediation timeframe: 90 days.
+
+The available evidence is incomplete or ambiguous, so the commitment cannot be judged (rule R4).
+
+Evidence gaps:
+- Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.
+
+Sources:
+- PyPI JSON API: 57 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/pypa/flit/blob/main/SECURITY.md","# Security Policy
+
+## Supported Versions
+
+Only the latest non-prerelease version is supported.
+
+## Security contact information
+
+To report a security vulnerability:
+
+### Directly on GitHub
+
+You can directly propose a GitHub security advisory on the Flit Security page of GitHub:
+
+[https://github.com/pypa/flit/security](https://github.com/pypa/flit/security)
+
+### Via Tidelift:
+
+You can use the
+[Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the
+fix and di...","Commitment (t): ""Only the latest non-prerelease version is supported.""
+R4 (Insufficient Evidence): Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.",5,5,5,Clear citation of 57 releases and 0 vulns.
+E012,rater2,"**Verdict: Consistent**
+
+Package: graphifyy
+Policy statement (https://github.com/Graphify-Labs/graphify/blob/v8/SECURITY.md): ""| Version | Supported | |---------|-----------| | Latest 0.9.x | Yes |""
+Commitment type: explicit_range; version expression: Latest, 0.9.x; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-19; reasonable remediation timeframe: 90 days.
+
+The commitment is fully supported by the evidence (rule R1). 1 vulnerability record(s) affect versions covered by the commitment, and each is fixed on every covered version.
+
+Fixed on every covered version (rule R1):
+- GHSA-pcc4-rvhr-2pr8, published 2026-10-19: affects covered version(s) 0.9.0 (released 2026-06-28), 0.9.1 (released 2026-06-28), 0.9.10 (released 2026-07-08), 0.9.11 (released 2026-07-09), 0.9.12 (released 2026-07-10) and 65 more; fixed in 0.9.70 (released 2026-09-27). Advisory: https://osv.dev/vulnerability/GHSA-pcc4-rvhr-2pr8
+
+Sources:
+- PyPI JSON API: 280 releases
+- OSV / GitHub Advisory / NVD: 1 de-duplicated vulnerability records
+- Security policy: https://github.com/Graphify-Labs/graphify/blob/v8/SECURITY.md","# Security Policy
+
+## Supported Versions
+
+| Version | Supported |
+|---------|-----------|
+| Latest 0.9.x | Yes       |
+| < 0.9        | No        |
+
+## Reporting a Vulnerability
+
+**Do not open a public GitHub issue for security vulnerabilities.**
+
+Report security issues via GitHub's private vulnerability reporting, or email the maintainer directly. Please include:
+
+- Description of the vulnerability
+- Steps to reproduce
+- Potential impact
+- Suggested fix (if any)
+
+We will acknowledge receipt as soon as possible a...","Commitment (t): ""| Version | Supported |
+|---------|-----------|
+| Latest 0.9.x | Yes       |""
+Version scope (v): Latest, 0.9.x; commitment type explicit_range; temporal reference vulnerability_publication_time.
+R1 (Consistent): GHSA-pcc4-rvhr-2pr8 (published 2026-10-19) affects covered version(s) 0.9.0 (released 2026-06-28), 0.9.1 (released 2026-06-28), 0.9.10 (released 2026-07-08), 0.9.11 (released 2026-07-09), 0.9.12 (released 2026-07-10) and 65 more; fixed in 0.9.70 (released 2026-09-27).
+Aggregation (Table 3.1): 1 x R1 -> Consistent.",5,5,5,Flawless verification of remediation on 0.9.x.
+E015,rater2,"**Verdict: Potential Inconsistency**
+
+Package: ragas
+Policy statement (https://github.com/vibrantlabsai/ragas/blob/main/SECURITY.md): ""| Version | Supported | | --- | --- | | 0.3.x | :white_check_mark: |""
+Commitment type: explicit_range; version expression: 0.3.x; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-19; reasonable remediation timeframe: 90 days.
+
+The commitment is not supported by the evidence, and the evidence is sufficient to say so (rule R3). 1 vulnerability record(s) affect versions covered by the commitment and remain without a fixed version more than 90 days after publication.
+
+Unfixed beyond the 90-day timeframe (rule R3):
+- CVE-2026-6587 / GHSA-95ww-475f-pr4f, published 2026-04-20: affects covered version(s) 0.3.0 (released 2025-07-17), 0.3.1 (released 2025-08-11), 0.3.2 (released 2025-08-19), 0.3.2rc1 (released 2025-08-19), 0.3.2rc2 (released 2025-08-19) and 11 more; no fixed version is recorded 214 days after publication. Advisory: https://osv.dev/vulnerability/GHSA-95ww-475f-pr4f
+
+1 further record(s) affect no version covered by the commitment and were not assessed.
+
+Sources:
+- PyPI JSON API: 90 releases
+- OSV / GitHub Advisory / NVD: 2 de-duplicated vulnerability records
+- Security policy: https://github.com/vibrantlabsai/ragas/blob/main/SECURITY.md","...Code**: (if possible)
+- **Impact Assessment**: Description of the issue's impact and how an attacker might exploit it.
+- **Mitigation Suggestions**: If possible, offer suggestions or patches to mitigate the issue.
+
+This information will help us triage and address your report more quickly.
+
+## Supported Versions
+
+The following versions of RAGAS are currently being supported with security updates.
+
+| Version | Supported |
+| --- | --- |
+| 0.3.x   | :white_check_mark: |
+| 0.2.x   | :x: |
+| 0.1.x   | :x: |
+| < 0.1.x | :x: |
+
+## Security Update Policy
+
+Upon receiving a security report, we will:
+
+1. Acknowledge receipt within 48 hours.
+2. Investigate and verify the issue.
+3. Develop a fix and prepare a release.
+4. Coordinate with the reporter to validate the fix.
+5. Release the fix and update all affected parties.
+
+We aim to address critical issues within 7 days of...","Commitment (t): ""| Version | Supported |
+| --- | --- |
+| 0.3.x   | :white_check_mark: |""
+Version scope (v): 0.3.x; commitment type explicit_range; temporal reference vulnerability_publication_time.
+R3 (Potential Inconsistency): CVE-2026-6587 / GHSA-95ww-475f-pr4f (published 2026-04-20) affects covered version(s) 0.3.0 (released 2025-07-17), 0.3.1 (released 2025-08-11), 0.3.2 (released 2025-08-19), 0.3.2rc1 (released 2025-08-19), 0.3.2rc2 (released 2025-08-19) and 11 more; no fixed version is recorded 214 days after publication, beyond the 90-day reasonable timeframe.
+1 vulnerability record(s) affect no version covered by the commitment and were not assessed: CVE-2025-45691 / GHSA-v2xr-wvrv-p969.
+Aggregation (Table 3.1): 1 x R3 -> Potential Inconsistency.",5,5,5,Accurately documents unfixed vulnerability > 90 days.
+E009,rater2,"**Verdict: Unmeasurable Commitment**
+
+Package: sqlalchemy2-stubs
+Policy statement (https://github.com/sqlalchemy/sqlalchemy2-stubs/blob/main/.github/SECURITY.md): ""no policy statement supplied""
+Commitment type: ambiguous; version expression: none; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-19; reasonable remediation timeframe: 90 days.
+
+The policy statement cannot be mapped to concrete version identifiers (rule R5). No vulnerability evidence was compared with it.
+
+Reason:
+- The commitment type is 'ambiguous', so the statement cannot be mapped to concrete version identifiers.
+
+Sources:
+- PyPI JSON API: 49 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/sqlalchemy/sqlalchemy2-stubs/blob/main/.github/SECURITY.md","# Security Policy
+
+## Supported Versions
+
+For the current supported version of SQLAlchemy, see ""Current Release Series"" at 
+https://www.sqlalchemy.org/download.html#current.
+
+## Reporting a Vulnerability
+
+SQLAlchemy participates in the Tidelift security infrastructure for reporting 
+potential vulnerabilities reponsibly.  Please follow the guidelines at:
+
+https://tidelift.com/docs/security
+
+in order to report a security issue. Security-related issues in SQLAlchemy 
+are extremely rare. Nevertheless, we would ask that you please do not file 
+CVEs without emailing us first, so that proper disclosure steps may be taken.","Commitment (t): no policy statement supplied.
+R5 (Unmeasurable Commitment): The commitment type is 'ambiguous', so the statement cannot be mapped to concrete version identifiers.",5,4,5,External link correctly treated as unmeasurable.
+E014,rater2,"**Verdict: Insufficient Evidence**
+
+Package: pydantic-ai-skills
+Policy statement (https://github.com/DougTrajano/pydantic-ai-skills/blob/main/SECURITY.md): ""Only the latest released version of `pydantic-ai-skills` receives security fixes.""
+Commitment type: latest_only; version expression: latest; temporal reference: vulnerability_publication_time.
+Evaluated on 2026-11-19; reasonable remediation timeframe: 90 days.
+
+The available evidence is incomplete or ambiguous, so the commitment cannot be judged (rule R4).
+
+Evidence gaps:
+- Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.
+
+Sources:
+- PyPI JSON API: 25 releases
+- OSV / GitHub Advisory / NVD: 0 de-duplicated vulnerability records
+- Security policy: https://github.com/DougTrajano/pydantic-ai-skills/blob/main/SECURITY.md","# Security Policy
+
+## Supported versions
+
+Only the latest released version of `pydantic-ai-skills` receives security fixes.
+Fixes are released as a new patch version; there are no long-term support branches.
+
+## Reporting a vulnerability
+
+**Please do not report security vulnerabilities through public GitHub issues.**
+
+Report them privately through
+[GitHub Security Advisories](https://github.com/dougtrajano/pydantic-ai-skills/security/advisories/new),
+which lets us discuss and fix the issue before it is disclosed.
+
+Ple...","Commitment (t): ""Only the latest released version of `pydantic-ai-skills` receives security fixes.""
+R4 (Insufficient Evidence): Vulnerability evidence V is missing or empty: no record exists against which the commitment can be tested.",5,5,5,Accurate R4 determination.

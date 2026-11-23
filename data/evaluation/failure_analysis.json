@@ -1,0 +1,374 @@
+{
+  "n_records": 45,
+  "research_question": "RQ3: which classes of cases predominantly produce failure or insufficient-evidence outcomes",
+  "activity_definition": "active: not archived and pushed_at at most 365 days before collected_at; abandoned: archived, or pushed_at more than 365 days before collected_at; unclassified: collected_at missing, or pushed_at missing for a non-archived repository; a missing archived field counts as not archived",
+  "activity_counts": {
+    "abandoned": 1,
+    "active": 44
+  },
+  "gold_verdict_counts": {
+    "Consistent": 1,
+    "Insufficient Evidence": 33,
+    "Partially Consistent": 1,
+    "Potential Inconsistency": 1,
+    "Unmeasurable Commitment": 9
+  },
+  "systems": {
+    "regex_baseline": {
+      "n_records": 45,
+      "verdict_error_pairs": {
+        "Unmeasurable Commitment": {
+          "Partially Consistent": 1,
+          "Insufficient Evidence": 7
+        }
+      },
+      "wrong_predictions": {
+        "n": 8,
+        "rules_triggered": {
+          "R1": 1,
+          "R2": 1,
+          "R4": 7
+        },
+        "reason_codes": {
+          "fixed_on_all_covered_versions": 1,
+          "fixed_on_some_release_lines": 1,
+          "no_vulnerability_in_scope": 2,
+          "vulnerabilities_missing": 5
+        }
+      },
+      "insufficient_evidence_predictions": {
+        "n": 40,
+        "rules_triggered": {
+          "R4": 40
+        },
+        "reason_codes": {
+          "no_vulnerability_in_scope": 4,
+          "vulnerabilities_missing": 36
+        }
+      },
+      "extraction_errors_by_gold_tau": {
+        "latest_only": {
+          "n": 6,
+          "tuple_exact_match_errors": 4,
+          "tau_errors": 0,
+          "verdict_errors": 1,
+          "mean_t_f1": 1.0,
+          "mean_v_f1": 0.3333333333333333
+        },
+        "explicit_range": {
+          "n": 31,
+          "tuple_exact_match_errors": 31,
+          "tau_errors": 9,
+          "verdict_errors": 0,
+          "mean_t_f1": 0.7205908509413952,
+          "mean_v_f1": 0.8602150537634409
+        },
+        "all_versions": {
+          "n": 1,
+          "tuple_exact_match_errors": 1,
+          "tau_errors": 0,
+          "verdict_errors": 0,
+          "mean_t_f1": 1.0,
+          "mean_v_f1": 0.0
+        },
+        "ambiguous": {
+          "n": 7,
+          "tuple_exact_match_errors": 7,
+          "tau_errors": 7,
+          "verdict_errors": 7,
+          "mean_t_f1": 0.0,
+          "mean_v_f1": 0.0
+        }
+      },
+      "verdict_errors_by_activity": {
+        "active": {
+          "n": 44,
+          "verdict_errors": 7,
+          "insufficient_evidence_predicted": 39
+        },
+        "abandoned": {
+          "n": 1,
+          "verdict_errors": 1,
+          "insufficient_evidence_predicted": 1
+        },
+        "unclassified": {
+          "n": 0,
+          "verdict_errors": 0,
+          "insufficient_evidence_predicted": 0
+        }
+      }
+    },
+    "roberta_finetuned": {
+      "n_records": 45,
+      "verdict_error_pairs": {
+        "Potential Inconsistency": {
+          "Partially Consistent": 1
+        },
+        "Insufficient Evidence": {
+          "Unmeasurable Commitment": 3
+        },
+        "Unmeasurable Commitment": {
+          "Insufficient Evidence": 3
+        }
+      },
+      "wrong_predictions": {
+        "n": 7,
+        "rules_triggered": {
+          "R2": 1,
+          "R3": 1,
+          "R4": 3,
+          "R5": 3
+        },
+        "reason_codes": {
+          "ambiguous_commitment_type": 3,
+          "fixed_on_some_release_lines": 1,
+          "no_vulnerability_in_scope": 2,
+          "unfixed_beyond_timeframe": 1,
+          "vulnerabilities_missing": 1
+        }
+      },
+      "insufficient_evidence_predictions": {
+        "n": 33,
+        "rules_triggered": {
+          "R4": 33
+        },
+        "reason_codes": {
+          "no_vulnerability_in_scope": 4,
+          "vulnerabilities_missing": 29
+        }
+      },
+      "extraction_errors_by_gold_tau": {
+        "latest_only": {
+          "n": 6,
+          "tuple_exact_match_errors": 4,
+          "tau_errors": 2,
+          "verdict_errors": 3,
+          "mean_t_f1": 0.9871794871794872,
+          "mean_v_f1": 0.6666666666666666
+        },
+        "explicit_range": {
+          "n": 31,
+          "tuple_exact_match_errors": 13,
+          "tau_errors": 9,
+          "verdict_errors": 2,
+          "mean_t_f1": 0.9491521918941275,
+          "mean_v_f1": 0.864516129032258
+        },
+        "all_versions": {
+          "n": 1,
+          "tuple_exact_match_errors": 1,
+          "tau_errors": 0,
+          "verdict_errors": 0,
+          "mean_t_f1": 1.0,
+          "mean_v_f1": 0.0
+        },
+        "ambiguous": {
+          "n": 7,
+          "tuple_exact_match_errors": 6,
+          "tau_errors": 2,
+          "verdict_errors": 2,
+          "mean_t_f1": 0.14285714285714285,
+          "mean_v_f1": 0.42857142857142855
+        }
+      },
+      "verdict_errors_by_activity": {
+        "active": {
+          "n": 44,
+          "verdict_errors": 7,
+          "insufficient_evidence_predicted": 33
+        },
+        "abandoned": {
+          "n": 1,
+          "verdict_errors": 0,
+          "insufficient_evidence_predicted": 0
+        },
+        "unclassified": {
+          "n": 0,
+          "verdict_errors": 0,
+          "insufficient_evidence_predicted": 0
+        }
+      }
+    },
+    "qwen_zero_shot": {
+      "n_records": 45,
+      "verdict_error_pairs": {
+        "Consistent": {
+          "Unmeasurable Commitment": 1
+        },
+        "Insufficient Evidence": {
+          "Unmeasurable Commitment": 1
+        },
+        "Unmeasurable Commitment": {
+          "Partially Consistent": 3,
+          "Insufficient Evidence": 4
+        }
+      },
+      "wrong_predictions": {
+        "n": 9,
+        "rules_triggered": {
+          "R1": 1,
+          "R2": 3,
+          "R4": 4,
+          "R5": 2
+        },
+        "reason_codes": {
+          "fixed_on_all_covered_versions": 1,
+          "fixed_on_some_release_lines": 3,
+          "version_scope_not_normalisable": 2,
+          "vulnerabilities_missing": 4
+        }
+      },
+      "insufficient_evidence_predictions": {
+        "n": 36,
+        "rules_triggered": {
+          "R4": 36
+        },
+        "reason_codes": {
+          "no_vulnerability_in_scope": 1,
+          "vulnerabilities_missing": 35
+        }
+      },
+      "extraction_errors_by_gold_tau": {
+        "latest_only": {
+          "n": 6,
+          "tuple_exact_match_errors": 6,
+          "tau_errors": 0,
+          "verdict_errors": 1,
+          "mean_t_f1": 0.8666666666666667,
+          "mean_v_f1": 0.3333333333333333
+        },
+        "explicit_range": {
+          "n": 31,
+          "tuple_exact_match_errors": 31,
+          "tau_errors": 7,
+          "verdict_errors": 2,
+          "mean_t_f1": 0.12798634278297671,
+          "mean_v_f1": 0.4685099846390169
+        },
+        "all_versions": {
+          "n": 1,
+          "tuple_exact_match_errors": 1,
+          "tau_errors": 0,
+          "verdict_errors": 0,
+          "mean_t_f1": 0.0,
+          "mean_v_f1": 0.0
+        },
+        "ambiguous": {
+          "n": 7,
+          "tuple_exact_match_errors": 7,
+          "tau_errors": 6,
+          "verdict_errors": 6,
+          "mean_t_f1": 0.42857142857142855,
+          "mean_v_f1": 0.14285714285714285
+        }
+      },
+      "verdict_errors_by_activity": {
+        "active": {
+          "n": 44,
+          "verdict_errors": 9,
+          "insufficient_evidence_predicted": 36
+        },
+        "abandoned": {
+          "n": 1,
+          "verdict_errors": 0,
+          "insufficient_evidence_predicted": 0
+        },
+        "unclassified": {
+          "n": 0,
+          "verdict_errors": 0,
+          "insufficient_evidence_predicted": 0
+        }
+      }
+    },
+    "qwen_finetuned_lora": {
+      "n_records": 45,
+      "verdict_error_pairs": {
+        "Insufficient Evidence": {
+          "Unmeasurable Commitment": 4
+        },
+        "Unmeasurable Commitment": {
+          "Partially Consistent": 1,
+          "Insufficient Evidence": 2
+        }
+      },
+      "wrong_predictions": {
+        "n": 7,
+        "rules_triggered": {
+          "R1": 1,
+          "R2": 1,
+          "R4": 2,
+          "R5": 4
+        },
+        "reason_codes": {
+          "ambiguous_commitment_type": 1,
+          "fixed_on_all_covered_versions": 1,
+          "fixed_on_some_release_lines": 1,
+          "no_vulnerability_in_scope": 1,
+          "version_scope_not_normalisable": 3,
+          "vulnerabilities_missing": 1
+        }
+      },
+      "insufficient_evidence_predictions": {
+        "n": 31,
+        "rules_triggered": {
+          "R4": 31
+        },
+        "reason_codes": {
+          "no_vulnerability_in_scope": 3,
+          "vulnerabilities_missing": 28
+        }
+      },
+      "extraction_errors_by_gold_tau": {
+        "latest_only": {
+          "n": 6,
+          "tuple_exact_match_errors": 0,
+          "tau_errors": 0,
+          "verdict_errors": 3,
+          "mean_t_f1": 1.0,
+          "mean_v_f1": 1.0
+        },
+        "explicit_range": {
+          "n": 31,
+          "tuple_exact_match_errors": 2,
+          "tau_errors": 0,
+          "verdict_errors": 0,
+          "mean_t_f1": 1.0,
+          "mean_v_f1": 1.0
+        },
+        "all_versions": {
+          "n": 1,
+          "tuple_exact_match_errors": 1,
+          "tau_errors": 1,
+          "verdict_errors": 1,
+          "mean_t_f1": 0.0,
+          "mean_v_f1": 0.0
+        },
+        "ambiguous": {
+          "n": 7,
+          "tuple_exact_match_errors": 5,
+          "tau_errors": 5,
+          "verdict_errors": 3,
+          "mean_t_f1": 0.2857142857142857,
+          "mean_v_f1": 0.2857142857142857
+        }
+      },
+      "verdict_errors_by_activity": {
+        "active": {
+          "n": 44,
+          "verdict_errors": 7,
+          "insufficient_evidence_predicted": 31
+        },
+        "abandoned": {
+          "n": 1,
+          "verdict_errors": 0,
+          "insufficient_evidence_predicted": 0
+        },
+        "unclassified": {
+          "n": 0,
+          "verdict_errors": 0,
+          "insufficient_evidence_predicted": 0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "created_at": "2026-11-23T21:43:33+00:00",
+  "seed": 42,
+  "system": "qwen_finetuned_lora",
+  "predictions_sha256": "ec8f7aa6365009c2f90e2215d931266aadd7d2a7ca28d11e0ed4a384a7e783a4",
+  "availability": {
+    "Consistent": {
+      "requested": 6,
+      "available": 1,
+      "sampled": 1,
+      "shortfall": 5
+    },
+    "Partially Consistent": {
+      "requested": 6,
+      "available": 2,
+      "sampled": 2,
+      "shortfall": 4
+    },
+    "Potential Inconsistency": {
+      "requested": 6,
+      "available": 1,
+      "sampled": 1,
+      "shortfall": 5
+    },
+    "Insufficient Evidence": {
+      "requested": 6,
+      "available": 31,
+      "sampled": 6,
+      "shortfall": 0
+    },
+    "Unmeasurable Commitment": {
+      "requested": 6,
+      "available": 10,
+      "sampled": 6,
+      "shortfall": 0
+    }
+  },
+  "items": [
+    {
+      "item_id": "E001",
+      "package_name": "django-anymail",
+      "system": "qwen_finetuned_lora",
+      "predicted_verdict": "Insufficient Evidence"
+    },
+    {
+      "item_id": "E002",
+      "package_name": "flit",
+      "system": "qwen_finetuned_lora",
+      "predicted_verdict": "Insufficient Evidence"
+    },
+    {
+      "item_id": "E003",
+      "package_name": "daytona-toolbox-api-client-async",
+      "system": "qwen_finetuned_lora",
+      "predicted_verdict": "Unmeasurable Commitment"
+    },
+    {
+      "item_id": "E004",
+      "package_name": "transformers",
+      "system": "qwen_finetuned_lora",
+      "predicted_verdict": "Partially Consistent"
+    },
+    {
+      "item_id": "E005",
+      "package_name": "llm-sandbox",
+      "system": "qwen_finetuned_lora",
+      "predicted_verdict": "Insufficient Evidence"
+    },
+    {
+      "item_id": "E006",
+      "package_name": "pipdeptree",
+      "system": "qwen_finetuned_lora",
+      "predicted_verdict": "Unmeasurable Commitment"
+    },
+    {
+      "item_id": "E007",
+      "package_name": "openexr",
+      "system": "qwen_finetuned_lora",
+      "predicted_verdict": "Partially Consistent"
+    },
+    {
+      "item_id": "E008",
+      "package_name": "nuitka",
+      "system": "qwen_finetuned_lora",
+      "predicted_verdict": "Unmeasurable Commitment"
+    },
+    {
+      "item_id": "E009",
+      "package_name": "sqlalchemy2-stubs",
+      "system": "qwen_finetuned_lora",
+      "predicted_verdict": "Unmeasurable Commitment"
+    },
+    {
+      "item_id": "E010",
+      "package_name": "pycep-parser",
+      "system": "qwen_finetuned_lora",
+      "predicted_verdict": "Unmeasurable Commitment"
+    },
+    {
+      "item_id": "E011",
+      "package_name": "apsw",
+      "system": "qwen_finetuned_lora",
+      "predicted_verdict": "Unmeasurable Commitment"
+    },
+    {
+      "item_id": "E012",
+      "package_name": "graphifyy",
+      "system": "qwen_finetuned_lora",
+      "predicted_verdict": "Consistent"
+    },
+    {
+      "item_id": "E013",
+      "package_name": "types-aiobotocore-ssm",
+      "system": "qwen_finetuned_lora",
+      "predicted_verdict": "Insufficient Evidence"
+    },
+    {
+      "item_id": "E014",
+      "package_name": "pydantic-ai-skills",
+      "system": "qwen_finetuned_lora",
+      "predicted_verdict": "Insufficient Evidence"
+    },
+    {
+      "item_id": "E015",
+      "package_name": "ragas",
+      "system": "qwen_finetuned_lora",
+      "predicted_verdict": "Potential Inconsistency"
+    },
+    {
+      "item_id": "E016",
+      "package_name": "pymatgen-core",
+      "system": "qwen_finetuned_lora",
+      "predicted_verdict": "Insufficient Evidence"
+    }
+  ]
+}
