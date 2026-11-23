@@ -14,6 +14,7 @@ from pathlib import Path
 
 import streamlit as st
 
+from src.layer1_ai_extraction import RuleBasedRegexBaseline
 from src.supportlens_pipeline import SupportLensPipeline
 
 ROOT = Path(__file__).resolve().parent
@@ -51,12 +52,13 @@ def page_audit() -> None:
     st.header("Audit a PyPI package")
     st.caption("Layer 0 acquisition, Layer 1 extraction, Layer 2 evidence, Layer 3 Algorithm 1, Layer 4 explanation.")
     package = st.text_input("PyPI package name", value="urllib3").strip()
-    strict = st.checkbox("Require the fine-tuned Qwen model (no regex fallback)", value=False)
+    use_qwen = st.checkbox("Use fine-tuned Qwen+LoRA model (requires CUDA GPU and downloading base model ~15GB)", value=False)
     if not st.button("Run audit") or not package:
         return
     with st.spinner(f"Auditing {package} ..."):
         try:
-            result = SupportLensPipeline(github_token=os.environ.get("GITHUB_TOKEN"), strict=strict).audit_package(package)
+            extractor = None if use_qwen else RuleBasedRegexBaseline()
+            result = SupportLensPipeline(github_token=os.environ.get("GITHUB_TOKEN"), extractor=extractor, strict=use_qwen).audit_package(package)
         except Exception as exc:
             st.error(f"Audit failed: {exc}")
             return
