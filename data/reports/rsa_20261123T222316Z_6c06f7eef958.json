@@ -1,0 +1,771 @@
+{
+  "report_id": "rsa_20261123T222316Z_6c06f7eef958",
+  "created_at": "2026-11-23T22:23:16.270291+00:00",
+  "schema_version": 1,
+  "package_name": "rsa",
+  "verdict": "Insufficient Evidence",
+  "explanation": "**Verdict: Insufficient Evidence**\n\nPackage: rsa\nPolicy statement (SECURITY.md, supported-versions section, lines 3-6, https://github.com/sybrenstuvel/python-rsa/blob/main/SECURITY.md#L3-L6): \"Security updates are applied only to the latest release.\"\nCommitment type: latest_only; version expression: latest; temporal reference: vulnerability_publication_time.\nEvaluated on 2026-11-23; reasonable remediation timeframe: 90 days.\n\nThe available evidence is incomplete or ambiguous, so the commitment cannot be judged (rule R4).\n\nEvidence gaps:\n- The mapping of the evidence to the package was flagged as uncertain.\n\nSources:\n- https://github.com/sybrenstuvel/python-rsa/blob/main/SECURITY.md#L3-L6\n- https://github.com/sybrenstuvel/python-rsa\n- https://pypi.org/project/rsa/\n- PyPI JSON API: https://pypi.org/pypi/rsa/json (37 releases)\n- OSV / GitHub Advisory / NVD: 3 de-duplicated vulnerability records\n- Security policy: https://github.com/sybrenstuvel/python-rsa/blob/main/SECURITY.md",
+  "source_references": [
+    "https://github.com/sybrenstuvel/python-rsa/blob/main/SECURITY.md#L3-L6",
+    "https://github.com/sybrenstuvel/python-rsa",
+    "https://pypi.org/project/rsa/",
+    "PyPI JSON API: https://pypi.org/pypi/rsa/json (37 releases)",
+    "OSV / GitHub Advisory / NVD: 3 de-duplicated vulnerability records",
+    "Security policy: https://github.com/sybrenstuvel/python-rsa/blob/main/SECURITY.md"
+  ],
+  "policy": {
+    "repository": "sybrenstuvel/python-rsa",
+    "path": "SECURITY.md",
+    "url": "https://github.com/sybrenstuvel/python-rsa/blob/main/SECURITY.md",
+    "line_start": 3,
+    "line_end": 6,
+    "line_annotated_url": "https://github.com/sybrenstuvel/python-rsa/blob/main/SECURITY.md#L3-L6",
+    "citation": "SECURITY.md, supported-versions section, lines 3-6, https://github.com/sybrenstuvel/python-rsa/blob/main/SECURITY.md#L3-L6"
+  },
+  "commitment": {
+    "commitment_text": "Security updates are applied only to the latest release.",
+    "version_expression": [
+      "latest"
+    ],
+    "support_status": "latest_only",
+    "temporal_reference": "vulnerability_publication_time",
+    "is_measurable": true,
+    "extractor_engine": "RuleBasedRegexBaseline",
+    "actual_model_used": "none",
+    "lora_applied": false,
+    "execution_device": "cpu",
+    "degraded": false
+  },
+  "assessment": {
+    "package_name": "rsa",
+    "verdict": "Insufficient Evidence",
+    "is_measurable": true,
+    "rules_triggered": [
+      "R4"
+    ],
+    "evidence_trail": [
+      "Commitment (t): \"Security updates are applied only to the latest release.\"",
+      "R4 (Insufficient Evidence): The mapping of the evidence to the package was flagged as uncertain."
+    ],
+    "evidence_log": [
+      {
+        "rule_id": "R4",
+        "outcome": "Insufficient Evidence",
+        "reason": "mapping_uncertain",
+        "message": "The mapping of the evidence to the package was flagged as uncertain.",
+        "vulnerability_id": null,
+        "identifiers": [],
+        "published_at": null,
+        "affected_in_scope": [],
+        "affected_release_dates": {},
+        "unremediated_versions": [],
+        "fixed_versions": [],
+        "fix_release_dates": {},
+        "days_since_publication": null,
+        "advisory_url": null
+      }
+    ],
+    "evaluated_vulns_count": 3,
+    "assessed_vulns_count": 0,
+    "out_of_scope_vulns_count": 0,
+    "rule_counts": {
+      "R1": 0,
+      "R2": 0,
+      "R3": 0,
+      "R4": 0
+    },
+    "reasonable_timeframe_days": 90,
+    "reference_time": "2026-11-23T22:23:08.891818+00:00"
+  },
+  "trace": {
+    "status": "INCLUDED",
+    "reference_time": "2026-11-23T22:23:08.891818+00:00",
+    "layer0": {
+      "package_name": "rsa",
+      "status": "INCLUDED",
+      "exclusion_reason": null,
+      "pypi_metadata": {
+        "author": "Sybren A. Stüvel",
+        "author_email": "sybren@stuvel.eu",
+        "bugtrack_url": null,
+        "classifiers": [
+          "Development Status :: 5 - Production/Stable",
+          "Intended Audience :: Developers",
+          "Intended Audience :: Education",
+          "Intended Audience :: Information Technology",
+          "License :: OSI Approved :: Apache Software License",
+          "Operating System :: OS Independent",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Programming Language :: Python :: 3.11",
+          "Programming Language :: Python :: 3.12",
+          "Programming Language :: Python :: 3.13",
+          "Programming Language :: Python :: 3.6",
+          "Programming Language :: Python :: 3.7",
+          "Programming Language :: Python :: 3.8",
+          "Programming Language :: Python :: 3.9",
+          "Programming Language :: Python :: Implementation :: CPython",
+          "Programming Language :: Python :: Implementation :: PyPy",
+          "Topic :: Security :: Cryptography"
+        ],
+        "description": "# Python-RSA has been archived\n\nHi folks,\n\nI'm Sybren, one of the original authors and the maintainer of this project.\nUnfortunately I don't have the time and brain space left to properly maintain\nPython-RSA. As you can see from the lack of activity on the open issues, and the\nlack of commits, that has been the case for a while now.\n\nAs Python-RSA is included as a dependency in quite a few high-profile projects,\nI don't feel comfortable handing over the project to someone else. It's just too\nbig of a risk.\n\nThanks for having used this little library for so long, and in so many projects.\nI truely didn't expect that when I started working on it. Also big thanks to all\nthe people helping out and improving the project.\n\nThere are improvements that haven't made it into a new release. As I said, I\ndon't have the time and the brain space to really investigate and oversee the\nsecurity impact of all those changes. It's not a decision I've made lightly.\n\nSo that's it. If you want to keep the project alive, please fork it. Give it the\nlove it deserves, investigate those yet-unreleased improvements, and have a\nproject that's then already better than how I left this one.\n\nCheers,\nSybren\n\n\n---------------------------------------------\n\n# Pure Python RSA implementation\n\n[![PyPI](https://img.shields.io/pypi/v/rsa.svg)](https://pypi.org/project/rsa/)\n[![Build Status](https://travis-ci.org/sybrenstuvel/python-rsa.svg?branch=master)](https://travis-ci.org/sybrenstuvel/python-rsa)\n[![Coverage Status](https://coveralls.io/repos/github/sybrenstuvel/python-rsa/badge.svg?branch=master)](https://coveralls.io/github/sybrenstuvel/python-rsa?branch=master)\n[![Code Climate](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)\n\n[Python-RSA](https://stuvel.eu/rsa) is a pure-Python RSA implementation. It supports\nencryption and decryption, signing and verifying signatures, and key\ngeneration according to PKCS#1 version 1.5. It can be used as a Python\nlibrary as well as on the commandline. The code was mostly written by\nSybren A.  Stüvel.\n\nDocumentation can be found at the [Python-RSA homepage](https://stuvel.eu/rsa). For all changes, check [the changelog](https://github.com/sybrenstuvel/python-rsa/blob/master/CHANGELOG.md).\n\nDownload and install using:\n\n    pip install rsa\n\nor download it from the [Python Package Index](https://pypi.org/project/rsa/).\n\nThe source code is maintained at [GitHub](https://github.com/sybrenstuvel/python-rsa/) and is\nlicensed under the [Apache License, version 2.0](https://www.apache.org/licenses/LICENSE-2.0)\n\n## Security\n\nBecause of how Python internally stores numbers, it is very hard (if not impossible) to make a pure-Python program secure against timing attacks. This library is no exception, so use it with care. See https://securitypitfalls.wordpress.com/2018/08/03/constant-time-compare-in-python/ for more info.\n\n## Setup of Development Environment\n\n```\npython3 -m venv .venv\n. ./.venv/bin/activate\npip install poetry\npoetry install\n```\n\n## Publishing a New Release\n\nSince this project is considered critical on the Python Package Index,\ntwo-factor authentication is required. For uploading packages to PyPi, an API\nkey is required; username+password will not work.\n\nFirst, generate an API token at https://pypi.org/manage/account/token/. Then,\nuse this token when publishing instead of your username and password.\n\nAs username, use `__token__`.\nAs password, use the token itself, including the `pypi-` prefix.\n\nSee https://pypi.org/help/#apitoken for help using API tokens to publish. This\nis what I have in `~/.pypirc`:\n\n```\n[distutils]\nindex-servers =\n    rsa\n\n# Use `twine upload -r rsa` to upload with this token.\n[rsa]\n  repository = https://upload.pypi.org/legacy/\n  username = __token__\n  password = pypi-token\n```\n\n```\n. ./.venv/bin/activate\npip install twine\n\npoetry build\ntwine check dist/rsa-4.9.1.tar.gz dist/rsa-4.9.1-*.whl\ntwine upload -r rsa dist/rsa-4.9.1.tar.gz dist/rsa-4.9.1-*.whl\n```\n\nThe `pip install twine` is necessary as Python-RSA requires Python >= 3.6, and\nTwine requires at least version 3.7. This means Poetry refuses to add it as\ndependency.\n\n",
+        "description_content_type": "text/markdown",
+        "docs_url": null,
+        "download_url": null,
+        "downloads": {
+          "last_day": -1,
+          "last_month": -1,
+          "last_week": -1
+        },
+        "dynamic": null,
+        "home_page": null,
+        "keywords": null,
+        "license": "Apache-2.0",
+        "license_expression": null,
+        "license_files": null,
+        "maintainer": null,
+        "maintainer_email": null,
+        "name": "rsa",
+        "package_url": "https://pypi.org/project/rsa/",
+        "platform": null,
+        "project_url": "https://pypi.org/project/rsa/",
+        "project_urls": {
+          "Homepage": "https://stuvel.eu/rsa",
+          "Repository": "https://github.com/sybrenstuvel/python-rsa"
+        },
+        "provides_extra": null,
+        "release_url": "https://pypi.org/project/rsa/4.9.1/",
+        "requires_dist": [
+          "pyasn1>=0.1.3"
+        ],
+        "requires_python": "<4,>=3.6",
+        "summary": "Pure-Python RSA implementation",
+        "version": "4.9.1",
+        "yanked": false,
+        "yanked_reason": null
+      },
+      "releases": [
+        {
+          "tag": "1.1",
+          "version": "1.1",
+          "published_at": "2008-04-23T11:27:28Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.2",
+          "version": "1.2",
+          "published_at": "2008-06-06T14:05:49Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.3",
+          "version": "1.3",
+          "published_at": "2009-01-22T15:05:31Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.3.1",
+          "version": "1.3.1",
+          "published_at": "2009-01-23T15:11:50Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.3.2",
+          "version": "1.3.2",
+          "published_at": "2010-02-05T09:57:28.572838Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "1.3.3",
+          "version": "1.3.3",
+          "published_at": "2010-02-05T10:38:04.776558Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "2.0",
+          "version": "2.0",
+          "published_at": "2011-01-09T17:22:23.146028Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "3.0",
+          "version": "3.0",
+          "published_at": "2011-08-05T10:39:26.966809Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "3.0.1",
+          "version": "3.0.1",
+          "published_at": "2011-08-07T16:21:54.483935Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "3.1",
+          "version": "3.1",
+          "published_at": "2012-06-17T12:05:05.722269Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "3.1.1",
+          "version": "3.1.1",
+          "published_at": "2012-06-18T17:16:48.481547Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "3.1.2",
+          "version": "3.1.2",
+          "published_at": "2013-09-15T11:03:35.020636Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "3.1.3",
+          "version": "3.1.3",
+          "published_at": "2014-02-02T11:09:06.621975Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "3.1.4",
+          "version": "3.1.4",
+          "published_at": "2014-02-22T10:26:36.207311Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "3.2",
+          "version": "3.2",
+          "published_at": "2015-07-29T07:36:39.976210Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "3.2.2",
+          "version": "3.2.2",
+          "published_at": "2015-11-05T15:35:48.698811Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "3.2.3",
+          "version": "3.2.3",
+          "published_at": "2015-11-05T20:35:26.298162Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "3.3",
+          "version": "3.3",
+          "published_at": "2016-01-13T09:16:38.929554Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "3.4",
+          "version": "3.4",
+          "published_at": "2016-03-17T12:51:43.561652Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "3.4.1",
+          "version": "3.4.1",
+          "published_at": "2016-03-26T12:40:37.584356Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "3.4.2",
+          "version": "3.4.2",
+          "published_at": "2016-03-29T13:16:23.973963Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "4.0",
+          "version": "4.0",
+          "published_at": "2018-09-16T11:43:44.684341Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "4.1",
+          "version": "4.1",
+          "published_at": "2020-06-10T10:26:47.257661Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "4.1.1",
+          "version": "4.1.1",
+          "published_at": "2020-06-11T17:40:46.080697Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "4.2",
+          "version": "4.2",
+          "published_at": "2020-06-11T18:26:32.227413Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "4.3",
+          "version": "4.3",
+          "published_at": "2020-06-12T17:49:15.691207Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "4.4",
+          "version": "4.4",
+          "published_at": "2020-06-12T17:49:16.884531Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "4.4.1",
+          "version": "4.4.1",
+          "published_at": "2020-06-12T17:53:44.520980Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "4.5",
+          "version": "4.5",
+          "published_at": "2020-06-12T20:25:43.381043Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "4.6",
+          "version": "4.6",
+          "published_at": "2020-06-12T20:25:46.974669Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "4.7",
+          "version": "4.7",
+          "published_at": "2021-01-10T10:45:35.995019Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "4.7.1",
+          "version": "4.7.1",
+          "published_at": "2021-02-15T20:45:54.287758Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "4.7.2",
+          "version": "4.7.2",
+          "published_at": "2021-02-24T10:55:03.550780Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "4.8",
+          "version": "4.8",
+          "published_at": "2021-11-24T10:09:16.631511Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "4.9",
+          "version": "4.9",
+          "published_at": "2022-07-20T10:28:34.978992Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "4.9.1",
+          "version": "4.9.1",
+          "published_at": "2025-04-16T09:51:17.142309Z",
+          "source": "PyPI JSON API"
+        },
+        {
+          "tag": "3.2.1",
+          "version": "3.2.1",
+          "published_at": null,
+          "source": "PyPI JSON API (unknown date)"
+        }
+      ],
+      "github_repo": "sybrenstuvel/python-rsa",
+      "default_branch": "main",
+      "repo_verification": "Verified via PyPI project_urls['Repository'] -> https://github.com/sybrenstuvel/python-rsa | Verified via GitHub API: sybrenstuvel/python-rsa (default branch: 'main')",
+      "security_policy_path": "SECURITY.md",
+      "security_policy_url": "https://github.com/sybrenstuvel/python-rsa/blob/main/SECURITY.md",
+      "retrieval_status": "FOUND",
+      "retrieval_reason": "Successfully retrieved from main/SECURITY.md",
+      "raw_policy_text": "# Security Policy\n\n## Supported Versions\n\nSecurity updates are applied only to the latest release.\n\n## Reporting a Vulnerability\n\nIf you have discovered a security vulnerability in this project, please report it privately. **Do not disclose it as a public issue.** This gives us time to work with you to fix the issue before public exposure, reducing the chance that the exploit will be used before a patch is released.\n\nPlease disclose it by email to <sybren@stuvel.eu>.\n\nThis project is maintained by a team of volunteers on a reasonable-effort basis. As such, vulnerabilities will be handled and/or disclosed in a best effort base.\n",
+      "preprocessed_text": "# Security Policy\n\n## Supported Versions\n\nSecurity updates are applied only to the latest release.\n\n## Reporting a Vulnerability\n\nIf you have discovered a security vulnerability in this project, please report it privately. **Do not disclose it as a public issue.** This gives us time to work with you to fix the issue before public exposure, reducing the chance that the exploit will be used before a patch is released.\n\nPlease disclose it by email to <sybren@stuvel.eu>.\n\nThis project is maintained by a team of volunteers on a reasonable-effort basis. As such, vulnerabilities will be handled and/or disclosed in a best effort base.",
+      "prioritized_text": "### [Prioritized Version Support Scope]\n## Supported Versions\n\nSecurity updates are applied only to the latest release.\n\n### [General Security Policy Context]\n# Security Policy\n\n## Reporting a Vulnerability\n\nIf you have discovered a security vulnerability in this project, please report it privately. **Do not disclose it as a public issue.** This gives us time to work with you to fix the issue before public exposure, reducing the chance that the exploit will be used before a patch is released.\n\nPlease disclose it by email to <sybren@stuvel.eu>.\n\nThis project is maintained by a team of volunteers on a reasonable-effort basis. As such, vulnerabilities will be handled and/or disclosed in a best effort base.",
+      "policy_sections": {
+        "supported_versions": "<!-- L3-L6 -->\n## Supported Versions\n\nSecurity updates are applied only to the latest release.",
+        "reporting": "<!-- L7-L13 -->\n## Reporting a Vulnerability\n\nIf you have discovered a security vulnerability in this project, please report it privately. **Do not disclose it as a public issue.** This gives us time to work with you to fix the issue before public exposure, reducing the chance that the exploit will be used before a patch is released.\n\nPlease disclose it by email to <sybren@stuvel.eu>.\n\nThis project is maintained by a team of volunteers on a reasonable-effort basis. As such, vulnerabilities will be handled and/or disclosed in a best effort base.",
+        "full_preprocessed_text": "# Security Policy\n\n## Supported Versions\n\nSecurity updates are applied only to the latest release.\n\n## Reporting a Vulnerability\n\nIf you have discovered a security vulnerability in this project, please report it privately. **Do not disclose it as a public issue.** This gives us time to work with you to fix the issue before public exposure, reducing the chance that the exploit will be used before a patch is released.\n\nPlease disclose it by email to <sybren@stuvel.eu>.\n\nThis project is maintained by a team of volunteers on a reasonable-effort basis. As such, vulnerabilities will be handled and/or disclosed in a best effort base.",
+        "segments": [
+          {
+            "heading": "Security Policy",
+            "level": 1,
+            "line_start": 1,
+            "line_end": 2,
+            "raw_content": "# Security Policy\n",
+            "cleaned_content": "# Security Policy",
+            "section_type": "general"
+          },
+          {
+            "heading": "Supported Versions",
+            "level": 2,
+            "line_start": 3,
+            "line_end": 6,
+            "raw_content": "## Supported Versions\n\nSecurity updates are applied only to the latest release.\n",
+            "cleaned_content": "## Supported Versions\n\nSecurity updates are applied only to the latest release.",
+            "section_type": "supported_versions"
+          },
+          {
+            "heading": "Reporting a Vulnerability",
+            "level": 2,
+            "line_start": 7,
+            "line_end": 13,
+            "raw_content": "## Reporting a Vulnerability\n\nIf you have discovered a security vulnerability in this project, please report it privately. **Do not disclose it as a public issue.** This gives us time to work with you to fix the issue before public exposure, reducing the chance that the exploit will be used before a patch is released.\n\nPlease disclose it by email to <sybren@stuvel.eu>.\n\nThis project is maintained by a team of volunteers on a reasonable-effort basis. As such, vulnerabilities will be handled and/or disclosed in a best effort base.",
+            "cleaned_content": "## Reporting a Vulnerability\n\nIf you have discovered a security vulnerability in this project, please report it privately. **Do not disclose it as a public issue.** This gives us time to work with you to fix the issue before public exposure, reducing the chance that the exploit will be used before a patch is released.\n\nPlease disclose it by email to <sybren@stuvel.eu>.\n\nThis project is maintained by a team of volunteers on a reasonable-effort basis. As such, vulnerabilities will be handled and/or disclosed in a best effort base.",
+            "section_type": "vulnerability_reporting"
+          }
+        ],
+        "line_references": {
+          "Security Policy": {
+            "line_start": 1,
+            "line_end": 2,
+            "section_type": "general"
+          },
+          "Supported Versions": {
+            "line_start": 3,
+            "line_end": 6,
+            "section_type": "supported_versions"
+          },
+          "Reporting a Vulnerability": {
+            "line_start": 7,
+            "line_end": 13,
+            "section_type": "vulnerability_reporting"
+          }
+        },
+        "version_section_detail": {
+          "found": true,
+          "heading": "Supported Versions",
+          "line_start": 3,
+          "line_end": 6,
+          "raw_content": "## Supported Versions\n\nSecurity updates are applied only to the latest release.\n",
+          "cleaned_content": "## Supported Versions\n\nSecurity updates are applied only to the latest release.",
+          "tables": [],
+          "list_items": []
+        }
+      },
+      "line_references": {
+        "Security Policy": {
+          "line_start": 1,
+          "line_end": 2,
+          "section_type": "general"
+        },
+        "Supported Versions": {
+          "line_start": 3,
+          "line_end": 6,
+          "section_type": "supported_versions"
+        },
+        "Reporting a Vulnerability": {
+          "line_start": 7,
+          "line_end": 13,
+          "section_type": "vulnerability_reporting"
+        }
+      },
+      "version_section_detail": {
+        "found": true,
+        "heading": "Supported Versions",
+        "line_start": 3,
+        "line_end": 6,
+        "raw_content": "## Supported Versions\n\nSecurity updates are applied only to the latest release.\n",
+        "cleaned_content": "## Supported Versions\n\nSecurity updates are applied only to the latest release.",
+        "tables": [],
+        "list_items": []
+      },
+      "has_version_support_statement": true,
+      "repo_metadata": {
+        "stars": 487,
+        "created_at": "2016-01-21T12:53:34+00:00",
+        "pushed_at": "2025-04-16T09:48:11+00:00",
+        "archived": true,
+        "fork": false,
+        "html_url": "https://github.com/sybrenstuvel/python-rsa"
+      },
+      "policy_word_count": 103
+    },
+    "mapping_uncertain": true,
+    "layer2": {
+      "total_releases": 37,
+      "total_vulnerabilities": 3,
+      "normalized_scope": [
+        "==4.9.1"
+      ],
+      "supported_releases_count": 1,
+      "source_diagnostics": {
+        "pypi": {
+          "status": "SUCCESS",
+          "count": 37,
+          "endpoint": "pypi.org/pypi/<pkg>/json"
+        },
+        "osv": {
+          "status": "SUCCESS",
+          "count": 6,
+          "endpoint": "https://api.osv.dev/v1/query",
+          "error": null,
+          "pages": 1
+        },
+        "github_advisory": {
+          "status": "SUCCESS",
+          "count": 3,
+          "endpoint": "https://api.github.com/advisories",
+          "error": null,
+          "pages": 1
+        },
+        "nvd": {
+          "status": "SUCCESS",
+          "count": 3,
+          "endpoint": "https://services.nvd.nist.gov/rest/json/cves/2.0",
+          "error": null,
+          "retrieved": 3,
+          "not_found": 0,
+          "failed": 0,
+          "skipped": 0,
+          "cached": 0,
+          "api_key_used": true,
+          "api_key_rejected": false,
+          "max_lookups": 250,
+          "delay_seconds": 0.6
+        }
+      },
+      "vulnerabilities": [
+        {
+          "id": "CVE-2020-13757",
+          "osv_id": "GHSA-537h-rv9q-vvph",
+          "cve_ids": [
+            "CVE-2020-13757"
+          ],
+          "ghsa_ids": [
+            "GHSA-537h-rv9q-vvph"
+          ],
+          "aliases": [
+            "CVE-2020-13757",
+            "PYSEC-2020-99",
+            "GHSA-537h-rv9q-vvph"
+          ],
+          "summary": "Python-RSA decryption of ciphertext leads to DoS",
+          "details": "Python-RSA before 4.1 ignores leading '\\0' bytes during decryption of ciphertext. This could conceivably have a security-relevant impact, e.g., by helping an attacker to infer that an application uses Python-RSA, or if the length of accepted ciphertext affects application behavior (such as by causing excessive memory allocation).",
+          "published_at": "2021-03-24T18:24:39Z",
+          "modified_at": "2024-10-21T22:00:53.647822Z",
+          "affected_versions": [
+            "1.1",
+            "1.2",
+            "1.3",
+            "1.3.1",
+            "1.3.2",
+            "1.3.3",
+            "2.0",
+            "3.0",
+            "3.0.1",
+            "3.1",
+            "3.1.1",
+            "3.1.2",
+            "3.1.3",
+            "3.1.4",
+            "3.2",
+            "3.2.1",
+            "3.2.2",
+            "3.2.3",
+            "3.3",
+            "3.4",
+            "3.4.1",
+            "3.4.2",
+            "4.0"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "4.1"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "4.1"
+                }
+              ],
+              "vulnerable_version_range": "< 4.1"
+            }
+          ],
+          "fixed_versions": [
+            "4.1"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory",
+            "NVD"
+          ],
+          "database_source": "OSV / GitHub Advisory / NVD",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-537h-rv9q-vvph",
+          "nvd_published_at": "2020-06-01T19:15:10.067"
+        },
+        {
+          "id": "CVE-2016-1494",
+          "osv_id": "GHSA-8rjr-6qq5-pj9p",
+          "cve_ids": [
+            "CVE-2016-1494"
+          ],
+          "ghsa_ids": [
+            "GHSA-8rjr-6qq5-pj9p"
+          ],
+          "aliases": [
+            "CVE-2016-1494",
+            "PYSEC-2016-10",
+            "GHSA-8rjr-6qq5-pj9p"
+          ],
+          "summary": "Python RSA allows attackers to spoof signatures",
+          "details": "The verify function in the RSA package for Python (Python-RSA) before 3.3 allows attackers to spoof signatures with a small public exponent via crafted signature padding, aka a BERserk attack.",
+          "published_at": "2022-05-14T00:59:49Z",
+          "modified_at": "2024-10-21T22:10:52.441583Z",
+          "affected_versions": [
+            "1.1",
+            "1.2",
+            "1.3",
+            "1.3.1",
+            "1.3.2",
+            "1.3.3",
+            "2.0",
+            "3.0",
+            "3.0.1",
+            "3.1",
+            "3.1.1",
+            "3.1.2",
+            "3.1.3",
+            "3.1.4",
+            "3.2",
+            "3.2.1",
+            "3.2.2",
+            "3.2.3"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "3.3"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "3.3"
+                }
+              ],
+              "vulnerable_version_range": "< 3.3"
+            }
+          ],
+          "fixed_versions": [
+            "3.3"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory",
+            "NVD"
+          ],
+          "database_source": "OSV / GitHub Advisory / NVD",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-8rjr-6qq5-pj9p",
+          "nvd_published_at": "2016-01-13T15:59:02.787"
+        },
+        {
+          "id": "CVE-2020-25658",
+          "osv_id": "GHSA-xrx6-fmxq-rjj2",
+          "cve_ids": [
+            "CVE-2020-25658"
+          ],
+          "ghsa_ids": [
+            "GHSA-xrx6-fmxq-rjj2"
+          ],
+          "aliases": [
+            "CVE-2020-25658",
+            "PYSEC-2020-100",
+            "GHSA-xrx6-fmxq-rjj2"
+          ],
+          "summary": "Timing attacks in python-rsa",
+          "details": "It was found that python-rsa is vulnerable to Bleichenbacher timing attacks. An attacker can use this flaw via the RSA decryption API to decrypt parts of the cipher text encrypted with RSA",
+          "published_at": "2021-04-30T17:35:15Z",
+          "modified_at": "2024-10-26T22:49:36.190678Z",
+          "affected_versions": [
+            "3.0",
+            "3.0.1",
+            "3.1",
+            "3.1.1",
+            "3.1.2",
+            "3.1.3",
+            "3.1.4",
+            "3.2",
+            "3.2.1",
+            "3.2.2",
+            "3.2.3",
+            "3.3",
+            "3.4",
+            "3.4.1",
+            "3.4.2",
+            "4.0",
+            "4.1",
+            "4.1.1",
+            "4.2",
+            "4.3",
+            "4.4",
+            "4.4.1",
+            "4.5",
+            "4.6"
+          ],
+          "affected_ranges": [
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "2.1"
+                },
+                {
+                  "fixed": "4.7"
+                }
+              ],
+              "vulnerable_version_range": null
+            },
+            {
+              "type": "ECOSYSTEM",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "4.7"
+                }
+              ],
+              "vulnerable_version_range": ">= 2.1, < 4.7"
+            }
+          ],
+          "fixed_versions": [
+            "4.7"
+          ],
+          "is_patched": true,
+          "sources": [
+            "OSV",
+            "GitHub Advisory",
+            "NVD"
+          ],
+          "database_source": "OSV / GitHub Advisory / NVD",
+          "advisory_url": "https://osv.dev/vulnerability/GHSA-xrx6-fmxq-rjj2",
+          "nvd_published_at": "2020-11-12T14:15:22.877"
+        }
+      ]
+    }
+  }
+}
