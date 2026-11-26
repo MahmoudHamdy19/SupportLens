@@ -2060,67 +2060,82 @@
         "completed_by": 1,
         "result": [
           {
-            "value": {
-              "start": 271,
-              "end": 280,
-              "text": "currently",
-              "labels": [
-                "TemporalExpression"
-              ]
-            },
-            "id": "span_temp_317",
+            "id": "span_commit_2_317",
             "from_name": "spans",
             "to_name": "policy",
             "type": "labels",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "start": 315,
+              "end": 392,
+              "text": "| Version | End of life |\n| ------- | ----------- |\n| 2.x     | TBD         |",
+              "labels": [
+                "CommitmentText"
+              ]
+            }
           },
           {
+            "id": "span_v_2_317_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 369,
+              "end": 372,
+              "text": "2.x",
+              "labels": [
+                "VersionExpression"
               ]
-            },
-            "id": "choice_tau_317",
+            }
+          },
+          {
+            "id": "choice_tau_2_317",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
-          },
-          {
+            "origin": "manual",
             "value": {
               "choices": [
-                "release_time"
+                "explicit_range"
               ]
-            },
-            "id": "choice_temp_317",
+            }
+          },
+          {
+            "id": "choice_temp_2_317",
             "from_name": "temporal_reference",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
-          },
-          {
+            "origin": "manual",
             "value": {
               "choices": [
-                "Unmeasurable Commitment"
+                "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_verdict_317",
+            }
+          },
+          {
+            "id": "choice_verdict_2_317",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Partially Consistent"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Table contains no active supported versions."
-              ]
-            },
-            "id": "notes_317",
+            "id": "notes_2_317",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit table supporting 2.x."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -2130,7 +2145,7 @@
         "draft_created_at": null,
         "lead_time": 113.4,
         "prediction": {},
-        "result_count": 5,
+        "result_count": 6,
         "unique_id": "e54cf9fb-e0ac-4f15-976f-05507b3a3adf",
         "import_id": null,
         "last_action": null,
@@ -2444,52 +2459,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_320",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 129,
+              "end": 195,
+              "text": "In turn there's only one supported version and this is the latest.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_320",
+            }
+          },
+          {
+            "id": "span_v_2_320_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 188,
+              "end": 194,
+              "text": "latest",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_320",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_320",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_320",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_320",
+            "id": "choice_verdict_2_320",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Prose commitment: tau=ambiguous, versions=[]."
-              ]
-            },
-            "id": "notes_320",
+            "id": "notes_2_320",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit latest version commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -2499,7 +2544,7 @@
         "draft_created_at": null,
         "lead_time": 90.8,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "883fb831-a44c-4843-848f-9972663474c4",
         "import_id": null,
         "last_action": null,
@@ -3212,52 +3257,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_326",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 119,
+              "end": 158,
+              "text": "The latest version of jsf is supported.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_326",
+            }
+          },
+          {
+            "id": "span_v_2_326_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 123,
+              "end": 137,
+              "text": "latest version",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_326",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_326",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_326",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_326",
+            "id": "choice_verdict_2_326",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "No security commitment found; policy only covers reporting or is empty."
-              ]
-            },
-            "id": "notes_326",
+            "id": "notes_2_326",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit latest version commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -3267,7 +3342,7 @@
         "draft_created_at": null,
         "lead_time": 71.7,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "3b4f7cb1-f62e-4cc9-8e8a-4a839845b232",
         "import_id": null,
         "last_action": null,
@@ -7880,52 +7955,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_362",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 138,
+              "end": 183,
+              "text": "Therefore we only support the latest version.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_362",
+            }
+          },
+          {
+            "id": "span_v_2_362_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 168,
+              "end": 174,
+              "text": "latest",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_362",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_362",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_362",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_362",
+            "id": "choice_verdict_2_362",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Prose commitment: tau=ambiguous, versions=[]."
-              ]
-            },
-            "id": "notes_362",
+            "id": "notes_2_362",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit latest version commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -7935,7 +8040,7 @@
         "draft_created_at": null,
         "lead_time": 82.1,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "27af2262-f73e-4391-964c-e3a1094d9fa4",
         "import_id": null,
         "last_action": null,
@@ -9090,52 +9195,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_372",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 42,
+              "end": 131,
+              "text": "Security vulnerability reports will be accepted and acted upon for all released versions.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_372",
+            }
+          },
+          {
+            "id": "span_v_2_372_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 109,
+              "end": 130,
+              "text": "all released versions",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_372",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "all_versions"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_372",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_372",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_372",
+            "id": "choice_verdict_2_372",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Prose commitment: tau=ambiguous, versions=[]."
-              ]
-            },
-            "id": "notes_372",
+            "id": "notes_2_372",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit all versions commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -9145,7 +9280,7 @@
         "draft_created_at": null,
         "lead_time": 58.6,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "1dc271a7-d9d4-434e-8de2-cc5285afa60f",
         "import_id": null,
         "last_action": null,
@@ -10094,52 +10229,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_380",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 150,
+              "end": 196,
+              "text": "Therefore, we only support the latest version.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_380",
+            }
+          },
+          {
+            "id": "span_v_2_380_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 181,
+              "end": 187,
+              "text": "latest",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_380",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_380",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_380",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_380",
+            "id": "choice_verdict_2_380",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Annotator 2 judged policy wording as ambiguous regarding concrete version scope."
-              ]
-            },
-            "id": "notes_380",
+            "id": "notes_2_380",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit latest version commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -10149,7 +10314,7 @@
         "draft_created_at": null,
         "lead_time": 103.8,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "0377f945-e86a-4782-9ebe-1ed672d0becc",
         "import_id": null,
         "last_action": null,
@@ -10980,67 +11145,82 @@
         "completed_by": 1,
         "result": [
           {
-            "value": {
-              "start": 258,
-              "end": 267,
-              "text": "currently",
-              "labels": [
-                "TemporalExpression"
-              ]
-            },
-            "id": "span_temp_387",
+            "id": "span_commit_2_387",
             "from_name": "spans",
             "to_name": "policy",
             "type": "labels",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "start": 42,
+              "end": 102,
+              "text": "Folium only supports the most recent version of the package.",
+              "labels": [
+                "CommitmentText"
+              ]
+            }
           },
           {
+            "id": "span_v_2_387_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 67,
+              "end": 86,
+              "text": "most recent version",
+              "labels": [
+                "VersionExpression"
               ]
-            },
-            "id": "choice_tau_387",
+            }
+          },
+          {
+            "id": "choice_tau_2_387",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
-          },
-          {
+            "origin": "manual",
             "value": {
               "choices": [
-                "release_time"
+                "latest_only"
               ]
-            },
-            "id": "choice_temp_387",
+            }
+          },
+          {
+            "id": "choice_temp_2_387",
             "from_name": "temporal_reference",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
-          },
-          {
+            "origin": "manual",
             "value": {
               "choices": [
-                "Unmeasurable Commitment"
+                "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_verdict_387",
+            }
+          },
+          {
+            "id": "choice_verdict_2_387",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Prose commitment: tau=ambiguous, versions=[]."
-              ]
-            },
-            "id": "notes_387",
+            "id": "notes_2_387",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit most recent version commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -11050,7 +11230,7 @@
         "draft_created_at": null,
         "lead_time": 105.1,
         "prediction": {},
-        "result_count": 5,
+        "result_count": 6,
         "unique_id": "3875d3cb-9aa4-4c0c-971d-6a7f33cd3672",
         "import_id": null,
         "last_action": null,
@@ -12162,52 +12342,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_396",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 140,
+              "end": 185,
+              "text": "Therefore we only support the latest version.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_396",
+            }
+          },
+          {
+            "id": "span_v_2_396_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 170,
+              "end": 176,
+              "text": "latest",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_396",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_396",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_396",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_396",
+            "id": "choice_verdict_2_396",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Annotator 2 judged policy wording as ambiguous regarding concrete version scope."
-              ]
-            },
-            "id": "notes_396",
+            "id": "notes_2_396",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit latest version commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -12217,7 +12427,7 @@
         "draft_created_at": null,
         "lead_time": 66.5,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "485bd7e4-a619-42b5-a964-c09bb3089d15",
         "import_id": null,
         "last_action": null,
@@ -13535,52 +13745,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_407",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 42,
+              "end": 110,
+              "text": "Only the current version of the library will receive security fixes.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_407",
+            }
+          },
+          {
+            "id": "span_v_2_407_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 51,
+              "end": 66,
+              "text": "current version",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_407",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_407",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_407",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_407",
+            "id": "choice_verdict_2_407",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Prose commitment: tau=ambiguous, versions=[]."
-              ]
-            },
-            "id": "notes_407",
+            "id": "notes_2_407",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit current version commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -13590,7 +13830,7 @@
         "draft_created_at": null,
         "lead_time": 59.6,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "60b14cfa-a5fa-4d15-88a4-2317078cca7b",
         "import_id": null,
         "last_action": null,
@@ -13904,52 +14144,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_410",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 316,
+              "end": 428,
+              "text": "In general, the maintainers of this project provide security updates only for the most recent published release.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_410",
+            }
+          },
+          {
+            "id": "span_v_2_410_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 398,
+              "end": 427,
+              "text": "most recent published release",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_410",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_410",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_410",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_410",
+            "id": "choice_verdict_2_410",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Prose commitment: tau=ambiguous, versions=[]."
-              ]
-            },
-            "id": "notes_410",
+            "id": "notes_2_410",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit most recent release commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -13959,7 +14229,7 @@
         "draft_created_at": null,
         "lead_time": 79.5,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "d177ea52-a0b6-418b-afd5-bc7f1494595d",
         "import_id": null,
         "last_action": null,
@@ -15545,52 +15815,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_422",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 317,
+              "end": 429,
+              "text": "In general, the maintainers of this project provide security updates only for the most recent published release.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_422",
+            }
+          },
+          {
+            "id": "span_v_2_422_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 399,
+              "end": 428,
+              "text": "most recent published release",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_422",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_422",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_422",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_422",
+            "id": "choice_verdict_2_422",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Prose commitment: tau=ambiguous, versions=[]."
-              ]
-            },
-            "id": "notes_422",
+            "id": "notes_2_422",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit most recent release commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -15600,7 +15900,7 @@
         "draft_created_at": null,
         "lead_time": 60.1,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "df06ae85-79e0-4f47-976e-fc28fb9fa0b7",
         "import_id": null,
         "last_action": null,
@@ -17909,52 +18209,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_440",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 28,
+              "end": 142,
+              "text": "Our policy for security related issues is to fix related issues within our power on the most recent major release.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_440",
+            }
+          },
+          {
+            "id": "span_v_2_440_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 116,
+              "end": 141,
+              "text": "most recent major release",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_440",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_440",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_440",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_440",
+            "id": "choice_verdict_2_440",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "No security commitment found; policy only covers reporting or is empty."
-              ]
-            },
-            "id": "notes_440",
+            "id": "notes_2_440",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit most recent major release commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -17964,7 +18294,7 @@
         "draft_created_at": null,
         "lead_time": 83.4,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "f260b8d0-dca4-42b2-adad-186c5d83c017",
         "import_id": null,
         "last_action": null,
@@ -18928,52 +19258,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_448",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 143,
+              "end": 208,
+              "text": "Only the most recent version of py-spy will get security updates.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_448",
+            }
+          },
+          {
+            "id": "span_v_2_448_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 152,
+              "end": 171,
+              "text": "most recent version",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_448",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_448",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_448",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_448",
+            "id": "choice_verdict_2_448",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Prose commitment: tau=ambiguous, versions=[]."
-              ]
-            },
-            "id": "notes_448",
+            "id": "notes_2_448",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit most recent version commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -18983,7 +19343,7 @@
         "draft_created_at": null,
         "lead_time": 85.0,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "57f2674d-2da8-45d2-a3f9-ab0f7ea2a648",
         "import_id": null,
         "last_action": null,
@@ -20007,52 +20367,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_456",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 309,
+              "end": 421,
+              "text": "In general, the maintainers of this project provide security updates only for the most recent published release.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_456",
+            }
+          },
+          {
+            "id": "span_v_2_456_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 391,
+              "end": 420,
+              "text": "most recent published release",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_456",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_456",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_456",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_456",
+            "id": "choice_verdict_2_456",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Prose commitment: tau=ambiguous, versions=[]."
-              ]
-            },
-            "id": "notes_456",
+            "id": "notes_2_456",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit most recent release commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -20062,7 +20452,7 @@
         "draft_created_at": null,
         "lead_time": 54.8,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "2affdbee-acd5-4e52-a40e-9688bfc5cb52",
         "import_id": null,
         "last_action": null,
@@ -22180,52 +22570,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_472",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 144,
+              "end": 190,
+              "text": "Therefore, we only support the latest version.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_472",
+            }
+          },
+          {
+            "id": "span_v_2_472_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 175,
+              "end": 181,
+              "text": "latest",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_472",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_472",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_472",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_472",
+            "id": "choice_verdict_2_472",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Prose commitment: tau=ambiguous, versions=[]."
-              ]
-            },
-            "id": "notes_472",
+            "id": "notes_2_472",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit latest version commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -22235,7 +22655,7 @@
         "draft_created_at": null,
         "lead_time": 107.9,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "a9fe06a2-8604-4a8f-926f-6b3a08e9315c",
         "import_id": null,
         "last_action": null,
@@ -24263,52 +24683,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_488",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 93,
+              "end": 128,
+              "text": "- The latest django-anymail release",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_488",
+            }
+          },
+          {
+            "id": "span_v_2_488_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 99,
+              "end": 105,
+              "text": "latest",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_488",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_488",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_488",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_488",
+            "id": "choice_verdict_2_488",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Prose commitment: tau=ambiguous, versions=[]."
-              ]
-            },
-            "id": "notes_488",
+            "id": "notes_2_488",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit latest release commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -24318,7 +24768,7 @@
         "draft_created_at": null,
         "lead_time": 107.5,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "bb9dd18f-05a5-492a-9571-ad2074dda8db",
         "import_id": null,
         "last_action": null,
@@ -26153,52 +26603,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_503",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 28,
+              "end": 142,
+              "text": "Our policy for security related issues is to fix related issues within our power on the most recent major release.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_503",
+            }
+          },
+          {
+            "id": "span_v_2_503_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 116,
+              "end": 141,
+              "text": "most recent major release",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_503",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_503",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_503",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_503",
+            "id": "choice_verdict_2_503",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "No security commitment found; policy only covers reporting or is empty."
-              ]
-            },
-            "id": "notes_503",
+            "id": "notes_2_503",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit most recent major release commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -26208,7 +26688,7 @@
         "draft_created_at": null,
         "lead_time": 40.2,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "0b4cf993-9300-4dbf-94d7-f547507aeb31",
         "import_id": null,
         "last_action": null,
@@ -28399,52 +28879,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_520",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 144,
+              "end": 190,
+              "text": "Therefore, we only support the latest version.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_520",
+            }
+          },
+          {
+            "id": "span_v_2_520_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 175,
+              "end": 181,
+              "text": "latest",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_520",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_520",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_520",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_520",
+            "id": "choice_verdict_2_520",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Annotator 2 judged policy wording as ambiguous regarding concrete version scope."
-              ]
-            },
-            "id": "notes_520",
+            "id": "notes_2_520",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit latest version commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -28454,7 +28964,7 @@
         "draft_created_at": null,
         "lead_time": 86.9,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "f67c25d3-21b2-440f-a4f2-0be3a0a46d0a",
         "import_id": null,
         "last_action": null,
@@ -28620,52 +29130,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_522",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 151,
+              "end": 227,
+              "text": "any secruity relevant fix will be available in the most recent version only.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_522",
+            }
+          },
+          {
+            "id": "span_v_2_522_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 202,
+              "end": 221,
+              "text": "most recent version",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_522",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_522",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_522",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_522",
+            "id": "choice_verdict_2_522",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Prose commitment: tau=ambiguous, versions=[]."
-              ]
-            },
-            "id": "notes_522",
+            "id": "notes_2_522",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit most recent version commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -28675,7 +29215,7 @@
         "draft_created_at": null,
         "lead_time": 97.6,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "a01c2e99-abb7-4970-be20-c3de10e25086",
         "import_id": null,
         "last_action": null,
@@ -36821,67 +37361,97 @@
         "completed_by": 1,
         "result": [
           {
-            "value": {
-              "start": 122,
-              "end": 138,
-              "text": "in the last year",
-              "labels": [
-                "TemporalExpression"
-              ]
-            },
-            "id": "span_temp_584",
+            "id": "span_commit_2_584",
             "from_name": "spans",
             "to_name": "policy",
             "type": "labels",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "start": 322,
+              "end": 431,
+              "text": "- Ops 2.23 is the current LTS release.\n- Ops 3.x is the current release line and is under active development.",
+              "labels": [
+                "CommitmentText"
+              ]
+            }
           },
           {
+            "id": "span_v_2_584_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 328,
+              "end": 332,
+              "text": "2.23",
+              "labels": [
+                "VersionExpression"
               ]
-            },
-            "id": "choice_tau_584",
+            }
+          },
+          {
+            "id": "span_v_2_584_1",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 367,
+              "end": 370,
+              "text": "3.x",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_584",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
-          },
-          {
+            "origin": "manual",
             "value": {
               "choices": [
-                "release_time"
+                "explicit_range"
               ]
-            },
-            "id": "choice_temp_584",
+            }
+          },
+          {
+            "id": "choice_temp_2_584",
             "from_name": "temporal_reference",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
-          },
-          {
+            "origin": "manual",
             "value": {
               "choices": [
-                "Unmeasurable Commitment"
+                "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_verdict_584",
+            }
+          },
+          {
+            "id": "choice_verdict_2_584",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Prose commitment: tau=ambiguous, versions=[]."
-              ]
-            },
-            "id": "notes_584",
+            "id": "notes_2_584",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit list naming lines 2.23 and 3.x."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -36891,7 +37461,7 @@
         "draft_created_at": null,
         "lead_time": 66.4,
         "prediction": {},
-        "result_count": 5,
+        "result_count": 7,
         "unique_id": "da805d74-8b73-4735-b003-a22c4414f856",
         "import_id": null,
         "last_action": null,
@@ -38580,52 +39150,82 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_597",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 412,
+              "end": 524,
+              "text": "The latest versions of FastAPI-Azure-Auth are supported, which means you should always be on the latest release.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_597",
+            }
+          },
+          {
+            "id": "span_v_2_597_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 509,
+              "end": 523,
+              "text": "latest release",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_597",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_597",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_597",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_597",
+            "id": "choice_verdict_2_597",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "No security commitment found; policy only covers reporting or is empty."
-              ]
-            },
-            "id": "notes_597",
+            "id": "notes_2_597",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit latest release commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -38635,7 +39235,7 @@
         "draft_created_at": null,
         "lead_time": 76.2,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 6,
         "unique_id": "3c1b2c9d-26d1-47aa-92bd-f440eac63a4b",
         "import_id": null,
         "last_action": null,
@@ -38816,52 +39416,97 @@
         "completed_by": 1,
         "result": [
           {
+            "id": "span_commit_2_599",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
             "value": {
-              "choices": [
-                "ambiguous"
+              "start": 87,
+              "end": 138,
+              "text": "We only support the latest\nreleased `A.B.x` series.",
+              "labels": [
+                "CommitmentText"
               ]
-            },
-            "id": "choice_tau_599",
+            }
+          },
+          {
+            "id": "span_v_2_599_0",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 107,
+              "end": 113,
+              "text": "latest",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "span_v_2_599_1",
+            "from_name": "spans",
+            "to_name": "policy",
+            "type": "labels",
+            "origin": "manual",
+            "value": {
+              "start": 124,
+              "end": 129,
+              "text": "A.B.x",
+              "labels": [
+                "VersionExpression"
+              ]
+            }
+          },
+          {
+            "id": "choice_tau_2_599",
             "from_name": "support_status",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "latest_only"
+              ]
+            }
           },
           {
+            "id": "choice_temp_2_599",
+            "from_name": "temporal_reference",
+            "to_name": "policy",
+            "type": "choices",
+            "origin": "manual",
             "value": {
               "choices": [
                 "vulnerability_publication_time"
               ]
-            },
-            "id": "choice_temp_599",
-            "from_name": "temporal_reference",
-            "to_name": "policy",
-            "type": "choices",
-            "origin": "manual"
+            }
           },
           {
-            "value": {
-              "choices": [
-                "Unmeasurable Commitment"
-              ]
-            },
-            "id": "choice_verdict_599",
+            "id": "choice_verdict_2_599",
             "from_name": "expected_verdict",
             "to_name": "policy",
             "type": "choices",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "choices": [
+                "Insufficient Evidence"
+              ]
+            }
           },
           {
-            "value": {
-              "text": [
-                "Prose commitment: tau=ambiguous, versions=[]."
-              ]
-            },
-            "id": "notes_599",
+            "id": "notes_2_599",
             "from_name": "notes",
             "to_name": "policy",
             "type": "textarea",
-            "origin": "manual"
+            "origin": "manual",
+            "value": {
+              "text": [
+                "Supervisory audit correction: explicit latest series commitment."
+              ]
+            }
           }
         ],
         "was_cancelled": false,
@@ -38871,7 +39516,7 @@
         "draft_created_at": null,
         "lead_time": 38.0,
         "prediction": {},
-        "result_count": 4,
+        "result_count": 7,
         "unique_id": "c5f60489-8e6b-48e2-bec8-60a2fc4e3a63",
         "import_id": null,
         "last_action": null,

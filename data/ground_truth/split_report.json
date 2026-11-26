@@ -25,8 +25,8 @@
       "rule": "nominal"
     },
     "Partially Consistent": {
-      "total": 8,
-      "train": 6,
+      "total": 9,
+      "train": 7,
       "val": 1,
       "test": 1,
       "rule": "nominal"
@@ -39,41 +39,41 @@
       "rule": "minimum of one record each in validation and test"
     },
     "Insufficient Evidence": {
-      "total": 220,
-      "train": 154,
-      "val": 33,
-      "test": 33,
+      "total": 241,
+      "train": 169,
+      "val": 36,
+      "test": 36,
       "rule": "nominal"
     },
     "Unmeasurable Commitment": {
-      "total": 60,
-      "train": 42,
-      "val": 9,
-      "test": 9,
+      "total": 38,
+      "train": 26,
+      "val": 6,
+      "test": 6,
       "rule": "nominal"
     }
   },
   "class_counts": {
     "train": {
       "Consistent": 7,
-      "Partially Consistent": 6,
+      "Partially Consistent": 7,
       "Potential Inconsistency": 1,
-      "Insufficient Evidence": 154,
-      "Unmeasurable Commitment": 42
+      "Insufficient Evidence": 169,
+      "Unmeasurable Commitment": 26
     },
     "val": {
       "Consistent": 1,
       "Partially Consistent": 1,
       "Potential Inconsistency": 1,
-      "Insufficient Evidence": 33,
-      "Unmeasurable Commitment": 9
+      "Insufficient Evidence": 36,
+      "Unmeasurable Commitment": 6
     },
     "test": {
       "Consistent": 1,
       "Partially Consistent": 1,
       "Potential Inconsistency": 1,
-      "Insufficient Evidence": 33,
-      "Unmeasurable Commitment": 9
+      "Insufficient Evidence": 36,
+      "Unmeasurable Commitment": 6
     }
   },
   "warnings": [
@@ -83,6 +83,6 @@
   ],
   "small_class_rules": "see the module docstring of src/data_pipeline/splits.py",
   "input_file": "C:\\Users\\Mahmoud\\Downloads\\Telegram Desktop\\SupportLens_Final\\SupportLens\\data\\ground_truth\\ground_truth.jsonl",
-  "input_sha256": "0987c459fc515ff1de8ee6b3eb5eb5d099e1641af365f4f1ec7bd9a5f8bef513",
-  "created_at": "2026-11-23T19:27:54+00:00"
+  "input_sha256": "41cb5624a396f485e5df7bd49d7918dba883b4a00cc6643900974178f043d8bf",
+  "created_at": "2026-11-26T16:49:00+00:00"
 }

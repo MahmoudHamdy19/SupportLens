@@ -1,0 +1,184 @@
+[
+  {
+    "package_name": "argcomplete",
+    "type": "latest_only",
+    "commitment_text": "In general, the maintainers of this project provide security updates only for the most recent published release.",
+    "version_expression": [
+      "most recent published release"
+    ],
+    "support_status": "latest_only",
+    "temporal_reference": "vulnerability_publication_time",
+    "temporal_expression": null,
+    "rationale": "Corrected based on supervisory audit: policy explicitly states support only for the most recent published release ('In general, the maintainers of this project provide security updates only for the most recent published release.')."
+  },
+  {
+    "package_name": "argon2-cffi",
+    "type": "latest_only",
+    "commitment_text": "Therefore, we only support the latest version.",
+    "version_expression": [
+      "latest"
+    ],
+    "support_status": "latest_only",
+    "temporal_reference": "vulnerability_publication_time",
+    "temporal_expression": null,
+    "rationale": "Corrected based on supervisory audit: policy explicitly states support for the latest version ('Therefore, we only support the latest version.')."
+  },
+  {
+    "package_name": "fastapi-azure-auth",
+    "type": "latest_only",
+    "commitment_text": "The latest versions of FastAPI-Azure-Auth are supported, which means you should always be on the latest release.",
+    "version_expression": [
+      "latest versions",
+      "latest release"
+    ],
+    "support_status": "latest_only",
+    "temporal_reference": "vulnerability_publication_time",
+    "temporal_expression": null,
+    "rationale": "Corrected based on supervisory audit: policy explicitly states that latest versions are supported."
+  },
+  {
+    "package_name": "folium",
+    "type": "latest_only",
+    "commitment_text": "Folium only supports the most recent version of the package.",
+    "version_expression": [
+      "most recent version"
+    ],
+    "support_status": "latest_only",
+    "temporal_reference": "vulnerability_publication_time",
+    "temporal_expression": null,
+    "rationale": "Corrected based on supervisory audit: policy explicitly states support for the most recent version ('Folium only supports the most recent version of the package.')."
+  },
+  {
+    "package_name": "hatch-fancy-pypi-readme",
+    "type": "latest_only",
+    "commitment_text": "Therefore we only support the latest version.",
+    "version_expression": [
+      "latest"
+    ],
+    "support_status": "latest_only",
+    "temporal_reference": "vulnerability_publication_time",
+    "temporal_expression": null,
+    "rationale": "Corrected based on supervisory audit: policy explicitly states support for the latest version ('Therefore we only support the latest version.')."
+  },
+  {
+    "package_name": "jsf",
+    "type": "latest_only",
+    "commitment_text": "The latest version of jsf is supported with security updates and bug fixes.",
+    "version_expression": [
+      "latest version"
+    ],
+    "support_status": "latest_only",
+    "temporal_reference": "vulnerability_publication_time",
+    "temporal_expression": null,
+    "rationale": "Corrected based on supervisory audit: policy explicitly states the latest version of jsf is supported."
+  },
+  {
+    "package_name": "pem",
+    "type": "latest_only",
+    "commitment_text": "Therefore we only support the latest version.",
+    "version_expression": [
+      "latest"
+    ],
+    "support_status": "latest_only",
+    "temporal_reference": "vulnerability_publication_time",
+    "temporal_expression": null,
+    "rationale": "Corrected based on supervisory audit: policy explicitly states support for the latest version ('Therefore we only support the latest version.')."
+  },
+  {
+    "package_name": "phonenumberslite",
+    "type": "latest_only",
+    "commitment_text": "Only the current version of the library will receive security fixes.",
+    "version_expression": [
+      "current version"
+    ],
+    "support_status": "latest_only",
+    "temporal_reference": "vulnerability_publication_time",
+    "temporal_expression": null,
+    "rationale": "Corrected based on supervisory audit: policy explicitly commits to the current version ('Only the current version of the library will receive security fixes.')."
+  },
+  {
+    "package_name": "pyotp",
+    "type": "latest_only",
+    "commitment_text": "In general, the maintainers of this project provide security updates only for the most recent published release.",
+    "version_expression": [
+      "most recent published release"
+    ],
+    "support_status": "latest_only",
+    "temporal_reference": "vulnerability_publication_time",
+    "temporal_expression": null,
+    "rationale": "Corrected based on supervisory audit: policy explicitly states support only for the most recent published release ('In general, the maintainers of this project provide security updates only for the most recent published release.')."
+  },
+  {
+    "package_name": "pyvista",
+    "type": "all_versions",
+    "commitment_text": "Security vulnerability reports will be accepted and acted upon for all released versions.",
+    "version_expression": [
+      "all released versions"
+    ],
+    "support_status": "all_versions",
+    "temporal_reference": "vulnerability_publication_time",
+    "temporal_expression": null,
+    "rationale": "Corrected based on supervisory audit: policy explicitly commits to supporting all released versions."
+  },
+  {
+    "package_name": "signxml",
+    "type": "latest_only",
+    "commitment_text": "In general, the maintainers of this project provide security updates only for the most recent published release.",
+    "version_expression": [
+      "most recent published release"
+    ],
+    "support_status": "latest_only",
+    "temporal_reference": "vulnerability_publication_time",
+    "temporal_expression": null,
+    "rationale": "Corrected based on supervisory audit: policy explicitly states support only for the most recent published release ('In general, the maintainers of this project provide security updates only for the most recent published release.')."
+  },
+  {
+    "package_name": "sqlparse",
+    "type": "latest_only",
+    "commitment_text": "In turn there's only one supported version and this is the latest.",
+    "version_expression": [
+      "latest"
+    ],
+    "support_status": "latest_only",
+    "temporal_reference": "vulnerability_publication_time",
+    "temporal_expression": null,
+    "rationale": "Corrected based on supervisory audit: policy explicitly names the latest version as the only supported version."
+  },
+  {
+    "package_name": "stamina",
+    "type": "latest_only",
+    "commitment_text": "Therefore, we only support the latest version.",
+    "version_expression": [
+      "latest"
+    ],
+    "support_status": "latest_only",
+    "temporal_reference": "vulnerability_publication_time",
+    "temporal_expression": null,
+    "rationale": "Corrected based on supervisory audit: policy explicitly states support for the latest version ('Therefore, we only support the latest version.')."
+  },
+  {
+    "package_name": "svcs",
+    "type": "latest_only",
+    "commitment_text": "Therefore, we only support the latest version.",
+    "version_expression": [
+      "latest"
+    ],
+    "support_status": "latest_only",
+    "temporal_reference": "vulnerability_publication_time",
+    "temporal_expression": null,
+    "rationale": "Corrected based on supervisory audit: policy explicitly states support for the latest version ('Therefore, we only support the latest version.')."
+  },
+  {
+    "package_name": "tinytag",
+    "type": "latest_only",
+    "commitment_text": "We only support the latest\nreleased `A.B.x` series.",
+    "version_expression": [
+      "latest",
+      "A.B.x"
+    ],
+    "support_status": "latest_only",
+    "temporal_reference": "vulnerability_publication_time",
+    "temporal_expression": null,
+    "rationale": "Corrected based on supervisory audit: policy explicitly supports the latest released A.B.x series."
+  }
+]

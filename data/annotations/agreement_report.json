@@ -1,10 +1,10 @@
 {
   "n_records": 300,
-  "cohens_kappa": 0.9763866295849294,
+  "cohens_kappa": 0.9706658844235846,
   "kappa_target": 0.8,
   "meets_target": true,
   "observed_agreement": 0.99,
-  "expected_agreement": 0.5765111111111111,
+  "expected_agreement": 0.6591,
   "percent_agreement": 99.0,
   "degenerate": false,
   "confusion_matrix": {
@@ -27,7 +27,7 @@
       ],
       [
         0,
-        7,
+        8,
         0,
         0,
         1
@@ -43,7 +43,7 @@
         0,
         0,
         0,
-        218,
+        239,
         2
       ],
       [
@@ -51,7 +51,7 @@
         0,
         0,
         0,
-        60
+        38
       ]
     ]
   },
@@ -59,8 +59,8 @@
     "support_status": {
       "percent_agreement": 99.0,
       "observed_agreement": 0.99,
-      "expected_agreement": 0.5467666666666666,
-      "cohens_kappa": 0.9779363094800323,
+      "expected_agreement": 0.5550888888888889,
+      "cohens_kappa": 0.9775236002197693,
       "degenerate": false,
       "labels": [
         "latest_only",
@@ -70,35 +70,35 @@
       ],
       "confusion_matrix": [
         [
-          34,
+          53,
           0,
           0,
           1
         ],
         [
           0,
-          212,
+          214,
           0,
           2
         ],
         [
           0,
           0,
-          1,
+          2,
           0
         ],
         [
           0,
           0,
           0,
-          50
+          28
         ]
       ]
     },
     "temporal_reference": {
       "percent_agreement": 100.0,
       "observed_agreement": 1.0,
-      "expected_agreement": 0.8416888888888889,
+      "expected_agreement": 0.8584222222222222,
       "cohens_kappa": 1.0,
       "degenerate": false,
       "labels": [
@@ -107,12 +107,12 @@
       ],
       "confusion_matrix": [
         [
-          26,
+          23,
           0
         ],
         [
           0,
-          274
+          277
         ]
       ]
     },
@@ -207,10 +207,10 @@
     "sample": "C:\\Users\\Mahmoud\\Downloads\\Telegram Desktop\\SupportLens_Final\\SupportLens\\data\\annotations\\sample_300.jsonl",
     "sample_sha256": "d30c19a8ffeb285be15d64e1495cc859aa62b5df9e4d592127fe2c7e680745c3",
     "annotator1_file": "data\\annotations\\annotator1_export.json",
-    "annotator1_sha256": "309dde28c35e3e70034bb7b1d98d4ea5c80b6830d9f91538a94c6304d8bffa95",
+    "annotator1_sha256": "e728ccf3f67d6f1f94ad1d4b6a805e1338dddb3d543b7d6894bacd1e2a591c18",
     "annotator2_file": "data\\annotations\\annotator2_export.json",
-    "annotator2_sha256": "217421a2c044fa51342f11f2bae19f0bed3957d09a870895b193571cf5548d55"
+    "annotator2_sha256": "b4fe4193251ff11e76793170f8f7bfc10e6d1ef175e33165f2bff525b437f4a1"
   },
-  "generated_at": "2026-11-23T19:24:01+00:00",
+  "generated_at": "2026-11-26T16:48:39+00:00",
   "export_authenticity_warnings": []
 }

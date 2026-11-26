@@ -1,0 +1,1026 @@
+[
+  {
+    "index": 10,
+    "package_name": "argcomplete",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "In general, the maintainers of this project provide security updates only for the most recent published release. If you need support for prior versions, please open an issue and describe your situation. Requests for updates to prior releases will be considered on a case-by-case basis, and will generally be accommodated only for the latest releases in prior major version release series.",
+      "version_expression": [
+        "most recent published release"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support statement: 'In general, the maintainers of this project provide security updates only for the most recent published release. If you need support for prior versions, please open an issue and describe your situation. Requests for updates to prior releases will be considered on a case-by-case basis, and will generally be accommodated only for the latest releases in prior major version release series.'."
+  },
+  {
+    "index": 11,
+    "package_name": "argon2-cffi",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "Therefore, we only support the latest version.",
+      "version_expression": [
+        "latest"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support statement for the latest release: 'Therefore, we only support the latest version.'."
+  },
+  {
+    "index": 19,
+    "package_name": "automat",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "release_time",
+      "temporal_expression": "until 3 months after the last day of the `YEAR"
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 28,
+    "package_name": "bracex",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "Our policy for security related issues is to fix related issues within our power on the most recent major release.",
+      "version_expression": [
+        "most recent major release"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support statement committing to the most recent major release: 'Our policy for security related issues is to fix related issues within our power on the most recent major release.'."
+  },
+  {
+    "index": 34,
+    "package_name": "composio",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 38,
+    "package_name": "coolprop",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 43,
+    "package_name": "daytona-toolbox-api-client",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "| 2.x | `main` | prerelease versions of `daytona` (PyPI) and `@daytona/sdk` (npm), and of the `daytona` CLI |",
+      "version_expression": [
+        "2.x",
+        "1.x"
+      ],
+      "support_status": "explicit_range",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support table defining lines 2.x and 1.x as supported."
+  },
+  {
+    "index": 44,
+    "package_name": "daytona-toolbox-api-client-async",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "| 2.x | `main` | prerelease versions of `daytona` (PyPI) and `@daytona/sdk` (npm), and of the `daytona` CLI |",
+      "version_expression": [
+        "2.x",
+        "1.x"
+      ],
+      "support_status": "explicit_range",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support table defining lines 2.x and 1.x as supported."
+  },
+  {
+    "index": 45,
+    "package_name": "django-anymail",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "- The latest django-anymail release",
+      "version_expression": [
+        "latest"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Consistent",
+    "rationale": "Explicit commitment to the latest release: '- The latest django-anymail release'."
+  },
+  {
+    "index": 59,
+    "package_name": "fastapi-azure-auth",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "The latest versions of FastAPI-Azure-Auth are supported, which means you should always be on the latest release.",
+      "version_expression": [
+        "latest versions",
+        "latest release"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support statement designating latest versions: 'The latest versions of FastAPI-Azure-Auth are supported, which means you should always be on the latest release.'."
+  },
+  {
+    "index": 68,
+    "package_name": "folium",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "release_time",
+      "temporal_expression": "currently"
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "Folium only supports the most recent version of the package. We strive to maintain backwards compatibility in new versions, so we recommend users to always update to the latest version. Support for older versions is currently not provided.",
+      "version_expression": [
+        "most recent version"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support statement for the most recent version: 'Folium only supports the most recent version of the package. We strive to maintain backwards compatibility in new versions, so we recommend users to always update to the latest version. Support for older versions is currently not provided.'."
+  },
+  {
+    "index": 79,
+    "package_name": "hatch-fancy-pypi-readme",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "Therefore we only support the latest version.",
+      "version_expression": [
+        "latest"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support statement for the latest release: 'Therefore we only support the latest version.'."
+  },
+  {
+    "index": 83,
+    "package_name": "ibis-framework",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 85,
+    "package_name": "ifixai",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 87,
+    "package_name": "inspect-swe",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 89,
+    "package_name": "jsf",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "The latest version of jsf is supported with security updates and bug fixes.",
+      "version_expression": [
+        "latest version"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support statement designating the latest version: 'The latest version of jsf is supported with security updates and bug fixes.'."
+  },
+  {
+    "index": 92,
+    "package_name": "k8s-agent-sandbox",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 94,
+    "package_name": "kfp-pipeline-spec",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 98,
+    "package_name": "libhoney",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 100,
+    "package_name": "litellm-enterprise",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "release_time",
+      "temporal_expression": "currently"
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 101,
+    "package_name": "litellm-proxy-extras",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "release_time",
+      "temporal_expression": "currently"
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 106,
+    "package_name": "mcp",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "| Version                                  | Line                    | Support                                     |\n| 2.x (newest release)                     | current stable (`main`) | bug fixes, security fixes, new features     |\n| 1.x newest release (`v1.x` branch)       | maintenance             | critical bug fixes and security fixes       |\n| older 1.x releases, and all pre-releases | unsupported             | upgrade to the newest 1.x release or to 2.x |",
+      "version_expression": [
+        "2.x",
+        "1.x"
+      ],
+      "support_status": "explicit_range",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Consistent",
+    "rationale": "Explicit support table defining lines 2.x and 1.x as supported."
+  },
+  {
+    "index": 107,
+    "package_name": "mcp-server-fetch",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 108,
+    "package_name": "mcp-server-git",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 109,
+    "package_name": "mcp-server-time",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 110,
+    "package_name": "mcp-types",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "| Version                                  | Line                    | Support                                     |\n| 2.x (newest release)                     | current stable (`main`) | bug fixes, security fixes, new features     |\n| 1.x newest release (`v1.x` branch)       | maintenance             | critical bug fixes and security fixes       |\n| older 1.x releases, and all pre-releases | unsupported             | upgrade to the newest 1.x release or to 2.x |",
+      "version_expression": [
+        "2.x",
+        "1.x"
+      ],
+      "support_status": "explicit_range",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support table defining lines 2.x and 1.x as supported."
+  },
+  {
+    "index": 188,
+    "package_name": "openexr",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "| CVE | Affected Versions | Patched Versions |\n| [CVE-2026-61555](https://www.cve.org/CVERecord?id=CVE-2026-61555) | 2.x, 3.0.x, 3.1.x, 3.2.0–3.2.10, 3.3.0–3.3.12, 3.4.0–3.4.13 | 3.2.11, 3.3.13, 3.4.14 |\n| [CVE-2026-59984](https://www.cve.org/CVERecord?id=CVE-2026-59984) | 3.1.x, 3.2.0–3.2.10, 3.3.0–3.3.12, 3.4.0–3.4.13 | 3.2.11, 3.3.13, 3.4.14 |\n| [CVE-2026-59983](https://www.cve.org/CVERecord?id=CVE-2026-59983) | 2.x, 3.0.x, 3.1.x, 3.2.0–3.2.10, 3.3.0–3.3.12, 3.4.0–3.4.13 | 3.2.11, 3.3.13, 3.4.14 |",
+      "version_expression": [
+        "2.x",
+        "1.x"
+      ],
+      "support_status": "explicit_range",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Consistent",
+    "rationale": "Explicit support table defining lines 2.x and 1.x as supported."
+  },
+  {
+    "index": 190,
+    "package_name": "opentelemetry-exporter-gcp-logging",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "release_time",
+      "temporal_expression": "for 12 months after a new major version is released: https://opensource"
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 191,
+    "package_name": "opentelemetry-exporter-gcp-monitoring",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "release_time",
+      "temporal_expression": "for 12 months after a new major version is released: https://opensource"
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 192,
+    "package_name": "opentelemetry-propagator-gcp",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "release_time",
+      "temporal_expression": "for 12 months after a new major version is released: https://opensource"
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 193,
+    "package_name": "ops",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "release_time",
+      "temporal_expression": "in the last year"
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 199,
+    "package_name": "pem",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "Therefore we only support the latest version.",
+      "version_expression": [
+        "latest"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support statement for the latest release: 'Therefore we only support the latest version.'."
+  },
+  {
+    "index": 200,
+    "package_name": "phonenumberslite",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "Only the current version of the library will receive security fixes.",
+      "version_expression": [
+        "current version"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support statement: 'Only the current version of the library will receive security fixes.'."
+  },
+  {
+    "index": 213,
+    "package_name": "py-spy",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "Only the most recent version of py-spy will get security updates.",
+      "version_expression": [
+        "most recent version"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support statement for the most recent version: 'Only the most recent version of py-spy will get security updates.'."
+  },
+  {
+    "index": 214,
+    "package_name": "pycep-parser",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "Since this project is in an early stage and didn't reach a maturity to actually support semantic versioning, any secruity relevant fix will be available in the most recent version only.",
+      "version_expression": [
+        "most recent version"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support statement designating the most recent version: 'Since this project is in an early stage and didn't reach a maturity to actually support semantic versioning, any secruity relevant fix will be available in the most recent version only.'."
+  },
+  {
+    "index": 221,
+    "package_name": "pyjwt",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "release_time",
+      "temporal_expression": "currently"
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "| Version | End of life |\n| 2.x     | TBD         |",
+      "version_expression": [
+        "2.x",
+        "1.x"
+      ],
+      "support_status": "explicit_range",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Consistent",
+    "rationale": "Explicit support table defining lines 2.x and 1.x as supported."
+  },
+  {
+    "index": 225,
+    "package_name": "pymdown-extensions",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "Our policy for security related issues is to fix related issues within our power on the most recent major release.",
+      "version_expression": [
+        "most recent major release"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Consistent",
+    "rationale": "Explicit support statement committing to the most recent major release: 'Our policy for security related issues is to fix related issues within our power on the most recent major release.'."
+  },
+  {
+    "index": 226,
+    "package_name": "pyocd",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "release_time",
+      "temporal_expression": "currently"
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 227,
+    "package_name": "pyotp",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "In general, the maintainers of this project provide security updates only for the most recent published release. If you need support for prior versions, please open an issue and describe your situation. Requests for updates to prior releases will be considered on a case-by-case basis, and will generally be accommodated only for the latest releases in prior major version release series.",
+      "version_expression": [
+        "most recent published release"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support statement: 'In general, the maintainers of this project provide security updates only for the most recent published release. If you need support for prior versions, please open an issue and describe your situation. Requests for updates to prior releases will be considered on a case-by-case basis, and will generally be accommodated only for the latest releases in prior major version release series.'."
+  },
+  {
+    "index": 231,
+    "package_name": "pytest-mergify",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 238,
+    "package_name": "pyvista",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "Security vulnerability reports will be accepted and acted upon for all released versions.",
+      "version_expression": [
+        "all released versions"
+      ],
+      "support_status": "all_versions",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support commitment covering all released versions: 'Security vulnerability reports will be accepted and acted upon for all released versions.'."
+  },
+  {
+    "index": 248,
+    "package_name": "schemachange",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 254,
+    "package_name": "signxml",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "In general, the maintainers of this project provide security updates only for the most recent published release. If you need support for prior versions, please open an issue and describe your situation. Requests for updates to prior releases will be considered on a case-by-case basis, and will generally be accommodated only for the latest releases in prior major version release series.",
+      "version_expression": [
+        "most recent published release"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Consistent",
+    "rationale": "Explicit support statement: 'In general, the maintainers of this project provide security updates only for the most recent published release. If you need support for prior versions, please open an issue and describe your situation. Requests for updates to prior releases will be considered on a case-by-case basis, and will generally be accommodated only for the latest releases in prior major version release series.'."
+  },
+  {
+    "index": 258,
+    "package_name": "sqlalchemy2-stubs",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  },
+  {
+    "index": 260,
+    "package_name": "sqlparse",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "In turn there's only one supported version and this is the latest.",
+      "version_expression": [
+        "latest"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Consistent",
+    "rationale": "Explicit support statement designating the latest version: 'In turn there's only one supported version and this is the latest.'."
+  },
+  {
+    "index": 262,
+    "package_name": "stamina",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "Therefore, we only support the latest version.",
+      "version_expression": [
+        "latest"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support statement for the latest release: 'Therefore, we only support the latest version.'."
+  },
+  {
+    "index": 264,
+    "package_name": "svcs",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "Therefore, we only support the latest version.",
+      "version_expression": [
+        "latest"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support statement for the latest release: 'Therefore, we only support the latest version.'."
+  },
+  {
+    "index": 266,
+    "package_name": "tinytag",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "We only support the latest\nreleased `A.B.x` series.",
+      "version_expression": [
+        "latest",
+        "A.B.x"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Consistent",
+    "rationale": "Explicit support commitment for latest released A.B.x line: 'We only support the latest\nreleased `A.B.x` series.'."
+  },
+  {
+    "index": 298,
+    "package_name": "vermin",
+    "action": "CORRECT",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": {
+      "commitment_text": "Security fixes and updates are applied to the `master` branch but they are not backported to older\nreleases.",
+      "version_expression": [
+        "master"
+      ],
+      "support_status": "latest_only",
+      "temporal_reference": "vulnerability_publication_time",
+      "temporal_expression": null
+    },
+    "corrected_verdict": "Insufficient Evidence",
+    "rationale": "Explicit support commitment for master/latest branch with no backporting: 'Security fixes and updates are applied to the `master` branch but they are not backported to older\nreleases.'."
+  },
+  {
+    "index": 299,
+    "package_name": "yamlfix",
+    "action": "KEEP_AMBIGUOUS",
+    "current_commitment": {
+      "commitment_text": "",
+      "version_expression": [],
+      "support_status": "ambiguous",
+      "temporal_reference": "release_time",
+      "temporal_expression": "for 6 months after a new"
+    },
+    "current_verdict": "Unmeasurable Commitment",
+    "corrected_commitment": null,
+    "corrected_verdict": null,
+    "rationale": "Genuinely ambiguous: policy describes reporting procedures, hardware targets, or external links without defining software version support."
+  }
+]
